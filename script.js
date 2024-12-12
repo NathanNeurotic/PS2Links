@@ -11,13 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchBar = document.getElementById("search-bar");
     searchBar.addEventListener("input", () => {
         const searchQuery = searchBar.value.toLowerCase();
+        const tagsQuery = searchBar.value.toLowerCase();
         const sections = document.querySelectorAll("section");
         sections.forEach((section) => {
             const links = section.querySelectorAll("a");
             let sectionVisible = false;
             links.forEach((link) => {
                 const linkText = link.textContent.toLowerCase();
-                if (linkText.includes(searchQuery)) {
+                const tags = link.getAttribute("data-tags").toLowerCase();
+         if (linkText.includes(searchQuery) || tags.includes(tagsQuery)) {
                     link.style.display = "block";
                     sectionVisible = true;
                 } else {
