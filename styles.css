@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     background-color: #0d1b2a;
@@ -75,4 +74,11 @@ footer {
     background-color: #1b263b;
     text-align: center;
     padding: 10px;
+}
+
+#return-home {
+    position: fixed; /* Fixed positioning relative to the viewport */
+    top: 10px;       /* 10 pixels from the top */
+    right: 10px;     /* 10 pixels from the right */
+    z-index: 1000;   /* Ensures it stays on top of other content */
 }
