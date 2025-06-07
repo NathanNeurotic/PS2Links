@@ -78,7 +78,7 @@ footer {
 
 #return-home {
     position: fixed; /* Fixed positioning relative to the viewport */
-    top: 10px;       /* 10 pixels from the top */
+    top: 110px;      /* Adjusted to be below most of the header content when scrolled */
     right: 10px;     /* 10 pixels from the right */
     z-index: 1000;   /* Ensures it stays on top of other content */
 }
