@@ -1,29 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #0d1b2a;
-    color: #ffffff;
+    font-family: "Orbitron", "Arial", sans-serif;
+    background-color: #070728; /* Deep Space Blue */
+    background-image: radial-gradient(circle at top right, #2E0854, #070728 70%),
+                      radial-gradient(circle at bottom left, #2E0854, #070728 70%);
+    color: #E0E0E0; /* Light Gray/Off-White */
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #1b263b;
+    background-color: #000000; /* Black for contrast, like PS2 console */
     padding: 20px;
     text-align: center;
+    border-bottom: 2px solid #2E0854; /* Dark Purple */
+}
+
+header img { /* logo.png */
+    display: block;
+    margin: 0 auto 10px auto; /* Added bottom margin */
+    max-width: 180px; /* Slightly smaller */
+    height: auto;
+    /* Attempt to make logo fit theme - this is experimental */
+    /* filter: invert(1) hue-rotate(200deg) saturate(1.5) brightness(1.2); */
+    /* A more subtle approach if the above is too much: */
+    filter: brightness(1.5) saturate(0.8);
 }
 
 h1 {
     margin: 0;
-    color: #e0e1dd;
+    color: #E0E0E0; /* Light Gray/Off-White */
+    font-weight: 700; /* Bolder Orbitron */
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF; /* Electric Blue glow */
 }
 
 #search-bar {
-    margin-top: 10px;
-    padding: 10px;
+    margin-top: 15px;
+    padding: 12px 15px;
     width: 80%;
-    max-width: 400px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    max-width: 450px;
+    border-radius: 25px; /* More rounded, futuristic pill shape */
+    border: 1px solid #00FFFF; /* Electric Blue border */
+    background-color: #101030; /* Darker than body, but not black */
+    color: #E0E0E0;
+    font-family: "Orbitron", "Arial", sans-serif;
+    font-size: 1em;
+    box-shadow: 0 0 8px #00FFFF, inset 0 0 5px rgba(0, 255, 255, 0.3); /* Outer and subtle inner glow */
+    transition: all 0.3s ease;
+}
+
+#search-bar::placeholder {
+    color: #A0A0A0; /* Dimmer light gray */
+    opacity: 0.8;
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: #FF00FF; /* Vibrant Magenta border on focus */
+    box-shadow: 0 0 12px #FF00FF, inset 0 0 8px rgba(255, 0, 255, 0.4); /* Magenta glow on focus */
+}
+
+#return-home {
+    position: fixed;
+    top: 20px; /* Adjusted for new header - might need further tweaking */
+    right: 20px;
+    width: 48px; /* Standard icon size */
+    height: 48px;
+    z-index: 1000;
+    /* Attempt to style the icon - highly dependent on original icon colors */
+    /* filter: invert(1) brightness(1.5) hue-rotate(180deg) saturate(3); */
+    /* If too complex, a simple brightness/contrast might be better, or leave as is */
+    filter: brightness(1.2) contrast(1.1);
+    border-radius: 50%; /* Make it circular */
+    background-color: rgba(46, 8, 84, 0.5); /* Dark Purple semi-transparent bg */
+    padding: 5px;
+    box-shadow: 0 0 10px #00FFFF;
+}
+#return-home:hover {
+    box-shadow: 0 0 15px #FF00FF;
+    background-color: rgba(255, 0, 255, 0.3);
 }
 
 main {
@@ -31,54 +87,85 @@ main {
 }
 
 section {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    background-color: rgba(0, 0, 20, 0.7); /* Very dark blue, semi-transparent */
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #2E0854; /* Dark Purple border */
+    box-shadow: 0 0 15px rgba(46, 8, 84, 0.5); /* Dark Purple glow */
 }
 
 h2.collapsible {
-    color: #f4a261;
+    color: #00FFFF; /* Electric Blue */
     cursor: pointer;
-    border-bottom: 2px solid #e76f51;
-    padding-bottom: 5px;
-    transition: color 0.3s;
+    border-bottom: 2px solid #00FFFF;
+    padding-bottom: 8px;
+    transition: color 0.3s, border-bottom-color 0.3s;
+    font-size: 1.5em; /* Larger */
+    font-weight: 700; /* Bolder Orbitron */
+    text-transform: uppercase; /* Galactic/digital feel */
+    letter-spacing: 1px;
 }
 
 h2.collapsible:hover {
-    color: #e9c46a;
+    color: #FF00FF; /* Vibrant Magenta on hover */
+    border-bottom-color: #FF00FF;
 }
 
 .content {
-    display: none;
+    display: none; /* Keep default as none, JS handles display */
     margin-top: 10px;
+    padding-left: 10px; /* Indent content slightly */
+    border-left: 2px dashed #2E0854; /* Dark Purple dashed line */
 }
 
 ul {
-    list-style: none;
+    list-style: none; /* Remove default bullets */
     padding: 0;
 }
 
 li {
-    margin: 5px 0;
+    margin: 8px 0;
+    padding-left: 20px; /* Space for custom bullet */
+    position: relative; /* For custom bullet positioning */
+}
+
+/* Custom bullet point - PS2 'X' symbol inspired */
+li::before {
+    content: '✕'; /* Using a multiplication X, or could use an SVG/image if possible */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #00FFFF; /* Electric Blue */
+    font-weight: bold;
+    font-size: 0.9em;
 }
 
 a {
-    color: #2a9d8f;
+    color: #00FFFF; /* Electric Blue */
     text-decoration: none;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: #e9c46a;
+    color: #FF00FF; /* Vibrant Magenta */
+    text-decoration: none; /* No underline, rely on color change and potential glow */
+    text-shadow: 0 0 5px #FF00FF; /* Magenta glow on hover */
+}
+
+a:visited {
+    color: #00AAAA; /* A dimmer/desaturated cyan for visited links */
 }
 
 footer {
-    background-color: #1b263b;
+    background-color: #000000; /* Black, same as header */
     text-align: center;
-    padding: 10px;
+    padding: 20px; /* More padding */
+    border-top: 2px solid #2E0854; /* Dark Purple */
+    margin-top: 30px; /* Space above footer */
 }
 
-#return-home {
-    position: fixed; /* Fixed positioning relative to the viewport */
-    top: 110px;      /* Adjusted to be below most of the header content when scrolled */
-    right: 10px;     /* 10 pixels from the right */
-    z-index: 1000;   /* Ensures it stays on top of other content */
+footer p {
+    margin: 0;
+    color: #A0A0A0; /* Dimmer light gray for footer text */
 }
