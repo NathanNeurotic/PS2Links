@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
+body.dark-mode {
+    --bg-color: #070728;
+    --text-color: #E0E0E0;
+}
+
+body.light-mode {
+    --bg-color: #E8EAF6;
+    --text-color: #050a1f;
+}
+
 body {
     font-family: "Orbitron", "Arial", sans-serif;
-    background-color: #070728; /* Deep Space Blue */
+    background-color: var(--bg-color); /* Deep Space Blue */
     background-image: linear-gradient(180deg, rgba(7,7,40,0.95) 0%, rgba(15,15,50,0.9) 50%, rgba(7,7,40,0.95) 100%),
                       radial-gradient(circle at top right, #2E0854, #070728 70%),
                       radial-gradient(circle at bottom left, #2E0854, #070728 70%);
     background-blend-mode: multiply; /* Or another blend mode if it looks better */
-    color: #E0E0E0; /* Light Gray/Off-White */
+    color: var(--text-color); /* Light Gray/Off-White */
     margin: 0;
     padding: 0;
     transition: background-color 0.5s ease, color 0.5s ease; /* Smooth theme transition */
@@ -41,7 +51,7 @@ header img { /* logo.png */
 
 h1 {
     margin: 0;
-    color: #E0E0E0; /* Light Gray/Off-White */
+    color: var(--text-color); /* Light Gray/Off-White */
     font-weight: 700; /* Bolder Orbitron */
     text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF; /* Electric Blue glow */
 }
@@ -59,7 +69,7 @@ header h1 { /* More specific selector for the main title if needed */
     border: 1px solid #00FFFF; /* Electric Blue border */
     background-color: #101030; /* Fallback */
     background-image: linear-gradient(to bottom, #1a1a3a, #0a0a28); /* Subtle dark gradient */
-    color: #E0E0E0;
+    color: var(--text-color);
     font-family: "Orbitron", "Arial", sans-serif;
     font-size: 1em;
     box-shadow: 0 0 8px #00FFFF, inset 0 0 5px rgba(0, 255, 255, 0.3); /* Outer and subtle inner glow */
@@ -170,7 +180,7 @@ header h1 { /* More specific selector for the main title if needed */
 /* Default (Dark Theme) Theme Toggle Button Style */
 #theme-toggle-btn {
     background: linear-gradient(145deg, #4a4a4a, #2a2a2a); /* Dark grey gradient */
-    color: #E0E0E0;
+    color: var(--text-color);
     border: 1px solid #555555;
     box-shadow: 0 2px 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
     position: relative; /* For ::after pseudo-element if needed for icon */
@@ -242,7 +252,7 @@ section {
 /* Category Header Styles */
 h2.collapsible {
     background: linear-gradient(145deg, #1f5ef7, #0a1a3a); /* Blue to Dark Blue/Black gradient */
-    color: #E0E0E0; /* Light Gray/Off-White for text */
+    color: var(--text-color); /* Light Gray/Off-White for text */
     cursor: pointer;
     padding: 12px 20px; /* Button-like padding */
     border-radius: 8px; /* Rounded corners */
@@ -503,12 +513,12 @@ body.light-mode .category-view-btn.active {
 
 
 body.light-mode {
-    background-color: #E8EAF6; /* Fallback */
+    background-color: var(--bg-color); /* Fallback */
     background-image: linear-gradient(180deg, #F5F5F5 0%, #E8EAF6 100%), /* Very light grey to light bluish-grey */
                       radial-gradient(circle at top right, #E1D8F0, #E8EAF6 70%),
                       radial-gradient(circle at bottom left, #E1D8F0, #E8EAF6 70%);
     background-blend-mode: multiply;
-    color: #050a1f; /* CHANGED: Very Dark Blue/Almost Black for high contrast */
+    color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black for high contrast */
 }
 
 body.light-mode header {
@@ -528,7 +538,7 @@ body.light-mode h1 {
 body.light-mode #search-bar {
     border: 1px solid #5C6BC0;
     background-image: linear-gradient(to bottom, #FFFFFF, #F5F5F5); /* White to light gray */
-    color: #050a1f;
+    color: var(--text-color);
     box-shadow: 0 0 6px #C5CAE9, inset 0 0 4px rgba(197, 202, 233, 0.3);
 }
 
@@ -562,7 +572,7 @@ body.light-mode section {
 /* Light Mode Category Header */
 body.light-mode h2.collapsible {
     background: linear-gradient(145deg, #5C6BC0, #3F51B5); /* CHANGED: Slightly darker, more saturated blues */
-    color: #050a1f; /* CHANGED: Very Dark Blue/Almost Black text for high contrast */
+    color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black text for high contrast */
     border: 1px solid #283593; /* CHANGED: Darker Indigo border */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), /* Softer shadow */
                 inset 0 1px 1px rgba(255, 255, 255, 0.4); /* Inner highlight for gloss */
@@ -587,7 +597,7 @@ body.light-mode .content.thumbnail-view {
 /* Light Mode Link Styles */
 body.light-mode .content.list-view li > a {
     background: linear-gradient(145deg, #E8EAF6, #C5CAE9); /* CHANGED: Lighter background for buttons */
-    color: #050a1f; /* CHANGED: Very Dark Blue/Almost Black text */
+    color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black text */
     border: 1px solid #9FA8DA; /* CHANGED: Lighter Indigo border */
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), /* Softer shadow */
                 inset 0 1px 1px rgba(255, 255, 255, 0.5); /* Brighter inner highlight */
@@ -625,7 +635,7 @@ body.light-mode .thumbnail-item img {
 }
 
 body.light-mode .thumbnail-item figcaption {
-    color: #050a1f; /* CHANGED: Very Dark Blue/Almost Black for caption */
+    color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black for caption */
 }
 
 body.light-mode .thumbnail-item a:hover figcaption {
@@ -635,7 +645,7 @@ body.light-mode .thumbnail-item a:hover figcaption {
 /* Light Mode Buttons */
 body.light-mode .view-btn {
     background: linear-gradient(145deg, #E0E0E0, #BDBDBD); /* CHANGED: Light Grey gradient */
-    color: #050a1f; /* CHANGED: Very Dark Blue text */
+    color: var(--text-color); /* CHANGED: Very Dark Blue text */
     border: 1px solid #9E9E9E; /* CHANGED: Medium Grey border */
     box-shadow: 0 2px 3px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255,255,255,0.4);
 }
@@ -655,7 +665,7 @@ body.light-mode .view-btn.active {
 
 body.light-mode #theme-toggle-btn {
     background: linear-gradient(145deg, #E0E0E0, #BDBDBD); /* Light grey gradient */
-    color: #050a1f; /* Very Dark Blue text */
+    color: var(--text-color); /* Very Dark Blue text */
     border: 1px solid #9E9E9E; /* Medium grey border */
     box-shadow: 0 2px 3px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255,255,255,0.4);
 }
