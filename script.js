@@ -81,8 +81,23 @@ document.addEventListener("DOMContentLoaded", () => {
                     const li = document.createElement("li");
                     const a = document.createElement("a");
                     a.href = linkObj.url;
-                    a.textContent = linkObj.name;
                     a.target = "_blank";
+
+                    const img = document.createElement("img");
+                    img.src = getFaviconUrl(linkObj.url);
+                    img.alt = ""; // Decorative
+                    img.loading = 'lazy';
+                    img.onerror = function() {
+                        this.src = 'favicon.ico'; // Fallback
+                    };
+                    img.classList.add("list-view-favicon");
+
+                    a.prepend(img); // Add the icon first
+
+                    // Then add the text. We need to create a text node for proper spacing.
+                    const textNode = document.createTextNode(" " + linkObj.name); // Add a space before the name
+                    a.appendChild(textNode);
+
                     li.appendChild(a);
                     ul.appendChild(li);
                 });
