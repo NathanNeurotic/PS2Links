@@ -3,15 +3,18 @@
 body {
     font-family: "Orbitron", "Arial", sans-serif;
     background-color: #070728; /* Deep Space Blue */
-    background-image: radial-gradient(circle at top right, #2E0854, #070728 70%),
+    background-image: linear-gradient(180deg, rgba(7,7,40,0.95) 0%, rgba(15,15,50,0.9) 50%, rgba(7,7,40,0.95) 100%),
+                      radial-gradient(circle at top right, #2E0854, #070728 70%),
                       radial-gradient(circle at bottom left, #2E0854, #070728 70%);
+    background-blend-mode: multiply; /* Or another blend mode if it looks better */
     color: #E0E0E0; /* Light Gray/Off-White */
     margin: 0;
     padding: 0;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth theme transition */
 }
 
 header {
-    background-color: #000000; /* Black for contrast, like PS2 console */
+    background: linear-gradient(to bottom, #0a0a1a, #000000); /* Dark blueish-black to black */
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #2E0854; /* Dark Purple */
@@ -35,6 +38,10 @@ h1 {
     text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF; /* Electric Blue glow */
 }
 
+header h1 { /* More specific selector for the main title if needed */
+    font-size: 2.5em; /* Larger title */
+}
+
 #search-bar {
     margin-top: 15px;
     padding: 12px 15px;
@@ -42,7 +49,8 @@ h1 {
     max-width: 450px;
     border-radius: 25px; /* More rounded, futuristic pill shape */
     border: 1px solid #00FFFF; /* Electric Blue border */
-    background-color: #101030; /* Darker than body, but not black */
+    background-color: #101030; /* Fallback */
+    background-image: linear-gradient(to bottom, #1a1a3a, #0a0a28); /* Subtle dark gradient */
     color: #E0E0E0;
     font-family: "Orbitron", "Arial", sans-serif;
     font-size: 1em;
@@ -60,6 +68,82 @@ h1 {
     border-color: #FF00FF; /* Vibrant Magenta border on focus */
     box-shadow: 0 0 12px #FF00FF, inset 0 0 8px rgba(255, 0, 255, 0.4); /* Magenta glow on focus */
 }
+
+/* View Toggle Buttons */
+#view-toggle-buttons {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex; /* For aligning items in the div */
+    justify-content: center; /* Center buttons */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+/* Theme Toggle Button Styles (Shared) */
+#theme-toggle-btn {
+    font-family: "Orbitron", "Arial", sans-serif;
+    padding: 8px 15px;
+    margin-left: 10px; /* Space from view buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    /* Specific theme styles will be below */
+}
+
+.view-btn {
+    font-family: "Orbitron", "Arial", sans-serif;
+    /* Default (dark theme) styles */
+    background: linear-gradient(145deg, #183d8f, #0a1a3a);
+    color: #C0C0FF;
+    border: 1px solid #003366;
+    padding: 8px 15px;
+    margin: 5px; /* Adjusted for wrapping */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
+    font-size: 0.9em;
+}
+
+.view-btn:hover {
+    background: linear-gradient(145deg, #204eaf, #0f234d); /* Dark theme hover */
+    color: #E0E0FF;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15);
+    transform: translateY(-1px);
+}
+
+.view-btn.active {
+    background: linear-gradient(145deg, #2968ff, #1f5ef7); /* Dark theme active */
+    color: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2), inset 0 0 5px rgba(0,0,0,0.3);
+    transform: translateY(1px);
+    cursor: default;
+}
+
+/* Default (Dark Theme) Theme Toggle Button Style */
+#theme-toggle-btn {
+    background: linear-gradient(145deg, #4a4a4a, #2a2a2a); /* Dark grey gradient */
+    color: #E0E0E0;
+    border: 1px solid #555555;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
+    position: relative; /* For ::after pseudo-element if needed for icon */
+}
+
+#theme-toggle-btn:hover {
+    background: linear-gradient(145deg, #5a5a5a, #3a3a3a);
+    color: #FFFFFF;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15);
+    transform: translateY(-1px);
+}
+
+#theme-toggle-btn:active {
+    background: linear-gradient(145deg, #3a3a3a, #1a1a1a); /* Darker pressed state */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5), inset 0 1px 3px rgba(0,0,0,0.2);
+    transform: translateY(1px);
+}
+
 
 #return-home {
     position: fixed;
@@ -86,79 +170,166 @@ main {
     padding: 20px;
 }
 
+/* Default main layout (single column for sections) */
+main {
+    /* standard padding already defined */
+}
+
+/* Multi-column layout for sections when thumbnail categories are active */
+main.thumbnail-categories-active {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Adjust minmax as needed */
+    gap: 20px;
+}
+
 section {
-    margin-bottom: 25px;
-    background-color: rgba(0, 0, 20, 0.7); /* Very dark blue, semi-transparent */
+    margin-bottom: 25px; /* This will apply in both list and grid view for spacing below sections */
+    /* background-color: rgba(0, 0, 20, 0.7); /* Fallback if gradient not supported */
+    background-image: linear-gradient(to bottom, rgba(10, 20, 50, 0.75), rgba(0, 0, 20, 0.85));
     padding: 15px;
     border-radius: 10px;
     border: 1px solid #2E0854; /* Dark Purple border */
     box-shadow: 0 0 15px rgba(46, 8, 84, 0.5); /* Dark Purple glow */
+    align-self: start; /* Ensures sections in a grid layout don't stretch if their content is shorter */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for theme changes */
 }
 
+/* Category Header Styles */
 h2.collapsible {
-    color: #00FFFF; /* Electric Blue */
+    background: linear-gradient(145deg, #1f5ef7, #0a1a3a); /* Blue to Dark Blue/Black gradient */
+    color: #E0E0E0; /* Light Gray/Off-White for text */
     cursor: pointer;
-    border-bottom: 2px solid #00FFFF;
-    padding-bottom: 8px;
-    transition: color 0.3s, border-bottom-color 0.3s;
-    font-size: 1.5em; /* Larger */
-    font-weight: 700; /* Bolder Orbitron */
-    text-transform: uppercase; /* Galactic/digital feel */
+    padding: 12px 20px; /* Button-like padding */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #003366; /* Darker blue border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), /* Lifted effect */
+                inset 0 1px 1px rgba(255, 255, 255, 0.2); /* Inner highlight for gloss */
+    transition: all 0.3s ease;
+    font-size: 1.4em; /* Adjusted size */
+    font-weight: 700;
+    text-transform: uppercase;
     letter-spacing: 1px;
+    margin-bottom: 10px; /* Space before content */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
 }
 
 h2.collapsible:hover {
-    color: #FF00FF; /* Vibrant Magenta on hover */
-    border-bottom-color: #FF00FF;
+    background: linear-gradient(145deg, #2968ff, #0f234d); /* Brighter gradient on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5), /* More lifted effect */
+                inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px); /* Slight lift */
+    color: #FFFFFF; /* Brighter text on hover */
 }
+
 
 .content {
     display: none; /* Keep default as none, JS handles display */
     margin-top: 10px;
-    padding-left: 10px; /* Indent content slightly */
-    border-left: 2px dashed #2E0854; /* Dark Purple dashed line */
+    padding-left: 0; /* Remove specific padding for list view */
+    border-left: none; /* Remove specific border for list view */
+    /* Common content styles */
 }
 
-ul {
-    list-style: none; /* Remove default bullets */
+/* List View Specific Styles */
+.content.list-view ul {
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
-li {
-    margin: 8px 0;
-    padding-left: 20px; /* Space for custom bullet */
-    position: relative; /* For custom bullet positioning */
+.content.list-view li {
+    list-style: none;
+    margin: 10px 0; /* Space between link buttons */
 }
 
-/* Custom bullet point - PS2 'X' symbol inspired */
-li::before {
-    content: '✕'; /* Using a multiplication X, or could use an SVG/image if possible */
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: #00FFFF; /* Electric Blue */
-    font-weight: bold;
-    font-size: 0.9em;
-}
-
-a {
-    color: #00FFFF; /* Electric Blue */
+.content.list-view li > a {
+    display: block;
+    background: linear-gradient(145deg, #0d2f6e, #040a18);
+    color: #C0C0FF;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #001f4d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
     text-decoration: none;
-    transition: color 0.3s, text-shadow 0.3s;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.95em;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
 }
 
-a:hover {
-    color: #FF00FF; /* Vibrant Magenta */
-    text-decoration: none; /* No underline, rely on color change and potential glow */
-    text-shadow: 0 0 5px #FF00FF; /* Magenta glow on hover */
+.content.list-view li > a:hover {
+    background: linear-gradient(145deg, #1a4ca3, #081229);
+    color: #E0E0FF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4),
+                inset 0 1px 2px rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px) scale(1.01);
+    text-shadow: 0 0 3px #C0C0FF;
 }
 
-a:visited {
-    color: #00AAAA; /* A dimmer/desaturated cyan for visited links */
+.content.list-view li > a:visited {
+    background: linear-gradient(145deg, #0a2550, #030712);
+    color: #A0A0CC;
+}
+
+/* Thumbnail View Specific Styles */
+.content.thumbnail-view {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 15px; /* Space between thumbnails */
+    padding: 10px 0; /* Padding for the container */
+}
+
+.thumbnail-item {
+    background-color: #081020; /* Dark background for thumbnail card */
+    border: 1px solid #1a2c5a;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    display: flex; /* Use flex for internal alignment */
+    flex-direction: column;
+    justify-content: space-between; /* Push caption to bottom */
+}
+
+.thumbnail-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,128,255,0.5);
+    border-color: #00FFFF;
+}
+
+.thumbnail-item a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent for caption */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make anchor fill the figure */
+}
+
+.thumbnail-item img {
+    max-width: 100%;
+    height: 80px; /* Fixed height for uniformity, adjust as needed */
+    object-fit: cover; /* Cover the area, might crop */
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #003366;
+}
+
+.thumbnail-item figcaption {
+    font-size: 0.85em;
+    color: #A0A0FF; /* Lighter caption color */
+    line-height: 1.2;
+    margin-top: auto; /* Push caption to bottom if image is small */
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+.thumbnail-item a:hover figcaption {
+    color: #E0E0FF; /* Brighter caption on hover */
 }
 
 footer {
-    background-color: #000000; /* Black, same as header */
+    background: linear-gradient(to top, #0a0a1a, #000000); /* Black to dark blueish-black */
     text-align: center;
     padding: 20px; /* More padding */
     border-top: 2px solid #2E0854; /* Dark Purple */
@@ -168,4 +339,187 @@ footer {
 footer p {
     margin: 0;
     color: #A0A0A0; /* Dimmer light gray for footer text */
+}
+
+
+/*-------------------- LIGHT MODE STYLES --------------------*/
+
+body.light-mode {
+    background-color: #E8EAF6; /* Fallback */
+    background-image: linear-gradient(180deg, #F5F5F5 0%, #E8EAF6 100%), /* Very light grey to light bluish-grey */
+                      radial-gradient(circle at top right, #E1D8F0, #E8EAF6 70%),
+                      radial-gradient(circle at bottom left, #E1D8F0, #E8EAF6 70%);
+    background-blend-mode: multiply;
+    color: #050a1f; /* CHANGED: Very Dark Blue/Almost Black for high contrast */
+}
+
+body.light-mode header {
+    background: linear-gradient(to bottom, #FAFAFA, #F5F5F5); /* White to very light gray */
+    border-bottom: 2px solid #7E57C2; /* Medium Purple */
+}
+
+body.light-mode header img { /* logo.png in light mode */
+    filter: brightness(1) saturate(1); /* Reset or adjust for light bg */
+}
+
+body.light-mode h1 {
+    color: #1A237E; /* CHANGED: Dark Indigo for better contrast */
+    text-shadow: 0 0 2px #AEB6BF, 0 0 4px #AEB6BF; /* Softer, less intense glow */
+}
+
+body.light-mode #search-bar {
+    border: 1px solid #5C6BC0;
+    background-image: linear-gradient(to bottom, #FFFFFF, #F5F5F5); /* White to light gray */
+    color: #050a1f;
+    box-shadow: 0 0 6px #C5CAE9, inset 0 0 4px rgba(197, 202, 233, 0.3);
+}
+
+body.light-mode #search-bar::placeholder {
+    color: #455A64;
+}
+
+body.light-mode #search-bar:focus {
+    border-color: #303F9F;
+    box-shadow: 0 0 10px #9FA8DA, inset 0 0 6px rgba(159, 168, 218, 0.4);
+}
+
+body.light-mode #return-home {
+    filter: brightness(0.9) contrast(1.2);
+    background-color: rgba(126, 87, 194, 0.5);
+    box-shadow: 0 0 10px #9575CD;
+}
+body.light-mode #return-home:hover {
+    box-shadow: 0 0 15px #7E57C2;
+    background-color: rgba(126, 87, 194, 0.7);
+}
+
+body.light-mode section {
+    /* background-color: #FFFFFF; /* Fallback */
+    background-image: linear-gradient(to bottom, #FFFFFF, #F9FAFB); /* White to very light grey */
+    border: 1px solid #9FA8DA;
+    box-shadow: 0 0 10px rgba(159, 168, 218, 0.4);
+    /* align-self: start; is already on the general section style */
+}
+
+/* Light Mode Category Header */
+body.light-mode h2.collapsible {
+    background: linear-gradient(145deg, #5C6BC0, #3F51B5); /* CHANGED: Slightly darker, more saturated blues */
+    color: #050a1f; /* CHANGED: Very Dark Blue/Almost Black text for high contrast */
+    border: 1px solid #283593; /* CHANGED: Darker Indigo border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), /* Softer shadow */
+                inset 0 1px 1px rgba(255, 255, 255, 0.4); /* Inner highlight for gloss */
+    text-shadow: none; /* Remove text shadow for cleaner look on light bg */
+}
+
+body.light-mode h2.collapsible:hover {
+    background: linear-gradient(145deg, #7986CB, #5C6BC0); /* Lighter on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
+                inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    color: #000000; /* Ensure text is still dark on hover */
+}
+
+body.light-mode .content {
+     border-left: 2px dashed #B39DDB; /* Lighter purple dashed line for list view */
+}
+body.light-mode .content.thumbnail-view {
+    border-left: none; /* No border for thumbnail content area */
+}
+
+
+/* Light Mode Link Styles */
+body.light-mode .content.list-view li > a {
+    background: linear-gradient(145deg, #E8EAF6, #C5CAE9); /* CHANGED: Lighter background for buttons */
+    color: #050a1f; /* CHANGED: Very Dark Blue/Almost Black text */
+    border: 1px solid #9FA8DA; /* CHANGED: Lighter Indigo border */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), /* Softer shadow */
+                inset 0 1px 1px rgba(255, 255, 255, 0.5); /* Brighter inner highlight */
+    text-shadow: none;
+}
+
+body.light-mode .content.list-view li > a:hover {
+    background: linear-gradient(145deg, #FFFFFF, #E8EAF6); /* Even lighter on hover */
+    color: #000000; /* CHANGED: Black text on hover for max contrast */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15),
+                inset 0 1px 1px rgba(255, 255, 255, 0.7);
+    transform: translateY(-1px) scale(1.01);
+}
+
+body.light-mode .content.list-view li > a:visited {
+    background: linear-gradient(145deg, #D1C4E9, #C5CAE9); /* Slightly different light shade for visited */
+    color: #283593; /* CHANGED: Dark Indigo for visited text */
+}
+
+/* Light Mode Thumbnail Styles */
+body.light-mode .thumbnail-item {
+    background-color: #FFFFFF; /* CHANGED: White background for thumbnail cards */
+    border: 1px solid #B0BEC5; /* CHANGED: Light Blue-grey border */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+body.light-mode .thumbnail-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.18);
+    border-color: #78909C; /* CHANGED: Darker Blue-grey border on hover */
+}
+
+body.light-mode .thumbnail-item img {
+    border: 1px solid #CFD8DC; /* CHANGED: Lighter Grey border for image */
+}
+
+body.light-mode .thumbnail-item figcaption {
+    color: #050a1f; /* CHANGED: Very Dark Blue/Almost Black for caption */
+}
+
+body.light-mode .thumbnail-item a:hover figcaption {
+    color: #000000; /* CHANGED: Black for caption on hover */
+}
+
+/* Light Mode Buttons */
+body.light-mode .view-btn {
+    background: linear-gradient(145deg, #E0E0E0, #BDBDBD); /* CHANGED: Light Grey gradient */
+    color: #050a1f; /* CHANGED: Very Dark Blue text */
+    border: 1px solid #9E9E9E; /* CHANGED: Medium Grey border */
+    box-shadow: 0 2px 3px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255,255,255,0.4);
+}
+
+body.light-mode .view-btn:hover {
+    background: linear-gradient(145deg, #EEEEEE, #E0E0E0); /* Lighter grey on hover */
+    color: #000000; /* Black text on hover */
+    transform: translateY(-1px);
+}
+
+body.light-mode .view-btn.active {
+    background: linear-gradient(145deg, #BDBDBD, #9E9E9E); /* Darker grey for active */
+    color: #000000; /* Black text for active */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15), inset 0 0 4px rgba(0,0,0,0.1);
+    transform: translateY(1px);
+}
+
+body.light-mode #theme-toggle-btn {
+    background: linear-gradient(145deg, #E0E0E0, #BDBDBD); /* Light grey gradient */
+    color: #050a1f; /* Very Dark Blue text */
+    border: 1px solid #9E9E9E; /* Medium grey border */
+    box-shadow: 0 2px 3px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255,255,255,0.4);
+}
+
+body.light-mode #theme-toggle-btn:hover {
+    background: linear-gradient(145deg, #EEEEEE, #E0E0E0); /* Lighter grey */
+    color: #000000; /* Black text */
+    transform: translateY(-1px);
+}
+
+body.light-mode #theme-toggle-btn:active {
+    background: linear-gradient(145deg, #BDBDBD, #9E9E9E); /* Darker pressed state */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 3px rgba(0,0,0,0.1);
+    transform: translateY(1px);
+}
+
+
+body.light-mode footer {
+    background: linear-gradient(to top, #FAFAFA, #F5F5F5); /* Light Gray to off-white */
+    border-top: 2px solid #BDBDBD;
+}
+
+body.light-mode footer p {
+    color: #212121;
 }
