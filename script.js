@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const listViewBtn = document.getElementById('list-view-btn');
     const thumbnailViewBtn = document.getElementById('thumbnail-view-btn');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const mainElement = document.querySelector("main");
 
     function applyTheme() {
         document.body.classList.remove('light-mode', 'dark-mode');
@@ -56,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         data.forEach(categoryObj => {
             const section = document.createElement("section");
+            // section.classList.add("category-section"); // Add a common class for styling sections if needed
             const h2 = document.createElement("h2");
             h2.classList.add("collapsible");
             h2.textContent = categoryObj.category;
@@ -107,6 +109,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         initializeCollapsibles();
+        const searchBar = document.getElementById("search-bar");
+        if (searchBar && searchBar.value) {
+             handleSearchInput();
+        } else {
         // Call search explicitly after HTML generation to ensure correct display
         const searchBar = document.getElementById("search-bar");
         if (searchBar && searchBar.value) { // If there's an active search term
@@ -139,6 +145,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function updateButtonStates() {
+        if (!listViewBtn || !thumbnailViewBtn || !mainElement) return;
+
+        mainElement.classList.remove('thumbnail-categories-active', 'list-categories-active');
+
+        if (currentView === 'list') {
+            listViewBtn.classList.add('active');
+            thumbnailViewBtn.classList.remove('active');
+            mainElement.classList.add('list-categories-active'); // Class for single column sections
+        } else {
+            thumbnailViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+            mainElement.classList.add('thumbnail-categories-active'); // Class for multi-column sections
+=======
         if (!listViewBtn || !thumbnailViewBtn) return;
         if (currentView === 'list') {
             listViewBtn.classList.add('active');
@@ -153,6 +172,8 @@ document.addEventListener("DOMContentLoaded", () => {
         listViewBtn.addEventListener('click', () => {
             if (currentView !== 'list') {
                 currentView = 'list';
+                updateButtonStates(); // Update class on main before re-rendering
+                generateHTML(allLinksData);
                 generateHTML(allLinksData);
                 updateButtonStates();
                 // handleSearch(); // Search listener is persistent now
@@ -162,6 +183,12 @@ document.addEventListener("DOMContentLoaded", () => {
         thumbnailViewBtn.addEventListener('click', () => {
             if (currentView !== 'thumbnail') {
                 currentView = 'thumbnail';
+                updateButtonStates(); // Update class on main before re-rendering
+                generateHTML(allLinksData);
+            }
+        });
+    }
+
                 generateHTML(allLinksData);
                 updateButtonStates();
                 // handleSearch();
@@ -188,6 +215,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 : contentElement.querySelectorAll(".thumbnail-item");
 
             itemsToSearch.forEach((item) => {
+                const textElement = currentView === 'list' ? item.querySelector("a") : item.querySelector("figcaption");
+                if (textElement) {
+                    const itemText = textElement.textContent.toLowerCase();
+                    if (itemText.includes(searchQuery)) {
+                        item.style.display = "";
+                        if (currentView === 'thumbnail') item.style.visibility = 'visible';
+                        hasMatchesInCurrentSection = true;
+                    } else {
+                        item.style.display = "none";
+                        if (currentView === 'thumbnail') item.style.visibility = 'hidden';
                 const linkElement = currentView === 'list' ? item.querySelector("a") : item.querySelector("figcaption");
                 if (linkElement) {
                     const linkText = linkElement.textContent.toLowerCase();
@@ -204,6 +241,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (hasMatchesInCurrentSection) {
                 section.style.display = "";
+                contentElement.style.display = currentView === 'thumbnail' ? "grid" : "block";
                 contentElement.style.display = currentView === 'thumbnail' ? "grid" : "block"; // Ensure correct display for view
                 collapsibleHeader.classList.add('search-match');
             } else {
@@ -211,17 +249,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     section.style.display = "none";
                 } else {
                     section.style.display = "";
+                    contentElement.style.display = "none";
                     contentElement.style.display = "none"; // Collapse if no search query and no match
                 }
                 collapsibleHeader.classList.remove('search-match');
             }
         });
 
+        if (searchQuery === "") {
         if (searchQuery === "") { // If search is cleared
             sections.forEach(section => {
                 section.style.display = "";
                 const contentElement = section.querySelector(".content");
                 if (contentElement) {
+                    contentElement.style.display = "none";
                     contentElement.style.display = "none"; // Collapse all
                 }
                 const collapsibleHeader = section.querySelector("h2.collapsible");
@@ -242,6 +283,8 @@ document.addEventListener("DOMContentLoaded", () => {
         allLinksData = await fetchLinks();
         if (allLinksData.length > 0) {
             allLinksData = sortLinks(allLinksData);
+            updateButtonStates(); // Set initial class on main
+            generateHTML(allLinksData);
             generateHTML(allLinksData); // Initial render
             updateButtonStates();
             // Search event listener is already attached, no need to call handleSearch() directly here for init
