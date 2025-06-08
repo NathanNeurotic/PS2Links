@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     itemToRemove.remove();
                 }
             }
+            console.log("Before calling removeFavoritesSectionIfEmpty. Current favorites.length:", favorites.length); // DEBUG
             removeFavoritesSectionIfEmpty();
         }
     }
@@ -302,14 +303,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Helper to remove the favorites section if it's empty
     function removeFavoritesSectionIfEmpty() {
+        console.log("removeFavoritesSectionIfEmpty called."); // Existing log
         const favSection = document.getElementById("favorites-section");
-        if (favSection && favorites.length === 0) {
-            favSection.remove();
-            // Remove "Favorites" from expandedCategories if it's there
+        console.log("Current favorites.length:", favorites.length); // Existing log
+
+        if (!favSection) {
+            console.log("Favorites section not found in DOM."); // Existing log
+            return; // Exit if section doesn't exist
+        }
+
+        console.log("Condition (favSection && favorites.length === 0):", favSection && favorites.length === 0); // Existing log
+        if (favorites.length === 0) { // Check length first, favSection is confirmed to exist by now
+            if (favSection.parentNode) { // Check if it's still in the DOM
+                console.log("Removing favorites section."); // Existing log
+                favSection.remove();
+                console.log("Favorites section removal attempt finished."); // New log
+            } else {
+                console.log("Favorites section found but already detached from DOM."); // New log
+            }
+
             const favIndex = expandedCategories.indexOf("Favorites");
             if (favIndex > -1) {
                 expandedCategories.splice(favIndex, 1);
                 saveExpandedCategories();
+                console.log("Removed 'Favorites' from expandedCategories."); // New log
             }
         }
     }
@@ -332,12 +349,15 @@ document.addEventListener("DOMContentLoaded", () => {
     async function fetchLinks() {
         try {
             const response = await fetch('links.json');
+            console.log("Response status:", response.status); // DEBUG
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
-            return await response.json();
+            const data = await response.json();
+            console.log("Parsed JSON data:", data); // DEBUG
+            return data;
         } catch (error) {
-            console.error("Could not fetch links.json:", error);
+            console.error("Could not fetch links.json:", error); // DEBUG
             return [];
         }
     }
@@ -355,6 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         mainElement.innerHTML = '';
+        console.log("generateHTML received data:", data); // DEBUG
 
         // Favorites Section
         if (favorites.length > 0) {
@@ -393,12 +414,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     ul.appendChild(listItem);
                 });
                 favContentDiv.appendChild(ul);
+                console.log("Favorites list items appended:", ul.children.length); // DEBUG
             } else { // Thumbnail view
                 favoriteLinks.forEach(linkObj => {
                     // Use helper to create thumbnail item
                     const thumbnailItem = createLinkThumbnailItem(linkObj, true); // True because it's in favorites
                     favContentDiv.appendChild(thumbnailItem);
                 });
+                console.log("Favorites thumbnail items appended:", favContentDiv.children.length); // DEBUG
             }
             favSection.appendChild(favH2);
             favSection.appendChild(favContentDiv);
@@ -407,6 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Process all other categories
         data.forEach(categoryObj => {
+            console.log("Processing categoryObj:", categoryObj, "Number of links:", categoryObj.links.length); // DEBUG
             const section = document.createElement("section");
             // section.classList.add("category-section");
             const h2 = document.createElement("h2");
@@ -468,12 +492,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     ul.appendChild(listItem);
                 });
                 contentDiv.appendChild(ul);
+                console.log(`Category "${categoryObj.category}" list items appended:`, ul.children.length); // DEBUG
             } else { // Thumbnail view
                 categoryObj.links.forEach(linkObj => {
                     // Use helper to create thumbnail item
                     const thumbnailItem = createLinkThumbnailItem(linkObj, favorites.includes(linkObj.url));
                     contentDiv.appendChild(thumbnailItem);
                 });
+                console.log(`Category "${categoryObj.category}" thumbnail items appended:`, contentDiv.children.length); // DEBUG
             }
 
             section.appendChild(h2);
@@ -491,12 +517,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const searchBar = document.getElementById("search-bar");
         if (searchBar && searchBar.value) {
              handleSearchInput();
-        } else {
-            document.querySelectorAll("main > section .content").forEach(content => {
-                content.style.display = 'none';
-            });
-            // NOTE: The incorrect 'content.style.display = 'none';' was here and is now removed.
         }
+        // Ensure this else block is removed or doesn't hide content by default.
+        // The behavior of hiding/showing content should be managed by initializeCollapsibles
+        // and search functionality.
     }
 
     function initializeCollapsibles() {
@@ -508,15 +532,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const categoryName = newCollapsible.textContent;
             const content = newCollapsible.nextElementSibling;
+            console.log(`Initializing collapsible for: ${categoryName}, expanded: ${expandedCategories.includes(categoryName)}`); // DEBUG
 
             newCollapsible.addEventListener("click", () => {
                 if (content) {
                     const isCurrentlyExpanded = content.style.display !== 'none' && content.style.display !== '';
                     if (isCurrentlyExpanded) {
                         content.style.display = 'none';
+                        console.log(`Set display for ${categoryName}: none`); // DEBUG
                         expandedCategories = expandedCategories.filter(cat => cat !== categoryName);
                     } else {
                         content.style.display = currentView === 'thumbnail' ? 'grid' : 'block';
+                        console.log(`Set display for ${categoryName}: ${content.style.display}`); // DEBUG
                         if (!expandedCategories.includes(categoryName)) {
                             expandedCategories.push(categoryName);
                         }
@@ -533,8 +560,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (content) { // Ensure content element exists
                 if (expandedCategories.includes(categoryName)) {
                     content.style.display = currentView === 'thumbnail' ? 'grid' : 'block';
+                    console.log(`Restored display for ${categoryName}: ${content.style.display}`); // DEBUG
                 } else {
                     content.style.display = 'none'; // Default to collapsed
+                    console.log(`Set display for ${categoryName} to none (collapsed by default)`); // DEBUG
                 }
             }
         });
