@@ -107,7 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         initializeCollapsibles();
-
         const searchBar = document.getElementById("search-bar");
         if (searchBar && searchBar.value) {
              handleSearchInput();
