@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function generateHTML(data) {
+        const mainElement = document.querySelector("main");
         if (!mainElement) {
             console.error("Main element not found!");
             return;
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const contentDiv = document.createElement("div");
             contentDiv.classList.add("content");
             contentDiv.classList.add(currentView === 'list' ? 'list-view' : 'thumbnail-view');
+            // contentDiv.style.display = "none"; // Collapsed by default - search will manage this
 
             if (currentView === 'list') {
                 const ul = document.createElement("ul");
@@ -107,11 +109,15 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         initializeCollapsibles();
-
         const searchBar = document.getElementById("search-bar");
         if (searchBar && searchBar.value) {
              handleSearchInput();
         } else {
+        // Call search explicitly after HTML generation to ensure correct display
+        const searchBar = document.getElementById("search-bar");
+        if (searchBar && searchBar.value) { // If there's an active search term
+             handleSearchInput(); // Re-apply search filtering
+        } else { // If no search term, ensure sections are collapsed by default
             document.querySelectorAll("main > section .content").forEach(content => {
                 content.style.display = 'none';
             });
@@ -127,6 +133,11 @@ document.addEventListener("DOMContentLoaded", () => {
             newCollapsible.addEventListener("click", () => {
                 const content = newCollapsible.nextElementSibling;
                 if (content) {
+                    const isSearchActive = document.getElementById("search-bar") && document.getElementById("search-bar").value.length > 0;
+                    // Do not toggle if a search is active and the section is shown due to search match.
+                    // Let search handle visibility in this case.
+                    // However, if search is NOT active, or if search IS active but this section was NOT a match (so it's hidden by search), then allow toggle.
+                    // A simpler approach: always allow toggle, but ensure search re-evaluates if content becomes visible.
                     content.style.display = content.style.display === "block" ? "none" : "block";
                 }
             });
@@ -146,6 +157,14 @@ document.addEventListener("DOMContentLoaded", () => {
             thumbnailViewBtn.classList.add('active');
             listViewBtn.classList.remove('active');
             mainElement.classList.add('thumbnail-categories-active'); // Class for multi-column sections
+=======
+        if (!listViewBtn || !thumbnailViewBtn) return;
+        if (currentView === 'list') {
+            listViewBtn.classList.add('active');
+            thumbnailViewBtn.classList.remove('active');
+        } else {
+            thumbnailViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
         }
     }
 
@@ -155,6 +174,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 currentView = 'list';
                 updateButtonStates(); // Update class on main before re-rendering
                 generateHTML(allLinksData);
+                generateHTML(allLinksData);
+                updateButtonStates();
+                // handleSearch(); // Search listener is persistent now
             }
         });
 
@@ -167,6 +189,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+                generateHTML(allLinksData);
+                updateButtonStates();
+                // handleSearch();
+            }
+        });
+    }
+
+    // This function is called when search input changes
     function handleSearchInput() {
         const searchBar = document.getElementById("search-bar");
         if (!searchBar) return;
@@ -195,6 +225,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     } else {
                         item.style.display = "none";
                         if (currentView === 'thumbnail') item.style.visibility = 'hidden';
+                const linkElement = currentView === 'list' ? item.querySelector("a") : item.querySelector("figcaption");
+                if (linkElement) {
+                    const linkText = linkElement.textContent.toLowerCase();
+                    if (linkText.includes(searchQuery)) {
+                        item.style.display = ""; // Show item
+                        if (currentView === 'thumbnail') item.style.visibility = 'visible'; // Ensure visibility for grid items
+                        hasMatchesInCurrentSection = true;
+                    } else {
+                        item.style.display = "none";
+                        if (currentView === 'thumbnail') item.style.visibility = 'hidden';// Hide for grid items
                     }
                 }
             });
@@ -202,6 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (hasMatchesInCurrentSection) {
                 section.style.display = "";
                 contentElement.style.display = currentView === 'thumbnail' ? "grid" : "block";
+                contentElement.style.display = currentView === 'thumbnail' ? "grid" : "block"; // Ensure correct display for view
                 collapsibleHeader.classList.add('search-match');
             } else {
                 if (searchQuery.length > 0) {
@@ -209,17 +250,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 } else {
                     section.style.display = "";
                     contentElement.style.display = "none";
+                    contentElement.style.display = "none"; // Collapse if no search query and no match
                 }
                 collapsibleHeader.classList.remove('search-match');
             }
         });
 
         if (searchQuery === "") {
+        if (searchQuery === "") { // If search is cleared
             sections.forEach(section => {
                 section.style.display = "";
                 const contentElement = section.querySelector(".content");
                 if (contentElement) {
                     contentElement.style.display = "none";
+                    contentElement.style.display = "none"; // Collapse all
                 }
                 const collapsibleHeader = section.querySelector("h2.collapsible");
                 if (collapsibleHeader) {
@@ -229,6 +273,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Attach search listener once
     const searchBar = document.getElementById("search-bar");
     if (searchBar) {
         searchBar.addEventListener("input", handleSearchInput);
@@ -240,7 +285,11 @@ document.addEventListener("DOMContentLoaded", () => {
             allLinksData = sortLinks(allLinksData);
             updateButtonStates(); // Set initial class on main
             generateHTML(allLinksData);
+            generateHTML(allLinksData); // Initial render
+            updateButtonStates();
+            // Search event listener is already attached, no need to call handleSearch() directly here for init
         } else {
+            const mainElement = document.querySelector("main");
             if (mainElement) {
                 mainElement.innerHTML = "<p>Could not load link data. Please try again later.</p>";
             }
