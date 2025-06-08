@@ -33,3 +33,8 @@ Then visit `http://localhost:8000/index.html` in your browser. `script.js` fetch
 
 Manual testing instructions are documented in [MANUAL_TESTING_PLAN.md](MANUAL_TESTING_PLAN.md).
 
+
+## License
+
+This project is released under the [MIT License](LICENSE).
+
