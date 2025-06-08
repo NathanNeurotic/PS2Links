@@ -11,10 +11,6 @@
         "url": "https://gbatemp.net/forums/other-platforms-oldies.202/?prefix_id=61"
       },
       {
-        "name": "Hardlevel.com.br",
-        "url": "https://hardlevel.com.br/"
-      },
-      {
         "name": "Jak & Daxter Fandom Wiki",
         "url": "https://jakanddaxter.fandom.com/"
       },
@@ -57,10 +53,6 @@
       {
         "name": "PS2-Home",
         "url": "https://www.ps2-home.com/"
-      },
-      {
-        "name": "PSBBN Portal by Vitas155",
-        "url": "https://psbbn.ru/"
       },
       {
         "name": "PSX-Place's PS2 Forums/Messaging Boards",
@@ -459,16 +451,8 @@
         "url": "https://israpps.github.io/CheatDevicePS2/"
       },
       {
-        "name": "CodeBreaker PS2 File utility github",
-        "url": "https://github.com/mlafeldt/cb2util"
-      },
-      {
         "name": "CosmicScale's github featuring Retro GEM Homebrews",
         "url": "https://github.com/CosmicScale"
-      },
-      {
-        "name": "Crystal Chip R34 v3",
-        "url": "https://github.com/saildot4k/Crystal-Chip-R34-v3"
       },
       {
         "name": "Cue Maker",
@@ -565,14 +549,6 @@
       {
         "name": "GOG Galaxy 2.0 Integration for PS2",
         "url": "https://github.com/AHCoder/galaxy-integration-ps2"
-      },
-      {
-        "name": "Haldrie's SKSApps Backup",
-        "url": "https://sksapps.haldrie.com/"
-      },
-      {
-        "name": "Hardlevel.com.br",
-        "url": "https://hardlevel.com.br/"
       },
       {
         "name": "HDL Game Installer",
@@ -987,10 +963,6 @@
         "url": "https://archive.org/details/bbn201311"
       },
       {
-        "name": "PSBBN Portal by Vitas155",
-        "url": "https://psbbn.ru/"
-      },
-      {
         "name": "PSBBN Unencrypted Loader",
         "url": "https://archive.org/details/osdboot"
       },
@@ -1099,10 +1071,6 @@
         "url": "https://github.com/israpps/bootcard_igr"
       },
       {
-        "name": "WAV to ADP Converter for OPL Theme Sounds/BGM",
-        "url": "https://www.psx-place.com/threads/wav-to-adp-converter-for-opl.21568/"
-      },
-      {
         "name": "Widescreen Game Cheats by sync-on-luma",
         "url": "https://github.com/sync-on-luma/PS2-widescreen-cheats"
       },
@@ -1117,10 +1085,6 @@
       {
         "name": "wLaunchELF_isr_HDD (Injection Capable) Project Page",
         "url": "https://github.com/israpps/wLaunchELF_ISR_HDD"
-      },
-      {
-        "name": "wLaunchELF_kHn (POPSTARTER Launch Capable)",
-        "url": "https://www.psx-place.com/threads/popstarter.19139/page-5#post-254888"
       },
       {
         "name": "XPF Tool for Extraction and Decompresson",
@@ -1220,7 +1184,7 @@
         "url": "http://www.emudreams.pl/"
       },
       {
-        "name": "Game Covers github Repo",
+        "name": "PS2 Covers github",
         "url": "https://github.com/xlenore/ps2-covers"
       },
       {
@@ -1252,10 +1216,6 @@
         "url": "https://sksapps.haldrie.com/"
       },
       {
-        "name": "Hardlevel.com.br",
-        "url": "https://hardlevel.com.br/"
-      },
-      {
         "name": "HQ HD Disc Case Covers by Berion",
         "url": "https://www.psx-place.com/threads/hq-disc-case-covers.26545/"
       },
@@ -1266,10 +1226,6 @@
       {
         "name": "Mobygames",
         "url": "http://www.mobygames.com/home"
-      },
-      {
-        "name": "Open PS2 Loader Theme Guide by Gamerman 5000",
-        "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/"
       },
       {
         "name": "Open PS2 Loader UDPBD Linux Setup Guide by OpenAI",
@@ -1288,16 +1244,8 @@
         "url": "http://planetemu.net/"
       },
       {
-        "name": "PS Gamers",
-        "url": "https://www.ps-gamers.ru/"
-      },
-      {
         "name": "PS2 Bios Archive",
         "url": "https://archive.org/details/the-ultimate-ps2-bios-collection"
-      },
-      {
-        "name": "PS2 Covers github",
-        "url": "https://github.com/xlenore/ps2-covers"
       },
       {
         "name": "PS2 FPU Testing Page by Fobes",
@@ -1316,32 +1264,12 @@
         "url": "https://museudospatche.blogspot.com//"
       },
       {
-        "name": "PS2 Wiki",
-        "url": "https://ps2wiki.github.io/"
-      },
-      {
-        "name": "PS2-Home Archive",
-        "url": "https://web.archive.org/web/20240914160929/https://www.ps2-home.com/forum/app.php/portal?sid=993deede5f113a38f2dc173d002446c1"
-      },
-      {
-        "name": "PS3 Memory Card Adapter Wiki",
-        "url": "https://www.psdevwiki.com/ps3/Card_Adapter"
-      },
-      {
-        "name": "PSX Data Center",
-        "url": "https://psxdatacenter.com/psx2/sitenews2.html"
-      },
-      {
         "name": "RFGeneration",
         "url": "http://www.rfgeneration.com"
       },
       {
         "name": "ROM Hacking .net Homepage",
         "url": "https://www.romhacking.net/"
-      },
-      {
-        "name": "Romstation.fr",
-        "url": "https://www.romstation.fr/multiplayer/"
       },
       {
         "name": "The Cover Project (Art)",
@@ -1377,10 +1305,6 @@
         "url": "https://web.archive.org/web/20191206184256/https://assemblergames.com/"
       },
       {
-        "name": "BDM Assault by El_isra",
-        "url": "https://www.psx-place.com/threads/42352/"
-      },
-      {
         "name": "Console Mods PS2 Model Differences",
         "url": "https://consolemods.org/wiki/PS2:Model_Differences"
       },
@@ -1393,32 +1317,12 @@
         "url": "https://desrdev.github.io/"
       },
       {
-        "name": "DKWDRV Playstation 1 Driver for PS2",
-        "url": "https://github.com/DKWDRV"
-      },
-      {
         "name": "Emuparadise.me",
         "url": "https://www.emuparadise.me/"
       },
       {
         "name": "Fobes.dev by Fobes",
         "url": "https://fobes.dev/"
-      },
-      {
-        "name": "FreeDVDBoot Official github",
-        "url": "https://github.com/ps2homebrew/FreeDVDBoot"
-      },
-      {
-        "name": "Gamefaqs PS2 Guides, Cheats, Saves and More",
-        "url": "https://gamefaqs.gamespot.com/ps2"
-      },
-      {
-        "name": "gamerman 5000's OPL Theme Guide",
-        "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/"
-      },
-      {
-        "name": "Haldrie's SKSApps Backup",
-        "url": "https://sksapps.haldrie.com/"
       },
       {
         "name": "Hardlevel.com.br",
@@ -1433,10 +1337,6 @@
         "url": "https://web.archive.org/web/20110106074036/http://hdloader.net/"
       },
       {
-        "name": "HowlingWolfHWC's official github",
-        "url": "https://github.com/HowlingWolfHWC"
-      },
-      {
         "name": "ifixit's PS2 Repair Guide and Documentation",
         "url": "https://www.ifixit.com/Device/PlayStation_2"
       },
@@ -1449,24 +1349,12 @@
         "url": "https://lnkworld.com/playstation.shtml"
       },
       {
-        "name": "Master Disc Patcher",
-        "url": "https://alex-free.github.io/psdb/master-disc.html"
-      },
-      {
         "name": "MCP2 Manual",
         "url": "https://qrco.de/bdiiDa"
       },
       {
-        "name": "MECHAPWN",
-        "url": "https://github.com/MechaResearch/MechaPwn"
-      },
-      {
         "name": "Memory Card Groups Documentation by sync-on-luma",
         "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin/wiki/Memory-Card-Groups"
-      },
-      {
-        "name": "MOD Chips PS2 Archive",
-        "url": "https://www.willsconsolemodifications.co.uk/ps2-wiki/chips.php"
       },
       {
         "name": "MOD Chip Disable Procedures and Tips",
@@ -1483,10 +1371,6 @@
       {
         "name": "Obscure Gamers Archive",
         "url": "https://archive.obscuregamers.com/"
-      },
-      {
-        "name": "Open PS2 Loader Frontend for Neutrino",
-        "url": "https://www.psx-place.com/threads/opl-based-gui-frontend-for-neutrino.42166/"
       },
       {
         "name": "Open PS2 Loader Official Page",
@@ -1525,32 +1409,8 @@
         "url": "https://ps2-home.com/forum/viewtopic.php?t=4926"
       },
       {
-        "name": "Open PS2 Loader UDPBD",
-        "url": "https://www.psx-place.com/threads/testers-needed-udpbd-the-next-generation-of-loading-games-through-lan-on-a-ps2.40132/"
-      },
-      {
         "name": "Open PS2 Loader User Guide for 0.9.3",
         "url": "https://www.ps2homebrew.org/Open-PS2-Loader-User-Guide/"
-      },
-      {
-        "name": "PCSX2 Emulator's Official Site",
-        "url": "https://pcsx2.net/"
-      },
-      {
-        "name": "POPSTARTER Official Release and Resources Thread",
-        "url": "https://www.psx-place.com/threads/popstarter.19139/"
-      },
-      {
-        "name": "PPF Relatted Softwares and Information",
-        "url": "https://consolecopyworld.com/ps2/ps2_ppf.shtml"
-      },
-      {
-        "name": "PS Gamers",
-        "url": "https://www.ps-gamers.ru/"
-      },
-      {
-        "name": "PS2 Developer github",
-        "url": "https://github.com/ps2dev"
       },
       {
         "name": "PS2 Developer Wiki",
@@ -1561,10 +1421,6 @@
         "url": "https://github.com/ps2dev-mirror/doc"
       },
       {
-        "name": "PS2 Homebrew github",
-        "url": "https://github.com/ps2homebrew"
-      },
-      {
         "name": "PS2 Homebrew.org Site",
         "url": "https://www.ps2homebrew.org/"
       },
@@ -1573,24 +1429,12 @@
         "url": "http://www.csclub.uwaterloo.ca:11068/mymc/ps2icon-0.5.pdf"
       },
       {
-        "name": "PS2 Icons Open Database",
-        "url": "https://ps2iodb.com"
-      },
-      {
-        "name": "PS2 Linux unOfficial Site",
-        "url": "https://ps2linux.no-ip.info/home/"
-      },
-      {
         "name": "PS2 Memory Card File System Documentation",
         "url": "http://www.csclub.uwaterloo.ca:11068/mymc/ps2mcfs.html"
       },
       {
         "name": "PS2 Programming Documents github",
         "url": "https://github.com/DarrenRainey/PS2-Programming-Docs"
-      },
-      {
-        "name": "PS2 Save Tools Homepage",
-        "url": "https://www.ps2savetools.com/"
       },
       {
         "name": "PS2 Wiki",
@@ -1609,16 +1453,8 @@
         "url": "https://github.com/ps2wiki"
       },
       {
-        "name": "PS3 MCA Exploit",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=297"
-      },
-      {
         "name": "PS3 Memory Card Adapter Wiki",
         "url": "https://www.psdevwiki.com/ps3/Card_Adapter"
-      },
-      {
-        "name": "PSBBN Files",
-        "url": "https://archive.org/search?query=PSBBN"
       },
       {
         "name": "PSBBN Guide",
@@ -1653,20 +1489,8 @@
         "url": "https://www.retrorgb.com/playstation2.html"
       },
       {
-        "name": "ROM Hacking .net Homepage",
-        "url": "https://www.romhacking.net/"
-      },
-      {
         "name": "Savegame Icon Library and Documentation github",
         "url": "https://github.com/ticky/ps2icon"
-      },
-      {
-        "name": "SD2PSX Official github",
-        "url": "https://github.com/sd2psx"
-      },
-      {
-        "name": "ShaolinAssassin's OPL Theme Guide",
-        "url": "https://web.archive.org/web/20200622004109/https://bitbucket.org/ShaolinAssassin/open-ps2-loader-0.9.3-documentation-project/wiki/theme-guide"
       },
       {
         "name": "ShaolinAssassin's POPSTARTER Wiki",
@@ -1675,10 +1499,6 @@
       {
         "name": "The Cutting Room Floor Game Content Wiki",
         "url": "https://tcrf.net/Category:PlayStation_2_games"
-      },
-      {
-        "name": "Tonyhax International by Alex-free",
-        "url": "https://alex-free.github.io/tonyhax-international/"
       },
       {
         "name": "uLaunchELF Wiki",
@@ -1695,18 +1515,6 @@
       {
         "name": "Wayback Machine's OpenPS2Loader.info Backup",
         "url": "https://web.archive.org/web/20130601035035/http://openps2loader.info:80/"
-      },
-      {
-        "name": "Wayback Machine's SKSApps Backup",
-        "url": "https://web.archive.org/web/20160818064541/http://sksapps.com:80/"
-      },
-      {
-        "name": "Xtreme Elite Boot+ Homepage",
-        "url": "http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/"
-      },
-      {
-        "name": "Xtreme Elite Boot+ Mirror",
-        "url": "https://web.archive.org/web/20240729132341/http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/"
       }
     ]
   },
@@ -1895,10 +1703,6 @@
         "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/"
       },
       {
-        "name": "Juanky's youtube OPL Themes",
-        "url": "https://www.youtube.com/@JUANKYPS2"
-      },
-      {
         "name": "Leroy Gates's youtube OPL Themes",
         "url": "https://www.youtube.com/@leroygates3239/search?query=Theme"
       },
@@ -1997,10 +1801,6 @@
     "category": "Game Hacking and Modding:",
     "links": [
       {
-        "name": "GameHacking.org - PS2",
-        "url": "https://gamehacking.org/system/ps2"
-      },
-      {
         "name": "Crystal Chip R34 v3",
         "url": "https://github.com/saildot4k/Crystal-Chip-R34-v3"
       },
@@ -2013,22 +1813,6 @@
   {
     "category": "PSBBN and Linux Related Resources:",
     "links": [
-      {
-        "name": "PSBBN Definitive English Patch v2",
-        "url": "https://archive.org/details/psbbn-definitive-english-patch-v2"
-      },
-      {
-        "name": "CosmicScale's PSBBN Definitive English Patch",
-        "url": "https://github.com/CosmicScale/PSBBN-Definitive-English-Patch/"
-      },
-      {
-        "name": "PSBBN PKGs",
-        "url": "https://archive.org/details/psbbn-pkgs"
-      },
-      {
-        "name": "PSBBN Archive",
-        "url": "https://archive.org/details/psbbn"
-      },
       {
         "name": "PSBBN Forum Discussion",
         "url": "https://www.ps2-home.com/forum/viewtopic.php?t=100"
@@ -2080,10 +1864,6 @@
       {
         "name": "Linux Sources for PlayStation 2",
         "url": "https://archive.org/details/linux-playstation2-sources"
-      },
-      {
-        "name": "PSBBN Footage (Feb 2020)",
-        "url": "https://archive.org/details/PSBBN-Footage-Feb-2020"
       }
     ]
   },
@@ -2111,15 +1891,6 @@
   },
   {
     "category": "New Link Submissions Yet to Be Merged:",
-    "links": [
-      {
-        "name": "PSX DVR DESR Tools",
-        "url": "https://github.com/SvenGDK/DESR-Tools"
-      },
-      {
-        "name": "Open PS2 Loader SMB Guide (Archive)",
-        "url": "https://web.archive.org/web/20241121150504/https://www.ps2-home.com/forum/viewtopic.php?t=3692"
-      }
-    ]
+    "links": []
   }
 ]
