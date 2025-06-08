@@ -1,0 +1,17 @@
+{
+  "name": "ps2links",
+  "version": "1.0.0",
+  "description": "PS2 Resource Links is a static collection of PlayStation 2 related sites. The page is built from `links.json` and displayed with simple JavaScript and CSS.",
+  "main": "main.js",
+  "scripts": {
+    "test": "playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "playwright": "^1.52.0"
+  }
+}

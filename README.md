@@ -33,6 +33,17 @@ Then visit `http://localhost:8000/index.html` in your browser. `script.js` fetch
 
 Manual testing instructions are documented in [MANUAL_TESTING_PLAN.md](MANUAL_TESTING_PLAN.md).
 
+## Automated Tests
+
+Playwright tests live in `tests/`. Install dependencies and run:
+
+```bash
+npm install
+npm test
+```
+
+The tests start a local server automatically and cover view toggling, theme switching, and favorites persistence.
+
 
 ## License
 
