@@ -242,6 +242,7 @@ h2.collapsible:hover {
 .content.list-view li {
     list-style: none;
     margin: 10px 0; /* Space between link buttons */
+    overflow-x: hidden; /* Prevent horizontal scrollbar on link hover/scale */
 }
 
 .content.list-view li > a {
@@ -271,6 +272,15 @@ h2.collapsible:hover {
 .content.list-view li > a:visited {
     background: linear-gradient(145deg, #0a2550, #030712);
     color: #A0A0CC;
+}
+
+/* Styles for favicons in list view */
+.list-view-favicon {
+    width: 16px; /* Standard small favicon size */
+    height: 16px; /* Standard small favicon size */
+    margin-right: 8px; /* Space between favicon and link text */
+    vertical-align: middle; /* Align icon nicely with text */
+    object-fit: contain; /* Ensure aspect ratio is maintained */
 }
 
 /* Thumbnail View Specific Styles */
@@ -309,9 +319,9 @@ h2.collapsible:hover {
 }
 
 .thumbnail-item img {
-    max-width: 100%;
-    height: 80px; /* Fixed height for uniformity, adjust as needed */
-    object-fit: cover; /* Cover the area, might crop */
+    width: 32px; /* Fixed width for favicons */
+    height: 32px; /* Fixed height for favicons */
+    object-fit: contain; /* Ensure aspect ratio is maintained, no cropping */
     border-radius: 4px;
     margin-bottom: 8px;
     border: 1px solid #003366;
