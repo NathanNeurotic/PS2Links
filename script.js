@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+    const DEBUG = false;
     let favorites = [];
     let expandedCategories = [];
     let allLinksData = [];
@@ -114,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     itemToRemove.remove();
                 }
             }
-            console.log("Before calling removeFavoritesSectionIfEmpty. Current favorites.length:", favorites.length); // DEBUG
+            if (DEBUG) console.log("Before calling removeFavoritesSectionIfEmpty. Current favorites.length:", favorites.length); // DEBUG
             removeFavoritesSectionIfEmpty();
         }
     }
@@ -349,15 +350,15 @@ document.addEventListener("DOMContentLoaded", () => {
     async function fetchLinks() {
         try {
             const response = await fetch('links.json');
-            console.log("Response status:", response.status); // DEBUG
+            if (DEBUG) console.log("Response status:", response.status); // DEBUG
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
-            console.log("Parsed JSON data:", data); // DEBUG
+            if (DEBUG) console.log("Parsed JSON data:", data); // DEBUG
             return data;
         } catch (error) {
-            console.error("Could not fetch links.json:", error); // DEBUG
+            if (DEBUG) console.error("Could not fetch links.json:", error); // DEBUG
             return [];
         }
     }
@@ -375,7 +376,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         mainElement.innerHTML = '';
-        console.log("generateHTML received data:", data); // DEBUG
+        if (DEBUG) console.log("generateHTML received data:", data); // DEBUG
 
         // Favorites Section
         if (favorites.length > 0) {
@@ -414,14 +415,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     ul.appendChild(listItem);
                 });
                 favContentDiv.appendChild(ul);
-                console.log("Favorites list items appended:", ul.children.length); // DEBUG
+                if (DEBUG) console.log("Favorites list items appended:", ul.children.length); // DEBUG
             } else { // Thumbnail view
                 favoriteLinks.forEach(linkObj => {
                     // Use helper to create thumbnail item
                     const thumbnailItem = createLinkThumbnailItem(linkObj, true); // True because it's in favorites
                     favContentDiv.appendChild(thumbnailItem);
                 });
-                console.log("Favorites thumbnail items appended:", favContentDiv.children.length); // DEBUG
+                if (DEBUG) console.log("Favorites thumbnail items appended:", favContentDiv.children.length); // DEBUG
             }
             favSection.appendChild(favH2);
             favSection.appendChild(favContentDiv);
@@ -430,7 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Process all other categories
         data.forEach(categoryObj => {
-            console.log("Processing categoryObj:", categoryObj, "Number of links:", categoryObj.links.length); // DEBUG
+            if (DEBUG) console.log("Processing categoryObj:", categoryObj, "Number of links:", categoryObj.links.length); // DEBUG
             const section = document.createElement("section");
             // section.classList.add("category-section");
             const h2 = document.createElement("h2");
@@ -492,14 +493,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     ul.appendChild(listItem);
                 });
                 contentDiv.appendChild(ul);
-                console.log(`Category "${categoryObj.category}" list items appended:`, ul.children.length); // DEBUG
+                if (DEBUG) console.log(`Category "${categoryObj.category}" list items appended:`, ul.children.length); // DEBUG
             } else { // Thumbnail view
                 categoryObj.links.forEach(linkObj => {
                     // Use helper to create thumbnail item
                     const thumbnailItem = createLinkThumbnailItem(linkObj, favorites.includes(linkObj.url));
                     contentDiv.appendChild(thumbnailItem);
                 });
-                console.log(`Category "${categoryObj.category}" thumbnail items appended:`, contentDiv.children.length); // DEBUG
+                if (DEBUG) console.log(`Category "${categoryObj.category}" thumbnail items appended:`, contentDiv.children.length); // DEBUG
             }
 
             section.appendChild(h2);
@@ -532,18 +533,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const categoryName = newCollapsible.textContent;
             const content = newCollapsible.nextElementSibling;
-            console.log(`Initializing collapsible for: ${categoryName}, expanded: ${expandedCategories.includes(categoryName)}`); // DEBUG
+            if (DEBUG) console.log(`Initializing collapsible for: ${categoryName}, expanded: ${expandedCategories.includes(categoryName)}`); // DEBUG
 
             newCollapsible.addEventListener("click", () => {
                 if (content) {
                     const isCurrentlyExpanded = content.style.display !== 'none' && content.style.display !== '';
                     if (isCurrentlyExpanded) {
                         content.style.display = 'none';
-                        console.log(`Set display for ${categoryName}: none`); // DEBUG
+                        if (DEBUG) console.log(`Set display for ${categoryName}: none`); // DEBUG
                         expandedCategories = expandedCategories.filter(cat => cat !== categoryName);
                     } else {
                         content.style.display = currentView === 'thumbnail' ? 'grid' : 'block';
-                        console.log(`Set display for ${categoryName}: ${content.style.display}`); // DEBUG
+                        if (DEBUG) console.log(`Set display for ${categoryName}: ${content.style.display}`); // DEBUG
                         if (!expandedCategories.includes(categoryName)) {
                             expandedCategories.push(categoryName);
                         }
@@ -560,10 +561,10 @@ document.addEventListener("DOMContentLoaded", () => {
             if (content) { // Ensure content element exists
                 if (expandedCategories.includes(categoryName)) {
                     content.style.display = currentView === 'thumbnail' ? 'grid' : 'block';
-                    console.log(`Restored display for ${categoryName}: ${content.style.display}`); // DEBUG
+                    if (DEBUG) console.log(`Restored display for ${categoryName}: ${content.style.display}`); // DEBUG
                 } else {
                     content.style.display = 'none'; // Default to collapsed
-                    console.log(`Set display for ${categoryName} to none (collapsed by default)`); // DEBUG
+                    if (DEBUG) console.log(`Set display for ${categoryName} to none (collapsed by default)`); // DEBUG
                 }
             }
         });
