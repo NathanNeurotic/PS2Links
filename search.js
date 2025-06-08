@@ -1,4 +1,5 @@
 import { state } from './state.js';
+import { initializeCollapsibles } from './collapsibles.js';
 
 export function handleSearchInput() {
     const searchBar = document.getElementById('search-bar');
@@ -58,5 +59,6 @@ export function handleSearchInput() {
                 collapsibleHeader.classList.remove('search-match');
             }
         });
+        initializeCollapsibles();
     }
 }
