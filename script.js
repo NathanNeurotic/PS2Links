@@ -8,6 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const mainElement = document.querySelector("main");
 
+    function getFaviconUrl(url) {
+        try {
+            const urlObject = new URL(url);
+            return `${urlObject.protocol}//${urlObject.hostname}/favicon.ico`;
+        } catch (error) {
+            console.error("Invalid URL:", error);
+            return 'favicon.ico'; // Fallback to local if URL parsing fails
+        }
+    }
+
     function applyTheme() {
         document.body.classList.remove('light-mode', 'dark-mode');
         document.body.classList.add(currentTheme + '-mode');
@@ -87,9 +97,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     a.target = "_blank";
 
                     const img = document.createElement("img");
-                    img.src = linkObj.thumbnailUrl || 'https://via.placeholder.com/120x80?text=No+Image';
+                    // Use getFaviconUrl and add onerror fallback
+                    img.src = getFaviconUrl(linkObj.url);
                     img.alt = linkObj.name;
                     img.loading = 'lazy';
+                    img.onerror = function() {
+                        this.src = 'favicon.ico'; // Fallback to local favicon
+                    };
 
                     const figcaption = document.createElement("figcaption");
                     figcaption.textContent = linkObj.name;

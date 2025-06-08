@@ -4,123 +4,99 @@
     "links": [
       {
         "name": "Fileforums.com",
-        "url": "https://fileforums.com/index.php",
-        "thumbnailUrl": "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://fileforums.com/index.php"
       },
       {
         "name": "GBATemp's PS2 Forum",
-        "url": "https://gbatemp.net/forums/other-platforms-oldies.202/?prefix_id=61",
-        "thumbnailUrl": "https://images.pexels.com/photos/325185/pexels-photo-325185.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://gbatemp.net/forums/other-platforms-oldies.202/?prefix_id=61"
       },
       {
         "name": "Hardlevel.com.br",
-        "url": "https://hardlevel.com.br/",
-        "thumbnailUrl": ""
+        "url": "https://hardlevel.com.br/"
       },
       {
         "name": "Jak & Daxter Fandom Wiki",
-        "url": "https://jakanddaxter.fandom.com/",
-        "thumbnailUrl": "https://images.pexels.com/photos/735911/pexels-photo-735911.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://jakanddaxter.fandom.com/"
       },
       {
         "name": "NFOHump Forum",
-        "url": "https://www.nfohump.com/forum/index.php",
-        "thumbnailUrl": ""
+        "url": "https://www.nfohump.com/forum/index.php"
       },
       {
         "name": "OnlineConsole's PS2 Pages",
-        "url": "https://playstation2.onlineconsoles.com/phpBB2/index.php",
-        "thumbnailUrl": ""
+        "url": "https://playstation2.onlineconsoles.com/phpBB2/index.php"
       },
       {
         "name": "OpenSpy's PS2 Online Servers",
-        "url": "https://ps2online.com/",
-        "thumbnailUrl": "https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://ps2online.com/"
       },
       {
         "name": "PCSX2 Forums",
-        "url": "https://forums.pcsx2.net/",
-        "thumbnailUrl": ""
+        "url": "https://forums.pcsx2.net/"
       },
       {
         "name": "PS Gamers",
-        "url": "https://www.ps-gamers.ru/",
-        "thumbnailUrl": ""
+        "url": "https://www.ps-gamers.ru/"
       },
       {
         "name": "PS Rewired emulated Online Servers",
-        "url": "https://psrewired.com/",
-        "thumbnailUrl": "https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://psrewired.com/"
       },
       {
         "name": "PS2 Homebrew Reddit",
-        "url": "https://www.reddit.com/r/ps2homebrew/",
-        "thumbnailUrl": ""
+        "url": "https://www.reddit.com/r/ps2homebrew/"
       },
       {
         "name": "PS2 Online Gaming",
-        "url": "https://ps2onlinegaming.com/",
-        "thumbnailUrl": ""
+        "url": "https://ps2onlinegaming.com/"
       },
       {
         "name": "PS2 Reddit",
-        "url": "https://www.reddit.com/r/ps2/",
-        "thumbnailUrl": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://www.reddit.com/r/ps2/"
       },
       {
         "name": "PS2-Home",
-        "url": "https://www.ps2-home.com/",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2-home.com/"
       },
       {
         "name": "PSBBN Portal by Vitas155",
-        "url": "https://psbbn.ru/",
-        "thumbnailUrl": ""
+        "url": "https://psbbn.ru/"
       },
       {
         "name": "PSX-Place's PS2 Forums/Messaging Boards",
-        "url": "https://www.psx-place.com/forums/#playstation-2-forums.6",
-        "thumbnailUrl": "https://images.pexels.com/photos/270404/pexels-photo-270404.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://www.psx-place.com/forums/#playstation-2-forums.6"
       },
       {
         "name": "PSX-Place",
-        "url": "https://www.psx-place.com/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/"
       },
       {
         "name": "Retro Game Boards",
-        "url": "https://www.retrogameboards.com/",
-        "thumbnailUrl": ""
+        "url": "https://www.retrogameboards.com/"
       },
       {
         "name": "Romhacking.net Forum",
-        "url": "https://www.romhacking.net/forum/",
-        "thumbnailUrl": "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://www.romhacking.net/forum/"
       },
       {
         "name": "Romstation.fr Multiplayer",
-        "url": "https://www.romstation.fr/multiplayer/",
-        "thumbnailUrl": ""
+        "url": "https://www.romstation.fr/multiplayer/"
       },
       {
         "name": "Romstation.fr Forum",
-        "url": "https://www.romstation.fr/forums/forum/376-forum",
-        "thumbnailUrl": ""
+        "url": "https://www.romstation.fr/forums/forum/376-forum"
       },
       {
         "name": "Team XLink Global Network Gaming",
-        "url": "https://www.teamxlink.co.uk/",
-        "thumbnailUrl": "https://images.pexels.com/photos/270632/pexels-photo-270632.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://www.teamxlink.co.uk/"
       },
       {
         "name": "The Cutting Room Floor Message Boards",
-        "url": "https://jul.rustedlogic.net/forum.php?id=12",
-        "thumbnailUrl": ""
+        "url": "https://jul.rustedlogic.net/forum.php?id=12"
       },
       {
         "name": "VGBA Forums",
-        "url": "https://vgboxart.com/forums/",
-        "thumbnailUrl": "https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://vgboxart.com/forums/"
       }
     ]
   },
@@ -129,113 +105,91 @@
     "links": [
       {
         "name": "8BitMods Discord Server",
-        "url": "https://discord.gg/F2aKahj",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/F2aKahj"
       },
       {
         "name": "AetherSX2 Emulator Discord Server",
-        "url": "https://discord.com/channels/914421153827794975/1063889680329879562",
-        "thumbnailUrl": "https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://discord.com/channels/914421153827794975/1063889680329879562"
       },
       {
         "name": "Athena PS2 System (AthenaEnv by DanielSant0s) Discord Server",
-        "url": "https://discord.gg/E7STQHQr9d",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/E7STQHQr9d"
       },
       {
         "name": "Hardlevel Discord Server",
-        "url": "https://bit.ly/hardlevel-discord",
-        "thumbnailUrl": ""
+        "url": "https://bit.ly/hardlevel-discord"
       },
       {
         "name": "Naughty Dog (Fan Server)",
-        "url": "https://discord.gg/tykmvRP",
-        "thumbnailUrl": "https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://discord.gg/tykmvRP"
       },
       {
         "name": "Obscure Gamers Discord Server",
-        "url": "https://discord.gg/pJ8Qu7qYHX",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/pJ8Qu7qYHX"
       },
       {
         "name": "OpenSpy's PS2 Online's Discord Server",
-        "url": "https://discord.com/invite/zE79nWT",
-        "thumbnailUrl": ""
+        "url": "https://discord.com/invite/zE79nWT"
       },
       {
         "name": "PCSX2 Emulator's Official Discord Server",
-        "url": "https://discord.com/invite/TCz3t9k",
-        "thumbnailUrl": "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://discord.com/invite/TCz3t9k"
       },
       {
         "name": "Playstation 2 Homebrew Community Discord Server (Archive)",
-        "url": "https://discord.gg/XaztguU",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/XaztguU"
       },
       {
         "name": "Playstation Homebrew Discord Server",
-        "url": "https://discord.gg/qHn9fuTrJw",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/qHn9fuTrJw"
       },
       {
         "name": "PS Rewired Discord Server",
-        "url": "https://discord.gg/VfeuF6ZWVb",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/VfeuF6ZWVb"
       },
       {
         "name": "PS-Gamers.ru Official Discord Server",
-        "url": "https://discord.gg/2V6SesJ",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/2V6SesJ"
       },
       {
         "name": "PS2 Online Gaming's Discord Server",
-        "url": "https://discord.gg/N2akedR",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/N2akedR"
       },
       {
         "name": "PS2 Scene Discord Server",
-        "url": "https://discord.gg/ZH55QuTSfT",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/ZH55QuTSfT"
       },
       {
         "name": "PS2 Space Discord Server",
-        "url": "https://discord.gg/3SWDtuVy7r",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/3SWDtuVy7r"
       },
       {
         "name": "PSORG (PS Online Returnal Games) Discord Server",
-        "url": "https://discord.gg/DQbrEb44qr",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/DQbrEb44qr"
       },
       {
         "name": "PSX Capture (PS2 - PS5) Online Discord Server",
-        "url": "https://discord.gg/FYmVq6zmgx",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/FYmVq6zmgx"
       },
       {
         "name": "PSX-Place Discord Server",
-        "url": "https://discord.com/invite/kASwQBs5",
-        "thumbnailUrl": ""
+        "url": "https://discord.com/invite/kASwQBs5"
       },
       {
         "name": "Team XLink (Official) Discord Server",
-        "url": "https://discord.gg/vdf7Q3v",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/vdf7Q3v"
       },
       {
         "name": "The Cutting Room Floor Discord Server",
-        "url": "https://discord.com/invite/SGeE8dcWR6",
-        "thumbnailUrl": ""
+        "url": "https://discord.com/invite/SGeE8dcWR6"
       },
       {
         "name": "The Emotion Engine Nostalgia Extrusion Concern, LLC Discord Server",
-        "url": "https://discord.gg/GyZgHhpxXT",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/GyZgHhpxXT"
       },
       {
         "name": "Xtreme Elite Boot+ Discord Server",
-        "url": "https://discord.com/invite/CnPWqBkAPG",
-        "thumbnailUrl": ""
+        "url": "https://discord.com/invite/CnPWqBkAPG"
       }
     ]
   },
@@ -244,138 +198,111 @@
     "links": [
       {
         "name": "25 to Life: Classic Discord Server",
-        "url": "https://discord.gg/gmYe84eS7q",
-        "thumbnailUrl": "https://images.pexels.com/photos/3945667/pexels-photo-3945667.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://discord.gg/gmYe84eS7q"
       },
       {
         "name": "Auto Modellista Meetup Club Discord Server",
-        "url": "https://discord.gg/h7RbJ5FCct",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/h7RbJ5FCct"
       },
       {
         "name": "Burnout 3 Online Revival Discord Server",
-        "url": "https://discord.gg/y9KYVrhQG7",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/y9KYVrhQG7"
       },
       {
         "name": "Burnout PS2 Online Discord Server",
-        "url": "https://discord.gg/cjceKbhuuv",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/cjceKbhuuv"
       },
       {
         "name": "EQOA Revival Discord Server",
-        "url": "https://discord.gg/uwqdv9yKtH",
-        "thumbnailUrl": "https://images.pexels.com/photos/7238759/pexels-photo-7238759.jpeg?auto=compress&cs=tinysrgb&w=120&h=80&dpr=1"
+        "url": "https://discord.gg/uwqdv9yKtH"
       },
       {
         "name": "Jack and Daxter Discord Server",
-        "url": "https://discord.gg/N358k7R",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/N358k7R"
       },
       {
         "name": "Jack and Daxter Lore'n'Lounge Discord Server",
-        "url": "https://discord.gg/RYJPuXkHu4",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/RYJPuXkHu4"
       },
       {
         "name": "Jack and Daxter Speedrun Discord Server",
-        "url": "https://discord.gg/UPaQy8ZUAa",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/UPaQy8ZUAa"
       },
       {
         "name": "Jak X Multiplayer Discord Server",
-        "url": "https://discord.gg/5VHj8sD",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/5VHj8sD"
       },
       {
         "name": "Medal of Honor Rising Discord Server",
-        "url": "https://discord.gg/2MafefE4XH",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/2MafefE4XH"
       },
       {
         "name": "MH Oldschool Discord Server",
-        "url": "https://discord.gg/k7d6RKd",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/k7d6RKd"
       },
       {
         "name": "Midnight Club 3/2/L.A Online Official Discord Server",
-        "url": "https://discord.gg/Zfj4TYN",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/Zfj4TYN"
       },
       {
         "name": "Netslum - .hack//fragment Community Discord Server",
-        "url": "https://discord.gg/DY3XEe8",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/DY3XEe8"
       },
       {
         "name": "NFSOR (NeedForSpeed) Discord Server",
-        "url": "https://discord.com/invite/3chzV4BMFn",
-        "thumbnailUrl": ""
+        "url": "https://discord.com/invite/3chzV4BMFn"
       },
       {
         "name": "Official OBSRV Server Discord Server",
-        "url": "https://discord.gg/r9v3DKG",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/r9v3DKG"
       },
       {
         "name": "Ratchet & Clank 3 Casuals Discord Server",
-        "url": "https://discord.gg/S7h4SbzvyG",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/S7h4SbzvyG"
       },
       {
         "name": "Ratchet & Clank Discord Server",
-        "url": "https://discord.gg/UyAeTgJ",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/UyAeTgJ"
       },
       {
         "name": "Ratchet & Clank Horizon Online Play Discord Server",
-        "url": "https://discord.gg/KaqEVBuCUh",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/KaqEVBuCUh"
       },
       {
         "name": "Ratchet & Clank Online Discord Server",
-        "url": "https://discord.gg/mUQzqGu",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/mUQzqGu"
       },
       {
         "name": "Ratchet & Clank Size Matters Online Discord Server",
-        "url": "https://discord.gg/hD23nTfDxT",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/hD23nTfDxT"
       },
       {
         "name": "Save MGO Discord Server",
-        "url": "https://discord.com/invite/h5gA3X9Zhj",
-        "thumbnailUrl": ""
+        "url": "https://discord.com/invite/h5gA3X9Zhj"
       },
       {
         "name": "SlyCooper Discord Server",
-        "url": "https://discord.gg/ZSjCVt2DNQ",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/ZSjCVt2DNQ"
       },
       {
         "name": "SOCOM Community Discord Server",
-        "url": "https://discord.gg/HB33DqU",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/HB33DqU"
       },
       {
         "name": "Star Wars Battlefront PS2 Online Discord Server",
-        "url": "https://discord.gg/jQDPcTQurN",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/jQDPcTQurN"
       },
       {
         "name": "SvR/WWE/F NETPLAY Discord Server",
-        "url": "https://discord.gg/Z6zqdDrKeT",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/Z6zqdDrKeT"
       },
       {
         "name": "Twisted Metal Alliance Discord Server",
-        "url": "https://discord.gg/hQbBHh3",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/hQbBHh3"
       },
       {
         "name": "zdxsv (foreign Gundam) Discord Server",
-        "url": "https://discord.gg/NtnVPuvart",
-        "thumbnailUrl": ""
+        "url": "https://discord.gg/NtnVPuvart"
       }
     ]
   },
@@ -384,118 +311,95 @@
     "links": [
       {
         "name": "Pixel Phantom's YouTube Channel",
-        "url": "https://www.youtube.com/channel/UC473GnVliV0dm5mwrR-qtsg",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/channel/UC473GnVliV0dm5mwrR-qtsg"
       },
       {
         "name": "Adam Koralik's YouTube Channel",
-        "url": "https://www.youtube.com/user/AdamKoralik",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/user/AdamKoralik"
       },
       {
         "name": "alexparrado's YouTube Channel",
-        "url": "https://www.youtube.com/@alexanderlopez-parrado3990",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@alexanderlopez-parrado3990"
       },
       {
         "name": "Blaine Locklair's YouTube Channel",
-        "url": "https://www.youtube.com/@blainelocklair/search?query=PS2",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@blainelocklair/search?query=PS2"
       },
       {
         "name": "CosmicScale's YouTube Channel",
-        "url": "https://www.youtube.com/channel/UCxptXkaMSRevkUoA3rfa3aw",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/channel/UCxptXkaMSRevkUoA3rfa3aw"
       },
       {
         "name": "Daniel Santos YouTube Channel",
-        "url": "https://www.youtube.com/channel/UCIDx5TuDp-1IRTRr5l5JSdw",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/channel/UCIDx5TuDp-1IRTRr5l5JSdw"
       },
       {
         "name": "Haldrie's YouTube Channel",
-        "url": "https://www.youtube.com/Haldrie",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/Haldrie"
       },
       {
         "name": "Hardlevel's Youtube Channel",
-        "url": "https://youtube.com/hardlevelbr",
-        "thumbnailUrl": ""
+        "url": "https://youtube.com/hardlevelbr"
       },
       {
         "name": "HugoPocked's YouTube Channel",
-        "url": "https://www.youtube.com/@hugopocked6695",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@hugopocked6695"
       },
       {
         "name": "Juanky's YouTube Channel",
-        "url": "https://www.youtube.com/@JUANKYPS2",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@JUANKYPS2"
       },
       {
         "name": "Macho Nacho Productions Youtube Channel",
-        "url": "https://www.youtube.com/@MachoNachoProductions/search?query=ps2",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@MachoNachoProductions/search?query=ps2"
       },
       {
         "name": "MegaBitmap's YouTube Channel",
-        "url": "https://www.youtube.com/@MegaBitmap",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@MegaBitmap"
       },
       {
         "name": "Modern Vintage Gamer's YouTube Channel",
-        "url": "https://www.youtube.com/user/ModernVintageGamer",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/user/ModernVintageGamer"
       },
       {
         "name": "Mr. Mario2011's YouTube Channel",
-        "url": "https://www.youtube.com/@MrMario2011",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@MrMario2011"
       },
       {
         "name": "MyLifeinGaming's YouTube Channel",
-        "url": "https://www.youtube.com/user/MyLifeInGaming",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/user/MyLifeInGaming"
       },
       {
         "name": "Playstation 2 Evolution by Sony's YouTube Channel",
-        "url": "https://www.youtube.com/watch?v=Hvcps5dFzfc",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/watch?v=Hvcps5dFzfc"
       },
       {
         "name": "Prime Retro Gamer's YouTube Channel",
-        "url": "https://www.youtube.com/@PrimeRetroGamer",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@PrimeRetroGamer"
       },
       {
         "name": "Project Pheonix Media's YouTube Channel",
-        "url": "https://www.youtube.com/@ProjectPhoenixMedia",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@ProjectPhoenixMedia"
       },
       {
         "name": "Spaghetticode (Boon Tobias) YouTube Channel",
-        "url": "https://www.youtube.com/@Spaghetticode_Boon_Tobias",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@Spaghetticode_Boon_Tobias"
       },
       {
         "name": "Spawn Wave's YouTube Channel",
-        "url": "https://www.youtube.com/@SpawnWave/search?query=ps2",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@SpawnWave/search?query=ps2"
       },
       {
         "name": "sync-on-luma's YouTube Channel",
-        "url": "https://www.youtube.com/@sync-on-luma",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@sync-on-luma"
       },
       {
         "name": "Usagiru's YouTube Channel",
-        "url": "https://www.youtube.com/@UsagiRu_Games",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@UsagiRu_Games"
       },
       {
         "name": "Vizor's YouTube Channel",
-        "url": "https://www.youtube.com/@ViZoRRetrogames",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@ViZoRRetrogames"
       }
     ]
   },
@@ -504,913 +408,731 @@
     "links": [
       {
         "name": "SAS .psu Releases/Downloads Index",
-        "url": "https://app.filen.io/#/f/979a8ea4-5556-4d55-bee8-c9329c463db6#sUFLyL85q45reUqcrrazZWktYK0pHjk6",
-        "thumbnailUrl": ""
+        "url": "https://app.filen.io/#/f/979a8ea4-5556-4d55-bee8-c9329c463db6#sUFLyL85q45reUqcrrazZWktYK0pHjk6"
       },
       {
         "name": "\"Dungeon\" test demo game",
-        "url": "https://bitbucket.org/glampert/ps2dev-tests/src/master/",
-        "thumbnailUrl": ""
+        "url": "https://bitbucket.org/glampert/ps2dev-tests/src/master/"
       },
       {
         "name": "3D Pinball PS2",
-        "url": "https://github.com/headshot2017/3dpinball-ps2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/headshot2017/3dpinball-ps2"
       },
       {
         "name": "576p GSM",
-        "url": "https://github.com/sestain/gsm",
-        "thumbnailUrl": ""
+        "url": "https://github.com/sestain/gsm"
       },
       {
         "name": "Additional Projects by El_isra",
-        "url": "https://israpps.github.io/projects/",
-        "thumbnailUrl": ""
+        "url": "https://israpps.github.io/projects/"
       },
       {
         "name": "AIO Project: PS2 v2.0.1 (2021) by Berion",
-        "url": "https://archive.org/details/aio-project-ps2-v201",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/aio-project-ps2-v201"
       },
       {
         "name": "Apollo Save Tool AIO Saves Management/Conversion/Import/Export",
-        "url": "https://github.com/bucanero/apollo-ps2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/bucanero/apollo-ps2"
       },
       {
         "name": "Arceus Menu by Project Zeus",
-        "url": "https://projectzeus0101.blogspot.com/",
-        "thumbnailUrl": ""
+        "url": "https://projectzeus0101.blogspot.com/"
       },
       {
         "name": "AthenaEnv by DanielSant0s github",
-        "url": "https://github.com/DanielSant0s/AthenaEnv",
-        "thumbnailUrl": ""
+        "url": "https://github.com/DanielSant0s/AthenaEnv"
       },
       {
         "name": "BDM Assault (enabled exFAT USB) by El_isra",
-        "url": "https://www.psx-place.com/threads/42352/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/42352/"
       },
       {
         "name": "bin2code convert binaries into PS2 Cheats",
-        "url": "https://github.com/Dnawrkshp/bin2code",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Dnawrkshp/bin2code"
       },
       {
         "name": "Cheat Database Launcher",
-        "url": "https://www.psx-place.com/resources/cheat-database-launcher.1500/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/cheat-database-launcher.1500/"
       },
       {
         "name": "Cheat Device",
-        "url": "https://israpps.github.io/CheatDevicePS2/",
-        "thumbnailUrl": ""
+        "url": "https://israpps.github.io/CheatDevicePS2/"
       },
       {
         "name": "CodeBreaker PS2 File utility github",
-        "url": "https://github.com/mlafeldt/cb2util",
-        "thumbnailUrl": ""
+        "url": "https://github.com/mlafeldt/cb2util"
       },
       {
         "name": "CosmicScale's github featuring Retro GEM Homebrews",
-        "url": "https://github.com/CosmicScale",
-        "thumbnailUrl": ""
+        "url": "https://github.com/CosmicScale"
       },
       {
         "name": "Crystal Chip R34 v3",
-        "url": "https://github.com/saildot4k/Crystal-Chip-R34-v3",
-        "thumbnailUrl": ""
+        "url": "https://github.com/saildot4k/Crystal-Chip-R34-v3"
       },
       {
         "name": "Cue Maker",
-        "url": "https://github.com/tralph3/Cue-Maker",
-        "thumbnailUrl": ""
+        "url": "https://github.com/tralph3/Cue-Maker"
       },
       {
         "name": "Discord for the PS2",
-        "url": "https://github.com/DanielSant0s/PS2Discord",
-        "thumbnailUrl": ""
+        "url": "https://github.com/DanielSant0s/PS2Discord"
       },
       {
         "name": "Discord PS2 Rich Presence Client for OPL via SMB",
-        "url": "https://github.com/GSTDiandre/ps2-discord-rpc",
-        "thumbnailUrl": ""
+        "url": "https://github.com/GSTDiandre/ps2-discord-rpc"
       },
       {
         "name": "DKWDRV Playstation 1 Driver for PS2",
-        "url": "https://github.com/DKWDRV",
-        "thumbnailUrl": ""
+        "url": "https://github.com/DKWDRV"
       },
       {
         "name": "DKWDRV Batch Game Installer by GDX",
-        "url": "https://github.com/GDX-X/DKWDRV-Batch-Game-Installer",
-        "thumbnailUrl": ""
+        "url": "https://github.com/GDX-X/DKWDRV-Batch-Game-Installer"
       },
       {
         "name": "DNAS Bypass Cheats",
-        "url": "https://www.psx-place.com/threads/tutorial-how-to-play-online-on-ps2-dvd-games-with-cheat-device-1-7-4.29802/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/tutorial-how-to-play-online-on-ps2-dvd-games-with-cheat-device-1-7-4.29802/"
       },
       {
         "name": "DNAS Patcher output to PNACH File Converter",
-        "url": "https://github.com/VTSTech/DNAStoPNACH",
-        "thumbnailUrl": ""
+        "url": "https://github.com/VTSTech/DNAStoPNACH"
       },
       {
         "name": "DNAS-net Patcher",
-        "url": "https://www.psx-place.com/threads/dnas-net-patcher.22813/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/dnas-net-patcher.22813/"
       },
       {
         "name": "Download sony_ps2linux_install_image.tgz",
-        "url": "https://sourceforge.net/projects/kernelloader/files/Sony%20Linux%20Toolkit/",
-        "thumbnailUrl": ""
+        "url": "https://sourceforge.net/projects/kernelloader/files/Sony%20Linux%20Toolkit/"
       },
       {
         "name": "Dungeon SDL2 Homebrew Game",
-        "url": "https://github.com/DevECoisas/PS2_Dungeon",
-        "thumbnailUrl": ""
+        "url": "https://github.com/DevECoisas/PS2_Dungeon"
       },
       {
         "name": "Enceladus by DanielSant0s github",
-        "url": "https://github.com/DanielSant0s/Enceladus",
-        "thumbnailUrl": ""
+        "url": "https://github.com/DanielSant0s/Enceladus"
       },
       {
         "name": "ESR",
-        "url": "https://www.psx-place.com/resources/esr.951/update?update=1613",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/esr.951/update?update=1613"
       },
       {
         "name": "Fortuna Launcher",
-        "url": "https://github.com/Veritas83/PS2_FORTUNA_Launcher",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Veritas83/PS2_FORTUNA_Launcher"
       },
       {
         "name": "FreeDVDBoot Official github",
-        "url": "https://github.com/ps2homebrew/FreeDVDBoot",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/FreeDVDBoot"
       },
       {
         "name": "FDVDB ESR Patcher GUI",
-        "url": "https://www.psx-place.com/threads/freedvdboot-by-cturt.30220/#post-255696",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/freedvdboot-by-cturt.30220/#post-255696"
       },
       {
         "name": "Free Master Code Finder by El_isra",
-        "url": "https://github.com/israpps/FreeMastercodeFinder",
-        "thumbnailUrl": ""
+        "url": "https://github.com/israpps/FreeMastercodeFinder"
       },
       {
         "name": "FreeMCBoot Continued by El_isra",
-        "url": "https://israpps.github.io/FreeMcBoot-Installer/",
-        "thumbnailUrl": ""
+        "url": "https://israpps.github.io/FreeMcBoot-Installer/"
       },
       {
         "name": "FreeMCBoot Official Page",
-        "url": "https://sites.google.com/view/ysai187/home/projects/fmcbfhdb",
-        "thumbnailUrl": ""
+        "url": "https://sites.google.com/view/ysai187/home/projects/fmcbfhdb"
       },
       {
         "name": "FTP Server for PS2",
-        "url": "https://github.com/ps2homebrew/ps2ftpd",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/ps2ftpd"
       },
       {
         "name": "Game Mods Collection by Nahelam",
-        "url": "https://github.com/Nahelam/PS2-Game-Mods",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Nahelam/PS2-Game-Mods"
       },
       {
         "name": "Ghidra EmotionEndgine Reloaded - Ghidra PS2 Addon",
-        "url": "https://github.com/chaoticgd/ghidra-emotionengine-reloaded",
-        "thumbnailUrl": ""
+        "url": "https://github.com/chaoticgd/ghidra-emotionengine-reloaded"
       },
       {
         "name": "Ghidra Processor definitions for MIPS R5900 (PS2)",
-        "url": "https://github.com/astrelsky/ghidra_MIPSR5900",
-        "thumbnailUrl": ""
+        "url": "https://github.com/astrelsky/ghidra_MIPSR5900"
       },
       {
         "name": "God-Hand-Tools for Conversion, Extraction, and Repacking",
-        "url": "https://github.com/akitotheanimator/God-Hand-Tools",
-        "thumbnailUrl": ""
+        "url": "https://github.com/akitotheanimator/God-Hand-Tools"
       },
       {
         "name": "GOG Galaxy 2.0 Integration for PS2",
-        "url": "https://github.com/AHCoder/galaxy-integration-ps2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/AHCoder/galaxy-integration-ps2"
       },
       {
         "name": "Haldrie's SKSApps Backup",
-        "url": "https://sksapps.haldrie.com/",
-        "thumbnailUrl": ""
+        "url": "https://sksapps.haldrie.com/"
       },
       {
         "name": "Hardlevel.com.br",
-        "url": "https://hardlevel.com.br/",
-        "thumbnailUrl": ""
+        "url": "https://hardlevel.com.br/"
       },
       {
         "name": "HDL Game Installer",
-        "url": "https://github.com/ps2homebrew/HDLGameInstaller",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/HDLGameInstaller"
       },
       {
         "name": "HDL-Batch-Installer by El_isra",
-        "url": "https://israpps.github.io/HDL-Batch-installer/",
-        "thumbnailUrl": ""
+        "url": "https://israpps.github.io/HDL-Batch-installer/"
       },
       {
         "name": "HDL_Dump",
-        "url": "https://github.com/ps2homebrew/hdl-dump",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/hdl-dump"
       },
       {
         "name": "HowlingWolfHWC's official github",
-        "url": "https://github.com/HowlingWolfHWC",
-        "thumbnailUrl": ""
+        "url": "https://github.com/HowlingWolfHWC"
       },
       {
         "name": "Homebrew Downloader",
-        "url": "https://github.com/Veritas83/VTSPS2-HBDL",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Veritas83/VTSPS2-HBDL"
       },
       {
         "name": "HugoPocked POPSTARTER Fixes",
-        "url": "https://www.psx-place.com/threads/hugopocked-fixes-for-popstarter.39750/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/hugopocked-fixes-for-popstarter.39750/"
       },
       {
         "name": "KELFBINDER by El_isra",
-        "url": "https://israpps.github.io/KELFBinder/",
-        "thumbnailUrl": ""
+        "url": "https://israpps.github.io/KELFBinder/"
       },
       {
         "name": "KELFtool - decrypt, encrypt, and sign KELF files for PS2/1",
-        "url": "https://github.com/xfwcfw/kelftool",
-        "thumbnailUrl": ""
+        "url": "https://github.com/xfwcfw/kelftool"
       },
       {
         "name": "Master Disc Patcher",
-        "url": "https://alex-free.github.io/psdb/master-disc.html",
-        "thumbnailUrl": ""
+        "url": "https://alex-free.github.io/psdb/master-disc.html"
       },
       {
         "name": "MCP2 OPL with Manual GameID Transmission",
-        "url": "https://install.appcenter.ms/orgs/beta-ucu9/apps/opl-with-gameid/distribution_groups/public",
-        "thumbnailUrl": ""
+        "url": "https://install.appcenter.ms/orgs/beta-ucu9/apps/opl-with-gameid/distribution_groups/public"
       },
       {
         "name": "MECHAPWN",
-        "url": "https://github.com/MechaResearch/MechaPwn",
-        "thumbnailUrl": ""
+        "url": "https://github.com/MechaResearch/MechaPwn"
       },
       {
         "name": "Memory Card Annihilator (MCA) Memory Card Tool",
-        "url": "https://www.psx-place.com/threads/memory-card-annihilator-v2-0a-a-new-version-after-more-than-11-years.36277/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/memory-card-annihilator-v2-0a-a-new-version-after-more-than-11-years.36277/"
       },
       {
         "name": "MOD Chip Files of Various Make",
-        "url": "https://github.com/m4x10187/ps2-modchip-files",
-        "thumbnailUrl": ""
+        "url": "https://github.com/m4x10187/ps2-modchip-files"
       },
       {
         "name": "MOD Chip Matrix Team Actel APA075 based modchips flash dump. (Not FPGA firmware!)",
-        "url": "https://github.com/78edu/ps2-matrix-infinity-modchip-dump",
-        "thumbnailUrl": ""
+        "url": "https://github.com/78edu/ps2-matrix-infinity-modchip-dump"
       },
       {
         "name": "MundoWiiHack's Wordpress - Check PS2 Sections",
-        "url": "https://mundowiihack.wordpress.com/",
-        "thumbnailUrl": ""
+        "url": "https://mundowiihack.wordpress.com/"
       },
       {
         "name": "mymc Homepage",
-        "url": "http://www.csclub.uwaterloo.ca:11068/mymc/",
-        "thumbnailUrl": ""
+        "url": "http://www.csclub.uwaterloo.ca:11068/mymc/"
       },
       {
         "name": "mymcc github",
-        "url": "https://github.com/ps2dev/mymc",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2dev/mymc"
       },
       {
         "name": "mymcplus github",
-        "url": "https://github.com/thestr4ng3r/mymcplus",
-        "thumbnailUrl": ""
+        "url": "https://github.com/thestr4ng3r/mymcplus"
       },
       {
         "name": "mymcplus Homepage",
-        "url": "https://git.sr.ht/~thestr4ng3r/mymcplus",
-        "thumbnailUrl": ""
+        "url": "https://git.sr.ht/~thestr4ng3r/mymcplus"
       },
       {
         "name": "mymcplusplus github",
-        "url": "https://github.com/Adubbz/mymcplusplus",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Adubbz/mymcplusplus"
       },
       {
         "name": "Neutrino Loader XEB+ Plugin by sync-on-luma",
-        "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin",
-        "thumbnailUrl": ""
+        "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin"
       },
       {
         "name": "Neutrino",
-        "url": "https://github.com/rickgaiser/neutrino",
-        "thumbnailUrl": ""
+        "url": "https://github.com/rickgaiser/neutrino"
       },
       {
         "name": "nHDDl Neutrino GUI PS2 Loader by pcm720",
-        "url": "https://github.com/pcm720/nhddl",
-        "thumbnailUrl": ""
+        "url": "https://github.com/pcm720/nhddl"
       },
       {
         "name": "Open PS2 Loader for PSX DVR DESR consoles",
-        "url": "https://github.com/SvenGDK/Open-PS2-Loader",
-        "thumbnailUrl": ""
+        "url": "https://github.com/SvenGDK/Open-PS2-Loader"
       },
       {
         "name": "Open PS2 Loader Frontend for Neutrino",
-        "url": "https://www.psx-place.com/threads/opl-based-gui-frontend-for-neutrino.42166/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/opl-based-gui-frontend-for-neutrino.42166/"
       },
       {
         "name": "Open PS2 Loader Official github - Official Downloads",
-        "url": "https://github.com/ps2homebrew/Open-PS2-Loader/releases",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/Open-PS2-Loader/releases"
       },
       {
         "name": "Open PS2 Loader OPLServer Windows SMB Program",
-        "url": "https://github.com/elmariolo/OPL-Server",
-        "thumbnailUrl": ""
+        "url": "https://github.com/elmariolo/OPL-Server"
       },
       {
         "name": "Open PS2 Loader PC Tools github Repo",
-        "url": "https://github.com/brainstream/OPL-PC-Tools",
-        "thumbnailUrl": ""
+        "url": "https://github.com/brainstream/OPL-PC-Tools"
       },
       {
         "name": "Open PS2 Loader Samba (SMB) Server Docker",
-        "url": "https://github.com/milouk/docker-smb-opl",
-        "thumbnailUrl": ""
+        "url": "https://github.com/milouk/docker-smb-opl"
       },
       {
         "name": "Open PS2 Loader SMB Server Containerized",
-        "url": "https://github.com/marcosatti/ps2smb-server",
-        "thumbnailUrl": ""
+        "url": "https://github.com/marcosatti/ps2smb-server"
       },
       {
         "name": "Open PS2 Loader SMB Server Script",
-        "url": "https://github.com/Lumiazaine/PS2-SMB",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Lumiazaine/PS2-SMB"
       },
       {
         "name": "Open PS2 Loader Theme Editor (WYSIWYG)",
-        "url": "https://github.com/IcySon55/OPL-Theme-Editor",
-        "thumbnailUrl": ""
+        "url": "https://github.com/IcySon55/OPL-Theme-Editor"
       },
       {
         "name": "Open PS2 Loader UDPBD",
-        "url": "https://www.psx-place.com/threads/testers-needed-udpbd-the-next-generation-of-loading-games-through-lan-on-a-ps2.40132/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/testers-needed-udpbd-the-next-generation-of-loading-games-through-lan-on-a-ps2.40132/"
       },
       {
         "name": "Open PS2 Loader Version Archive",
-        "url": "https://www.psx-place.com/resources/opl-archive.1447/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/opl-archive.1447/"
       },
       {
         "name": "Open PS2 Loader Widescreen Cheats Collection (dated)",
-        "url": "https://github.com/madmodder123/OpenPS2Loader_Widescreen_Cheats",
-        "thumbnailUrl": ""
+        "url": "https://github.com/madmodder123/OpenPS2Loader_Widescreen_Cheats"
       },
       {
         "name": "Open PS2 Loader Widescreen Cheats",
-        "url": "https://github.com/PS2-Widescreen/OPL-Widescreen-Cheats",
-        "thumbnailUrl": ""
+        "url": "https://github.com/PS2-Widescreen/OPL-Widescreen-Cheats"
       },
       {
         "name": "Open PS2 Loader CFG Compatibility Databse by GDX",
-        "url": "https://github.com/GDX-X/PS2-OPL-CFG-Compatibility-Database",
-        "thumbnailUrl": ""
+        "url": "https://github.com/GDX-X/PS2-OPL-CFG-Compatibility-Database"
       },
       {
         "name": "OpenTuna Installer Official Page",
-        "url": "https://github.com/ps2homebrew/opentuna-installer",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/opentuna-installer"
       },
       {
         "name": "OPL Launcher",
-        "url": "https://github.com/ps2homebrew/OPL-Launcher",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/OPL-Launcher"
       },
       {
         "name": "OPL Manager (OPLM) PC Application",
-        "url": "https://oplmanager.com/site/",
-        "thumbnailUrl": ""
+        "url": "https://oplmanager.com/site/"
       },
       {
         "name": "OPL Scanner",
-        "url": "https://www.psx-place.com/threads/opl-scanner.42787/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/opl-scanner.42787/"
       },
       {
         "name": "OPLUtil OPL Tool",
-        "url": "https://github.com/IsseiYoshida/OPLUtil",
-        "thumbnailUrl": ""
+        "url": "https://github.com/IsseiYoshida/OPLUtil"
       },
       {
         "name": "Original Memory Card Tester",
-        "url": "https://www.psx-place.com/resources/original-card-test.1504/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/original-card-test.1504/"
       },
       {
         "name": "OSDSYS Launcher",
-        "url": "https://github.com/HowlingWolfHWC/OSDSYS-Launcher",
-        "thumbnailUrl": ""
+        "url": "https://github.com/HowlingWolfHWC/OSDSYS-Launcher"
       },
       {
         "name": "PFS-BatchKit-Manager by GDX",
-        "url": "https://github.com/GDX-X/PFS-BatchKit-Manager",
-        "thumbnailUrl": ""
+        "url": "https://github.com/GDX-X/PFS-BatchKit-Manager"
       },
       {
         "name": "PFS-BatchKit-Manager Extras by GDX",
-        "url": "https://www.mediafire.com/folder/mjrpskskupuvc/PS2",
-        "thumbnailUrl": ""
+        "url": "https://www.mediafire.com/folder/mjrpskskupuvc/PS2"
       },
       {
         "name": "Playstation 2 Basic Boot Loader by El_isra",
-        "url": "https://israpps.github.io/PlayStation2-Basic-BootLoader/",
-        "thumbnailUrl": ""
+        "url": "https://israpps.github.io/PlayStation2-Basic-BootLoader/"
       },
       {
         "name": "PlayStation 2 MECHACON Adjustment Program (PMAP)",
-        "url": "https://www.psx-place.com/resources/playstation-2-mechacon-adjustment-program-pmap.962/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/playstation-2-mechacon-adjustment-program-pmap.962/"
       },
       {
         "name": "PlayStation Disc Burner (PSDB) by alex-free",
-        "url": "https://alex-free.github.io/psdb/",
-        "thumbnailUrl": ""
+        "url": "https://alex-free.github.io/psdb/"
       },
       {
         "name": "POPS Binaries",
-        "url": "https://github.com/AnimMouse/POPS-binaries",
-        "thumbnailUrl": ""
+        "url": "https://github.com/AnimMouse/POPS-binaries"
       },
       {
         "name": "POPS VCD Manager by El_isra",
-        "url": "https://www.psx-place.com/resources/pops-vcd-manager.1284/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/pops-vcd-manager.1284/"
       },
       {
         "name": "POPS2APPS",
-        "url": "https://www.psx-place.com/resources/pops2apps.1214/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/pops2apps.1214/"
       },
       {
         "name": "POPSLoader by El_isra",
-        "url": "https://www.psx-place.com/resources/popsloader.1396/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/popsloader.1396/"
       },
       {
         "name": "POPSTARTER Cumulative r6 Fixes",
-        "url": "https://www.psx-place.com/threads/popstarter.19139/page-5#post-254888",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/popstarter.19139/page-5#post-254888"
       },
       {
         "name": "POPSTARTER Discs_Pooper for Auto creation DISCS.TXT and VMCDIR.TXT",
-        "url": "https://www.psx-place.com/resources/discs_pooper-bambuch0-fix.1429/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/discs_pooper-bambuch0-fix.1429/"
       },
       {
         "name": "POPSTARTER Game Installer for OPL",
-        "url": "https://www.psx-place.com/threads/popstarter-game-installer-for-opl.34243/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/popstarter-game-installer-for-opl.34243/"
       },
       {
         "name": "POPSTARTER Installer github (dated)",
-        "url": "https://github.com/IsseiYoshida/Instalador-POPStarter",
-        "thumbnailUrl": ""
+        "url": "https://github.com/IsseiYoshida/Instalador-POPStarter"
       },
       {
         "name": "POPSTARTER Official Release and Resources Thread",
-        "url": "https://www.psx-place.com/threads/popstarter.19139/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/popstarter.19139/"
       },
       {
         "name": "POPSY-X XEB+ PS1 Launcher by GDX",
-        "url": "https://www.psx-place.com/resources/popsy-x.1424/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/popsy-x.1424/"
       },
       {
         "name": "PPF Relatted Softwares and Information",
-        "url": "https://consolecopyworld.com/ps2/ps2_ppf.shtml",
-        "thumbnailUrl": ""
+        "url": "https://consolecopyworld.com/ps2/ps2_ppf.shtml"
       },
       {
         "name": "Protokernal Patch for 10k Models",
-        "url": "https://github.com/jimmikaelkael/ps2-protokernel-patch",
-        "thumbnailUrl": ""
+        "url": "https://github.com/jimmikaelkael/ps2-protokernel-patch"
       },
       {
         "name": "Prussia",
-        "url": "https://github.com/Ravenslofty/prussia",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Ravenslofty/prussia"
       },
       {
         "name": "PS1 HDMI/Component Fix for PS2 (custom GSM)",
-        "url": "https://github.com/PhilRoll/gsm",
-        "thumbnailUrl": ""
+        "url": "https://github.com/PhilRoll/gsm"
       },
       {
         "name": "PS2 .PNACH Converter for OPL",
-        "url": "https://github.com/israpps/PS2-pnach-converter",
-        "thumbnailUrl": ""
+        "url": "https://github.com/israpps/PS2-pnach-converter"
       },
       {
         "name": "PS2 Bios Dumper",
-        "url": "https://github.com/F0bes/biosdrain",
-        "thumbnailUrl": ""
+        "url": "https://github.com/F0bes/biosdrain"
       },
       {
         "name": "PS2 Boot Sequencer for 900xx FMCB Remote Loading",
-        "url": "https://github.com/smsry/PS2-Boot-Sequencer",
-        "thumbnailUrl": ""
+        "url": "https://github.com/smsry/PS2-Boot-Sequencer"
       },
       {
         "name": "PS2 Client",
-        "url": "https://github.com/ps2dev/ps2client",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2dev/ps2client"
       },
       {
         "name": "PS2 Controller Remapper",
-        "url": "https://www.psx-place.com/resources/ps2-controller-remapper-by-pelvicthrustman.692/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/ps2-controller-remapper-by-pelvicthrustman.692/"
       },
       {
         "name": "PS2 Controller Tester",
-        "url": "https://www.psx-place.com/resources/ps2-controller-tester-by-jbit.670/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/ps2-controller-tester-by-jbit.670/"
       },
       {
         "name": "PS2 Debugging Toolset",
-        "url": "https://github.com/ps2dbg/dsnet",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2dbg/dsnet"
       },
       {
         "name": "PS2 Developer github",
-        "url": "https://github.com/ps2dev",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2dev"
       },
       {
         "name": "PS2 Disc Saver",
-        "url": "https://github.com/FloppidyDingo/PS2-Disk-Saver/wiki/Installation-Instructions",
-        "thumbnailUrl": ""
+        "url": "https://github.com/FloppidyDingo/PS2-Disk-Saver/wiki/Installation-Instructions"
       },
       {
         "name": "PS2 Drivers (.IRX EE .a)",
-        "url": "https://github.com/fjtrujy/ps2_drivers",
-        "thumbnailUrl": ""
+        "url": "https://github.com/fjtrujy/ps2_drivers"
       },
       {
         "name": "PS2 Dummy ISO Creator",
-        "url": "https://www.mediafire.com/file/1j2obwq0v4d9rq4/%255BBlog_do_UsagiRu%255D_PS2_Dummy_Creator.zip/file",
-        "thumbnailUrl": ""
+        "url": "https://www.mediafire.com/file/1j2obwq0v4d9rq4/%255BBlog_do_UsagiRu%255D_PS2_Dummy_Creator.zip/file"
       },
       {
         "name": "PS2 Homebrew github",
-        "url": "https://github.com/ps2homebrew",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew"
       },
       {
         "name": "PS2 Icon Sys Tools",
-        "url": "https://github.com/ticky/ps2iconsys",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ticky/ps2iconsys"
       },
       {
         "name": "PS2 Image Maker for PS2 iso files",
-        "url": "https://github.com/Smartkin/PS2ImageMaker",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Smartkin/PS2ImageMaker"
       },
       {
         "name": "PS2 ISO Batch Renamer",
-        "url": "https://github.com/L10N37/PS2-ISO-Batch-Renamer-",
-        "thumbnailUrl": ""
+        "url": "https://github.com/L10N37/PS2-ISO-Batch-Renamer-"
       },
       {
         "name": "PS2 ISO Tools - Read, Build, Edit PS2 ISOs with UDF Filesystem",
-        "url": "https://github.com/Finzenku/Ps2IsoTools",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Finzenku/Ps2IsoTools"
       },
       {
         "name": "PS2 Laser Fix",
-        "url": "https://github.com/nostalgic-indulgences/PS2_Laserfix",
-        "thumbnailUrl": ""
+        "url": "https://github.com/nostalgic-indulgences/PS2_Laserfix"
       },
       {
         "name": "PS2 Link - Side Application Loader",
-        "url": "https://github.com/ps2dev/ps2link",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2dev/ps2link"
       },
       {
         "name": "PS2 MC Browser",
-        "url": "https://github.com/caol64/ps2mc-browser",
-        "thumbnailUrl": ""
+        "url": "https://github.com/caol64/ps2mc-browser"
       },
       {
         "name": "PS2 OPL Discord Rich Presence",
-        "url": "https://github.com/Xferno2/PS2RPC",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Xferno2/PS2RPC"
       },
       {
         "name": "PS2 Packer - Homebrew ELF Compresser",
-        "url": "https://github.com/ps2dev/ps2-packer",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2dev/ps2-packer"
       },
       {
         "name": "PS2 Patch Engine",
-        "url": "https://www.psx-place.com/threads/ps2-patch-engine-by-pelvicthrustman.19167/#post-130158",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/ps2-patch-engine-by-pelvicthrustman.19167/#post-130158"
       },
       {
         "name": "PS2 Save Decrypters by bucanero",
-        "url": "https://github.com/bucanero/save-decrypters",
-        "thumbnailUrl": ""
+        "url": "https://github.com/bucanero/save-decrypters"
       },
       {
         "name": "PS2 Save Tools Homepage",
-        "url": "https://www.ps2savetools.com/",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2savetools.com/"
       },
       {
         "name": "PS2 Save Utility Converter for Save Files",
-        "url": "https://github.com/root670/PS2SaveUtility",
-        "thumbnailUrl": ""
+        "url": "https://github.com/root670/PS2SaveUtility"
       },
       {
         "name": "PS2 Unpacker - Homebrew ELF Decompresser",
-        "url": "https://github.com/ps2homebrew/ps2-unpacker",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/ps2-unpacker"
       },
       {
         "name": "PS2 Vault",
-        "url": "https://howlingwolfhwc.github.io/ps2vault/",
-        "thumbnailUrl": ""
+        "url": "https://howlingwolfhwc.github.io/ps2vault/"
       },
       {
         "name": "PS2 VMC Tool by bucanero",
-        "url": "https://github.com/bucanero/ps2vmc-tool",
-        "thumbnailUrl": ""
+        "url": "https://github.com/bucanero/ps2vmc-tool"
       },
       {
         "name": "PS2-VMC-GUI",
-        "url": "https://github.com/MegaBitmap/PS2-VMC-GUI",
-        "thumbnailUrl": ""
+        "url": "https://github.com/MegaBitmap/PS2-VMC-GUI"
       },
       {
         "name": "PS2-Yabasic-Exploit",
-        "url": "https://github.com/CTurt/PS2-Yabasic-Exploit",
-        "thumbnailUrl": ""
+        "url": "https://github.com/CTurt/PS2-Yabasic-Exploit"
       },
       {
         "name": "PS2Ident PS2 Identification Homebrew",
-        "url": "https://github.com/ps2homebrew/PS2Ident",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/PS2Ident"
       },
       {
         "name": "PS2rd MOD",
-        "url": "https://www.psx-place.com/threads/ps2rdmod-by-pelvicthrustman.19168/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/ps2rdmod-by-pelvicthrustman.19168/"
       },
       {
         "name": "PS2rd PS2 Debugging Tools",
-        "url": "https://github.com/mlafeldt/ps2rd",
-        "thumbnailUrl": ""
+        "url": "https://github.com/mlafeldt/ps2rd"
       },
       {
         "name": "PS2Runner Remote Test Harness for PS2 via IRToy and ps2link",
-        "url": "https://github.com/telyn/ps2runner",
-        "thumbnailUrl": ""
+        "url": "https://github.com/telyn/ps2runner"
       },
       {
         "name": "PS2SDK",
-        "url": "https://github.com/ps2dev/ps2sdk",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2dev/ps2sdk"
       },
       {
         "name": "PS2Splash for Custom PNG Splash image on OSDSYS Launcher",
-        "url": "https://github.com/parrado/ps2splash",
-        "thumbnailUrl": ""
+        "url": "https://github.com/parrado/ps2splash"
       },
       {
         "name": "PS3 MCA Exploit Archive",
-        "url": "https://web.archive.org/web/20241121005548/https://www.ps2-home.com/forum/viewtopic.php?t=297",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20241121005548/https://www.ps2-home.com/forum/viewtopic.php?t=297"
       },
       {
         "name": "PS3 MCA Exploit",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=297",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=297"
       },
       {
         "name": "PSBBN Definitive English Patch by CosmicScale",
-        "url": "https://archive.org/details/playstation-broadband-navigator-psbbn-definitive-english-patch-v1.0",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/playstation-broadband-navigator-psbbn-definitive-english-patch-v1.0"
       },
       {
         "name": "PSBBN English Patch by Vitas155",
-        "url": "https://archive.org/details/bbn201311",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/bbn201311"
       },
       {
         "name": "PSBBN Portal by Vitas155",
-        "url": "https://psbbn.ru/",
-        "thumbnailUrl": ""
+        "url": "https://psbbn.ru/"
       },
       {
         "name": "PSBBN Unencrypted Loader",
-        "url": "https://archive.org/details/osdboot",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/osdboot"
       },
       {
         "name": "PSCOVERDL tool for PCSX2 and Duckstation Cover Art",
-        "url": "https://github.com/xlenore/pscoverdl",
-        "thumbnailUrl": ""
+        "url": "https://github.com/xlenore/pscoverdl"
       },
       {
         "name": "PSX 80 Minute Patcher - Patch CD games for Early PS2 Models",
-        "url": "https://alex-free.github.io/psx80mp/",
-        "thumbnailUrl": ""
+        "url": "https://alex-free.github.io/psx80mp/"
       },
       {
         "name": "PSX DVR DESR Tools github",
-        "url": "https://github.com/SvenGDK/DESR-Tools",
-        "thumbnailUrl": ""
+        "url": "https://github.com/SvenGDK/DESR-Tools"
       },
       {
         "name": "PSX-Place's PS2 Resources Directory",
-        "url": "https://www.psx-place.com/resources/categories/playstation-2-ps2.7/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/categories/playstation-2-ps2.7/"
       },
       {
         "name": "PSX-XMB-Manager Homebrew Installer for the PSX DVR (DESR)",
-        "url": "https://github.com/SvenGDK/PSX-XMB-Manager",
-        "thumbnailUrl": ""
+        "url": "https://github.com/SvenGDK/PSX-XMB-Manager"
       },
       {
         "name": "PSXVCD Tool",
-        "url": "https://www.psx-place.com/resources/psxvcd.669/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/psxvcd.669/"
       },
       {
         "name": "pypsu Library for analyzing/creating PS2 PSu Saves",
-        "url": "https://github.com/McCaulay/pypsu",
-        "thumbnailUrl": ""
+        "url": "https://github.com/McCaulay/pypsu"
       },
       {
         "name": "Radhost Client",
-        "url": "https://www.psx-place.com/resources/rad-host-client-1-8a-sms-ule-host-compatible.629/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/rad-host-client-1-8a-sms-ule-host-compatible.629/"
       },
       {
         "name": "RETRO Gem Programs/Applications/Game ID by CosmicScale",
-        "url": "https://github.com/CosmicScale?tab=repositories",
-        "thumbnailUrl": ""
+        "url": "https://github.com/CosmicScale?tab=repositories"
       },
       {
         "name": "RetroArch for the PS2",
-        "url": "https://docs.libretro.com/guides/install-ps2/",
-        "thumbnailUrl": ""
+        "url": "https://docs.libretro.com/guides/install-ps2/"
       },
       {
         "name": "RETROLauncher by Spaghetticode (Boon Tobias)",
-        "url": "https://github.com/Spaghetticode-Boon-Tobias/RETROLauncher",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Spaghetticode-Boon-Tobias/RETROLauncher"
       },
       {
         "name": "Rockstar Games Uncensored PS2 Cheats",
-        "url": "https://github.com/GDX-X/Rockstar-Games-Uncensored-PS2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/GDX-X/Rockstar-Games-Uncensored-PS2"
       },
       {
         "name": "SD2PSX Custom GameID Detection Firmware by bbsan22",
-        "url": "https://github.com/bbsan2k/sd2psx_firmware",
-        "thumbnailUrl": ""
+        "url": "https://github.com/bbsan2k/sd2psx_firmware"
       },
       {
         "name": "SD2PSX Official github",
-        "url": "https://github.com/sd2psx",
-        "thumbnailUrl": ""
+        "url": "https://github.com/sd2psx"
       },
       {
         "name": "Simple Media System (SMS)",
-        "url": "https://github.com/ps2homebrew/SMS",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/SMS"
       },
       {
         "name": "smbLaunchELF",
-        "url": "https://www.psx-place.com/resources/smblaunchelf.1190/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/resources/smblaunchelf.1190/"
       },
       {
         "name": "SuperTux",
-        "url": "https://github.com/headshot2017/supertux-ps2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/headshot2017/supertux-ps2"
       },
       {
         "name": "Tony Hawk's Pro Strcpy Exploit by Grimdoomer",
-        "url": "https://github.com/grimdoomer/TonyHawksProStrcpy",
-        "thumbnailUrl": ""
+        "url": "https://github.com/grimdoomer/TonyHawksProStrcpy"
       },
       {
         "name": "Tonyhax International by Alex-free",
-        "url": "https://alex-free.github.io/tonyhax-international/",
-        "thumbnailUrl": ""
+        "url": "https://alex-free.github.io/tonyhax-international/"
       },
       {
         "name": "Tyra",
-        "url": "https://github.com/h4570/tyra/",
-        "thumbnailUrl": ""
+        "url": "https://github.com/h4570/tyra/"
       },
       {
         "name": "TyraCraft",
-        "url": "https://github.com/Wellinator/tyracraft",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Wellinator/tyracraft"
       },
       {
         "name": "Undertale for the PS2",
-        "url": "https://github.com/KreitinnSoftware/Undertale-PS2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/KreitinnSoftware/Undertale-PS2"
       },
       {
         "name": "unofficial Open PS2 Loader Grimdoomer internal exFAT Forked Version",
-        "url": "https://github.com/grimdoomer/Open-PS2-Loader/releases",
-        "thumbnailUrl": ""
+        "url": "https://github.com/grimdoomer/Open-PS2-Loader/releases"
       },
       {
         "name": "unofficial Open PS2 Loader Tenth Anniversary Edition Daily Build by Jay-Jay (Not recommended and abandoned)",
-        "url": "https://github.com/Jay-Jay-OPL/OPL-Daily-Builds",
-        "thumbnailUrl": ""
+        "url": "https://github.com/Jay-Jay-OPL/OPL-Daily-Builds"
       },
       {
         "name": "USBUtil for Splitting ISO Files on fat32 USB for OPL",
-        "url": "https://www.psx-place.com/threads/usbutil-by-iseko.19048/#post-397442",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/usbutil-by-iseko.19048/#post-397442"
       },
       {
         "name": "VMC Bootcard Loader MOD by El_isra",
-        "url": "https://github.com/israpps/bootcard_igr",
-        "thumbnailUrl": ""
+        "url": "https://github.com/israpps/bootcard_igr"
       },
       {
         "name": "WAV to ADP Converter for OPL Theme Sounds/BGM",
-        "url": "https://www.psx-place.com/threads/wav-to-adp-converter-for-opl.21568/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/wav-to-adp-converter-for-opl.21568/"
       },
       {
         "name": "Widescreen Game Cheats by sync-on-luma",
-        "url": "https://github.com/sync-on-luma/PS2-widescreen-cheats",
-        "thumbnailUrl": ""
+        "url": "https://github.com/sync-on-luma/PS2-widescreen-cheats"
       },
       {
         "name": "Widescreen Game Patches",
-        "url": "https://forums.pcsx2.net/Thread-PCSX2-Widescreen-Game-Patches?pid=271674#pid271674",
-        "thumbnailUrl": ""
+        "url": "https://forums.pcsx2.net/Thread-PCSX2-Widescreen-Game-Patches?pid=271674#pid271674"
       },
       {
         "name": "wLaunchELF_isr Downloads Page by El_isra",
-        "url": "https://israpps.github.io/projects/wlaunchelf-isr",
-        "thumbnailUrl": ""
+        "url": "https://israpps.github.io/projects/wlaunchelf-isr"
       },
       {
         "name": "wLaunchELF_isr_HDD (Injection Capable) Project Page",
-        "url": "https://github.com/israpps/wLaunchELF_ISR_HDD",
-        "thumbnailUrl": ""
+        "url": "https://github.com/israpps/wLaunchELF_ISR_HDD"
       },
       {
         "name": "wLaunchELF_kHn (POPSTARTER Launch Capable)",
-        "url": "https://www.psx-place.com/threads/popstarter.19139/page-5#post-254888",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/popstarter.19139/page-5#post-254888"
       },
       {
         "name": "XPF Tool for Extraction and Decompresson",
-        "url": "https://github.com/simontime/xpftool",
-        "thumbnailUrl": ""
+        "url": "https://github.com/simontime/xpftool"
       },
       {
         "name": "Xtreme Elite Boot+ Homepage",
-        "url": "http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/",
-        "thumbnailUrl": ""
+        "url": "http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/"
       },
       {
         "name": "Xtreme Elite Boot+ Mirror",
-        "url": "https://web.archive.org/web/20240729132341/http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20240729132341/http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/"
       }
     ]
   },
@@ -1419,283 +1141,227 @@
     "links": [
       {
         "name": "AEP Emulation Page",
-        "url": "http://www.aep-emu.de/",
-        "thumbnailUrl": ""
+        "url": "http://www.aep-emu.de/"
       },
       {
         "name": "Art and Info for OPL and XEB+",
-        "url": "https://github.com/HowlingWolfHWC/PS2-Art-and-Info-for-OPL-and-XEBPlus",
-        "thumbnailUrl": ""
+        "url": "https://github.com/HowlingWolfHWC/PS2-Art-and-Info-for-OPL-and-XEBPlus"
       },
       {
         "name": "Art DB Backups from OPLManager.com",
-        "url": "https://oplmanager.com/site/?backups",
-        "thumbnailUrl": ""
+        "url": "https://oplmanager.com/site/?backups"
       },
       {
         "name": "Art Hi-Res Covers by Berion and Krahjohlito",
-        "url": "https://app.filen.io/#/d/84d32310-81e2-43c7-8d24-8c49ee281780#FOGFf1breawlIAm4qFvQSw2AIcymlwo4",
-        "thumbnailUrl": ""
+        "url": "https://app.filen.io/#/d/84d32310-81e2-43c7-8d24-8c49ee281780#FOGFf1breawlIAm4qFvQSw2AIcymlwo4"
       },
       {
         "name": "Art NTSC Hi-Res 8bit for OPL (archive)",
-        "url": "https://archive.org/details/ntsc-hi-res-8-bit",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/ntsc-hi-res-8-bit"
       },
       {
         "name": "Art NTSC Hi-Res 8bit for OPL",
-        "url": "https://www.mediafire.com/file/6vik1mdhtai4n48/NTSC_Hi-Res_8-bit.zip/file",
-        "thumbnailUrl": ""
+        "url": "https://www.mediafire.com/file/6vik1mdhtai4n48/NTSC_Hi-Res_8-bit.zip/file"
       },
       {
         "name": "CD Media World",
-        "url": "https://cdmediaworld.com/hardware/cdrom/cd.shtml",
-        "thumbnailUrl": ""
+        "url": "https://cdmediaworld.com/hardware/cdrom/cd.shtml"
       },
       {
         "name": "Cheat Engine Website",
-        "url": "http://www.cheatengine.org/",
-        "thumbnailUrl": ""
+        "url": "http://www.cheatengine.org/"
       },
       {
         "name": "Cover Database by SvenGDK",
-        "url": "https://github.com/SvenGDK/PSMT-Covers",
-        "thumbnailUrl": ""
+        "url": "https://github.com/SvenGDK/PSMT-Covers"
       },
       {
         "name": "Cover Scans by Video Game Museum",
-        "url": "https://www.vgmuseum.com/scans/ps2.html",
-        "thumbnailUrl": ""
+        "url": "https://www.vgmuseum.com/scans/ps2.html"
       },
       {
         "name": "Covers by Kirkland's MANUAL LABOR (evilbadman.com archive)",
-        "url": "https://web.archive.org/web/20231129120159/http://evilbadman.com/",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20231129120159/http://evilbadman.com/"
       },
       {
         "name": "Covers by Kirkland's Manual Labor 4k PS2 Archive",
-        "url": "https://archive.org/details/kirklands-manual-labor-sony-playstation-2-usa-4k-version",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/kirklands-manual-labor-sony-playstation-2-usa-4k-version"
       },
       {
         "name": "Covers by Kirkland's MANUAL LABOR",
-        "url": "http://www.atensionspan.com/evil/tn/index.html",
-        "thumbnailUrl": ""
+        "url": "http://www.atensionspan.com/evil/tn/index.html"
       },
       {
         "name": "Covers by LaunchBox Community Forums - Ultra HD",
-        "url": "https://forums.launchbox-app.com/files/category/187-sony-playstation-2/",
-        "thumbnailUrl": ""
+        "url": "https://forums.launchbox-app.com/files/category/187-sony-playstation-2/"
       },
       {
         "name": "Cover Target Game Covers",
-        "url": "https://covertarget.com/",
-        "thumbnailUrl": ""
+        "url": "https://covertarget.com/"
       },
       {
         "name": "Dirty Cheater / Touffu's Site",
-        "url": "http://blog.goo.ne.jp/touffu",
-        "thumbnailUrl": ""
+        "url": "http://blog.goo.ne.jp/touffu"
       },
       {
         "name": "DobieStation",
-        "url": "https://github.com/PSI-Rockin/DobieStation",
-        "thumbnailUrl": ""
+        "url": "https://github.com/PSI-Rockin/DobieStation"
       },
       {
         "name": "Emu-France",
-        "url": "http://emu-france.com/",
-        "thumbnailUrl": ""
+        "url": "http://emu-france.com/"
       },
       {
         "name": "EmuCR",
-        "url": "http://www.emucr.com",
-        "thumbnailUrl": ""
+        "url": "http://www.emucr.com"
       },
       {
         "name": "Emudreams",
-        "url": "http://www.emudreams.pl/",
-        "thumbnailUrl": ""
+        "url": "http://www.emudreams.pl/"
       },
       {
         "name": "Game Covers github Repo",
-        "url": "https://github.com/xlenore/ps2-covers",
-        "thumbnailUrl": ""
+        "url": "https://github.com/xlenore/ps2-covers"
       },
       {
         "name": "Game Rave Perfect Guides",
-        "url": "http://www.game-rave.com",
-        "thumbnailUrl": ""
+        "url": "http://www.game-rave.com"
       },
       {
         "name": "Gamefaqs PS2 Guides, Cheats, Saves and More",
-        "url": "https://gamefaqs.gamespot.com/ps2",
-        "thumbnailUrl": ""
+        "url": "https://gamefaqs.gamespot.com/ps2"
       },
       {
         "name": "Gamehacking.org",
-        "url": "http://www.gamehacking.org/",
-        "thumbnailUrl": ""
+        "url": "http://www.gamehacking.org/"
       },
       {
         "name": "Gamekult",
-        "url": "http://www.gamekult.com/",
-        "thumbnailUrl": ""
+        "url": "http://www.gamekult.com/"
       },
       {
         "name": "Gaming Alexandria",
-        "url": "https://www.gamingalexandria.com/wp/",
-        "thumbnailUrl": ""
+        "url": "https://www.gamingalexandria.com/wp/"
       },
       {
         "name": "Guide to install Linux on APA and upgrade to the 2.2.21 kernel",
-        "url": "http://ps2-linux.tensioncore.com/download/apa/apa_xrhino_2.2.21-pre1-xr7.html",
-        "thumbnailUrl": ""
+        "url": "http://ps2-linux.tensioncore.com/download/apa/apa_xrhino_2.2.21-pre1-xr7.html"
       },
       {
         "name": "Haldrie's SKSApps Backup",
-        "url": "https://sksapps.haldrie.com/",
-        "thumbnailUrl": ""
+        "url": "https://sksapps.haldrie.com/"
       },
       {
         "name": "Hardlevel.com.br",
-        "url": "https://hardlevel.com.br/",
-        "thumbnailUrl": ""
+        "url": "https://hardlevel.com.br/"
       },
       {
         "name": "HQ HD Disc Case Covers by Berion",
-        "url": "https://www.psx-place.com/threads/hq-disc-case-covers.26545/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/hq-disc-case-covers.26545/"
       },
       {
         "name": "Instructions for setting up dual-boot with Akmem",
-        "url": "https://hp.vector.co.jp/authors/VA008536/ps2linux/akmem.html",
-        "thumbnailUrl": ""
+        "url": "https://hp.vector.co.jp/authors/VA008536/ps2linux/akmem.html"
       },
       {
         "name": "Mobygames",
-        "url": "http://www.mobygames.com/home",
-        "thumbnailUrl": ""
+        "url": "http://www.mobygames.com/home"
       },
       {
         "name": "Open PS2 Loader Theme Guide by Gamerman 5000",
-        "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/"
       },
       {
         "name": "Open PS2 Loader UDPBD Linux Setup Guide by OpenAI",
-        "url": "https://chatgpt.com/share/674216e4-825c-8001-8b0b-14b03d8f8dab",
-        "thumbnailUrl": ""
+        "url": "https://chatgpt.com/share/674216e4-825c-8001-8b0b-14b03d8f8dab"
       },
       {
         "name": "PCSX2 Cheats Collection github",
-        "url": "https://github.com/xs1l3n7x/pcsx2_cheats_collection",
-        "thumbnailUrl": ""
+        "url": "https://github.com/xs1l3n7x/pcsx2_cheats_collection"
       },
       {
         "name": "PCSX2 Emulator's Official Site",
-        "url": "https://pcsx2.net/",
-        "thumbnailUrl": ""
+        "url": "https://pcsx2.net/"
       },
       {
         "name": "Planetemu",
-        "url": "http://planetemu.net/",
-        "thumbnailUrl": ""
+        "url": "http://planetemu.net/"
       },
       {
         "name": "PS Gamers",
-        "url": "https://www.ps-gamers.ru/",
-        "thumbnailUrl": ""
+        "url": "https://www.ps-gamers.ru/"
       },
       {
         "name": "PS2 Bios Archive",
-        "url": "https://archive.org/details/the-ultimate-ps2-bios-collection",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/the-ultimate-ps2-bios-collection"
       },
       {
         "name": "PS2 Covers github",
-        "url": "https://github.com/xlenore/ps2-covers",
-        "thumbnailUrl": ""
+        "url": "https://github.com/xlenore/ps2-covers"
       },
       {
         "name": "PS2 FPU Testing Page by Fobes",
-        "url": "https://ps2.fobes.dev/",
-        "thumbnailUrl": ""
+        "url": "https://ps2.fobes.dev/"
       },
       {
         "name": "PS2 Icons Open Database",
-        "url": "https://ps2iodb.com",
-        "thumbnailUrl": ""
+        "url": "https://ps2iodb.com"
       },
       {
         "name": "PS2 Linux unOfficial Site",
-        "url": "https://ps2linux.no-ip.info/home/",
-        "thumbnailUrl": ""
+        "url": "https://ps2linux.no-ip.info/home/"
       },
       {
         "name": "PS2 Patch Museum",
-        "url": "https://museudospatche.blogspot.com//",
-        "thumbnailUrl": ""
+        "url": "https://museudospatche.blogspot.com//"
       },
       {
         "name": "PS2 Wiki",
-        "url": "https://ps2wiki.github.io/",
-        "thumbnailUrl": ""
+        "url": "https://ps2wiki.github.io/"
       },
       {
         "name": "PS2-Home Archive",
-        "url": "https://web.archive.org/web/20240914160929/https://www.ps2-home.com/forum/app.php/portal?sid=993deede5f113a38f2dc173d002446c1",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20240914160929/https://www.ps2-home.com/forum/app.php/portal?sid=993deede5f113a38f2dc173d002446c1"
       },
       {
         "name": "PS3 Memory Card Adapter Wiki",
-        "url": "https://www.psdevwiki.com/ps3/Card_Adapter",
-        "thumbnailUrl": ""
+        "url": "https://www.psdevwiki.com/ps3/Card_Adapter"
       },
       {
         "name": "PSX Data Center",
-        "url": "https://psxdatacenter.com/psx2/sitenews2.html",
-        "thumbnailUrl": ""
+        "url": "https://psxdatacenter.com/psx2/sitenews2.html"
       },
       {
         "name": "RFGeneration",
-        "url": "http://www.rfgeneration.com",
-        "thumbnailUrl": ""
+        "url": "http://www.rfgeneration.com"
       },
       {
         "name": "ROM Hacking .net Homepage",
-        "url": "https://www.romhacking.net/",
-        "thumbnailUrl": ""
+        "url": "https://www.romhacking.net/"
       },
       {
         "name": "Romstation.fr",
-        "url": "https://www.romstation.fr/multiplayer/",
-        "thumbnailUrl": ""
+        "url": "https://www.romstation.fr/multiplayer/"
       },
       {
         "name": "The Cover Project (Art)",
-        "url": "https://www.thecoverproject.net/view.php?cat_id=6",
-        "thumbnailUrl": ""
+        "url": "https://www.thecoverproject.net/view.php?cat_id=6"
       },
       {
         "name": "Usagiru's Blog",
-        "url": "https://usagiru.blogspot.com/",
-        "thumbnailUrl": ""
+        "url": "https://usagiru.blogspot.com/"
       },
       {
         "name": "Video Game Box Art Box Design Showcase",
-        "url": "https://vgboxart.com/browse-covers/PS2/",
-        "thumbnailUrl": ""
+        "url": "https://vgboxart.com/browse-covers/PS2/"
       },
       {
         "name": "Wayback Machine's SKSApps Backup",
-        "url": "https://web.archive.org/web/20160818064541/http://sksapps.com:80/",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20160818064541/http://sksapps.com:80/"
       },
       {
         "name": "ZigStation2",
-        "url": "https://github.com/FalsePattern/ZigStation2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/FalsePattern/ZigStation2"
       }
     ]
   },
@@ -1704,428 +1370,343 @@
     "links": [
       {
         "name": "PS2 ROM Information PDF",
-        "url": "https://app.filen.io/#/d/c936c3aa-8920-495d-a515-b34b57ac662f#BLTymcMaDnCYQDH7kmLMjRKijWUst6mQ)",
-        "thumbnailUrl": ""
+        "url": "https://app.filen.io/#/d/c936c3aa-8920-495d-a515-b34b57ac662f#BLTymcMaDnCYQDH7kmLMjRKijWUst6mQ)"
       },
       {
         "name": "AssemblerGames Forum Archive",
-        "url": "https://web.archive.org/web/20191206184256/https://assemblergames.com/",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20191206184256/https://assemblergames.com/"
       },
       {
         "name": "BDM Assault by El_isra",
-        "url": "https://www.psx-place.com/threads/42352/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/42352/"
       },
       {
         "name": "Console Mods PS2 Model Differences",
-        "url": "https://consolemods.org/wiki/PS2:Model_Differences",
-        "thumbnailUrl": ""
+        "url": "https://consolemods.org/wiki/PS2:Model_Differences"
       },
       {
         "name": "Console5's PS2 Wiki",
-        "url": "https://wiki.console5.com/wiki/PlayStation_2",
-        "thumbnailUrl": ""
+        "url": "https://wiki.console5.com/wiki/PlayStation_2"
       },
       {
         "name": "DESR Dev github.io",
-        "url": "https://desrdev.github.io/",
-        "thumbnailUrl": ""
+        "url": "https://desrdev.github.io/"
       },
       {
         "name": "DKWDRV Playstation 1 Driver for PS2",
-        "url": "https://github.com/DKWDRV",
-        "thumbnailUrl": ""
+        "url": "https://github.com/DKWDRV"
       },
       {
         "name": "Emuparadise.me",
-        "url": "https://www.emuparadise.me/",
-        "thumbnailUrl": ""
+        "url": "https://www.emuparadise.me/"
       },
       {
         "name": "Fobes.dev by Fobes",
-        "url": "https://fobes.dev/",
-        "thumbnailUrl": ""
+        "url": "https://fobes.dev/"
       },
       {
         "name": "FreeDVDBoot Official github",
-        "url": "https://github.com/ps2homebrew/FreeDVDBoot",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew/FreeDVDBoot"
       },
       {
         "name": "Gamefaqs PS2 Guides, Cheats, Saves and More",
-        "url": "https://gamefaqs.gamespot.com/ps2",
-        "thumbnailUrl": ""
+        "url": "https://gamefaqs.gamespot.com/ps2"
       },
       {
         "name": "gamerman 5000's OPL Theme Guide",
-        "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/"
       },
       {
         "name": "Haldrie's SKSApps Backup",
-        "url": "https://sksapps.haldrie.com/",
-        "thumbnailUrl": ""
+        "url": "https://sksapps.haldrie.com/"
       },
       {
         "name": "Hardlevel.com.br",
-        "url": "https://hardlevel.com.br/",
-        "thumbnailUrl": ""
+        "url": "https://hardlevel.com.br/"
       },
       {
         "name": "HDD Compatibility Chart (Incomplete)",
-        "url": "https://ps2drives.x-pec.com/",
-        "thumbnailUrl": ""
+        "url": "https://ps2drives.x-pec.com/"
       },
       {
         "name": "HDLoader.com Archive",
-        "url": "https://web.archive.org/web/20110106074036/http://hdloader.net/",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20110106074036/http://hdloader.net/"
       },
       {
         "name": "HowlingWolfHWC's official github",
-        "url": "https://github.com/HowlingWolfHWC",
-        "thumbnailUrl": ""
+        "url": "https://github.com/HowlingWolfHWC"
       },
       {
         "name": "ifixit's PS2 Repair Guide and Documentation",
-        "url": "https://www.ifixit.com/Device/PlayStation_2",
-        "thumbnailUrl": ""
+        "url": "https://www.ifixit.com/Device/PlayStation_2"
       },
       {
         "name": "THE INSIDERS ’ GUIDE TO MICROPROCESSOR: HARDWARE REPORT: Sony’s Emotionally Charged Chip (VOLUME 13, NUMBER 5 APRIL 19, 1999)",
-        "url": "https://websrv.cecs.uci.edu/~papers/mpr/MPR/19990419/130501.pdf",
-        "thumbnailUrl": ""
+        "url": "https://websrv.cecs.uci.edu/~papers/mpr/MPR/19990419/130501.pdf"
       },
       {
         "name": "Link World",
-        "url": "https://lnkworld.com/playstation.shtml",
-        "thumbnailUrl": ""
+        "url": "https://lnkworld.com/playstation.shtml"
       },
       {
         "name": "Master Disc Patcher",
-        "url": "https://alex-free.github.io/psdb/master-disc.html",
-        "thumbnailUrl": ""
+        "url": "https://alex-free.github.io/psdb/master-disc.html"
       },
       {
         "name": "MCP2 Manual",
-        "url": "https://qrco.de/bdiiDa",
-        "thumbnailUrl": ""
+        "url": "https://qrco.de/bdiiDa"
       },
       {
         "name": "MECHAPWN",
-        "url": "https://github.com/MechaResearch/MechaPwn",
-        "thumbnailUrl": ""
+        "url": "https://github.com/MechaResearch/MechaPwn"
       },
       {
         "name": "Memory Card Groups Documentation by sync-on-luma",
-        "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin/wiki/Memory-Card-Groups",
-        "thumbnailUrl": ""
+        "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin/wiki/Memory-Card-Groups"
       },
       {
         "name": "MOD Chips PS2 Archive",
-        "url": "https://www.willsconsolemodifications.co.uk/ps2-wiki/chips.php",
-        "thumbnailUrl": ""
+        "url": "https://www.willsconsolemodifications.co.uk/ps2-wiki/chips.php"
       },
       {
         "name": "MOD Chip Disable Procedures and Tips",
-        "url": "https://www.psx-place.com/threads/modchip-disable-procedure.31585/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/modchip-disable-procedure.31585/"
       },
       {
         "name": "Mongoose http Server on PS2 Example",
-        "url": "https://github.com/F0bes/ps2_http",
-        "thumbnailUrl": ""
+        "url": "https://github.com/F0bes/ps2_http"
       },
       {
         "name": "Neutrino Launcher Wiki Compatibility List sync-on-luma",
-        "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin/wiki/Compatibility-List",
-        "thumbnailUrl": ""
+        "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin/wiki/Compatibility-List"
       },
       {
         "name": "Obscure Gamers Archive",
-        "url": "https://archive.obscuregamers.com/",
-        "thumbnailUrl": ""
+        "url": "https://archive.obscuregamers.com/"
       },
       {
         "name": "Open PS2 Loader Frontend for Neutrino",
-        "url": "https://www.psx-place.com/threads/opl-based-gui-frontend-for-neutrino.42166/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/opl-based-gui-frontend-for-neutrino.42166/"
       },
       {
         "name": "Open PS2 Loader Official Page",
-        "url": "https://www.ps2homebrew.org/Open-PS2-Loader/",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2homebrew.org/Open-PS2-Loader/"
       },
       {
         "name": "Open PS2 Loader NAS SMB Troubleshooting Tips",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=12689#p49670",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=12689#p49670"
       },
       {
         "name": "Open PS2 Loader NAS SMB Troubleshooting Tips (Archive)",
-        "url": "https://web.archive.org/web/20241208123804/https://www.ps2-home.com/forum/viewtopic.php?t=12689#p49670",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20241208123804/https://www.ps2-home.com/forum/viewtopic.php?t=12689#p49670"
       },
       {
         "name": "Open PS2 Loader SMB Guide (Archive)",
-        "url": "https://web.archive.org/web/20241121150504/https://www.ps2-home.com/forum/viewtopic.php?t=3692",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20241121150504/https://www.ps2-home.com/forum/viewtopic.php?t=3692"
       },
       {
         "name": "Open PS2 Loader SMB Guide for Linux Systems",
-        "url": "https://www.psx-place.com/threads/opl-smb-linux-configuration-guide.20638/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/opl-smb-linux-configuration-guide.20638/"
       },
       {
         "name": "Open PS2 Loader SMB Guide for Windows",
-        "url": "https://www.psx-place.com/threads/opl-network-connection-in-windows-10.40899/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/opl-network-connection-in-windows-10.40899/"
       },
       {
         "name": "Open PS2 Loader SMB Guide",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=3692",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=3692"
       },
       {
         "name": "Open PS2 Loader SMB Troubleshooting for Windows (Archive)",
-        "url": "https://web.archive.org/web/20241121143157/https://ps2-home.com/forum/viewtopic.php?t=4926",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20241121143157/https://ps2-home.com/forum/viewtopic.php?t=4926"
       },
       {
         "name": "Open PS2 Loader SMB Troubleshooting for Windows",
-        "url": "https://ps2-home.com/forum/viewtopic.php?t=4926",
-        "thumbnailUrl": ""
+        "url": "https://ps2-home.com/forum/viewtopic.php?t=4926"
       },
       {
         "name": "Open PS2 Loader UDPBD",
-        "url": "https://www.psx-place.com/threads/testers-needed-udpbd-the-next-generation-of-loading-games-through-lan-on-a-ps2.40132/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/testers-needed-udpbd-the-next-generation-of-loading-games-through-lan-on-a-ps2.40132/"
       },
       {
         "name": "Open PS2 Loader User Guide for 0.9.3",
-        "url": "https://www.ps2homebrew.org/Open-PS2-Loader-User-Guide/",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2homebrew.org/Open-PS2-Loader-User-Guide/"
       },
       {
         "name": "PCSX2 Emulator's Official Site",
-        "url": "https://pcsx2.net/",
-        "thumbnailUrl": ""
+        "url": "https://pcsx2.net/"
       },
       {
         "name": "POPSTARTER Official Release and Resources Thread",
-        "url": "https://www.psx-place.com/threads/popstarter.19139/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/popstarter.19139/"
       },
       {
         "name": "PPF Relatted Softwares and Information",
-        "url": "https://consolecopyworld.com/ps2/ps2_ppf.shtml",
-        "thumbnailUrl": ""
+        "url": "https://consolecopyworld.com/ps2/ps2_ppf.shtml"
       },
       {
         "name": "PS Gamers",
-        "url": "https://www.ps-gamers.ru/",
-        "thumbnailUrl": ""
+        "url": "https://www.ps-gamers.ru/"
       },
       {
         "name": "PS2 Developer github",
-        "url": "https://github.com/ps2dev",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2dev"
       },
       {
         "name": "PS2 Developer Wiki",
-        "url": "https://www.psdevwiki.com/ps2/",
-        "thumbnailUrl": ""
+        "url": "https://www.psdevwiki.com/ps2/"
       },
       {
         "name": "PS2 Documentation mirror github",
-        "url": "https://github.com/ps2dev-mirror/doc",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2dev-mirror/doc"
       },
       {
         "name": "PS2 Homebrew github",
-        "url": "https://github.com/ps2homebrew",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2homebrew"
       },
       {
         "name": "PS2 Homebrew.org Site",
-        "url": "https://www.ps2homebrew.org/",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2homebrew.org/"
       },
       {
         "name": "PS2 Icon Format v0.5 Documentation",
-        "url": "http://www.csclub.uwaterloo.ca:11068/mymc/ps2icon-0.5.pdf",
-        "thumbnailUrl": ""
+        "url": "http://www.csclub.uwaterloo.ca:11068/mymc/ps2icon-0.5.pdf"
       },
       {
         "name": "PS2 Icons Open Database",
-        "url": "https://ps2iodb.com",
-        "thumbnailUrl": ""
+        "url": "https://ps2iodb.com"
       },
       {
         "name": "PS2 Linux unOfficial Site",
-        "url": "https://ps2linux.no-ip.info/home/",
-        "thumbnailUrl": ""
+        "url": "https://ps2linux.no-ip.info/home/"
       },
       {
         "name": "PS2 Memory Card File System Documentation",
-        "url": "http://www.csclub.uwaterloo.ca:11068/mymc/ps2mcfs.html",
-        "thumbnailUrl": ""
+        "url": "http://www.csclub.uwaterloo.ca:11068/mymc/ps2mcfs.html"
       },
       {
         "name": "PS2 Programming Documents github",
-        "url": "https://github.com/DarrenRainey/PS2-Programming-Docs",
-        "thumbnailUrl": ""
+        "url": "https://github.com/DarrenRainey/PS2-Programming-Docs"
       },
       {
         "name": "PS2 Save Tools Homepage",
-        "url": "https://www.ps2savetools.com/",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2savetools.com/"
       },
       {
         "name": "PS2 Wiki",
-        "url": "https://ps2wiki.github.io/",
-        "thumbnailUrl": ""
+        "url": "https://ps2wiki.github.io/"
       },
       {
         "name": "PS2-Home Archive",
-        "url": "https://web.archive.org/web/20240914160929/https://www.ps2-home.com/forum/app.php/portal?sid=993deede5f113a38f2dc173d002446c1",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20240914160929/https://www.ps2-home.com/forum/app.php/portal?sid=993deede5f113a38f2dc173d002446c1"
       },
       {
         "name": "ps2tek's PS2 Comprehensive Hardware Reference",
-        "url": "https://psi-rockin.github.io/ps2tek/",
-        "thumbnailUrl": ""
+        "url": "https://psi-rockin.github.io/ps2tek/"
       },
       {
         "name": "PS2Wiki Team github",
-        "url": "https://github.com/ps2wiki",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ps2wiki"
       },
       {
         "name": "PS3 MCA Exploit",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=297",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=297"
       },
       {
         "name": "PS3 Memory Card Adapter Wiki",
-        "url": "https://www.psdevwiki.com/ps3/Card_Adapter",
-        "thumbnailUrl": ""
+        "url": "https://www.psdevwiki.com/ps3/Card_Adapter"
       },
       {
         "name": "PSBBN Files",
-        "url": "https://archive.org/search?query=PSBBN",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/search?query=PSBBN"
       },
       {
         "name": "PSBBN Guide",
-        "url": "https://bungiefan.tripod.com/psbbn_01.html",
-        "thumbnailUrl": ""
+        "url": "https://bungiefan.tripod.com/psbbn_01.html"
       },
       {
         "name": "PSBBN Install Guide",
-        "url": "https://bungiefan.tripod.com/psbbninstall_01.html",
-        "thumbnailUrl": ""
+        "url": "https://bungiefan.tripod.com/psbbninstall_01.html"
       },
       {
         "name": "PSBBN Lost Channels",
-        "url": "https://www.psx-place.com/threads/playstation-bb-lost-channels.31940/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/playstation-bb-lost-channels.31940/"
       },
       {
         "name": "PSBBN Portal by Vitas155",
-        "url": "https://psbbn.ru/",
-        "thumbnailUrl": ""
+        "url": "https://psbbn.ru/"
       },
       {
         "name": "PSX Data Center",
-        "url": "https://psxdatacenter.com/psx2/sitenews2.html",
-        "thumbnailUrl": ""
+        "url": "https://psxdatacenter.com/psx2/sitenews2.html"
       },
       {
         "name": "Redump.org's PS2 Verification Database",
-        "url": "http://redump.org/discs/system/ps2/",
-        "thumbnailUrl": ""
+        "url": "http://redump.org/discs/system/ps2/"
       },
       {
         "name": "Restorative Land Geocities (Old)",
-        "url": "https://geocities.restorativland.org/SiliconValley/Station/8269/",
-        "thumbnailUrl": ""
+        "url": "https://geocities.restorativland.org/SiliconValley/Station/8269/"
       },
       {
         "name": "RETRORGB's PS2 Page",
-        "url": "https://www.retrorgb.com/playstation2.html",
-        "thumbnailUrl": ""
+        "url": "https://www.retrorgb.com/playstation2.html"
       },
       {
         "name": "ROM Hacking .net Homepage",
-        "url": "https://www.romhacking.net/",
-        "thumbnailUrl": ""
+        "url": "https://www.romhacking.net/"
       },
       {
         "name": "Savegame Icon Library and Documentation github",
-        "url": "https://github.com/ticky/ps2icon",
-        "thumbnailUrl": ""
+        "url": "https://github.com/ticky/ps2icon"
       },
       {
         "name": "SD2PSX Official github",
-        "url": "https://github.com/sd2psx",
-        "thumbnailUrl": ""
+        "url": "https://github.com/sd2psx"
       },
       {
         "name": "ShaolinAssassin's OPL Theme Guide",
-        "url": "https://web.archive.org/web/20200622004109/https://bitbucket.org/ShaolinAssassin/open-ps2-loader-0.9.3-documentation-project/wiki/theme-guide",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20200622004109/https://bitbucket.org/ShaolinAssassin/open-ps2-loader-0.9.3-documentation-project/wiki/theme-guide"
       },
       {
         "name": "ShaolinAssassin's POPSTARTER Wiki",
-        "url": "https://bitbucket.org/ShaolinAssassin/popstarter-documentation-stuff/wiki/browse/",
-        "thumbnailUrl": ""
+        "url": "https://bitbucket.org/ShaolinAssassin/popstarter-documentation-stuff/wiki/browse/"
       },
       {
         "name": "The Cutting Room Floor Game Content Wiki",
-        "url": "https://tcrf.net/Category:PlayStation_2_games",
-        "thumbnailUrl": ""
+        "url": "https://tcrf.net/Category:PlayStation_2_games"
       },
       {
         "name": "Tonyhax International by Alex-free",
-        "url": "https://alex-free.github.io/tonyhax-international/",
-        "thumbnailUrl": ""
+        "url": "https://alex-free.github.io/tonyhax-international/"
       },
       {
         "name": "uLaunchELF Wiki",
-        "url": "http://ps2ulaunchelf.pbworks.com/w/page/19520134/FrontPage",
-        "thumbnailUrl": ""
+        "url": "http://ps2ulaunchelf.pbworks.com/w/page/19520134/FrontPage"
       },
       {
         "name": "Video Game Museum",
-        "url": "https://www.vgmuseum.com/ps2.htm",
-        "thumbnailUrl": ""
+        "url": "https://www.vgmuseum.com/ps2.htm"
       },
       {
         "name": "Wayback Machine's FreeMCBoot.info Backup",
-        "url": "https://web.archive.org/web/20130529175034/http://freemcboot.info/index.html",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20130529175034/http://freemcboot.info/index.html"
       },
       {
         "name": "Wayback Machine's OpenPS2Loader.info Backup",
-        "url": "https://web.archive.org/web/20130601035035/http://openps2loader.info:80/",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20130601035035/http://openps2loader.info:80/"
       },
       {
         "name": "Wayback Machine's SKSApps Backup",
-        "url": "https://web.archive.org/web/20160818064541/http://sksapps.com:80/",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20160818064541/http://sksapps.com:80/"
       },
       {
         "name": "Xtreme Elite Boot+ Homepage",
-        "url": "http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/",
-        "thumbnailUrl": ""
+        "url": "http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/"
       },
       {
         "name": "Xtreme Elite Boot+ Mirror",
-        "url": "https://web.archive.org/web/20240729132341/http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20240729132341/http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/"
       }
     ]
   },
@@ -2134,178 +1715,143 @@
     "links": [
       {
         "name": "8bitdo.com's PS2 Accessories",
-        "url": "https://www.8bitdo.com/#Products",
-        "thumbnailUrl": ""
+        "url": "https://www.8bitdo.com/#Products"
       },
       {
         "name": "8bitmods.com's PS2 Accessories",
-        "url": "https://8bitmods.com/shop-by-console/sony/playstation-2/",
-        "thumbnailUrl": ""
+        "url": "https://8bitmods.com/shop-by-console/sony/playstation-2/"
       },
       {
         "name": "Arthrimus PS2 Mods and Parts - including Slim HDD Mod Iflash2PS2",
-        "url": "https://arthrimus.com/",
-        "thumbnailUrl": ""
+        "url": "https://arthrimus.com/"
       },
       {
         "name": "BitFunx Official 2.0 IDE to SATA Chip Swap for Official PS2 Network Adapters",
-        "url": "https://www.aliexpress.com/item/32809586287.html",
-        "thumbnailUrl": ""
+        "url": "https://www.aliexpress.com/item/32809586287.html"
       },
       {
         "name": "BitFunx Official Gamestar SATA Network (No Network) Adapter - Not recommended/Mixed Reviews",
-        "url": "https://www.aliexpress.com/item/2251832549771984.html",
-        "thumbnailUrl": ""
+        "url": "https://www.aliexpress.com/item/2251832549771984.html"
       },
       {
         "name": "BitFunx Official MX4SIO",
-        "url": "https://www.aliexpress.com/item/3256804671298047.html",
-        "thumbnailUrl": ""
+        "url": "https://www.aliexpress.com/item/3256804671298047.html"
       },
       {
         "name": "Bitfunx sd2psx Release(MemCard Gen2)",
-        "url": "https://www.aliexpress.us/item/3256807978476851.html",
-        "thumbnailUrl": ""
+        "url": "https://www.aliexpress.us/item/3256807978476851.html"
       },
       {
         "name": "Bitfunx sd2psx (MemCard Gen2) mirror",
-        "url": "https://www.aliexpress.us/item/3256807978598346.html",
-        "thumbnailUrl": ""
+        "url": "https://www.aliexpress.us/item/3256807978598346.html"
       },
       {
         "name": "Blue Retro Core PADEMU Device",
-        "url": "https://www.blue-retro.com/",
-        "thumbnailUrl": ""
+        "url": "https://www.blue-retro.com/"
       },
       {
         "name": "Brook's Wingman PS2 Controller Adapter",
-        "url": "https://www.brookaccessory.com/products/wingmanps2/index.html",
-        "thumbnailUrl": ""
+        "url": "https://www.brookaccessory.com/products/wingmanps2/index.html"
       },
       {
         "name": "ElectronAnalog HDMI Mod",
-        "url": "https://electron-shepherd.com/collections/all/products/electronanalog",
-        "thumbnailUrl": ""
+        "url": "https://electron-shepherd.com/collections/all/products/electronanalog"
       },
       {
         "name": "ElectronPulse HDMI Plug and Play",
-        "url": "https://electron-shepherd.com/products/electronpulse",
-        "thumbnailUrl": ""
+        "url": "https://electron-shepherd.com/products/electronpulse"
       },
       {
         "name": "Gusse Retro Shop's Mods and Parts - including Methylene",
-        "url": "https://gusse.in/",
-        "thumbnailUrl": ""
+        "url": "https://gusse.in/"
       },
       {
         "name": "Helder's Gametech/MC2SIO",
-        "url": "https://heldergametech.com/",
-        "thumbnailUrl": ""
+        "url": "https://heldergametech.com/"
       },
       {
         "name": "Kaico SATA Network Adapter Upgrade",
-        "url": "https://a.co/d/7itdPZ3",
-        "thumbnailUrl": ""
+        "url": "https://a.co/d/7itdPZ3"
       },
       {
         "name": "Kaico Gamestar SATA Network (No Network) HDD Adapter - Not recommended/Mixed Reviews",
-        "url": "https://a.co/d/6Sr3xDZ",
-        "thumbnailUrl": ""
+        "url": "https://a.co/d/6Sr3xDZ"
       },
       {
         "name": "Kaico PS1/PS2 AV to HDMI Cable for all PS1 & PS2 Models - Swaps between RGB/Component",
-        "url": "https://a.co/d/dKIL69c",
-        "thumbnailUrl": ""
+        "url": "https://a.co/d/dKIL69c"
       },
       {
         "name": "MemCardPro2 VMC Device",
-        "url": "https://8bitmods.com/memcard-pro2-for-ps2-and-ps1-smoke-black/#tab-description",
-        "thumbnailUrl": ""
+        "url": "https://8bitmods.com/memcard-pro2-for-ps2-and-ps1-smoke-black/#tab-description"
       },
       {
         "name": "MG2BOX (MX4SIO)",
-        "url": "https://www.aliexpress.us/item/3256805234828516.html",
-        "thumbnailUrl": ""
+        "url": "https://www.aliexpress.us/item/3256805234828516.html"
       },
       {
         "name": "Official Blue Retro by darthcloud",
-        "url": "https://darthcloud.itch.io/blueretro",
-        "thumbnailUrl": ""
+        "url": "https://darthcloud.itch.io/blueretro"
       },
       {
         "name": "Official Sony Network Adapters (Recommended via Ebay or other resellers)",
-        "url": "https://www.psdevwiki.com/ps2/Network_Adaptor",
-        "thumbnailUrl": ""
+        "url": "https://www.psdevwiki.com/ps2/Network_Adaptor"
       },
       {
         "name": "pcp.tech's SD2PSX Ebay Listing - Verified SD2PSX Reseller on Ebay",
-        "url": "https://www.ebay.com/itm/314357590044",
-        "thumbnailUrl": ""
+        "url": "https://www.ebay.com/itm/314357590044"
       },
       {
         "name": "PS2 Easy HDD",
-        "url": "https://github.com/jeffqchen/PS2EasyHDD",
-        "thumbnailUrl": ""
+        "url": "https://github.com/jeffqchen/PS2EasyHDD"
       },
       {
         "name": "RETRO Gem HDMI Mods",
-        "url": "https://www.pixelfx.co/product-page/retro-gem-universal-hdmi-upscaler-kit",
-        "thumbnailUrl": ""
+        "url": "https://www.pixelfx.co/product-page/retro-gem-universal-hdmi-upscaler-kit"
       },
       {
         "name": "RETROTink Video Solutions",
-        "url": "https://www.retrotink.com/",
-        "thumbnailUrl": ""
+        "url": "https://www.retrotink.com/"
       },
       {
         "name": "RGEEK Gamestar SATA Network (No Network) HDD Adapter - Not recommended/Mixed Reviews",
-        "url": "https://a.co/d/2LvnbWI",
-        "thumbnailUrl": ""
+        "url": "https://a.co/d/2LvnbWI"
       },
       {
         "name": "SD2PSX VMC Device",
-        "url": "https://sd2psx.net/",
-        "thumbnailUrl": ""
+        "url": "https://sd2psx.net/"
       },
       {
         "name": "USB Optical Wireless Bluetooth Transmitter 2 in 1 Audio Transmitter Adapter Low Lantency For TV PC USB Wireless Audio Adapter",
-        "url": "https://www.aliexpress.us/item/3256806809890714.html",
-        "thumbnailUrl": ""
+        "url": "https://www.aliexpress.us/item/3256806809890714.html"
       },
       {
         "name": "Bitfunx AliExpress Store",
-        "url": "https://bitfunx.aliexpress.com/store/1100940502/pages/all-items.html",
-        "thumbnailUrl": ""
+        "url": "https://bitfunx.aliexpress.com/store/1100940502/pages/all-items.html"
       },
       {
         "name": "GitHub: PSxMemCardGen2 by GameBitFunx",
-        "url": "https://github.com/gamebitfunx/PSxMemCardGen2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/gamebitfunx/PSxMemCardGen2"
       },
       {
         "name": "GitHub: PicoMemcard by Dangiu",
-        "url": "https://github.com/dangiu/PicoMemcard",
-        "thumbnailUrl": ""
+        "url": "https://github.com/dangiu/PicoMemcard"
       },
       {
         "name": "GitHub: PicoDrive by Irixxxx",
-        "url": "https://github.com/irixxxx/picodrive",
-        "thumbnailUrl": ""
+        "url": "https://github.com/irixxxx/picodrive"
       },
       {
         "name": "Megidish Retro Shop",
-        "url": "https://megidish.net/",
-        "thumbnailUrl": ""
+        "url": "https://megidish.net/"
       },
       {
         "name": "AliExpress: Additional Hardware",
-        "url": "https://www.aliexpress.us/item/3256805974551961.html",
-        "thumbnailUrl": ""
+        "url": "https://www.aliexpress.us/item/3256805974551961.html"
       },
       {
         "name": "AliExpress: Item EusgZGC",
-        "url": "https://a.aliexpress.com/_EusgZGC",
-        "thumbnailUrl": ""
+        "url": "https://a.aliexpress.com/_EusgZGC"
       }
     ]
   },
@@ -2314,138 +1860,111 @@
     "links": [
       {
         "name": "Assorted OPL Theme Relatted Documentation",
-        "url": "https://mega.nz/folder/h6kWwZKb#TitJOS1xFjKBP9tHDA7c3Q",
-        "thumbnailUrl": ""
+        "url": "https://mega.nz/folder/h6kWwZKb#TitJOS1xFjKBP9tHDA7c3Q"
       },
       {
         "name": "BarbudimGamer's youtube OPL Themes",
-        "url": "https://www.youtube.com/@BarbudimGamer/search?query=JVSG",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@BarbudimGamer/search?query=JVSG"
       },
       {
         "name": "Controversas Nerds's youtube OPL Themes",
-        "url": "https://youtube.com/playlist?list=PLYa7yhJPUuTWTbnVNZXYvyonCYneyG4-z&si=U6UJkMiwviLC9xDi",
-        "thumbnailUrl": ""
+        "url": "https://youtube.com/playlist?list=PLYa7yhJPUuTWTbnVNZXYvyonCYneyG4-z&si=U6UJkMiwviLC9xDi"
       },
       {
         "name": "Crymax's blogspot OPL Themes",
-        "url": "https://crymaax.blogspot.com/",
-        "thumbnailUrl": ""
+        "url": "https://crymaax.blogspot.com/"
       },
       {
         "name": "Crymax's youtube OPL Themes",
-        "url": "https://www.youtube.com/@CRYMAXPS2/search?query=OPL",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@CRYMAXPS2/search?query=OPL"
       },
       {
         "name": "FEH e RICK OPL Theme Blog",
-        "url": "https://fehps2.blogspot.com/",
-        "thumbnailUrl": ""
+        "url": "https://fehps2.blogspot.com/"
       },
       {
         "name": "GaboGames's youtube OPL Themes missing",
-        "url": "https://www.youtube.com/@gabogamesbol/search?query=tema",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@gabogamesbol/search?query=tema"
       },
       {
         "name": "GaboGames's youtube OPL Themes",
-        "url": "https://youtube.com/playlist?list=PL59JnGTaT2IuezfrfgH7y7cgXudavQzwX&si=Quj_tI5xpRKzfq55",
-        "thumbnailUrl": ""
+        "url": "https://youtube.com/playlist?list=PL59JnGTaT2IuezfrfgH7y7cgXudavQzwX&si=Quj_tI5xpRKzfq55"
       },
       {
         "name": "gamerman 5000's OPL Theme Guide",
-        "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/"
       },
       {
         "name": "Juanky's youtube OPL Themes",
-        "url": "https://www.youtube.com/@JUANKYPS2",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@JUANKYPS2"
       },
       {
         "name": "Leroy Gates's youtube OPL Themes",
-        "url": "https://www.youtube.com/@leroygates3239/search?query=Theme",
-        "thumbnailUrl": ""
+        "url": "https://www.youtube.com/@leroygates3239/search?query=Theme"
       },
       {
         "name": "Mega.nz OPL Themes Package 1",
-        "url": "https://mega.nz/folder/onk0gLhY#FbmAnbQmyp3ZBd5Xf8_sMQ",
-        "thumbnailUrl": ""
+        "url": "https://mega.nz/folder/onk0gLhY#FbmAnbQmyp3ZBd5Xf8_sMQ"
       },
       {
         "name": "Mega.nz OPL Themes Package 2",
-        "url": "https://mega.nz/folder/xudghTRZ#kLb6gl5cJhUTi4qK70qxYg",
-        "thumbnailUrl": ""
+        "url": "https://mega.nz/folder/xudghTRZ#kLb6gl5cJhUTi4qK70qxYg"
       },
       {
         "name": "OPL Manager's OPL Simulator Themes Guide",
-        "url": "https://oplmanager.com/site/?docs#oplsimulator",
-        "thumbnailUrl": ""
+        "url": "https://oplmanager.com/site/?docs#oplsimulator"
       },
       {
         "name": "OPLMania's blogspot OPL Themes",
-        "url": "https://oplmania.blogspot.com/2018/08/tema-ps2-plus-v1.html",
-        "thumbnailUrl": ""
+        "url": "https://oplmania.blogspot.com/2018/08/tema-ps2-plus-v1.html"
       },
       {
         "name": "PixeliGer's github OPL Themes",
-        "url": "https://github.com/PixeliGer?tab=repositories",
-        "thumbnailUrl": ""
+        "url": "https://github.com/PixeliGer?tab=repositories"
       },
       {
         "name": "PS2-Home's OPL Themes (Archive)",
-        "url": "https://web.archive.org/web/20241122180419/https://www.ps2-home.com/forum/viewforum.php?f=51&sid=fcd3b52bdb73ea4c2573e11220a20dbd",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20241122180419/https://www.ps2-home.com/forum/viewforum.php?f=51&sid=fcd3b52bdb73ea4c2573e11220a20dbd"
       },
       {
         "name": "PS2-Home's OPL Themes Guide (Archive)",
-        "url": "https://web.archive.org/web/20241122180601/https://www.ps2-home.com/forum/viewtopic.php?f=111&t=1782",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20241122180601/https://www.ps2-home.com/forum/viewtopic.php?f=111&t=1782"
       },
       {
         "name": "PS2-Home's OPL Themes Guide",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?f=111&t=1782",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2-home.com/forum/viewtopic.php?f=111&t=1782"
       },
       {
         "name": "PS2-Home's OPL Themes",
-        "url": "https://www.ps2-home.com/forum/viewforum.php?f=51&sid=fcd3b52bdb73ea4c2573e11220a20dbd",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2-home.com/forum/viewforum.php?f=51&sid=fcd3b52bdb73ea4c2573e11220a20dbd"
       },
       {
         "name": "PS2infinity's blogspot OPL Themes",
-        "url": "https://ps2infinitymod.blogspot.com/",
-        "thumbnailUrl": ""
+        "url": "https://ps2infinitymod.blogspot.com/"
       },
       {
         "name": "PS2THM's blogspot OPL Themes",
-        "url": "https://thmps2.blogspot.com/",
-        "thumbnailUrl": ""
+        "url": "https://thmps2.blogspot.com/"
       },
       {
         "name": "PSX-Place.com OPL Themes",
-        "url": "https://www.psx-place.com/forums/themes-for-opl.229/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/forums/themes-for-opl.229/"
       },
       {
         "name": "ShaolinAssassin's OPL Theme Guide",
-        "url": "https://web.archive.org/web/20200622004109/https://bitbucket.org/ShaolinAssassin/open-ps2-loader-0.9.3-documentation-project/wiki/theme-guide",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20200622004109/https://bitbucket.org/ShaolinAssassin/open-ps2-loader-0.9.3-documentation-project/wiki/theme-guide"
       },
       {
         "name": "Skinneblack's youtube OPL Themes",
-        "url": "https://youtube.com/playlist?list=PLxne_h-fAME2ZN-0LsFjKiGVTxXJAKoZC&si=N5hpgaSNm6TXWxiC",
-        "thumbnailUrl": ""
+        "url": "https://youtube.com/playlist?list=PLxne_h-fAME2ZN-0LsFjKiGVTxXJAKoZC&si=N5hpgaSNm6TXWxiC"
       },
       {
         "name": "SKSApps OPL Theme Guide Archive (Outdated)",
-        "url": "https://web.archive.org/web/20170412171607/http://opl.sksapps.com/index.php?opl=theme.html",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20170412171607/http://opl.sksapps.com/index.php?opl=theme.html"
       },
       {
         "name": "WAV to ADP Converter for OPL Theme Sounds/BGM",
-        "url": "https://www.psx-place.com/threads/wav-to-adp-converter-for-opl.21568/",
-        "thumbnailUrl": ""
+        "url": "https://www.psx-place.com/threads/wav-to-adp-converter-for-opl.21568/"
       }
     ]
   },
@@ -2454,28 +1973,23 @@
     "links": [
       {
         "name": "PSBBN Definitive English Patch v2",
-        "url": "https://archive.org/details/psbbn-definitive-english-patch-v2",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/psbbn-definitive-english-patch-v2"
       },
       {
         "name": "CosmicScale's PSBBN Definitive English Patch",
-        "url": "https://github.com/CosmicScale/PSBBN-Definitive-English-Patch/",
-        "thumbnailUrl": ""
+        "url": "https://github.com/CosmicScale/PSBBN-Definitive-English-Patch/"
       },
       {
         "name": "PSBBN PKGs",
-        "url": "https://archive.org/details/psbbn-pkgs",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/psbbn-pkgs"
       },
       {
         "name": "PSBBN Archive",
-        "url": "https://archive.org/details/psbbn",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/psbbn"
       },
       {
         "name": "PSBBN Footage (Feb 2020)",
-        "url": "https://archive.org/details/PSBBN-Footage-Feb-2020",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/PSBBN-Footage-Feb-2020"
       }
     ]
   },
@@ -2484,18 +1998,15 @@
     "links": [
       {
         "name": "GameHacking.org - PS2",
-        "url": "https://gamehacking.org/system/ps2",
-        "thumbnailUrl": ""
+        "url": "https://gamehacking.org/system/ps2"
       },
       {
         "name": "Crystal Chip R34 v3",
-        "url": "https://github.com/saildot4k/Crystal-Chip-R34-v3",
-        "thumbnailUrl": ""
+        "url": "https://github.com/saildot4k/Crystal-Chip-R34-v3"
       },
       {
         "name": "PS2 Chip Modifications Wiki",
-        "url": "https://www.willsconsolemodifications.co.uk/ps2-wiki/chips.php",
-        "thumbnailUrl": ""
+        "url": "https://www.willsconsolemodifications.co.uk/ps2-wiki/chips.php"
       }
     ]
   },
@@ -2504,93 +2015,75 @@
     "links": [
       {
         "name": "PSBBN Definitive English Patch v2",
-        "url": "https://archive.org/details/psbbn-definitive-english-patch-v2",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/psbbn-definitive-english-patch-v2"
       },
       {
         "name": "CosmicScale's PSBBN Definitive English Patch",
-        "url": "https://github.com/CosmicScale/PSBBN-Definitive-English-Patch/",
-        "thumbnailUrl": ""
+        "url": "https://github.com/CosmicScale/PSBBN-Definitive-English-Patch/"
       },
       {
         "name": "PSBBN PKGs",
-        "url": "https://archive.org/details/psbbn-pkgs",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/psbbn-pkgs"
       },
       {
         "name": "PSBBN Archive",
-        "url": "https://archive.org/details/psbbn",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/psbbn"
       },
       {
         "name": "PSBBN Forum Discussion",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=100",
-        "thumbnailUrl": ""
+        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=100"
       },
       {
         "name": "Kernelloader 3.0 for installing Linux without the Official Sony Linux RTE disc",
-        "url": "https://sourceforge.net/projects/kernelloader/files/Kernelloader/Kernelloader%203.0/",
-        "thumbnailUrl": ""
+        "url": "https://sourceforge.net/projects/kernelloader/files/Kernelloader/Kernelloader%203.0/"
       },
       {
         "name": "Linux 2.2.1 from Sony's Linux Toolkit",
-        "url": "https://github.com/jur/linux-2.2.1-ps2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/jur/linux-2.2.1-ps2"
       },
       {
         "name": "Linux 2.4.17 Patched for PS2",
-        "url": "https://github.com/rickgaiser/linux-2.4.17-ps2",
-        "thumbnailUrl": ""
+        "url": "https://github.com/rickgaiser/linux-2.4.17-ps2"
       },
       {
         "name": "Linux 2.6.35.4 mipsel PS2 Mod",
-        "url": "https://github.com/anikkcah/PS2Linux",
-        "thumbnailUrl": ""
+        "url": "https://github.com/anikkcah/PS2Linux"
       },
       {
         "name": "Linux Kernel 2.2.1 for PS2",
-        "url": "https://github.com/azagramac/ps2-linux",
-        "thumbnailUrl": ""
+        "url": "https://github.com/azagramac/ps2-linux"
       },
       {
         "name": "Linux Kernel for PS2",
-        "url": "https://github.com/frno7/linux",
-        "thumbnailUrl": ""
+        "url": "https://github.com/frno7/linux"
       },
       {
         "name": "Linux kernel source: linux-2.2.21-pre1-xr7.tar.gz",
-        "url": "https://archive.org/download/linux-playstation2-sources/linux-2.2.21-pre1-xr7.tar.gz",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/download/linux-playstation2-sources/linux-2.2.21-pre1-xr7.tar.gz"
       },
       {
         "name": "Bomberman Online",
-        "url": "https://archive.org/details/bomberman-online-10300-0",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/bomberman-online-10300-0"
       },
       {
         "name": "SLBB-00001",
-        "url": "https://archive.org/details/SLBB-00001",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/SLBB-00001"
       },
       {
         "name": "PS2 HDD Images and Dumps",
-        "url": "https://archive.org/details/ps2-hdd-imgs-dumps",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/ps2-hdd-imgs-dumps"
       },
       {
         "name": "PSBBN Files on Archive.org",
-        "url": "https://archive.org/search?query=PSBBN",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/search?query=PSBBN"
       },
       {
         "name": "Linux Sources for PlayStation 2",
-        "url": "https://archive.org/details/linux-playstation2-sources",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/linux-playstation2-sources"
       },
       {
         "name": "PSBBN Footage (Feb 2020)",
-        "url": "https://archive.org/details/PSBBN-Footage-Feb-2020",
-        "thumbnailUrl": ""
+        "url": "https://archive.org/details/PSBBN-Footage-Feb-2020"
       }
     ]
   },
@@ -2599,8 +2092,7 @@
     "links": [
       {
         "name": "Athena Environment",
-        "url": "https://athena-env.vercel.app/",
-        "thumbnailUrl": ""
+        "url": "https://athena-env.vercel.app/"
       }
     ]
   },
@@ -2609,13 +2101,11 @@
     "links": [
       {
         "name": "GameHacking.org - PS2",
-        "url": "https://gamehacking.org/system/ps2",
-        "thumbnailUrl": ""
+        "url": "https://gamehacking.org/system/ps2"
       },
       {
         "name": "CodeBreaker PS2 File Utility",
-        "url": "https://github.com/mlafeldt/cb2util",
-        "thumbnailUrl": ""
+        "url": "https://github.com/mlafeldt/cb2util"
       }
     ]
   },
@@ -2624,13 +2114,11 @@
     "links": [
       {
         "name": "PSX DVR DESR Tools",
-        "url": "https://github.com/SvenGDK/DESR-Tools",
-        "thumbnailUrl": ""
+        "url": "https://github.com/SvenGDK/DESR-Tools"
       },
       {
         "name": "Open PS2 Loader SMB Guide (Archive)",
-        "url": "https://web.archive.org/web/20241121150504/https://www.ps2-home.com/forum/viewtopic.php?t=3692",
-        "thumbnailUrl": ""
+        "url": "https://web.archive.org/web/20241121150504/https://www.ps2-home.com/forum/viewtopic.php?t=3692"
       }
     ]
   }

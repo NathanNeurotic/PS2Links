@@ -228,6 +228,8 @@ h2.collapsible:hover {
     padding-left: 0; /* Remove specific padding for list view */
     border-left: none; /* Remove specific border for list view */
     /* Common content styles */
+    max-height: 300px; /* Limit height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* List View Specific Styles */
