@@ -7,7 +7,8 @@ export function initializeCollapsibles() {
         collapsible.parentNode.replaceChild(newCollapsible, collapsible);
 
         const categoryName = newCollapsible.textContent;
-        const content = newCollapsible.nextElementSibling;
+        const section = newCollapsible.parentElement;
+        const content = section ? section.querySelector('.content') : null;
 
         newCollapsible.addEventListener('click', () => {
             if (content) {
@@ -28,7 +29,8 @@ export function initializeCollapsibles() {
 
     document.querySelectorAll('.collapsible').forEach(coll => {
         const categoryName = coll.textContent;
-        const content = coll.nextElementSibling;
+        const section = coll.parentElement;
+        const content = section ? section.querySelector('.content') : null;
         if (content) {
             if (state.expandedCategories.includes(categoryName)) {
                 content.style.display = state.currentView === 'thumbnail' ? 'grid' : 'block';

@@ -10,10 +10,10 @@ export function getFaviconUrl(url) {
 
 export function createLinkListItem(linkObj, isFavorited, toggleFavorite) {
     const li = document.createElement('li');
+    li.setAttribute('data-url', linkObj.url);
     const a = document.createElement('a');
     a.href = linkObj.url;
     a.target = '_blank';
-    a.setAttribute('data-url', linkObj.url);
 
     const img = document.createElement('img');
     img.src = getFaviconUrl(linkObj.url);

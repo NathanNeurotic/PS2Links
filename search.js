@@ -8,7 +8,7 @@ export function handleSearchInput() {
 
     sections.forEach((section) => {
         const collapsibleHeader = section.querySelector('h2.collapsible');
-        const contentElement = collapsibleHeader ? collapsibleHeader.nextElementSibling : null;
+        const contentElement = section.querySelector('.content');
         if (!collapsibleHeader || !contentElement) return;
 
         let hasMatches = false;
