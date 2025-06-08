@@ -279,30 +279,6 @@ h2.collapsible:hover {
     padding: 10px 0; /* Padding for the container */
 }
 
-}
-
-.content.list-view li > a:hover {
-    background: linear-gradient(145deg, #1a4ca3, #081229);
-    color: #E0E0FF;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4),
-                inset 0 1px 2px rgba(255, 255, 255, 0.15);
-    transform: translateY(-1px) scale(1.01);
-    text-shadow: 0 0 3px #C0C0FF;
-}
-
-.content.list-view li > a:visited {
-    background: linear-gradient(145deg, #0a2550, #030712);
-    color: #A0A0CC;
-}
-
-/* Thumbnail View Specific Styles */
-.content.thumbnail-view {
-    display: grid; /* Use grid for layout */
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
-    gap: 15px; /* Space between thumbnails */
-    padding: 10px 0; /* Padding for the container */
-}
-
 .thumbnail-item {
     background-color: #081020; /* Dark background for thumbnail card */
     border: 1px solid #1a2c5a;
@@ -379,14 +355,6 @@ body.light-mode {
 
 body.light-mode header {
     background: linear-gradient(to bottom, #FAFAFA, #F5F5F5); /* White to very light gray */
-    background-color: #E8EAF6; /* Light bluish gray */
-    background-image: radial-gradient(circle at top right, #D1C4E9, #E8EAF6 70%), /* Lighter purple tones */
-                      radial-gradient(circle at bottom left, #D1C4E9, #E8EAF6 70%);
-    color: #263238; /* Dark Gray for text */
-}
-
-body.light-mode header {
-    background-color: #FFFFFF; /* White */
     border-bottom: 2px solid #7E57C2; /* Medium Purple */
 }
 
@@ -419,30 +387,6 @@ body.light-mode #return-home {
     filter: brightness(0.9) contrast(1.2);
     background-color: rgba(126, 87, 194, 0.5);
     box-shadow: 0 0 10px #9575CD;
-    color: #3949AB; /* Indigo */
-    text-shadow: 0 0 3px #9FA8DA, 0 0 6px #9FA8DA; /* Lighter blue glow */
-}
-
-body.light-mode #search-bar {
-    border: 1px solid #7E57C2; /* Medium Purple border */
-    background-color: #F5F5F5; /* Light Gray */
-    color: #263238; /* Dark Gray text */
-    box-shadow: 0 0 8px #D1C4E9, inset 0 0 5px rgba(209, 196, 233, 0.3); /* Lighter purple glow */
-}
-
-body.light-mode #search-bar::placeholder {
-    color: #757575; /* Medium Gray */
-}
-
-body.light-mode #search-bar:focus {
-    border-color: #5E35B1; /* Deep Purple */
-    box-shadow: 0 0 12px #B39DDB, inset 0 0 8px rgba(179, 157, 219, 0.4); /* Deep Purple glow */
-}
-
-body.light-mode #return-home {
-    filter: brightness(0.9) contrast(1.2); /* Adjust for light bg */
-    background-color: rgba(126, 87, 194, 0.5); /* Medium Purple semi-transparent bg */
-    box-shadow: 0 0 10px #9575CD; /* Lighter Purple shadow */
 }
 body.light-mode #return-home:hover {
     box-shadow: 0 0 15px #7E57C2;
@@ -455,9 +399,6 @@ body.light-mode section {
     border: 1px solid #9FA8DA;
     box-shadow: 0 0 10px rgba(159, 168, 218, 0.4);
     /* align-self: start; is already on the general section style */
-    background-color: rgba(255, 255, 255, 0.8); /* White, semi-transparent */
-    border: 1px solid #B39DDB; /* Lighter Purple border */
-    box-shadow: 0 0 15px rgba(179, 157, 219, 0.5); /* Lighter Purple glow */
 }
 
 /* Light Mode Category Header */
@@ -475,19 +416,6 @@ body.light-mode h2.collapsible:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
                 inset 0 1px 2px rgba(255, 255, 255, 0.5);
     color: #000000; /* Ensure text is still dark on hover */
-    background: linear-gradient(145deg, #7986CB, #5C6BC0); /* Indigo/Light Blue gradient */
-    color: #FFFFFF; /* White text */
-    border: 1px solid #3949AB; /* Darker Indigo border */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1),
-                inset 0 1px 1px rgba(255, 255, 255, 0.3);
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-}
-
-body.light-mode h2.collapsible:hover {
-    background: linear-gradient(145deg, #9FA8DA, #7986CB); /* Lighter gradient on hover */
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15),
-                inset 0 1px 2px rgba(255, 255, 255, 0.4);
-    color: #FFFFFF;
 }
 
 body.light-mode .content {
@@ -505,11 +433,6 @@ body.light-mode .content.list-view li > a {
     border: 1px solid #9FA8DA; /* CHANGED: Lighter Indigo border */
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), /* Softer shadow */
                 inset 0 1px 1px rgba(255, 255, 255, 0.5); /* Brighter inner highlight */
-    background: linear-gradient(145deg, #9FA8DA, #7986CB); /* Light Blue gradient */
-    color: #1A237E; /* Dark Indigo text */
-    border: 1px solid #5C6BC0; /* Medium Indigo border */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1),
-                inset 0 1px 1px rgba(255, 255, 255, 0.2);
     text-shadow: none;
 }
 
@@ -524,16 +447,6 @@ body.light-mode .content.list-view li > a:hover {
 body.light-mode .content.list-view li > a:visited {
     background: linear-gradient(145deg, #D1C4E9, #C5CAE9); /* Slightly different light shade for visited */
     color: #283593; /* CHANGED: Dark Indigo for visited text */
-    background: linear-gradient(145deg, #C5CAE9, #9FA8DA); /* Even Lighter Blue on hover */
-    color: #0D47A1; /* Dark Blue text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15),
-                inset 0 1px 2px rgba(255, 255, 255, 0.3);
-    transform: translateY(-1px) scale(1.01); /* Added for consistency */
-}
-
-body.light-mode .content.list-view li > a:visited {
-    background: linear-gradient(145deg, #D1C4E9, #B39DDB); /* Light Purple for visited */
-    color: #4527A0; /* Deep Purple text */
 }
 
 /* Light Mode Thumbnail Styles */
@@ -559,28 +472,6 @@ body.light-mode .thumbnail-item figcaption {
 
 body.light-mode .thumbnail-item a:hover figcaption {
     color: #000000; /* CHANGED: Black for caption on hover */
-    background-color: #F5F5F5; /* Very light gray */
-    border: 1px solid #C5CAE9; /* Light indigo border */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    /* transform property will be inherited from dark mode's .thumbnail-item:hover via specificity if not overridden */
-}
-
-body.light-mode .thumbnail-item:hover {
-    transform: scale(1.05); /* Explicitly add for light mode consistency */
-    box-shadow: 0 4px 10px rgba(92,107,192,0.3); /* Indigo shadow */
-    border-color: #7986CB;
-}
-
-body.light-mode .thumbnail-item img {
-    border: 1px solid #9FA8DA; /* Light indigo border for image */
-}
-
-body.light-mode .thumbnail-item figcaption {
-    color: #3949AB; /* Indigo text */
-}
-
-body.light-mode .thumbnail-item a:hover figcaption {
-    color: #283593; /* Darker Indigo on hover */
 }
 
 /* Light Mode Buttons */
@@ -619,40 +510,6 @@ body.light-mode #theme-toggle-btn:hover {
 
 body.light-mode #theme-toggle-btn:active {
     background: linear-gradient(145deg, #BDBDBD, #9E9E9E); /* Darker pressed state */
-    background: linear-gradient(145deg, #AEC6CF, #90A4AE); /* Light blue-grey */
-    color: #263238; /* Dark grey text */
-    border: 1px solid #78909C; /* Medium blue-grey border */
-    box-shadow: 0 2px 3px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.3);
-}
-
-body.light-mode .view-btn:hover {
-    background: linear-gradient(145deg, #B0BEC5, #90A4AE);
-    color: #000000;
-    transform: translateY(-1px); /* Added for consistency */
-}
-
-body.light-mode .view-btn.active {
-    background: linear-gradient(145deg, #78909C, #607D8B); /* Darker blue-grey for active */
-    color: #FFFFFF;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1), inset 0 0 5px rgba(0,0,0,0.2);
-    transform: translateY(1px); /* Added for consistency */
-}
-
-body.light-mode #theme-toggle-btn {
-    background: linear-gradient(145deg, #CFD8DC, #B0BEC5); /* Light grey gradient */
-    color: #263238; /* Dark grey text */
-    border: 1px solid #90A4AE; /* Medium grey border */
-    box-shadow: 0 2px 3px rgba(0,0,0,0.1), inset 0 1px 1px rgba(255,255,255,0.3);
-}
-
-body.light-mode #theme-toggle-btn:hover {
-    background: linear-gradient(145deg, #ECEFF1, #CFD8DC);
-    color: #000000;
-    transform: translateY(-1px); /* Added for consistency */
-}
-
-body.light-mode #theme-toggle-btn:active {
-    background: linear-gradient(145deg, #B0BEC5, #9EABB3); /* Darker pressed state for light mode */
     box-shadow: 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 3px rgba(0,0,0,0.1);
     transform: translateY(1px);
 }
@@ -665,10 +522,4 @@ body.light-mode footer {
 
 body.light-mode footer p {
     color: #212121;
-    background-color: #FFFFFF; /* White */
-    border-top: 2px solid #7E57C2; /* Medium Purple */
-}
-
-body.light-mode footer p {
-    color: #546E7A; /* Blue Grey text */
 }
