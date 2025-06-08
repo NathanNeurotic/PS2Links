@@ -15,9 +15,13 @@ export function initializeCollapsibles() {
                 const isExpanded = content.style.display !== 'none' && content.style.display !== '';
                 if (isExpanded) {
                     content.style.display = 'none';
+                    newCollapsible.classList.remove('expanded');
+                    newCollapsible.classList.add('collapsed');
                     state.expandedCategories = state.expandedCategories.filter(cat => cat !== categoryName);
                 } else {
                     content.style.display = state.currentView === 'thumbnail' ? 'grid' : 'block';
+                    newCollapsible.classList.remove('collapsed');
+                    newCollapsible.classList.add('expanded');
                     if (!state.expandedCategories.includes(categoryName)) {
                         state.expandedCategories.push(categoryName);
                     }
@@ -34,8 +38,12 @@ export function initializeCollapsibles() {
         if (content) {
             if (state.expandedCategories.includes(categoryName)) {
                 content.style.display = state.currentView === 'thumbnail' ? 'grid' : 'block';
+                coll.classList.add('expanded');
+                coll.classList.remove('collapsed');
             } else {
                 content.style.display = 'none';
+                coll.classList.add('collapsed');
+                coll.classList.remove('expanded');
             }
         }
     });
