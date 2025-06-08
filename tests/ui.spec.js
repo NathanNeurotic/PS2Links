@@ -42,3 +42,27 @@ test('favorites persistence', async ({ page }) => {
   const starAfter = await getFirstStar(page);
   await expect(starAfter).toHaveClass(/favorited/);
 });
+
+test('category collapsible toggle', async ({ page }) => {
+  const firstSection = page.locator('main > section').first();
+  const header = firstSection.locator('h2.collapsible');
+  const content = firstSection.locator('.content');
+
+  await expect(content).not.toBeVisible();
+  await header.click();
+  await expect(content).toBeVisible();
+  await header.click();
+  await expect(content).not.toBeVisible();
+});
+
+test('search filters categories', async ({ page }) => {
+  const search = page.locator('#search-bar');
+  await search.fill('Romhacking');
+
+  const visibleSections = page.locator('main > section:visible');
+  await expect(visibleSections).toHaveCount(1);
+  await expect(visibleSections.first()).toContainText('Romhacking.net Forum');
+
+  await search.fill('');
+  await expect(page.locator('main > section:visible').first()).toBeVisible();
+});
