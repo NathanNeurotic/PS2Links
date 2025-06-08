@@ -1,5 +1,4 @@
-import { state, saveFavorites } from './state.js';
-import { saveExpandedCategories } from './state.js';
+import { state, saveFavorites, saveExpandedCategories } from './state.js';
 import { initializeCollapsibles } from './collapsibles.js';
 import { createLinkListItem, createLinkThumbnailItem } from './linkUtils.js';
 
