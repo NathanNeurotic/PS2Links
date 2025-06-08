@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    let favorites = [];
+    let expandedCategories = [];
     let allLinksData = [];
     let currentView = 'list';
     let currentTheme = localStorage.getItem('theme') || 'dark';
@@ -7,6 +9,49 @@ document.addEventListener("DOMContentLoaded", () => {
     const thumbnailViewBtn = document.getElementById('thumbnail-view-btn');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     const mainElement = document.querySelector("main");
+
+    function loadExpandedCategories() {
+        const storedExpanded = localStorage.getItem('expandedCategories');
+        if (storedExpanded) {
+            try {
+                expandedCategories = JSON.parse(storedExpanded);
+            } catch (e) {
+                console.error("Error parsing expandedCategories from localStorage:", e);
+                expandedCategories = [];
+            }
+        }
+    }
+
+    function saveExpandedCategories() {
+        localStorage.setItem('expandedCategories', JSON.stringify(expandedCategories));
+    }
+
+    function loadFavorites() {
+        const storedFavorites = localStorage.getItem('favorites');
+        if (storedFavorites) {
+            try {
+                favorites = JSON.parse(storedFavorites);
+            } catch (e) {
+                console.error("Error parsing favorites from localStorage:", e);
+                favorites = []; // Reset to empty if parsing fails
+            }
+        }
+    }
+
+    function saveFavorites() {
+        localStorage.setItem('favorites', JSON.stringify(favorites));
+    }
+
+    function toggleFavorite(url) {
+        const index = favorites.indexOf(url);
+        if (index > -1) {
+            favorites.splice(index, 1); // Remove from favorites
+        } else {
+            favorites.push(url); // Add to favorites
+        }
+        saveFavorites();
+        generateHTML(allLinksData); // Re-render the UI
+    }
 
     function getFaviconUrl(url) {
         try {
@@ -64,9 +109,100 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         mainElement.innerHTML = '';
 
+        // Favorites Section
+        if (favorites.length > 0) {
+            const favSection = document.createElement("section");
+            const favH2 = document.createElement("h2");
+            favH2.classList.add("collapsible");
+            favH2.textContent = "Favorites";
+
+            const favContentDiv = document.createElement("div");
+            favContentDiv.classList.add("content");
+            favContentDiv.classList.add(currentView === 'list' ? 'list-view' : 'thumbnail-view');
+
+            let favoriteLinks = [];
+            allLinksData.forEach(category => {
+                category.links.forEach(link => {
+                    if (favorites.includes(link.url)) {
+                        favoriteLinks.push(link);
+                    }
+                });
+            });
+
+            // Sort favorite links alphabetically by name
+            favoriteLinks.sort((a, b) => a.name.localeCompare(b.name));
+
+
+            if (currentView === 'list') {
+                const ul = document.createElement("ul");
+                favoriteLinks.forEach(linkObj => {
+                    const li = document.createElement("li");
+                    const a = document.createElement("a");
+                    a.href = linkObj.url;
+                    a.target = "_blank";
+
+                    const img = document.createElement("img");
+                    img.src = getFaviconUrl(linkObj.url);
+                    img.alt = ""; // Decorative
+                    img.loading = 'lazy';
+                    img.onerror = function() { this.src = 'favicon.ico'; };
+                    img.classList.add("list-view-favicon");
+                    a.prepend(img);
+                    const textNode = document.createTextNode(" " + linkObj.name);
+                    a.appendChild(textNode);
+
+                    const favButton = document.createElement("button");
+                    favButton.classList.add('favorite-btn');
+                    favButton.innerHTML = '★';
+                    if (favorites.includes(linkObj.url)) {
+                        favButton.classList.add('favorited');
+                    }
+                    favButton.addEventListener('click', () => toggleFavorite(linkObj.url));
+
+                    li.appendChild(a);
+                    li.appendChild(favButton); // Append button to li
+                    ul.appendChild(li);
+                });
+                favContentDiv.appendChild(ul);
+            } else { // Thumbnail view
+                favoriteLinks.forEach(linkObj => {
+                    const thumbnailFigure = document.createElement("figure");
+                    thumbnailFigure.classList.add("thumbnail-item");
+                    const a = document.createElement("a");
+                    a.href = linkObj.url;
+                    a.target = "_blank";
+                    const img = document.createElement("img");
+                    img.src = getFaviconUrl(linkObj.url);
+                    img.alt = linkObj.name;
+                    img.loading = 'lazy';
+                    img.onerror = function() { this.src = 'favicon.ico'; };
+                    const figcaption = document.createElement("figcaption");
+                    figcaption.textContent = linkObj.name;
+                    a.appendChild(img);
+                    a.appendChild(figcaption);
+                    thumbnailFigure.appendChild(a);
+
+                    const favButton = document.createElement("button");
+                    favButton.classList.add('favorite-btn');
+                    favButton.innerHTML = '★';
+                    if (favorites.includes(linkObj.url)) {
+                        favButton.classList.add('favorited');
+                    }
+                    favButton.addEventListener('click', () => toggleFavorite(linkObj.url));
+                    thumbnailFigure.appendChild(favButton); // Append button to figure
+
+                    favContentDiv.appendChild(thumbnailFigure);
+                });
+            }
+            favSection.appendChild(favH2);
+            favSection.appendChild(favContentDiv);
+            mainElement.appendChild(favSection);
+        }
+
+        // Process all other categories
         data.forEach(categoryObj => {
             const section = document.createElement("section");
-            // section.classList.add("category-section"); // Add a common class for styling sections if needed
+            // section.classList.add("category-section");
             const h2 = document.createElement("h2");
             h2.classList.add("collapsible");
             h2.textContent = categoryObj.category;
@@ -93,16 +229,23 @@ document.addEventListener("DOMContentLoaded", () => {
                     img.classList.add("list-view-favicon");
 
                     a.prepend(img); // Add the icon first
-
-                    // Then add the text. We need to create a text node for proper spacing.
-                    const textNode = document.createTextNode(" " + linkObj.name); // Add a space before the name
+                    const textNode = document.createTextNode(" " + linkObj.name);
                     a.appendChild(textNode);
 
+                    const favButton = document.createElement("button");
+                    favButton.classList.add('favorite-btn');
+                    favButton.innerHTML = '★';
+                    if (favorites.includes(linkObj.url)) {
+                        favButton.classList.add('favorited');
+                    }
+                    favButton.addEventListener('click', () => toggleFavorite(linkObj.url));
+
                     li.appendChild(a);
+                    li.appendChild(favButton); // Append button to li
                     ul.appendChild(li);
                 });
                 contentDiv.appendChild(ul);
-            } else {
+            } else { // Thumbnail view
                 categoryObj.links.forEach(linkObj => {
                     const thumbnailFigure = document.createElement("figure");
                     thumbnailFigure.classList.add("thumbnail-item");
@@ -112,7 +255,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     a.target = "_blank";
 
                     const img = document.createElement("img");
-                    // Use getFaviconUrl and add onerror fallback
                     img.src = getFaviconUrl(linkObj.url);
                     img.alt = linkObj.name;
                     img.loading = 'lazy';
@@ -126,6 +268,16 @@ document.addEventListener("DOMContentLoaded", () => {
                     a.appendChild(img);
                     a.appendChild(figcaption);
                     thumbnailFigure.appendChild(a);
+
+                    const favButton = document.createElement("button");
+                    favButton.classList.add('favorite-btn');
+                    favButton.innerHTML = '★';
+                    if (favorites.includes(linkObj.url)) {
+                        favButton.classList.add('favorited');
+                    }
+                    favButton.addEventListener('click', () => toggleFavorite(linkObj.url));
+                    thumbnailFigure.appendChild(favButton); // Append button to figure
+
                     contentDiv.appendChild(thumbnailFigure);
                 });
             }
@@ -143,29 +295,51 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelectorAll("main > section .content").forEach(content => {
                 content.style.display = 'none';
             });
+            // NOTE: The incorrect 'content.style.display = 'none';' was here and is now removed.
         }
     }
 
     function initializeCollapsibles() {
         const collapsibles = document.querySelectorAll(".collapsible");
         collapsibles.forEach((collapsible) => {
+            // Remove old event listeners by replacing the node
             const newCollapsible = collapsible.cloneNode(true);
             collapsible.parentNode.replaceChild(newCollapsible, collapsible);
 
+            const categoryName = newCollapsible.textContent;
+            const content = newCollapsible.nextElementSibling;
+
             newCollapsible.addEventListener("click", () => {
-                const content = newCollapsible.nextElementSibling;
                 if (content) {
-                    if (content.style.display === 'none' || content.style.display === '') {
-                        // When expanding, choose display based on currentView
-                        content.style.display = currentView === 'thumbnail' ? 'grid' : 'block';
-                    } else {
-                        // When collapsing, always set to none
+                    const isCurrentlyExpanded = content.style.display !== 'none' && content.style.display !== '';
+                    if (isCurrentlyExpanded) {
                         content.style.display = 'none';
+                        expandedCategories = expandedCategories.filter(cat => cat !== categoryName);
+                    } else {
+                        content.style.display = currentView === 'thumbnail' ? 'grid' : 'block';
+                        if (!expandedCategories.includes(categoryName)) {
+                            expandedCategories.push(categoryName);
+                        }
                     }
+                    saveExpandedCategories();
                 }
             });
         });
+
+        // Restore expanded states
+        document.querySelectorAll(".collapsible").forEach(coll => {
+            const categoryName = coll.textContent;
+            const content = coll.nextElementSibling;
+            if (content) { // Ensure content element exists
+                if (expandedCategories.includes(categoryName)) {
+                    content.style.display = currentView === 'thumbnail' ? 'grid' : 'block';
+                } else {
+                    content.style.display = 'none'; // Default to collapsed
+                }
+            }
+        });
     }
+
 
     function updateButtonStates() {
         if (!listViewBtn || !thumbnailViewBtn || !mainElement) return;
@@ -269,6 +443,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     async function initializePage() {
+        loadFavorites();
+        loadExpandedCategories(); // Load expanded states
         allLinksData = await fetchLinks();
         if (allLinksData.length > 0) {
             allLinksData = sortLinks(allLinksData);
