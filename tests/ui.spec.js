@@ -51,6 +51,20 @@ test('favorites persistence', async ({ page }) => {
   await expect(starAfter).toHaveClass(/favorited/);
 });
 
+test('favorites section shows and hides without reload', async ({ page }) => {
+  const header = page.locator('main h2.collapsible').first();
+  await header.click();
+
+  const star = await getFirstStar(page);
+  await star.click({ force: true });
+
+  const favoritesSection = page.locator('#favorites-section');
+  await expect(favoritesSection).toBeVisible();
+
+  await star.click({ force: true });
+  await expect(favoritesSection).toHaveCount(0);
+});
+
 test('category collapsible toggle', async ({ page }) => {
   const firstSection = page.locator('main > section').first();
   const header = firstSection.locator('h2.collapsible');
