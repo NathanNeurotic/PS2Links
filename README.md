@@ -1,3 +1,4 @@
+![[image](https://github.com/user-attachments/assets/d70c7f65-c3fd-46f4-a0e4-5cf873b45fb9)](https://nathanneurotic.github.io/PS2Links)
 # PS2 Resource Links
 
 PS2 Resource Links is a static collection of PlayStation 2 related sites. The page is built from `links.json` and displayed with simple JavaScript and CSS.
