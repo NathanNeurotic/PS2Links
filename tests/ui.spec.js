@@ -9,11 +9,9 @@ const BASE = 'http://localhost:3000';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(`${BASE}/index.html`);
-  // Wait for the main element to signal it's likely populated by generateHTML
-  await page.waitForSelector('main > section h2.collapsible', { timeout: 10000 });
-  // Additional wait to ensure JS execution has progressed enough for buttons to be interactive if visible.
-  // This is a bit of a safety net. A more robust way would be to wait for a specific app state if available.
-  await page.waitForTimeout(500); // Wait for 500ms
+  // Wait for the main element to be present, indicating basic HTML structure is loaded.
+  // Further waits for specific content should be in individual tests or more specific setup helpers.
+  await page.locator('main').waitFor({ timeout: 10000 });
 });
 
 test('view toggling', async ({ page }) => {

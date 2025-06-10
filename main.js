@@ -115,6 +115,14 @@ function createCategorySection(categoryObj) {
     const categoryName = categoryObj.category;
     const categoryCurrentView = state.categoryViewModes[categoryName] || state.currentView;
 
+    // Add category description if it exists
+    let descriptionParagraph = null;
+    if (categoryObj.description) {
+        descriptionParagraph = document.createElement('p');
+        descriptionParagraph.textContent = categoryObj.description;
+        descriptionParagraph.classList.add('category-description');
+    }
+
     const toggleContainer = document.createElement('div');
     toggleContainer.classList.add('category-view-toggle');
 
@@ -156,6 +164,9 @@ function createCategorySection(categoryObj) {
 
     section.appendChild(h2);
     section.appendChild(toggleContainer);
+    if (descriptionParagraph) {
+        section.appendChild(descriptionParagraph); // Add description after toggle buttons
+    }
     section.appendChild(contentDiv);
 
     // Attach event listeners for category view toggle buttons
