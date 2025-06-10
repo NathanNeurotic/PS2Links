@@ -93,7 +93,6 @@ function populateFavoritesContent(contentDiv, viewMode) {
     // Note: Sorting by name is now handled by sortItemsInSection
 
     const ul = viewMode === 'list' ? document.createElement('ul') : null;
-
     favoriteLinkObjects.forEach(linkObj => { // Iterate over the collected link objects
         // toggleFavorite is imported and no longer needs mainElement passed.
         const item = createLinkItem(linkObj, true, toggleFavorite, viewMode);

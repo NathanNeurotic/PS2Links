@@ -9,7 +9,6 @@ import { createLinkItem } from './linkUtils.js'; // getLinkDataByUrl and sortIte
 
 // getLinkDataByUrl function has been moved to linkUtils.js
 // sortItemsInSection function has been moved to linkUtils.js
-
 // ensureFavoritesSection function will be removed as per instructions.
 // Its functionality will be handled by refreshFavoritesDisplayIfNeeded and createFavoritesSectionElements in main.js
 // The problematic top-level code block that was here has been removed.
