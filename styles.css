@@ -240,9 +240,9 @@ main.thumbnail-categories-active {
 }
 
 main.list-categories-active {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Keep the gap for spacing between items */
 }
 
 section {
