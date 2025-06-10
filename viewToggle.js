@@ -38,17 +38,27 @@ export function handleCategoryViewToggle(event, allLinksData, favorites, createL
     const categoryObj = allLinksData.find(cat => cat.category === categoryName);
     if (!categoryObj) return;
 
-    if (newView === 'list') {
+    populateCategoryContent(contentDiv, categoryObj, newView, favorites, createListItem, createThumbItem);
+}
+
+// Helper function to populate category content (used by handleCategoryViewToggle)
+function populateCategoryContent(contentDiv, categoryObj, viewMode, favorites, createListItem, createThumbItem) {
+    contentDiv.innerHTML = ''; // Clear existing content first
+
+    if (viewMode === 'list') {
         const ul = document.createElement('ul');
         categoryObj.links.forEach(linkObj => {
-            const li = createListItem(linkObj, favorites.includes(linkObj.url));
-            ul.appendChild(li);
+            // Ensure 'favorites' is an array, typically state.favorites
+            const isFavorited = favorites.includes(linkObj.url);
+            const listItem = createListItem(linkObj, isFavorited);
+            ul.appendChild(listItem);
         });
         contentDiv.appendChild(ul);
-    } else {
+    } else { // 'thumbnail' view
         categoryObj.links.forEach(linkObj => {
-            const fig = createThumbItem(linkObj, favorites.includes(linkObj.url));
-            contentDiv.appendChild(fig);
+            const isFavorited = favorites.includes(linkObj.url);
+            const thumbnailItem = createThumbItem(linkObj, isFavorited);
+            contentDiv.appendChild(thumbnailItem);
         });
     }
 }
