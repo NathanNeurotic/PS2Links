@@ -758,16 +758,21 @@ body.light-mode footer p {
     top: 20px; /* Align with #return-home */
     left: 20px;
     z-index: 1200; /* Highest z-index to be on top of everything */
-    padding: 10px 15px;
+    width: 30px; /* NEW */
+    height: 30px; /* NEW */
     background-color: #1f5ef7; /* Blue, similar to active buttons */
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 5px; /* Or 50% for a circle */
     cursor: pointer;
     font-family: "Orbitron", "Arial", sans-serif;
-    font-size: 0.9em;
+    font-size: 16px; /* ADJUSTED - or suitable for icon size */
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     transition: background-color 0.3s ease, left 0.3s ease-in-out;
+    display: flex; /* NEW */
+    align-items: center; /* NEW */
+    justify-content: center; /* NEW */
+    padding: 0; /* Remove previous padding if fixed width/height is used */
 }
 
 #sidebar-toggle:hover {
@@ -793,6 +798,15 @@ body.light-mode #sidebar-toggle {
     background-color: #5C6BC0; /* Indigo, similar to light mode active buttons */
     color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    /* Ensure width, height, display, align-items, justify-content, padding are consistent or inherited */
+    /* Explicitly setting them for clarity, matching dark mode values */
+    width: 30px;
+    height: 30px;
+    font-size: 16px; /* Assuming same font size adjustment */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body.light-mode #sidebar-toggle:hover {

@@ -280,8 +280,16 @@ function populateSidebar(data) {
 
 function setupSidebarToggle() {
     if (sidebarToggleBtn && sidebarElement) {
+        sidebarToggleBtn.textContent = '>'; // Set initial icon
+
         sidebarToggleBtn.addEventListener('click', () => {
             sidebarElement.classList.toggle('open');
+            // Update icon based on sidebar state
+            if (sidebarElement.classList.contains('open')) {
+                sidebarToggleBtn.textContent = '<';
+            } else {
+                sidebarToggleBtn.textContent = '>';
+            }
         });
     }
 }
