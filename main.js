@@ -10,6 +10,18 @@ const listViewBtn = document.getElementById('list-view-btn');
 const thumbnailViewBtn = document.getElementById('thumbnail-view-btn');
 const themeToggleBtn = document.getElementById('theme-toggle-btn');
 const mainElement = document.querySelector('main');
+const sidebarElement = document.getElementById('sidebar');
+const sidebarToggleBtn = document.getElementById('sidebar-toggle');
+
+// Helper function to create slugs for IDs and HREFs
+function slugify(text) {
+    if (!text) return '';
+    return text.toString().toLowerCase()
+        .replace(/\s+/g, '-')           // Replace spaces with -
+        .replace(/&/g, '-and-')         // Replace & with 'and'
+        .replace(/[^\w-]+/g, '')       // Remove all non-word chars (alphanumeric, underscore, hyphen)
+        .replace(/--+/g, '-');          // Replace multiple - with single -
+}
 
 function applyTheme() {
     document.body.classList.remove('light-mode', 'dark-mode');
@@ -108,11 +120,14 @@ function createFavoritesSection() {
 // Calls 'handleCategoryViewToggle' from viewToggle.js for category view changes.
 function createCategorySection(categoryObj) {
     const section = document.createElement('section');
+    const categoryName = categoryObj.category;
+    const categorySlug = slugify(categoryName);
+    section.id = categorySlug; // Add ID to section for sidebar navigation
+
     const h2 = document.createElement('h2');
     h2.classList.add('collapsible');
-    h2.textContent = categoryObj.category;
+    h2.textContent = categoryName;
 
-    const categoryName = categoryObj.category;
     const categoryCurrentView = state.categoryViewModes[categoryName] || state.currentView;
 
     // Add category description if it exists
@@ -235,9 +250,39 @@ export async function initializePage() {
     if (state.allLinksData.length > 0) {
         state.allLinksData = sortLinks(state.allLinksData);
         updateButtonStates(listViewBtn, thumbnailViewBtn, mainElement);
-        generateHTML(state.allLinksData);
+        generateHTML(state.allLinksData); // Generates main content sections with IDs
+        populateSidebar(state.allLinksData); // Populate sidebar after data is fetched
     } else if (mainElement) {
         mainElement.innerHTML = '<p>Could not load link data. Please try again later.</p>';
+    }
+}
+
+function populateSidebar(data) {
+    if (!sidebarElement || !data) return;
+    sidebarElement.innerHTML = ''; // Clear existing sidebar content
+
+    data.forEach(categoryObj => {
+        const categoryName = categoryObj.category;
+        const categorySlug = slugify(categoryName);
+
+        const anchor = document.createElement('a');
+        anchor.href = `#${categorySlug}`;
+        anchor.textContent = categoryName;
+        // Optional: Add click listener to close sidebar on navigation
+        anchor.addEventListener('click', () => {
+            if (sidebarElement.classList.contains('open')) {
+                sidebarElement.classList.remove('open');
+            }
+        });
+        sidebarElement.appendChild(anchor);
+    });
+}
+
+function setupSidebarToggle() {
+    if (sidebarToggleBtn && sidebarElement) {
+        sidebarToggleBtn.addEventListener('click', () => {
+            sidebarElement.classList.toggle('open');
+        });
     }
 }
 
@@ -248,3 +293,4 @@ if (searchBar) {
 }
 
 initializePage();
+setupSidebarToggle(); // Initialize sidebar toggle functionality
