@@ -62,9 +62,11 @@ export function toggleFavorite(url) { // mainElement parameter removed
 
     // Dynamically import refreshFavoritesDisplayIfNeeded to potentially mitigate circular dependency issues at load time.
     // This is an advanced pattern. For now, let's stick to the direct import as per instructions and see if it works.
-    import('./main.js').then(mainModule => {
-        mainModule.refreshFavoritesDisplayIfNeeded();
-    }).catch(error => console.error("Error importing main.js for refreshFavoritesDisplayIfNeeded:", error));
+    // import('./main.js').then(mainModule => {
+    //     mainModule.refreshFavoritesDisplayIfNeeded();
+    // }).catch(error => console.error("Error importing main.js for refreshFavoritesDisplayIfNeeded:", error));
+    const event = new CustomEvent('favoritesUpdated', { bubbles: true, composed: true });
+    document.body.dispatchEvent(event);
 }
 
 // ensureFavoritesSection is being removed.

@@ -310,12 +310,24 @@ h2.collapsible:hover {
     color: #FFFFFF; /* Brighter text on hover */
 }
 
+/* When expanded, the display type is primarily controlled by .list-view or .thumbnail-view */
+.content-expanded.list-view {
+    display: block; /* Default display for list content containers */
+}
+.content-expanded.thumbnail-view {
+    display: grid; /* Default display for thumbnail content containers */
+    /* Keep existing grid-template-columns and gap from .content.thumbnail-view */
+}
+
+.content-collapsed {
+    display: none !important;
+}
 
 .content {
-    display: none; /* Keep default as none, JS handles display */
+    /* display: none; /* This line is removed */
     margin-top: 10px;
-    padding-left: 0; /* Remove specific padding for list view */
-    border-left: none; /* Remove specific border for list view */
+    padding-left: 0; /* Reset from original */
+    border-left: none; /* Reset from original */
     /* Common content styles */
     max-height: 300px; /* Limit height for scrolling */
     overflow-y: auto; /* Enable vertical scrolling */
@@ -343,6 +355,9 @@ h2.collapsible:hover {
     flex-grow: 1; /* Allow link to take available space */
     margin-right: 8px; /* Space between link and favorite button */
     /* The rest of the link styles remain */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     background: linear-gradient(145deg, #0d2f6e, #040a18);
     color: #C0C0FF;
     padding: 10px 15px;
@@ -389,7 +404,7 @@ h2.collapsible:hover {
 
 /* Thumbnail View Specific Styles */
 .content.thumbnail-view {
-    display: grid; /* Use grid for layout */
+    /* display: grid; /* This will be handled by .content-expanded.thumbnail-view */
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
     gap: 15px; /* Space between thumbnails */
     padding: 10px 0; /* Padding for the container */
@@ -521,6 +536,14 @@ footer p {
 
 
 /*-------------------- LIGHT MODE STYLES --------------------*/
+
+/* Ensure light mode border for list-view is preserved if content is expanded */
+body.light-mode .content-expanded.list-view {
+   border-left: 2px dashed #B39DDB;
+}
+body.light-mode .content-expanded.thumbnail-view {
+   border-left: none; /* Explicitly no border for thumbnail view in light mode */
+}
 
 /* Light Mode Category View Toggle Buttons */
 body.light-mode .category-view-toggle {
@@ -845,4 +868,10 @@ body.light-mode #sidebar-toggle:hover {
 
 #sidebar.open ~ #sidebar-toggle {
     left: 220px; /* Sidebar width (200px) + original left offset (20px) */
+}
+
+/* Classes for Search Filtering */
+.item-hidden-by-search,
+.section-hidden-by-search {
+    display: none !important;
 }
