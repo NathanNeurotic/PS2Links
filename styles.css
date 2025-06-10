@@ -239,6 +239,11 @@ main.thumbnail-categories-active {
     gap: 20px;
 }
 
+/* New rule for sections within thumbnail-categories-active main */
+main.thumbnail-categories-active > section {
+    width: 100%; /* Make section take full width of its grid column */
+}
+
 main.list-categories-active {
     display: flex;
     flex-direction: column;
@@ -246,6 +251,7 @@ main.list-categories-active {
 }
 
 section {
+    box-sizing: border-box; /* Add this line */
     margin-bottom: 25px; /* This will apply in both list and grid view for spacing below sections */
     /* background-color: rgba(0, 0, 20, 0.7); /* Fallback if gradient not supported */
     background-image: linear-gradient(to bottom, rgba(10, 20, 50, 0.75), rgba(0, 0, 20, 0.85));
@@ -279,6 +285,7 @@ h2.collapsible {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden; /* Added */
 }
 
 h2.collapsible::after {
@@ -652,9 +659,12 @@ body.light-mode section {
     /* align-self: start; is already on the general section style */
 }
 
-/* Ensure the title span in H2 doesn't get squished if H2 is flex */
+/* Ensure the title span in H2 (specifically for Favorites, but good practice) doesn't get squished and handles its own overflow */
 #favorites-section h2.collapsible > span:first-child {
     flex-grow: 1; /* Allows title to take available space */
+    overflow: hidden; /* Added */
+    white-space: nowrap; /* Added */
+    text-overflow: ellipsis; /* Added */
 }
 
 
