@@ -223,6 +223,8 @@ header h1 { /* More specific selector for the main title if needed */
 
 main {
     padding: 20px;
+    margin-left: 0; /* Default margin */
+    transition: margin-left 0.3s ease-in-out;
 }
 
 /* Default main layout (single column for sections) */
@@ -765,7 +767,7 @@ body.light-mode footer p {
     font-family: "Orbitron", "Arial", sans-serif;
     font-size: 0.9em;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, left 0.3s ease-in-out;
 }
 
 #sidebar-toggle:hover {
@@ -795,4 +797,13 @@ body.light-mode #sidebar-toggle {
 
 body.light-mode #sidebar-toggle:hover {
     background-color: #7986CB; /* Lighter indigo on hover */
+}
+
+/* When sidebar is open, shift main content and toggle button */
+#sidebar.open ~ main {
+    margin-left: 200px; /* Matches sidebar width */
+}
+
+#sidebar.open ~ #sidebar-toggle {
+    left: 220px; /* Sidebar width (200px) + original left offset (20px) */
 }
