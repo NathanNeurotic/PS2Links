@@ -239,6 +239,12 @@ main.thumbnail-categories-active {
     gap: 20px;
 }
 
+main.list-categories-active {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+}
+
 section {
     margin-bottom: 25px; /* This will apply in both list and grid view for spacing below sections */
     /* background-color: rgba(0, 0, 20, 0.7); /* Fallback if gradient not supported */

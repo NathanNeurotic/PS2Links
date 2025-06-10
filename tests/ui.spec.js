@@ -14,13 +14,19 @@ test.beforeEach(async ({ page }) => {
   await page.locator('main').waitFor({ timeout: 10000 });
 });
 
-test('view toggling', async ({ page }) => {
-  await page.click('#thumbnail-view-btn');
-  const firstContent = page.locator('main section .content').first();
-  await expect(firstContent).toHaveClass(/thumbnail-view/);
+test('view toggling and category layout', async ({ page }) => {
+  const mainElement = page.locator('main');
+  const firstContent = mainElement.locator('section .content').first();
 
+  // Test Thumbnail View
+  await page.click('#thumbnail-view-btn');
+  await expect(mainElement).toHaveCSS('display', 'grid'); // New assertion for main layout
+  await expect(firstContent).toHaveClass(/thumbnail-view/); // Existing assertion for content view
+
+  // Test List View
   await page.click('#list-view-btn');
-  await expect(firstContent).toHaveClass(/list-view/);
+  await expect(mainElement).toHaveCSS('display', 'grid'); // New assertion for main layout
+  await expect(firstContent).toHaveClass(/list-view/);     // Existing assertion for content view
 });
 
 test('theme switching', async ({ page }) => {
