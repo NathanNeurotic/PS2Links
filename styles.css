@@ -479,13 +479,14 @@ h2.collapsible:hover {
     flex-direction: column;
     justify-content: space-between; /* Push caption to bottom */
     position: relative; /* For absolute positioning of the favorite button */
-    height: 150px; /* Fixed height for square thumbnails */
+    width: 160px; /* Fixed width for square thumbnails */
+    height: 160px; /* Fixed height for square thumbnails */
 }
 
 .thumbnail-item img {
     width: 100%; /* Make image fill the width of the thumbnail item */
-    height: 50%; /* Allocate 50% of the item's height to the image */
-    object-fit: cover; /* Cover the allocated space, cropping if necessary */
+    height: 70%; /* Allocate 70% of the item's height to the image */
+    object-fit: contain; /* Contain the image within the allocated space, preserving aspect ratio */
     border-radius: 4px;
     margin-bottom: 5px;
     border: 1px solid #003366;
@@ -495,11 +496,14 @@ h2.collapsible:hover {
     font-size: 0.8em;
     color: #A0A0FF; /* Lighter caption color */
     line-height: 1.2;
-    /* margin-top: auto; /* Push caption to bottom if image is small */
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-    margin-bottom: 5px;
-    /* overflow-wrap: break-word; /* Not needed with nowrap */
-    /* word-break: break-word; /* Not needed with nowrap */
+    /* margin-top: auto; /* Push caption to bottom if image is small - flex handles this */
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Break words to prevent overflow */
+    text-align: center; /* Ensure text is centered */
+    height: 30%; /* Allocate 30% of the item's height to the caption */
+    overflow-y: auto; /* Allow vertical scroll if content overflows */
+    /* margin-bottom: 5px; /* Removed, flexbox and height percentage should manage space */
+    /* overflow: hidden; text-overflow: ellipsis; are removed */
 }
 
 .thumbnail-item a:hover figcaption {
@@ -509,11 +513,12 @@ h2.collapsible:hover {
 .thumbnail-item .thumbnail-website {
     font-size: 0.7em; /* Smaller font for URL */
     color: #B0B0FF; /* Lighter color, adjust for light mode too */
-    word-break: break-all; /* Break long URLs */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap; /* Show only one line, add ellipsis if too long */
-    margin-top: auto; /* Push to bottom if space allows, may not be needed with flex column */
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Break words to prevent overflow */
+    /* word-break: break-all; /* Replaced by overflow-wrap */
+    /* overflow: hidden; /* Not needed with normal white-space */
+    /* text-overflow: ellipsis; /* Not needed with normal white-space */
+    /* margin-top: auto; /* Removed as figcaption handles its own space */
 }
 
 footer {
@@ -740,16 +745,21 @@ body.light-mode .thumbnail-item img {
     border: 1px solid #CFD8DC; /* CHANGED: Lighter Grey border for image */
     /* Ensure square aspect ratio image adjustments are applied in light mode too */
     width: 100%;
-    height: 50%; /* Or adjust as needed for light mode caption */
-    object-fit: cover;
+    height: 70%; /* Matched to base: Allocate 70% of the item's height to the image */
+    object-fit: contain; /* Matched to base: Contain the image, preserving aspect ratio */
 }
 
 body.light-mode .thumbnail-item figcaption {
     color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black for caption */
     /* Ensure font-size and overflow properties match dark mode if not overridden */
     font-size: 0.8em;
-    margin-bottom: 5px;
-    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    /* margin-bottom: 5px; /* Removed, flexbox and height percentage should manage space */
+    /* overflow: hidden; text-overflow: ellipsis; white-space: nowrap; /* Removed for wrapping */
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Break words to prevent overflow */
+    text-align: center; /* Ensure text is centered */
+    height: 30%; /* Allocate 30% of the item's height to the caption */
+    overflow-y: auto; /* Allow vertical scroll if content overflows */
 }
 
 body.light-mode .thumbnail-item a:hover figcaption {
@@ -760,11 +770,13 @@ body.light-mode .thumbnail-item .thumbnail-website {
     color: #555577; /* Adjust for light mode visibility */
     /* Ensure font-size and overflow properties match dark mode if not overridden */
     font-size: 0.7em;
-    word-break: break-all;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin-top: auto;
+    /* word-break: break-all; /* Replaced by overflow-wrap */
+    /* overflow: hidden; /* Not needed with normal white-space */
+    /* text-overflow: ellipsis; /* Not needed with normal white-space */
+    /* white-space: nowrap; /* Replaced by normal */
+    /* margin-top: auto; /* Removed as figcaption handles its own space */
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Break words to prevent overflow */
 }
 
 /* Light Mode Buttons */
