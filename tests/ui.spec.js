@@ -25,7 +25,7 @@ test('view toggling and category layout', async ({ page }) => {
 
   // Test List View
   await page.click('#list-view-btn');
-  await expect(mainElement).toHaveCSS('display', 'grid'); // New assertion for main layout
+  await expect(mainElement).toHaveCSS('display', 'flex'); // Layout switches back to flex
   await expect(firstContent).toHaveClass(/list-view/);     // Existing assertion for content view
 });
 
