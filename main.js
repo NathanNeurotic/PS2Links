@@ -402,5 +402,7 @@ if (searchBar) {
     searchBar.addEventListener('input', handleSearchInput);
 }
 
-initializePage();
-setupSidebarToggle(); // Initialize sidebar toggle functionality
+initializePage().then(() => {
+    document.body.addEventListener('favoritesUpdated', refreshFavoritesDisplayIfNeeded);
+    setupSidebarToggle(); // Initialize sidebar toggle functionality
+});
