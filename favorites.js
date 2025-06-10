@@ -1,6 +1,6 @@
 import { state, saveFavorites, saveExpandedCategories } from './state.js';
 import { initializeCollapsibles } from './collapsibles.js';
-import { createLinkListItem, createLinkThumbnailItem } from './linkUtils.js';
+import { createLinkItem } from './linkUtils.js';
 
 function getLinkDataByUrl(url) {
     for (const category of state.allLinksData) {
@@ -118,12 +118,8 @@ export function toggleFavorite(url, mainElement) {
     if (!isFavorited) {
         const container = ensureFavoritesSection(mainElement);
         if (!container.querySelector(`[data-url="${url}"]`)) {
-            let newItem;
-            if (state.currentView === 'list') {
-                newItem = createLinkListItem(linkObj, true, (u) => toggleFavorite(u, mainElement));
-            } else {
-                newItem = createLinkThumbnailItem(linkObj, true, (u) => toggleFavorite(u, mainElement));
-            }
+            const itemType = state.currentView === 'list' ? 'list' : 'thumbnail';
+            const newItem = createLinkItem(linkObj, true, (u) => toggleFavorite(u, mainElement), itemType);
             container.appendChild(newItem);
         }
         sortItemsInSection(container, state.currentView);

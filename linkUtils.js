@@ -8,23 +8,36 @@ export function getFaviconUrl(url) {
     }
 }
 
-export function createLinkListItem(linkObj, isFavorited, toggleFavorite) {
-    const li = document.createElement('li');
-    li.setAttribute('data-url', linkObj.url);
+export function createLinkItem(linkObj, isFavorited, toggleFavorite, type) {
+    const element = type === 'list' ? document.createElement('li') : document.createElement('figure');
+    element.setAttribute('data-url', linkObj.url);
+    if (type === 'thumbnail') {
+        element.classList.add('thumbnail-item');
+    }
+
     const a = document.createElement('a');
     a.href = linkObj.url;
     a.target = '_blank';
 
     const img = document.createElement('img');
     img.src = getFaviconUrl(linkObj.url);
-    img.alt = '';
+    img.alt = type === 'list' ? '' : linkObj.name;
     img.loading = 'lazy';
     img.onerror = function() { this.src = 'favicon.ico'; };
-    img.classList.add('list-view-favicon');
-    a.prepend(img);
 
-    const textNode = document.createTextNode(' ' + linkObj.name);
-    a.appendChild(textNode);
+    if (type === 'list') {
+        img.classList.add('list-view-favicon');
+        a.prepend(img);
+        const textNode = document.createTextNode(' ' + linkObj.name);
+        a.appendChild(textNode);
+    } else {
+        const figcaption = document.createElement('figcaption');
+        figcaption.textContent = linkObj.name;
+        a.appendChild(img);
+        a.appendChild(figcaption);
+    }
+
+    element.appendChild(a);
 
     const favButton = document.createElement('button');
     favButton.classList.add('favorite-btn');
@@ -36,44 +49,7 @@ export function createLinkListItem(linkObj, isFavorited, toggleFavorite) {
         e.stopPropagation();
         toggleFavorite(linkObj.url);
     });
+    element.appendChild(favButton);
 
-    li.appendChild(a);
-    li.appendChild(favButton);
-    return li;
-}
-
-export function createLinkThumbnailItem(linkObj, isFavorited, toggleFavorite) {
-    const figure = document.createElement('figure');
-    figure.classList.add('thumbnail-item');
-    figure.setAttribute('data-url', linkObj.url);
-
-    const a = document.createElement('a');
-    a.href = linkObj.url;
-    a.target = '_blank';
-
-    const img = document.createElement('img');
-    img.src = getFaviconUrl(linkObj.url);
-    img.alt = linkObj.name;
-    img.loading = 'lazy';
-    img.onerror = function() { this.src = 'favicon.ico'; };
-
-    const figcaption = document.createElement('figcaption');
-    figcaption.textContent = linkObj.name;
-
-    a.appendChild(img);
-    a.appendChild(figcaption);
-    figure.appendChild(a);
-
-    const favButton = document.createElement('button');
-    favButton.classList.add('favorite-btn');
-    favButton.innerHTML = '★';
-    if (isFavorited) {
-        favButton.classList.add('favorited');
-    }
-    favButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        toggleFavorite(linkObj.url);
-    });
-    figure.appendChild(favButton);
-    return figure;
+    return element;
 }

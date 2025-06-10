@@ -22,36 +22,39 @@ export function handleSearchInput() {
             if (textElement) {
                 const itemText = textElement.textContent.toLowerCase();
                 if (itemText.includes(searchQuery)) {
-                    item.style.display = '';
-                    if (state.currentView === 'thumbnail') item.style.visibility = 'visible';
+                    item.style.display = ''; // Show item
                     hasMatches = true;
                 } else {
-                    item.style.display = 'none';
-                    if (state.currentView === 'thumbnail') item.style.visibility = 'hidden';
+                    item.style.display = 'none'; // Hide item
                 }
             }
         });
 
+        // Update section visibility based on matches
         if (hasMatches) {
-            section.style.display = '';
+            section.style.display = ''; // Show section
+            // Ensure content area is visible; display type depends on the view mode.
             contentElement.style.display = state.currentView === 'thumbnail' ? 'grid' : 'block';
-            collapsibleHeader.classList.add('search-match');
+            collapsibleHeader.classList.add('search-match'); // Mark header for styling
         } else {
             if (searchQuery.length > 0) {
-                section.style.display = 'none';
+                section.style.display = 'none'; // Hide section if no matches and search is active
             } else {
+                // If search is empty, ensure section is visible but content is handled by collapsibles
                 section.style.display = '';
-                contentElement.style.display = 'none';
+                contentElement.style.display = 'none'; // Initially hide content; collapsibles will manage it
             }
             collapsibleHeader.classList.remove('search-match');
         }
     });
 
+    // If the search query is empty, reset all sections to their default state
     if (searchQuery === '') {
         sections.forEach(section => {
-            section.style.display = '';
+            section.style.display = ''; // Ensure section is visible
             const contentElement = section.querySelector('.content');
             if (contentElement) {
+                // Hide content; initializeCollapsibles will restore based on expanded/collapsed state
                 contentElement.style.display = 'none';
             }
             const collapsibleHeader = section.querySelector('h2.collapsible');
@@ -59,6 +62,7 @@ export function handleSearchInput() {
                 collapsibleHeader.classList.remove('search-match');
             }
         });
+        // Re-initialize collapsibles to apply original expanded/collapsed states
         initializeCollapsibles();
     }
 }
