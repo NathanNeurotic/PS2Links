@@ -235,7 +235,7 @@ main {
 /* Multi-column layout for sections when thumbnail categories are active */
 main.thumbnail-categories-active {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* Adjust minmax as needed */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 320px)); /* Adjust minmax as needed */
     gap: 20px;
 }
 
@@ -474,24 +474,36 @@ h2.collapsible:hover {
 
 .thumbnail-item img {
     width: 100%; /* Make image fill the width of the thumbnail item */
-    height: 70%; /* Allocate 70% of the item's height to the image */
+    height: 50%; /* Allocate 50% of the item's height to the image */
     object-fit: cover; /* Cover the allocated space, cropping if necessary */
     border-radius: 4px;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     border: 1px solid #003366;
 }
 
 .thumbnail-item figcaption {
-    font-size: 0.85em;
+    font-size: 0.8em;
     color: #A0A0FF; /* Lighter caption color */
     line-height: 1.2;
-    margin-top: auto; /* Push caption to bottom if image is small */
-    overflow-wrap: break-word;
-    word-break: break-word;
+    /* margin-top: auto; /* Push caption to bottom if image is small */
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    margin-bottom: 5px;
+    /* overflow-wrap: break-word; /* Not needed with nowrap */
+    /* word-break: break-word; /* Not needed with nowrap */
 }
 
 .thumbnail-item a:hover figcaption {
     color: #E0E0FF; /* Brighter caption on hover */
+}
+
+.thumbnail-item .thumbnail-website {
+    font-size: 0.7em; /* Smaller font for URL */
+    color: #B0B0FF; /* Lighter color, adjust for light mode too */
+    word-break: break-all; /* Break long URLs */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Show only one line, add ellipsis if too long */
+    margin-top: auto; /* Push to bottom if space allows, may not be needed with flex column */
 }
 
 footer {
@@ -702,16 +714,31 @@ body.light-mode .thumbnail-item img {
     border: 1px solid #CFD8DC; /* CHANGED: Lighter Grey border for image */
     /* Ensure square aspect ratio image adjustments are applied in light mode too */
     width: 100%;
-    height: 70%; /* Or adjust as needed for light mode caption */
+    height: 50%; /* Or adjust as needed for light mode caption */
     object-fit: cover;
 }
 
 body.light-mode .thumbnail-item figcaption {
     color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black for caption */
+    /* Ensure font-size and overflow properties match dark mode if not overridden */
+    font-size: 0.8em;
+    margin-bottom: 5px;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 
 body.light-mode .thumbnail-item a:hover figcaption {
     color: #000000; /* CHANGED: Black for caption on hover */
+}
+
+body.light-mode .thumbnail-item .thumbnail-website {
+    color: #555577; /* Adjust for light mode visibility */
+    /* Ensure font-size and overflow properties match dark mode if not overridden */
+    font-size: 0.7em;
+    word-break: break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: auto;
 }
 
 /* Light Mode Buttons */
