@@ -215,7 +215,35 @@ export function refreshFavoritesDisplayIfNeeded() {
         }
 
     } else {
-        removeFavoritesSectionIfEmpty(); // This function is imported from favorites.js
+        // Favorites are empty, ensure section exists and display "No Favorites Added" message
+        let favSection = document.getElementById('favorites-section');
+        let favContentDiv = document.getElementById('favorites-content');
+
+        if (!favSection) {
+            favSection = createFavoritesSectionElements();
+            currentMainElement.insertBefore(favSection, currentMainElement.firstChild);
+            const newCollapsibleHeader = favSection.querySelector('h2.collapsible');
+            if (newCollapsibleHeader) {
+                initializeCollapsibles(); // Re-run globally or initialize the specific new one
+            }
+            favContentDiv = document.getElementById('favorites-content'); // Re-fetch after creation
+        }
+
+        if (favContentDiv) {
+            favContentDiv.innerHTML = ''; // Clear existing content (e.g., previous links)
+            const noFavsMessage = document.createElement('p');
+            noFavsMessage.textContent = 'No Favorites Added.';
+            noFavsMessage.classList.add('no-favorites-message'); // For styling
+            favContentDiv.appendChild(noFavsMessage);
+            // Ensure the content area is appropriately classed for view consistency if needed
+            // (e.g., if it had list-view or thumbnail-view classes that affect padding/layout)
+            // For now, just clearing and adding the message.
+            // We might want to ensure it's visible if the section was collapsed.
+            // However, createFavoritesSectionElements already sets it to expanded by default.
+        } else {
+            console.error("Favorites content div not found for showing 'No Favorites' message.");
+        }
+        // The call to removeFavoritesSectionIfEmpty() is removed as per subtask.
     }
 }
 

@@ -16,12 +16,12 @@ import { createLinkItem } from './linkUtils.js'; // getLinkDataByUrl and sortIte
 export function removeFavoritesSectionIfEmpty() {
     const favSection = document.getElementById('favorites-section');
     if (favSection && state.favorites.length === 0) {
-        favSection.remove();
-        const idx = state.expandedCategories.indexOf('Favorites');
-        if (idx > -1) {
-            state.expandedCategories.splice(idx, 1);
-            saveExpandedCategories();
-        }
+        // The section is no longer removed from here.
+        // Display of empty state is handled by refreshFavoritesDisplayIfNeeded in main.js.
+        // console.log("removeFavoritesSectionIfEmpty: Favorites section found and favorites are empty. Section removal and state.expandedCategories update are now handled by refreshFavoritesDisplayIfNeeded.");
+
+        // The part that managed state.expandedCategories for 'Favorites' is also removed
+        // as the section header should remain collapsible even when empty.
     }
 }
 

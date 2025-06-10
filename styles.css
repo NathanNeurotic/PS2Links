@@ -235,7 +235,7 @@ main {
 /* Multi-column layout for sections when thumbnail categories are active */
 main.thumbnail-categories-active {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 320px)); /* Adjust minmax as needed */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Adjust minmax as needed */
     gap: 20px;
 }
 
@@ -405,7 +405,7 @@ h2.collapsible:hover {
 /* Thumbnail View Specific Styles */
 .content.thumbnail-view {
     /* display: grid; /* This will be handled by .content-expanded.thumbnail-view */
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(3, 1fr); /* Responsive grid */
     gap: 15px; /* Space between thumbnails */
     padding: 10px 0; /* Padding for the container */
 }
@@ -546,8 +546,21 @@ footer p {
     color: #A0A0A0; /* Dimmer light gray for footer text */
 }
 
+/* Message for empty favorites section */
+.no-favorites-message {
+    text-align: center;
+    padding: 20px; /* Increased padding for better spacing */
+    font-style: italic;
+    color: #888; /* Neutral color for dark mode */
+}
+
 
 /*-------------------- LIGHT MODE STYLES --------------------*/
+
+/* Light mode for no-favorites-message */
+body.light-mode .no-favorites-message {
+    color: #555; /* Darker grey for light mode */
+}
 
 /* Ensure light mode border for list-view is preserved if content is expanded */
 body.light-mode .content-expanded.list-view {
