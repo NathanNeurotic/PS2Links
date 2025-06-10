@@ -1,0 +1,938 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body.dark-mode {
+    --bg-color: #070728;
+    --text-color: #E0E0E0;
+}
+
+body.light-mode {
+    --bg-color: #E8EAF6;
+    --text-color: #050a1f;
+}
+
+body {
+    font-family: "Orbitron", "Arial", sans-serif;
+    background-color: var(--bg-color); /* Deep Space Blue */
+    background-image: linear-gradient(180deg, rgba(7,7,40,0.95) 0%, rgba(15,15,50,0.9) 50%, rgba(7,7,40,0.95) 100%),
+                      radial-gradient(circle at top right, #2E0854, #070728 70%),
+                      radial-gradient(circle at bottom left, #2E0854, #070728 70%);
+    background-blend-mode: multiply; /* Or another blend mode if it looks better */
+    color: var(--text-color); /* Light Gray/Off-White */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth theme transition */
+}
+
+header {
+    background: linear-gradient(to bottom, #0a0a1a, #000000); /* Dark blueish-black to black */
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #2E0854; /* Dark Purple */
+}
+
+header img { /* logo.png */
+    display: block;
+    margin: 0 auto 10px auto; /* Added bottom margin */
+    max-width: 180px; /* Slightly smaller */
+    height: auto;
+    /* Attempt to make logo fit theme - this is experimental */
+    /* filter: invert(1) hue-rotate(200deg) saturate(1.5) brightness(1.2); */
+    /* A more subtle approach if the above is too much: */
+    filter: brightness(1.5) saturate(0.8);
+}
+
+/* Header logo specific styling */
+#logo {
+    display: block;
+    margin: 0 auto; /* Center horizontally */
+    max-width: 200px;
+    height: auto;
+}
+
+h1 {
+    margin: 0;
+    color: var(--text-color); /* Light Gray/Off-White */
+    font-weight: 700; /* Bolder Orbitron */
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF; /* Electric Blue glow */
+}
+
+header h1 { /* More specific selector for the main title if needed */
+    font-size: 2.5em; /* Larger title */
+}
+
+#search-bar {
+    margin-top: 15px;
+    padding: 12px 15px;
+    width: 80%;
+    max-width: 450px;
+    border-radius: 25px; /* More rounded, futuristic pill shape */
+    border: 1px solid #00FFFF; /* Electric Blue border */
+    background-color: #101030; /* Fallback */
+    background-image: linear-gradient(to bottom, #1a1a3a, #0a0a28); /* Subtle dark gradient */
+    color: var(--text-color);
+    font-family: "Orbitron", "Arial", sans-serif;
+    font-size: 1em;
+    box-shadow: 0 0 8px #00FFFF, inset 0 0 5px rgba(0, 255, 255, 0.3); /* Outer and subtle inner glow */
+    transition: all 0.3s ease;
+}
+
+#search-bar::placeholder {
+    color: #A0A0A0; /* Dimmer light gray */
+    opacity: 0.8;
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: #FF00FF; /* Vibrant Magenta border on focus */
+    box-shadow: 0 0 12px #FF00FF, inset 0 0 8px rgba(255, 0, 255, 0.4); /* Magenta glow on focus */
+}
+
+/* View Toggle Buttons */
+#view-toggle-buttons {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: flex; /* For aligning items in the div */
+    justify-content: center; /* Center buttons */
+    align-items: center; /* Align items vertically */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+/* Theme Toggle Button Styles (Shared) */
+#theme-toggle-btn {
+    font-family: "Orbitron", "Arial", sans-serif;
+    padding: 8px 15px;
+    margin-left: 10px; /* Space from view buttons */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    /* Specific theme styles will be below */
+}
+
+.view-btn {
+    font-family: "Orbitron", "Arial", sans-serif;
+    /* Default (dark theme) styles */
+    background: linear-gradient(145deg, #183d8f, #0a1a3a);
+    color: #C0C0FF;
+    border: 1px solid #003366;
+    padding: 8px 15px;
+    margin: 5px; /* Adjusted for wrapping */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
+    font-size: 0.9em;
+}
+
+.view-btn:hover {
+    background: linear-gradient(145deg, #204eaf, #0f234d); /* Dark theme hover */
+    color: #E0E0FF;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15);
+    transform: translateY(-1px);
+}
+
+.view-btn.active {
+    background: linear-gradient(145deg, #2968ff, #1f5ef7); /* Dark theme active */
+    color: #FFFFFF;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2), inset 0 0 5px rgba(0,0,0,0.3);
+    transform: translateY(1px);
+    cursor: default;
+}
+
+/* Category View Toggle Buttons */
+.category-view-toggle {
+    display: flex;
+    justify-content: flex-end; /* Align to the right */
+    align-items: center;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    margin-bottom: 8px; /* Space below the toggles, before content area */
+    gap: 5px; /* Space between buttons */
+}
+
+.category-view-btn {
+    font-family: "Orbitron", "Arial", sans-serif;
+    background: linear-gradient(145deg, #2a2a3a, #1a1a28); /* Darker, less prominent */
+    color: #A0A0CC;
+    border: 1px solid #333344;
+    padding: 4px 10px; /* Smaller padding */
+    margin: 0; /* Gap property handles spacing */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.75em; /* Smaller font */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 0px rgba(255,255,255,0.05);
+}
+
+.category-view-btn:hover {
+    background: linear-gradient(145deg, #3a3a4a, #2a2a38);
+    color: #C0C0FF;
+    border-color: #444455;
+}
+
+.category-view-btn.active {
+    background: linear-gradient(145deg, #1f5ef7, #0a1a3a); /* Similar to main active buttons */
+    color: #FFFFFF;
+    border-color: #003366;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1), inset 0 0 3px rgba(0,0,0,0.2);
+    cursor: default;
+}
+
+/* Default (Dark Theme) Theme Toggle Button Style */
+#theme-toggle-btn {
+    background: linear-gradient(145deg, #4a4a4a, #2a2a2a); /* Dark grey gradient */
+    color: var(--text-color);
+    border: 1px solid #555555;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
+    position: relative; /* For ::after pseudo-element if needed for icon */
+}
+
+#theme-toggle-btn:hover {
+    background: linear-gradient(145deg, #5a5a5a, #3a3a3a);
+    color: #FFFFFF;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.4), inset 0 1px 1px rgba(255,255,255,0.15);
+    transform: translateY(-1px);
+}
+
+#theme-toggle-btn:active {
+    background: linear-gradient(145deg, #3a3a3a, #1a1a1a); /* Darker pressed state */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5), inset 0 1px 3px rgba(0,0,0,0.2);
+    transform: translateY(1px);
+}
+
+
+#return-home {
+    position: fixed;
+    top: 20px; /* Adjusted for new header - might need further tweaking */
+    right: 20px;
+    width: 48px; /* Standard icon size */
+    height: 48px;
+    z-index: 1000;
+    /* Attempt to style the icon - highly dependent on original icon colors */
+    /* filter: invert(1) brightness(1.5) hue-rotate(180deg) saturate(3); */
+    /* If too complex, a simple brightness/contrast might be better, or leave as is */
+    filter: brightness(1.2) contrast(1.1);
+    border-radius: 50%; /* Make it circular */
+    background-color: rgba(46, 8, 84, 0.5); /* Dark Purple semi-transparent bg */
+    padding: 5px;
+    box-shadow: 0 0 10px #00FFFF;
+}
+#return-home:hover {
+    box-shadow: 0 0 15px #FF00FF;
+    background-color: rgba(255, 0, 255, 0.3);
+}
+
+main {
+    padding: 20px;
+    margin-left: 0; /* Default margin */
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* Default main layout (single column for sections) */
+main {
+    /* standard padding already defined */
+}
+
+/* Multi-column layout for sections when thumbnail categories are active */
+main.thumbnail-categories-active {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Adjust minmax as needed */
+    gap: 20px;
+}
+
+/* New rule for sections within thumbnail-categories-active main */
+main.thumbnail-categories-active > section {
+    width: 100%; /* Make section take full width of its grid column */
+}
+
+main.list-categories-active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Keep the gap for spacing between items */
+}
+
+section {
+    box-sizing: border-box;
+    width: 100%; /* Ensure sections take full available width */
+    margin-bottom: 25px; /* This will apply in both list and grid view for spacing below sections */
+    /* background-color: rgba(0, 0, 20, 0.7); /* Fallback if gradient not supported */
+    background-image: linear-gradient(to bottom, rgba(10, 20, 50, 0.75), rgba(0, 0, 20, 0.85));
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #2E0854; /* Dark Purple border */
+    box-shadow: 0 0 15px rgba(46, 8, 84, 0.5); /* Dark Purple glow */
+    align-self: start; /* Ensures sections in a grid layout don't stretch if their content is shorter */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for theme changes */
+}
+
+/* Category Header Styles */
+h2.collapsible {
+    background: linear-gradient(145deg, #1f5ef7, #0a1a3a); /* Blue to Dark Blue/Black gradient */
+    color: var(--text-color); /* Light Gray/Off-White for text */
+    cursor: pointer;
+    padding: 12px 20px; /* Button-like padding */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #003366; /* Darker blue border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4), /* Lifted effect */
+                inset 0 1px 1px rgba(255, 255, 255, 0.2); /* Inner highlight for gloss */
+    transition: all 0.3s ease;
+    font-size: 1.4em; /* Adjusted size */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    /* margin-bottom: 10px; */ /* This space is now potentially handled by category-view-toggle or content's margin-top */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+    position: relative;
+    /* Make H2 a flex container for title and toggle buttons */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden; /* Added */
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+h2.collapsible::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.35em 0.35em 0.35em 0;
+    border-color: transparent currentColor transparent transparent;
+    margin-left: 10px;
+    transition: transform 0.2s ease;
+    vertical-align: middle;
+}
+
+h2.collapsible.expanded::after {
+    transform: rotate(90deg);
+}
+
+h2.collapsible.collapsed::after {
+    transform: rotate(0deg);
+}
+
+h2.collapsible:hover {
+    background: linear-gradient(145deg, #2968ff, #0f234d); /* Brighter gradient on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.5), /* More lifted effect */
+                inset 0 1px 2px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px); /* Slight lift */
+    color: #FFFFFF; /* Brighter text on hover */
+}
+
+/* When expanded, the display type is primarily controlled by .list-view or .thumbnail-view */
+.content-expanded.list-view {
+    display: block; /* Default display for list content containers */
+}
+.content-expanded.thumbnail-view {
+    display: grid; /* Default display for thumbnail content containers */
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.content-collapsed {
+    display: none !important;
+}
+
+.content {
+    /* display: none; /* This line is removed */
+    margin-top: 10px;
+    padding-left: 0; /* Reset from original */
+    border-left: none; /* Reset from original */
+    /* Common content styles */
+}
+
+/* List View Specific Styles */
+.content.list-view ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.content.list-view li {
+    list-style: none;
+    margin: 10px 0; /* Space between link buttons */
+    overflow-x: hidden; /* Prevent horizontal scrollbar on link hover/scale */
+    display: flex; /* Arrange link and button in a row */
+    align-items: center; /* Vertically align items */
+    justify-content: space-between; /* Push button to the far right */
+}
+
+.content.list-view li > a {
+    display: flex; /* Ensure 'a' tag is also flex if needed, though its parent li handles layout */
+    align-items: center; /* Vertically center content (icon and text) */
+    flex-grow: 1; /* Allow link to take available space */
+    margin-right: 8px; /* Space between link and favorite button */
+    /* The rest of the link styles remain */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: linear-gradient(145deg, #0d2f6e, #040a18);
+    color: #C0C0FF;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #001f4d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3),
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    font-size: 0.95em;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.5);
+}
+
+/* Specific adjustments for favorite button in list view if necessary */
+.content.list-view li .favorite-btn {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    /* Minimal styling, as it's just a star character */
+    padding: 0 5px; /* Adjust if needed */
+    margin-left: auto; /* Helps ensure it's pushed to the right, though justify-content on li should handle it */
+}
+
+.content.list-view li > a:hover {
+    background: linear-gradient(145deg, #1a4ca3, #081229);
+    color: #E0E0FF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4),
+                inset 0 1px 2px rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px) scale(1.01);
+    text-shadow: 0 0 3px #C0C0FF;
+}
+
+.content.list-view li > a:visited {
+    background: linear-gradient(145deg, #0a2550, #030712);
+    color: #A0A0CC;
+}
+
+/* Styles for favicons in list view */
+.list-view-favicon {
+    width: 16px; /* Standard small favicon size */
+    height: 16px; /* Standard small favicon size */
+    margin-right: 8px; /* Space between favicon and link text */
+    vertical-align: middle; /* Align icon nicely with text */
+    object-fit: contain; /* Ensure aspect ratio is maintained */
+}
+
+/* Thumbnail View Specific Styles */
+.content.thumbnail-view {
+    /* display: grid; /* This will be handled by .content-expanded.thumbnail-view */
+    padding: 10px 0; /* Padding for the container */
+}
+
+/* Favorite button within thumbnail */
+.thumbnail-item .favorite-btn {
+    position: absolute;
+    top: 5px; /* Adjust as needed */
+    right: 5px; /* Adjust as needed */
+    background: rgba(10, 10, 30, 0.6); /* Subtle dark background */
+    border: 1px solid rgba(0, 255, 255, 0.3); /* Faint cyan border */
+    border-radius: 50%; /* Circular */
+    width: 28px; /* Adjust size */
+    height: 28px; /* Adjust size */
+    padding: 0;
+    font-size: 14px; /* Adjust star icon size */
+    line-height: 26px; /* Center star vertically */
+    text-align: center;
+    color: #777; /* Default non-favorited star color */
+    z-index: 10; /* Ensure it's above other elements */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.thumbnail-item .favorite-btn:hover {
+    background: rgba(20, 30, 60, 0.8);
+    border-color: rgba(0, 255, 255, 0.6);
+    color: #FFD700; /* Gold on hover, consistent with general .favorite-btn hover */
+}
+
+.thumbnail-item .favorite-btn.favorited {
+    color: #FFD700; /* Gold for favorited, consistent */
+    background: rgba(255, 215, 0, 0.2); /* Slight gold glow background */
+    border-color: rgba(255, 215, 0, 0.5);
+    text-shadow: 0 0 3px gold; /* Consistent text shadow */
+}
+
+
+.thumbnail-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,128,255,0.5);
+    border-color: #00FFFF;
+}
+
+.thumbnail-item a {
+    text-decoration: none;
+    color: inherit; /* Inherit color from parent for caption */
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Make anchor fill the figure */
+}
+
+.thumbnail-item {
+    background-color: #081020; /* Dark background for thumbnail card */
+    border: 1px solid #1a2c5a;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    display: flex; /* Use flex for internal alignment */
+    flex-direction: column;
+    justify-content: space-between; /* Push caption to bottom */
+    position: relative; /* For absolute positioning of the favorite button */
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    min-width: 160px;
+    min-height: 160px;
+}
+
+.thumbnail-item img {
+    width: 100%; /* Make image fill the width of the thumbnail item */
+    height: 70%; /* Allocate 70% of the item's height to the image */
+    object-fit: contain; /* Contain the image within the allocated space, preserving aspect ratio */
+    border-radius: 4px;
+    margin-bottom: 5px;
+    border: 1px solid #003366;
+}
+
+.thumbnail-item figcaption {
+    font-size: 0.8em;
+    color: #A0A0FF; /* Lighter caption color */
+    line-height: 1.2;
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Break words to prevent overflow */
+    text-align: center; /* Ensure text is centered */
+    margin-top: 5px;
+}
+
+.thumbnail-item a:hover figcaption {
+    color: #E0E0FF; /* Brighter caption on hover */
+}
+
+.thumbnail-item .thumbnail-website {
+    font-size: 0.7em; /* Smaller font for URL */
+    color: #B0B0FF; /* Lighter color, adjust for light mode too */
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Break words to prevent overflow */
+    /* word-break: break-all; /* Replaced by overflow-wrap */
+    /* overflow: hidden; /* Not needed with normal white-space */
+    /* text-overflow: ellipsis; /* Not needed with normal white-space */
+    /* margin-top: auto; /* Removed as figcaption handles its own space */
+}
+
+footer {
+    background: linear-gradient(to top, #0a0a1a, #000000); /* Black to dark blueish-black */
+    text-align: center;
+    padding: 20px; /* More padding */
+    border-top: 2px solid #2E0854; /* Dark Purple */
+    margin-top: 30px; /* Space above footer */
+}
+
+/* Favorite Button General Styles */
+.favorite-btn {
+    background: none;
+    border: none;
+    color: #777; /* Default non-favorited star color (grey) */
+    cursor: pointer;
+    padding: 2px 5px; /* Minimal padding */
+    font-size: 1.5em; /* Adjust star size */
+    line-height: 1; /* Ensure consistent line height */
+    transition: color 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.favorite-btn:hover {
+    color: #FFD700; /* Gold color on hover */
+    transform: scale(1.1);
+}
+
+.favorite-btn.favorited {
+    color: #FFD700; /* Gold color for favorited star */
+    text-shadow: 0 0 3px gold;
+}
+/* Make sure the star doesn't have text decoration from an outer link */
+a .favorite-btn, .thumbnail-item .favorite-btn {
+    text-decoration: none;
+}
+
+
+footer p {
+    margin: 0;
+    color: #A0A0A0; /* Dimmer light gray for footer text */
+}
+
+/* Message for empty favorites section */
+.no-favorites-message {
+    text-align: center;
+    padding: 20px; /* Increased padding for better spacing */
+    font-style: italic;
+    color: #888; /* Neutral color for dark mode */
+}
+
+
+/*-------------------- LIGHT MODE STYLES --------------------*/
+
+/* Light mode for no-favorites-message */
+body.light-mode .no-favorites-message {
+    color: #555; /* Darker grey for light mode */
+}
+
+/* Ensure light mode border for list-view is preserved if content is expanded */
+body.light-mode .content-expanded.list-view {
+   border-left: 2px dashed #B39DDB;
+}
+body.light-mode .content-expanded.thumbnail-view {
+   border-left: none; /* Explicitly no border for thumbnail view in light mode */
+}
+
+/* Light Mode Category View Toggle Buttons */
+body.light-mode .category-view-toggle {
+    /* Structure (flex properties) remains the same, only button appearances change */
+}
+
+body.light-mode .category-view-btn {
+    background: linear-gradient(145deg, #E0E0E0, #D0D0D0); /* Light grey */
+    color: #212121; /* Dark text */
+    border: 1px solid #BDBDBD; /* Medium grey border */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1), inset 0 1px 0px rgba(255,255,255,0.3);
+}
+
+body.light-mode .category-view-btn:hover {
+    background: linear-gradient(145deg, #E8E8E8, #D8D8D8);
+    color: #000000;
+    border-color: #AEAEAE;
+}
+
+body.light-mode .category-view-btn.active {
+    background: linear-gradient(145deg, #5C6BC0, #3F51B5); /* Main active button style for light mode */
+    color: #FFFFFF;
+    border-color: #283593;
+}
+
+
+body.light-mode {
+    background-color: var(--bg-color); /* Fallback */
+    background-image: linear-gradient(180deg, #F5F5F5 0%, #E8EAF6 100%), /* Very light grey to light bluish-grey */
+                      radial-gradient(circle at top right, #E1D8F0, #E8EAF6 70%),
+                      radial-gradient(circle at bottom left, #E1D8F0, #E8EAF6 70%);
+    background-blend-mode: multiply;
+    color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black for high contrast */
+}
+
+body.light-mode header {
+    background: linear-gradient(to bottom, #FAFAFA, #F5F5F5); /* White to very light gray */
+    border-bottom: 2px solid #7E57C2; /* Medium Purple */
+}
+
+body.light-mode header img { /* logo.png in light mode */
+    filter: brightness(1) saturate(1); /* Reset or adjust for light bg */
+}
+
+body.light-mode h1 {
+    color: #1A237E; /* CHANGED: Dark Indigo for better contrast */
+    text-shadow: 0 0 2px #AEB6BF, 0 0 4px #AEB6BF; /* Softer, less intense glow */
+}
+
+body.light-mode #search-bar {
+    border: 1px solid #5C6BC0;
+    background-image: linear-gradient(to bottom, #FFFFFF, #F5F5F5); /* White to light gray */
+    color: var(--text-color);
+    box-shadow: 0 0 6px #C5CAE9, inset 0 0 4px rgba(197, 202, 233, 0.3);
+}
+
+body.light-mode #search-bar::placeholder {
+    color: #455A64;
+}
+
+body.light-mode #search-bar:focus {
+    border-color: #303F9F;
+    box-shadow: 0 0 10px #9FA8DA, inset 0 0 6px rgba(159, 168, 218, 0.4);
+}
+
+body.light-mode #return-home {
+    filter: brightness(0.9) contrast(1.2);
+    background-color: rgba(126, 87, 194, 0.5);
+    box-shadow: 0 0 10px #9575CD;
+}
+body.light-mode #return-home:hover {
+    box-shadow: 0 0 15px #7E57C2;
+    background-color: rgba(126, 87, 194, 0.7);
+}
+
+body.light-mode section {
+    /* background-color: #FFFFFF; /* Fallback */
+    background-image: linear-gradient(to bottom, #FFFFFF, #F9FAFB); /* White to very light grey */
+    border: 1px solid #9FA8DA;
+    box-shadow: 0 0 10px rgba(159, 168, 218, 0.4);
+    /* align-self: start; is already on the general section style */
+}
+
+/* Ensure the title span in H2 (specifically for Favorites, but good practice) doesn't get squished and handles its own overflow */
+#favorites-section h2.collapsible > span:first-child {
+    flex-grow: 1; /* Allows title to take available space */
+    overflow: hidden; /* Added */
+    white-space: nowrap; /* Added */
+    text-overflow: ellipsis; /* Added */
+}
+
+
+/* Light Mode Category Header */
+body.light-mode h2.collapsible {
+    background: linear-gradient(145deg, #5C6BC0, #3F51B5); /* CHANGED: Slightly darker, more saturated blues */
+    color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black text for high contrast */
+    /* It should also be a flex container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #283593; /* CHANGED: Darker Indigo border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), /* Softer shadow */
+                inset 0 1px 1px rgba(255, 255, 255, 0.4); /* Inner highlight for gloss */
+    text-shadow: none; /* Remove text shadow for cleaner look on light bg */
+}
+
+body.light-mode h2.collapsible:hover {
+    background: linear-gradient(145deg, #7986CB, #5C6BC0); /* Lighter on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2),
+                inset 0 1px 2px rgba(255, 255, 255, 0.5);
+    color: #000000; /* Ensure text is still dark on hover */
+}
+
+body.light-mode .content {
+     border-left: 2px dashed #B39DDB; /* Lighter purple dashed line for list view */
+}
+body.light-mode .content.thumbnail-view {
+    border-left: none; /* No border for thumbnail content area */
+}
+
+
+/* Light Mode Link Styles */
+body.light-mode .content.list-view li > a {
+    background: linear-gradient(145deg, #E8EAF6, #C5CAE9); /* CHANGED: Lighter background for buttons */
+    color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black text */
+    border: 1px solid #9FA8DA; /* CHANGED: Lighter Indigo border */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), /* Softer shadow */
+                inset 0 1px 1px rgba(255, 255, 255, 0.5); /* Brighter inner highlight */
+    text-shadow: none;
+}
+
+body.light-mode .content.list-view li > a:hover {
+    background: linear-gradient(145deg, #FFFFFF, #E8EAF6); /* Even lighter on hover */
+    color: #000000; /* CHANGED: Black text on hover for max contrast */
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.15),
+                inset 0 1px 1px rgba(255, 255, 255, 0.7);
+    transform: translateY(-1px) scale(1.01);
+}
+
+body.light-mode .content.list-view li > a:visited {
+    background: linear-gradient(145deg, #D1C4E9, #C5CAE9); /* Slightly different light shade for visited */
+    color: #283593; /* CHANGED: Dark Indigo for visited text */
+}
+
+/* Light Mode Thumbnail Styles */
+body.light-mode .thumbnail-item {
+    background-color: #FFFFFF; /* CHANGED: White background for thumbnail cards */
+    border: 1px solid #B0BEC5; /* CHANGED: Light Blue-grey border */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+body.light-mode .thumbnail-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 3px 7px rgba(0,0,0,0.18);
+    border-color: #78909C; /* CHANGED: Darker Blue-grey border on hover */
+}
+
+body.light-mode .thumbnail-item img {
+    border: 1px solid #CFD8DC; /* CHANGED: Lighter Grey border for image */
+    /* Ensure square aspect ratio image adjustments are applied in light mode too */
+    width: 100%;
+    height: 70%; /* Matched to base: Allocate 70% of the item's height to the image */
+    object-fit: contain; /* Matched to base: Contain the image, preserving aspect ratio */
+}
+
+body.light-mode .thumbnail-item figcaption {
+    color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black for caption */
+    /* Ensure font-size and overflow properties match dark mode if not overridden */
+    font-size: 0.8em;
+    /* margin-bottom: 5px; /* Removed, flexbox and height percentage should manage space */
+    /* overflow: hidden; text-overflow: ellipsis; white-space: nowrap; /* Removed for wrapping */
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Break words to prevent overflow */
+    text-align: center; /* Ensure text is centered */
+    height: 30%; /* Allocate 30% of the item's height to the caption */
+    overflow-y: auto; /* Allow vertical scroll if content overflows */
+}
+
+body.light-mode .thumbnail-item a:hover figcaption {
+    color: #000000; /* CHANGED: Black for caption on hover */
+}
+
+body.light-mode .thumbnail-item .thumbnail-website {
+    color: #555577; /* Adjust for light mode visibility */
+    /* Ensure font-size and overflow properties match dark mode if not overridden */
+    font-size: 0.7em;
+    /* word-break: break-all; /* Replaced by overflow-wrap */
+    /* overflow: hidden; /* Not needed with normal white-space */
+    /* text-overflow: ellipsis; /* Not needed with normal white-space */
+    /* white-space: nowrap; /* Replaced by normal */
+    /* margin-top: auto; /* Removed as figcaption handles its own space */
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Break words to prevent overflow */
+}
+
+/* Light Mode Buttons */
+body.light-mode .view-btn {
+    background: linear-gradient(145deg, #E0E0E0, #BDBDBD); /* CHANGED: Light Grey gradient */
+    color: var(--text-color); /* CHANGED: Very Dark Blue text */
+    border: 1px solid #9E9E9E; /* CHANGED: Medium Grey border */
+    box-shadow: 0 2px 3px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255,255,255,0.4);
+}
+
+body.light-mode .view-btn:hover {
+    background: linear-gradient(145deg, #EEEEEE, #E0E0E0); /* Lighter grey on hover */
+    color: #000000; /* Black text on hover */
+    transform: translateY(-1px);
+}
+
+body.light-mode .view-btn.active {
+    background: linear-gradient(145deg, #BDBDBD, #9E9E9E); /* Darker grey for active */
+    color: #000000; /* Black text for active */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15), inset 0 0 4px rgba(0,0,0,0.1);
+    transform: translateY(1px);
+}
+
+body.light-mode #theme-toggle-btn {
+    background: linear-gradient(145deg, #E0E0E0, #BDBDBD); /* Light grey gradient */
+    color: var(--text-color); /* Very Dark Blue text */
+    border: 1px solid #9E9E9E; /* Medium grey border */
+    box-shadow: 0 2px 3px rgba(0,0,0,0.12), inset 0 1px 1px rgba(255,255,255,0.4);
+}
+
+body.light-mode #theme-toggle-btn:hover {
+    background: linear-gradient(145deg, #EEEEEE, #E0E0E0); /* Lighter grey */
+    color: #000000; /* Black text */
+    transform: translateY(-1px);
+}
+
+body.light-mode #theme-toggle-btn:active {
+    background: linear-gradient(145deg, #BDBDBD, #9E9E9E); /* Darker pressed state */
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2), inset 0 1px 3px rgba(0,0,0,0.1);
+    transform: translateY(1px);
+}
+
+
+body.light-mode footer {
+    background: linear-gradient(to top, #FAFAFA, #F5F5F5); /* Light Gray to off-white */
+    border-top: 2px solid #BDBDBD;
+}
+
+body.light-mode footer p {
+    color: #212121;
+}
+
+/* Sidebar Styles */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px; /* Example width */
+    background-color: var(--bg-color); /* Use theme variable */
+    border-right: 1px solid #2E0854; /* Dark Purple border, similar to header */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1100; /* Higher than other fixed elements like #return-home */
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5); /* Add a subtle shadow */
+}
+
+#sidebar.open {
+    transform: translateX(0);
+}
+
+/* Style for links/categories within the sidebar */
+#sidebar a {
+    display: block;
+    padding: 8px 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: background-color 0.2s ease;
+}
+
+#sidebar a:hover {
+    background-color: rgba(46, 8, 84, 0.3); /* Dark Purple, semi-transparent */
+}
+
+/* Sidebar Toggle Button Styles */
+#sidebar-toggle {
+    position: fixed;
+    top: 20px; /* Align with #return-home */
+    left: 20px;
+    z-index: 1200; /* Highest z-index to be on top of everything */
+    width: 30px; /* NEW */
+    height: 30px; /* NEW */
+    background-color: #1f5ef7; /* Blue, similar to active buttons */
+    color: white;
+    border: none;
+    border-radius: 5px; /* Or 50% for a circle */
+    cursor: pointer;
+    font-family: "Orbitron", "Arial", sans-serif;
+    font-size: 16px; /* ADJUSTED - or suitable for icon size */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease, left 0.3s ease-in-out;
+    display: flex; /* NEW */
+    align-items: center; /* NEW */
+    justify-content: center; /* NEW */
+    padding: 0; /* Remove previous padding if fixed width/height is used */
+}
+
+#sidebar-toggle:hover {
+    background-color: #2968ff; /* Brighter blue on hover */
+}
+
+/* Light mode specific styles for sidebar and toggle */
+body.light-mode #sidebar {
+    background-color: var(--bg-color); /* Use theme variable */
+    border-right: 1px solid #9FA8DA; /* Lighter Indigo border */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+body.light-mode #sidebar a {
+    color: var(--text-color);
+}
+
+body.light-mode #sidebar a:hover {
+    background-color: rgba(126, 87, 194, 0.2); /* Lighter purple, semi-transparent */
+}
+
+body.light-mode #sidebar-toggle {
+    background-color: #5C6BC0; /* Indigo, similar to light mode active buttons */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    /* Ensure width, height, display, align-items, justify-content, padding are consistent or inherited */
+    /* Explicitly setting them for clarity, matching dark mode values */
+    width: 30px;
+    height: 30px;
+    font-size: 16px; /* Assuming same font size adjustment */
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.light-mode #sidebar-toggle:hover {
+    background-color: #7986CB; /* Lighter indigo on hover */
+}
+
+/* When sidebar is open, shift main content and toggle button */
+#sidebar.open ~ main {
+    margin-left: 200px; /* Matches sidebar width */
+}
+
+#sidebar.open ~ #sidebar-toggle {
+    left: 220px; /* Sidebar width (200px) + original left offset (20px) */
+}
+
+/* Classes for Search Filtering */
+.item-hidden-by-search,
+.section-hidden-by-search {
+    display: none !important;
+}
