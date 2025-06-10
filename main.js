@@ -81,21 +81,19 @@ function populateFavoritesContent(contentDiv, viewMode) {
     contentDiv.classList.remove('list-view', 'thumbnail-view');
     contentDiv.classList.add(viewMode === 'list' ? 'list-view' : 'thumbnail-view');
 
-    const favoriteLinks = [];
-    if (state.allLinksData && state.favorites) {
-        state.allLinksData.forEach(category => {
-            (category.links || []).forEach(link => {
-                if (state.favorites.includes(link.url)) {
-                    favoriteLinks.push(link);
-                }
-            });
+    const favoriteLinkObjects = [];
+    if (state.favorites && state.allLinksData) { // Ensure both lists are available
+        state.favorites.forEach(favUrl => {
+            const linkObj = getLinkDataByUrl(favUrl, state.allLinksData); // Call getLinkDataByUrl as per subtask
+            if (linkObj) {
+                favoriteLinkObjects.push(linkObj);
+            }
         });
     }
     // Note: Sorting by name is now handled by sortItemsInSection
 
     const ul = viewMode === 'list' ? document.createElement('ul') : null;
-
-    favoriteLinks.forEach(linkObj => {
+    favoriteLinkObjects.forEach(linkObj => { // Iterate over the collected link objects
         // toggleFavorite is imported and no longer needs mainElement passed.
         const item = createLinkItem(linkObj, true, toggleFavorite, viewMode);
         if (ul) {

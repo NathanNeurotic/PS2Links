@@ -55,15 +55,15 @@ export function createLinkItem(linkObj, isFavorited, toggleFavorite, type) {
 }
 
 // Added functions (originally from favorites.js)
-import { state } from './state.js'; // For getLinkDataByUrl
+// import { state } from './state.js'; // REMOVED - state.allLinksData is now passed as a parameter
 
-export function getLinkDataByUrl(url) {
-    // Guard against state.allLinksData being undefined or null
-    if (!state.allLinksData) {
-        console.warn("getLinkDataByUrl called before state.allLinksData is populated.");
+export function getLinkDataByUrl(url, allLinksData) { // Added allLinksData parameter
+    // Guard against allLinksData being undefined or null
+    if (!allLinksData) {
+        console.warn("getLinkDataByUrl called with null or undefined allLinksData.");
         return null;
     }
-    for (const category of state.allLinksData) {
+    for (const category of allLinksData) { // Use allLinksData parameter
         // Guard against category.links being undefined or null
         if (!category.links) continue;
         for (const link of category.links) {
