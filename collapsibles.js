@@ -14,14 +14,16 @@ export function initializeCollapsibles() {
 
         collapsible.addEventListener('click', () => {
             if (content) {
-                const isExpanded = content.style.display !== 'none' && content.style.display !== '';
+                const isExpanded = content.classList.contains('content-expanded');
                 if (isExpanded) {
-                    content.style.display = 'none';
+                    content.classList.remove('content-expanded');
+                    content.classList.add('content-collapsed');
                     collapsible.classList.remove('expanded');
                     collapsible.classList.add('collapsed');
                     state.expandedCategories = state.expandedCategories.filter(cat => cat !== categoryName);
                 } else {
-                    content.style.display = state.currentView === 'thumbnail' ? 'grid' : 'block';
+                    content.classList.remove('content-collapsed');
+                    content.classList.add('content-expanded');
                     collapsible.classList.remove('collapsed');
                     collapsible.classList.add('expanded');
                     if (!state.expandedCategories.includes(categoryName)) {
@@ -37,11 +39,13 @@ export function initializeCollapsibles() {
         // Set initial state
         if (content) {
             if (state.expandedCategories.includes(categoryName)) {
-                content.style.display = state.currentView === 'thumbnail' ? 'grid' : 'block';
+                content.classList.remove('content-collapsed');
+                content.classList.add('content-expanded');
                 collapsible.classList.add('expanded');
                 collapsible.classList.remove('collapsed');
             } else {
-                content.style.display = 'none';
+                content.classList.remove('content-expanded');
+                content.classList.add('content-collapsed');
                 collapsible.classList.add('collapsed');
                 collapsible.classList.remove('expanded');
             }

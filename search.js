@@ -22,27 +22,29 @@ export function handleSearchInput() {
             if (textElement) {
                 const itemText = textElement.textContent.toLowerCase();
                 if (itemText.includes(searchQuery)) {
-                    item.style.display = ''; // Show item
+                    item.classList.remove('item-hidden-by-search'); // Show item
                     hasMatches = true;
                 } else {
-                    item.style.display = 'none'; // Hide item
+                    item.classList.add('item-hidden-by-search'); // Hide item
                 }
             }
         });
 
         // Update section visibility based on matches
         if (hasMatches) {
-            section.style.display = ''; // Show section
+            section.classList.remove('section-hidden-by-search'); // Show section
             // Ensure content area is visible; display type depends on the view mode.
-            contentElement.style.display = state.currentView === 'thumbnail' ? 'grid' : 'block';
+            // Ensure content is treated as expanded if section has matches
+            contentElement.classList.remove('content-collapsed');
+            contentElement.classList.add('content-expanded');
             collapsibleHeader.classList.add('search-match'); // Mark header for styling
         } else {
             if (searchQuery.length > 0) {
-                section.style.display = 'none'; // Hide section if no matches and search is active
+                section.classList.add('section-hidden-by-search'); // Hide section if no matches and search is active
             } else {
                 // If search is empty, ensure section is visible but content is handled by collapsibles
-                section.style.display = '';
-                contentElement.style.display = 'none'; // Initially hide content; collapsibles will manage it
+                section.classList.remove('section-hidden-by-search');
+                // contentElement.style.display = 'none'; // Initially hide content; collapsibles will manage it - REMOVED
             }
             collapsibleHeader.classList.remove('search-match');
         }
@@ -51,12 +53,12 @@ export function handleSearchInput() {
     // If the search query is empty, reset all sections to their default state
     if (searchQuery === '') {
         sections.forEach(section => {
-            section.style.display = ''; // Ensure section is visible
+            section.classList.remove('section-hidden-by-search'); // Ensure section is visible
             const contentElement = section.querySelector('.content');
-            if (contentElement) {
+            // if (contentElement) { // This if block is no longer needed
                 // Hide content; initializeCollapsibles will restore based on expanded/collapsed state
-                contentElement.style.display = 'none';
-            }
+                // contentElement.style.display = 'none'; // REMOVED
+            // }
             const collapsibleHeader = section.querySelector('h2.collapsible');
             if (collapsibleHeader) {
                 collapsibleHeader.classList.remove('search-match');
