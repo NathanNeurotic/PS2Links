@@ -145,7 +145,6 @@ function createFavoritesSectionElements() {
 
     toggleContainer.appendChild(listBtn);
     toggleContainer.appendChild(thumbBtn);
-    h2.appendChild(toggleContainer); // Add toggle buttons to the h2 for flex layout
 
     const contentDiv = document.createElement('div');
     contentDiv.id = 'favorites-content';
@@ -153,6 +152,7 @@ function createFavoritesSectionElements() {
     // Initial view mode class will be set by populateFavoritesContent
 
     section.appendChild(h2);
+    section.appendChild(toggleContainer); // Add toggle buttons to the section
     section.appendChild(contentDiv);
 
     // Event listeners for toggle buttons

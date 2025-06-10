@@ -598,15 +598,6 @@ body.light-mode section {
     /* align-self: start; is already on the general section style */
 }
 
-/* Styles for the favorites section's view toggle container specifically */
-/* This assumes .category-view-toggle is nested directly in h2.collapsible */
-#favorites-section h2.collapsible .category-view-toggle {
-    margin-left: auto; /* Pushes toggle to the right if space is available */
-    margin-right: 5px; /* Give some space from the expand/collapse arrow */
-    /* Override any margin-bottom from the generic .category-view-toggle if needed */
-    margin-bottom: 0;
-}
-
 /* Ensure the title span in H2 doesn't get squished if H2 is flex */
 #favorites-section h2.collapsible > span:first-child {
     flex-grow: 1; /* Allows title to take available space */
