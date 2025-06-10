@@ -327,7 +327,7 @@ h2.collapsible:hover {
 }
 .content-expanded.thumbnail-view {
     display: grid; /* Default display for thumbnail content containers */
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 15px;
 }
 
@@ -341,8 +341,6 @@ h2.collapsible:hover {
     padding-left: 0; /* Reset from original */
     border-left: none; /* Reset from original */
     /* Common content styles */
-    max-height: 300px; /* Limit height for scrolling */
-    overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* List View Specific Styles */
@@ -479,8 +477,10 @@ h2.collapsible:hover {
     flex-direction: column;
     justify-content: space-between; /* Push caption to bottom */
     position: relative; /* For absolute positioning of the favorite button */
-    width: 160px; /* Fixed width for square thumbnails */
-    height: 160px; /* Fixed height for square thumbnails */
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    min-width: 160px;
+    min-height: 160px;
 }
 
 .thumbnail-item img {
@@ -496,14 +496,10 @@ h2.collapsible:hover {
     font-size: 0.8em;
     color: #A0A0FF; /* Lighter caption color */
     line-height: 1.2;
-    /* margin-top: auto; /* Push caption to bottom if image is small - flex handles this */
     white-space: normal; /* Allow wrapping */
     overflow-wrap: break-word; /* Break words to prevent overflow */
     text-align: center; /* Ensure text is centered */
-    height: 30%; /* Allocate 30% of the item's height to the caption */
-    overflow-y: auto; /* Allow vertical scroll if content overflows */
-    /* margin-bottom: 5px; /* Removed, flexbox and height percentage should manage space */
-    /* overflow: hidden; text-overflow: ellipsis; are removed */
+    margin-top: 5px;
 }
 
 .thumbnail-item a:hover figcaption {

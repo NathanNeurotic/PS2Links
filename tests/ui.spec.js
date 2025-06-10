@@ -60,8 +60,7 @@ test('favorites section shows and hides without reload', async ({ page }) => {
 
   const favoritesSection = page.locator('#favorites-section');
   await expect(favoritesSection).toBeVisible();
-
-  await star.click({ force: true });
+  await page.locator('section:not(#favorites-section) .favorite-btn.favorited').first().click({ force: true });
   await expect(favoritesSection).toHaveCount(0);
 });
 
@@ -106,7 +105,7 @@ test('favorites section appears at the top', async ({ page }) => {
   await expect(page.locator('main > section:first-child')).toHaveId('favorites-section');
 
   // Clean up: Unfavorite the item to leave state as it was (optional, but good practice)
-  await firstFavoriteButton.click({ force: true });
+  await page.locator('section:not(#favorites-section) .favorite-btn.favorited').first().click({ force: true });
   await expect(favoritesSection).toHaveCount(0); // Or expect it to be hidden/not present
 });
 
@@ -126,8 +125,9 @@ test('thumbnail items are square', async ({ page }) => {
   await thumbnailItem.waitFor({ state: 'visible' });
 
 
-  await expect(thumbnailItem).toHaveCSS('width', '160px');
-  await expect(thumbnailItem).toHaveCSS('height', '160px');
+  const width = await thumbnailItem.evaluate(el => parseFloat(getComputedStyle(el).width));
+  const height = await thumbnailItem.evaluate(el => parseFloat(getComputedStyle(el).height));
+  expect(Math.abs(width - height)).toBeLessThan(1);
 });
 
 test('thumbnail images use object-fit contain', async ({ page }) => {
