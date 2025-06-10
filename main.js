@@ -192,8 +192,8 @@ export function refreshFavoritesDisplayIfNeeded() {
 
         if (!favSection) {
             favSection = createFavoritesSectionElements();
-            // Append favorites at the end so existing section order remains stable
-            currentMainElement.appendChild(favSection);
+            // Prepend favorites so it appears at the top of the main element.
+            currentMainElement.prepend(favSection);
             // Since createFavoritesSectionElements creates a new collapsible h2,
             // we need to re-initialize collapsibles for it.
             // initializeCollapsibles() typically queries all .collapsible elements.
