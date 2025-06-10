@@ -4,7 +4,8 @@ export const state = {
     allLinksData: [],
     currentView: 'list',
     currentTheme: localStorage.getItem('theme') || 'dark',
-    categoryViewModes: {}
+    categoryViewModes: {},
+    favoritesViewMode: 'list' // Default view mode for favorites
 };
 
 export function loadFavorites() {
@@ -53,4 +54,30 @@ export function loadCategoryViewModes() {
 
 export function saveCategoryViewModes() {
     localStorage.setItem('categoryViewModes', JSON.stringify(state.categoryViewModes));
+}
+
+// Load and Save Favorites View Mode
+export function loadFavoritesViewMode() {
+    const storedMode = localStorage.getItem('favoritesViewMode');
+    if (storedMode) {
+        try {
+            // Ensure it's a valid view mode, otherwise default
+            const parsedMode = JSON.parse(storedMode);
+            if (['list', 'thumbnail'].includes(parsedMode)) {
+                state.favoritesViewMode = parsedMode;
+            } else {
+                console.warn(`Invalid favoritesViewMode '${parsedMode}' found in localStorage. Defaulting to 'list'.`);
+                state.favoritesViewMode = 'list';
+            }
+        } catch (e) {
+            console.error('Error parsing favoritesViewMode from localStorage:', e);
+            state.favoritesViewMode = 'list'; // Default to 'list' on error
+        }
+    } else {
+        state.favoritesViewMode = 'list'; // Default if not found
+    }
+}
+
+export function saveFavoritesViewMode() {
+    localStorage.setItem('favoritesViewMode', JSON.stringify(state.favoritesViewMode));
 }
