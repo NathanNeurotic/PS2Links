@@ -53,3 +53,58 @@ export function createLinkItem(linkObj, isFavorited, toggleFavorite, type) {
 
     return element;
 }
+
+// Added functions (originally from favorites.js)
+import { state } from './state.js'; // For getLinkDataByUrl
+
+export function getLinkDataByUrl(url) {
+    // Guard against state.allLinksData being undefined or null
+    if (!state.allLinksData) {
+        console.warn("getLinkDataByUrl called before state.allLinksData is populated.");
+        return null;
+    }
+    for (const category of state.allLinksData) {
+        // Guard against category.links being undefined or null
+        if (!category.links) continue;
+        for (const link of category.links) {
+            if (link.url === url) {
+                return link;
+            }
+        }
+    }
+    return null;
+}
+
+export function sortItemsInSection(sectionContentElement, viewMode) {
+    // Guard against sectionContentElement or its children being null/undefined
+    if (!sectionContentElement || !sectionContentElement.children) {
+        console.warn("sortItemsInSection called with invalid sectionContentElement.");
+        return;
+    }
+    const items = Array.from(sectionContentElement.children);
+    items.sort((a, b) => {
+        let nameA = '';
+        let nameB = '';
+
+        try {
+            if (viewMode === 'list') {
+                const aLink = a.querySelector('a');
+                // Ensure textContent is not null and gracefully handle missing img alt
+                nameA = aLink && aLink.textContent ? (aLink.textContent.replace(aLink.querySelector('img') ? (aLink.querySelector('img').alt || '') : '', '')).trim().toLowerCase() : '';
+                const bLink = b.querySelector('a');
+                nameB = bLink && bLink.textContent ? (bLink.textContent.replace(bLink.querySelector('img') ? (bLink.querySelector('img').alt || '') : '', '')).trim().toLowerCase() : '';
+            } else { // thumbnail view
+                const aFigcaption = a.querySelector('figcaption');
+                nameA = aFigcaption && aFigcaption.textContent ? aFigcaption.textContent.trim().toLowerCase() : '';
+                const bFigcaption = b.querySelector('figcaption');
+                nameB = bFigcaption && bFigcaption.textContent ? bFigcaption.textContent.trim().toLowerCase() : '';
+            }
+        } catch (e) {
+            console.error("Error accessing properties for sorting in sortItemsInSection:", e, "Item A:", a, "Item B:", b);
+            // Default to empty strings if error occurs, preventing further crashes
+        }
+
+        return nameA.localeCompare(nameB);
+    });
+    items.forEach(item => sectionContentElement.appendChild(item));
+}

@@ -269,6 +269,10 @@ h2.collapsible {
     /* margin-bottom: 10px; */ /* This space is now potentially handled by category-view-toggle or content's margin-top */
     text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
     position: relative;
+    /* Make H2 a flex container for title and toggle buttons */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 h2.collapsible::after {
@@ -385,20 +389,6 @@ h2.collapsible:hover {
     padding: 10px 0; /* Padding for the container */
 }
 
-.thumbnail-item {
-    background-color: #081020; /* Dark background for thumbnail card */
-    border: 1px solid #1a2c5a;
-    border-radius: 6px;
-    padding: 10px;
-    text-align: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    display: flex; /* Use flex for internal alignment */
-    flex-direction: column;
-    justify-content: space-between; /* Push caption to bottom */
-    position: relative; /* For absolute positioning of the favorite button */
-}
-
 /* Favorite button within thumbnail */
 .thumbnail-item .favorite-btn {
     position: absolute;
@@ -446,10 +436,25 @@ h2.collapsible:hover {
     height: 100%; /* Make anchor fill the figure */
 }
 
+.thumbnail-item {
+    background-color: #081020; /* Dark background for thumbnail card */
+    border: 1px solid #1a2c5a;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    display: flex; /* Use flex for internal alignment */
+    flex-direction: column;
+    justify-content: space-between; /* Push caption to bottom */
+    position: relative; /* For absolute positioning of the favorite button */
+    height: 150px; /* Fixed height for square thumbnails */
+}
+
 .thumbnail-item img {
-    width: 32px; /* Fixed width for favicons */
-    height: 32px; /* Fixed height for favicons */
-    object-fit: contain; /* Ensure aspect ratio is maintained, no cropping */
+    width: 100%; /* Make image fill the width of the thumbnail item */
+    height: 70%; /* Allocate 70% of the item's height to the image */
+    object-fit: cover; /* Cover the allocated space, cropping if necessary */
     border-radius: 4px;
     margin-bottom: 8px;
     border: 1px solid #003366;
@@ -593,10 +598,29 @@ body.light-mode section {
     /* align-self: start; is already on the general section style */
 }
 
+/* Styles for the favorites section's view toggle container specifically */
+/* This assumes .category-view-toggle is nested directly in h2.collapsible */
+#favorites-section h2.collapsible .category-view-toggle {
+    margin-left: auto; /* Pushes toggle to the right if space is available */
+    margin-right: 5px; /* Give some space from the expand/collapse arrow */
+    /* Override any margin-bottom from the generic .category-view-toggle if needed */
+    margin-bottom: 0;
+}
+
+/* Ensure the title span in H2 doesn't get squished if H2 is flex */
+#favorites-section h2.collapsible > span:first-child {
+    flex-grow: 1; /* Allows title to take available space */
+}
+
+
 /* Light Mode Category Header */
 body.light-mode h2.collapsible {
     background: linear-gradient(145deg, #5C6BC0, #3F51B5); /* CHANGED: Slightly darker, more saturated blues */
     color: var(--text-color); /* CHANGED: Very Dark Blue/Almost Black text for high contrast */
+    /* It should also be a flex container */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid #283593; /* CHANGED: Darker Indigo border */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), /* Softer shadow */
                 inset 0 1px 1px rgba(255, 255, 255, 0.4); /* Inner highlight for gloss */
@@ -656,6 +680,10 @@ body.light-mode .thumbnail-item:hover {
 
 body.light-mode .thumbnail-item img {
     border: 1px solid #CFD8DC; /* CHANGED: Lighter Grey border for image */
+    /* Ensure square aspect ratio image adjustments are applied in light mode too */
+    width: 100%;
+    height: 70%; /* Or adjust as needed for light mode caption */
+    object-fit: cover;
 }
 
 body.light-mode .thumbnail-item figcaption {

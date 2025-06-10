@@ -1,9 +1,11 @@
-import { state, loadFavorites, loadExpandedCategories, loadCategoryViewModes } from './state.js';
-import { toggleFavorite, ensureFavoritesSection } from './favorites.js';
+import { state, loadFavorites, loadExpandedCategories, loadCategoryViewModes, loadFavoritesViewMode, saveFavoritesViewMode } from './state.js';
+// ensureFavoritesSection is removed from favorites.js, removeFavoritesSectionIfEmpty is added
+import { toggleFavorite, removeFavoritesSectionIfEmpty } from './favorites.js';
 import { updateButtonStates, handleCategoryViewToggle } from './viewToggle.js';
 import { initializeCollapsibles } from './collapsibles.js';
 import { handleSearchInput } from './search.js';
-import { createLinkItem } from './linkUtils.js';
+// getLinkDataByUrl and sortItemsInSection are now imported from linkUtils.js
+import { createLinkItem, getLinkDataByUrl, sortItemsInSection } from './linkUtils.js';
 
 const DEBUG = false;
 const listViewBtn = document.getElementById('list-view-btn');
@@ -72,47 +74,150 @@ function sortLinks(data) {
     return data;
 }
 
-// Helper function to create and populate the favorites section
-// Uses global 'state' and 'mainElement' for toggleFavorite callback context.
-function createFavoritesSection() {
-    const favSection = document.createElement('section');
-    favSection.id = 'favorites-section';
-    const favH2 = document.createElement('h2');
-    favH2.id = 'favorites-header';
-    favH2.classList.add('collapsible');
-    favH2.textContent = 'Favorites';
-    const favContentDiv = document.createElement('div');
-    favContentDiv.classList.add('content');
-    favContentDiv.classList.add(state.currentView === 'list' ? 'list-view' : 'thumbnail-view');
-    favContentDiv.id = 'favorites-content';
+// ** NEW FUNCTION: populateFavoritesContent **
+function populateFavoritesContent(contentDiv, viewMode) {
+    if (!contentDiv) return;
+    contentDiv.innerHTML = ''; // Clear existing content
+    contentDiv.classList.remove('list-view', 'thumbnail-view');
+    contentDiv.classList.add(viewMode === 'list' ? 'list-view' : 'thumbnail-view');
 
     const favoriteLinks = [];
-    state.allLinksData.forEach(category => {
-        category.links.forEach(link => {
-            if (state.favorites.includes(link.url)) {
-                favoriteLinks.push(link);
+    if (state.allLinksData && state.favorites) {
+        state.allLinksData.forEach(category => {
+            (category.links || []).forEach(link => {
+                if (state.favorites.includes(link.url)) {
+                    favoriteLinks.push(link);
+                }
+            });
+        });
+    }
+    // Note: Sorting by name is now handled by sortItemsInSection
+
+    const ul = viewMode === 'list' ? document.createElement('ul') : null;
+
+    favoriteLinks.forEach(linkObj => {
+        // toggleFavorite is imported and no longer needs mainElement passed.
+        const item = createLinkItem(linkObj, true, toggleFavorite, viewMode);
+        if (ul) {
+            ul.appendChild(item);
+        } else {
+            contentDiv.appendChild(item); // For thumbnail view
+        }
+    });
+
+    if (ul) {
+        contentDiv.appendChild(ul);
+    }
+    sortItemsInSection(contentDiv, viewMode);
+}
+
+// ** NEW FUNCTION: createFavoritesSectionElements **
+function createFavoritesSectionElements() {
+    const section = document.createElement('section');
+    section.id = 'favorites-section';
+
+    const h2 = document.createElement('h2');
+    h2.id = 'favorites-header';
+    h2.classList.add('collapsible');
+    // h2.textContent = 'Favorites'; // Text content will be a span, buttons will be siblings
+
+    const titleSpan = document.createElement('span');
+    titleSpan.textContent = 'Favorites';
+    h2.appendChild(titleSpan);
+
+
+    const toggleContainer = document.createElement('div');
+    toggleContainer.classList.add('category-view-toggle'); // Reuse styles
+
+    const listBtn = document.createElement('button');
+    listBtn.textContent = 'List';
+    listBtn.classList.add('category-view-btn', 'list-fav-btn', state.currentTheme + '-mode');
+    listBtn.dataset.view = 'list';
+
+    const thumbBtn = document.createElement('button');
+    thumbBtn.textContent = 'Thumbnail';
+    thumbBtn.classList.add('category-view-btn', 'thumb-fav-btn', state.currentTheme + '-mode');
+    thumbBtn.dataset.view = 'thumbnail';
+
+    if (state.favoritesViewMode === 'list') {
+        listBtn.classList.add('active');
+    } else {
+        thumbBtn.classList.add('active');
+    }
+
+    toggleContainer.appendChild(listBtn);
+    toggleContainer.appendChild(thumbBtn);
+    h2.appendChild(toggleContainer); // Add toggle buttons to the h2 for flex layout
+
+    const contentDiv = document.createElement('div');
+    contentDiv.id = 'favorites-content';
+    contentDiv.classList.add('content');
+    // Initial view mode class will be set by populateFavoritesContent
+
+    section.appendChild(h2);
+    section.appendChild(contentDiv);
+
+    // Event listeners for toggle buttons
+    [listBtn, thumbBtn].forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            const newView = e.target.dataset.view;
+            if (newView !== state.favoritesViewMode) {
+                state.favoritesViewMode = newView;
+                saveFavoritesViewMode();
+
+                // Update active class on buttons
+                listBtn.classList.toggle('active', newView === 'list');
+                thumbBtn.classList.toggle('active', newView === 'thumbnail');
+
+                populateFavoritesContent(contentDiv, newView);
             }
         });
     });
-    favoriteLinks.sort((a, b) => a.name.localeCompare(b.name));
 
-    if (state.currentView === 'list') {
-        const ul = document.createElement('ul');
-        favoriteLinks.forEach(linkObj => {
-            // Pass mainElement to toggleFavorite for context if needed, or adjust toggleFavorite
-            const item = createLinkItem(linkObj, true, (url) => toggleFavorite(url, mainElement), 'list');
-            ul.appendChild(item);
-        });
-        favContentDiv.appendChild(ul);
+    // Apply theme to newly created buttons
+    applyTheme(); // ensure new buttons get correct theme classes
+
+    return section;
+}
+
+// ** NEW FUNCTION: refreshFavoritesDisplayIfNeeded (and EXPORTED) **
+export function refreshFavoritesDisplayIfNeeded() {
+    const currentMainElement = document.querySelector('main'); // Ensure we're using the correct main element
+    if (!currentMainElement) return;
+
+    if (state.favorites && state.favorites.length > 0) {
+        let favSection = document.getElementById('favorites-section');
+        let favContentDiv = document.getElementById('favorites-content');
+
+        if (!favSection) {
+            favSection = createFavoritesSectionElements();
+            currentMainElement.insertBefore(favSection, currentMainElement.firstChild);
+            // Since createFavoritesSectionElements creates a new collapsible h2,
+            // we need to re-initialize collapsibles for it.
+            // initializeCollapsibles() typically queries all .collapsible elements.
+            // If it's safe to call multiple times or if it correctly handles already initialized ones,
+            // then calling it broadly is fine. Otherwise, target the specific new one.
+            const newCollapsibleHeader = favSection.querySelector('h2.collapsible');
+            if (newCollapsibleHeader) {
+                 // Assuming initializeCollapsibles can be called on a specific element or re-run globally
+                 // For simplicity, let's assume initializeCollapsibles() can be re-run:
+                 initializeCollapsibles();
+                 // Or, if initializeCollapsibles needs a specific element:
+                 // initializeSingleCollapsible(newCollapsibleHeader); // (This function would need to exist)
+            }
+            favContentDiv = document.getElementById('favorites-content'); // Re-fetch after creation
+        }
+
+        // Ensure favContentDiv is valid before populating
+        if (favContentDiv) {
+            populateFavoritesContent(favContentDiv, state.favoritesViewMode);
+        } else {
+            console.error("Favorites content div not found after ensuring section exists.");
+        }
+
     } else {
-        favoriteLinks.forEach(linkObj => {
-            const item = createLinkItem(linkObj, true, (url) => toggleFavorite(url, mainElement), 'thumbnail');
-            favContentDiv.appendChild(item);
-        });
+        removeFavoritesSectionIfEmpty(); // This function is imported from favorites.js
     }
-    favSection.appendChild(favH2);
-    favSection.appendChild(favContentDiv);
-    return favSection;
 }
 
 // Helper function to create and populate a category section
@@ -191,16 +296,13 @@ function createCategorySection(categoryObj) {
     return section;
 }
 
-// Main function to render the entire page content (favorites and categories)
+// Main function to render the entire page content (now only categories)
 function generateHTML(data) {
     if (!mainElement) return;
     mainElement.innerHTML = ''; // Clear existing content
 
-    // Create and append favorites section if there are any favorites
-    if (state.favorites.length > 0) {
-        const favSection = createFavoritesSection();
-        mainElement.appendChild(favSection);
-    }
+    // Favorites section is now handled by refreshFavoritesDisplayIfNeeded()
+    // and added/removed dynamically.
 
     // Create and append each category section
     data.forEach(categoryObj => {
@@ -246,13 +348,15 @@ export async function initializePage() {
     loadFavorites();
     loadExpandedCategories();
     loadCategoryViewModes();
+    loadFavoritesViewMode(); // Load the favorites view mode
     state.allLinksData = await fetchLinks();
     if (state.allLinksData.length > 0) {
         state.allLinksData = sortLinks(state.allLinksData);
-        updateButtonStates(listViewBtn, thumbnailViewBtn, mainElement);
-        generateHTML(state.allLinksData); // Generates main content sections with IDs
-        populateSidebar(state.allLinksData); // Populate sidebar after data is fetched
-    } else if (mainElement) {
+        updateButtonStates(listViewBtn, thumbnailViewBtn, mainElement); // mainElement here is the global one
+        generateHTML(state.allLinksData); // Generates category sections
+        refreshFavoritesDisplayIfNeeded(); // Create or update favorites section
+        populateSidebar(state.allLinksData); // Populate sidebar
+    } else if (mainElement) { // mainElement here is the global one
         mainElement.innerHTML = '<p>Could not load link data. Please try again later.</p>';
     }
 }
