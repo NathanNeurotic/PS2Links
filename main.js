@@ -38,13 +38,15 @@ function applyTheme() {
         button.classList.remove('light-mode', 'dark-mode'); // Remove existing theme classes
         button.classList.add(state.currentTheme + '-mode'); // Add current theme class
     });
-    refreshFavoritesDisplayIfNeeded();
 }
 
 function toggleTheme() {
     state.currentTheme = state.currentTheme === 'dark' ? 'light' : 'dark';
     localStorage.setItem('theme', state.currentTheme);
     applyTheme();
+    // Update favorites section after theme change now that applyTheme no longer
+    // triggers this refresh implicitly.
+    refreshFavoritesDisplayIfNeeded();
 }
 
 if (themeToggleBtn) {
@@ -173,8 +175,8 @@ function createFavoritesSectionElements() {
         });
     });
 
-    // Apply theme to newly created buttons
-    applyTheme(); // ensure new buttons get correct theme classes
+    // Apply theme classes to the new buttons without triggering further updates
+    // to avoid recursion with applyTheme -> refreshFavoritesDisplayIfNeeded
 
     return section;
 }
@@ -190,7 +192,8 @@ export function refreshFavoritesDisplayIfNeeded() {
 
         if (!favSection) {
             favSection = createFavoritesSectionElements();
-            currentMainElement.insertBefore(favSection, currentMainElement.firstChild);
+            // Append favorites at the end so existing section order remains stable
+            currentMainElement.appendChild(favSection);
             // Since createFavoritesSectionElements creates a new collapsible h2,
             // we need to re-initialize collapsibles for it.
             // initializeCollapsibles() typically queries all .collapsible elements.
@@ -215,35 +218,11 @@ export function refreshFavoritesDisplayIfNeeded() {
         }
 
     } else {
-        // Favorites are empty, ensure section exists and display "No Favorites Added" message
-        let favSection = document.getElementById('favorites-section');
-        let favContentDiv = document.getElementById('favorites-content');
-
-        if (!favSection) {
-            favSection = createFavoritesSectionElements();
-            currentMainElement.insertBefore(favSection, currentMainElement.firstChild);
-            const newCollapsibleHeader = favSection.querySelector('h2.collapsible');
-            if (newCollapsibleHeader) {
-                initializeCollapsibles(); // Re-run globally or initialize the specific new one
-            }
-            favContentDiv = document.getElementById('favorites-content'); // Re-fetch after creation
+        // No favorites saved: remove the favorites section entirely if it exists
+        const favSection = document.getElementById('favorites-section');
+        if (favSection) {
+            favSection.remove();
         }
-
-        if (favContentDiv) {
-            favContentDiv.innerHTML = ''; // Clear existing content (e.g., previous links)
-            const noFavsMessage = document.createElement('p');
-            noFavsMessage.textContent = 'No Favorites Added.';
-            noFavsMessage.classList.add('no-favorites-message'); // For styling
-            favContentDiv.appendChild(noFavsMessage);
-            // Ensure the content area is appropriately classed for view consistency if needed
-            // (e.g., if it had list-view or thumbnail-view classes that affect padding/layout)
-            // For now, just clearing and adding the message.
-            // We might want to ensure it's visible if the section was collapsed.
-            // However, createFavoritesSectionElements already sets it to expanded by default.
-        } else {
-            console.error("Favorites content div not found for showing 'No Favorites' message.");
-        }
-        // The call to removeFavoritesSectionIfEmpty() is removed as per subtask.
     }
 }
 

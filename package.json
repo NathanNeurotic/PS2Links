@@ -4,7 +4,7 @@
   "description": "PS2 Resource Links is a static collection of PlayStation 2 related sites. The page is built from `links.json` and displayed with simple JavaScript and CSS.",
   "main": "main.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test --config=tests/playwright.config.js"
   },
   "keywords": [],
   "author": "",
