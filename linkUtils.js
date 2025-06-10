@@ -35,6 +35,11 @@ export function createLinkItem(linkObj, isFavorited, toggleFavorite, type) {
         figcaption.textContent = linkObj.name;
         a.appendChild(img);
         a.appendChild(figcaption);
+
+        const websiteSpan = document.createElement('span');
+        websiteSpan.classList.add('thumbnail-website');
+        websiteSpan.textContent = linkObj.url;
+        a.appendChild(websiteSpan);
     }
 
     element.appendChild(a);

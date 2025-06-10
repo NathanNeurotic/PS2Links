@@ -38,6 +38,7 @@ function applyTheme() {
         button.classList.remove('light-mode', 'dark-mode'); // Remove existing theme classes
         button.classList.add(state.currentTheme + '-mode'); // Add current theme class
     });
+    refreshFavoritesDisplayIfNeeded();
 }
 
 function toggleTheme() {
