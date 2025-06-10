@@ -713,3 +713,86 @@ body.light-mode footer {
 body.light-mode footer p {
     color: #212121;
 }
+
+/* Sidebar Styles */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px; /* Example width */
+    background-color: var(--bg-color); /* Use theme variable */
+    border-right: 1px solid #2E0854; /* Dark Purple border, similar to header */
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1100; /* Higher than other fixed elements like #return-home */
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.5); /* Add a subtle shadow */
+}
+
+#sidebar.open {
+    transform: translateX(0);
+}
+
+/* Style for links/categories within the sidebar */
+#sidebar a {
+    display: block;
+    padding: 8px 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: background-color 0.2s ease;
+}
+
+#sidebar a:hover {
+    background-color: rgba(46, 8, 84, 0.3); /* Dark Purple, semi-transparent */
+}
+
+/* Sidebar Toggle Button Styles */
+#sidebar-toggle {
+    position: fixed;
+    top: 20px; /* Align with #return-home */
+    left: 20px;
+    z-index: 1200; /* Highest z-index to be on top of everything */
+    padding: 10px 15px;
+    background-color: #1f5ef7; /* Blue, similar to active buttons */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Orbitron", "Arial", sans-serif;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: background-color 0.3s ease;
+}
+
+#sidebar-toggle:hover {
+    background-color: #2968ff; /* Brighter blue on hover */
+}
+
+/* Light mode specific styles for sidebar and toggle */
+body.light-mode #sidebar {
+    background-color: var(--bg-color); /* Use theme variable */
+    border-right: 1px solid #9FA8DA; /* Lighter Indigo border */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+body.light-mode #sidebar a {
+    color: var(--text-color);
+}
+
+body.light-mode #sidebar a:hover {
+    background-color: rgba(126, 87, 194, 0.2); /* Lighter purple, semi-transparent */
+}
+
+body.light-mode #sidebar-toggle {
+    background-color: #5C6BC0; /* Indigo, similar to light mode active buttons */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+
+body.light-mode #sidebar-toggle:hover {
+    background-color: #7986CB; /* Lighter indigo on hover */
+}
