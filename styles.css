@@ -226,6 +226,8 @@ body.block-view main > #favorites {
 }
 
 body.block-view .category {
+    display: block;
+    width: 100%;
     margin-bottom: 0;
 }
 
