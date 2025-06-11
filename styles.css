@@ -91,7 +91,12 @@ header {
     cursor: pointer;
     margin-top: 1rem;
     margin-left: 0.5rem;
-    display: none;
+    display: inline-block;
+}
+
+#installBtn[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 #clearFavoritesBtn {
