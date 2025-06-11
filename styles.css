@@ -14,6 +14,8 @@
     --scroll-thumb: #0077FF;
     --card-min-width: 300px;
     --category-min-width: 300px;
+    --card-max-width: 400px;
+    --scrollbar-width: 8px;
 }
 
 .light-mode {
@@ -58,13 +60,13 @@ body {
 
 header {
     background: var(--header-gradient);
-    padding: 0.5rem 1rem; /* Compacted padding */
-    /* text-align: center; Removed */
+    padding: 1.5rem; /* Compacted padding */
+    text-align: center; /* Removed */
     border-bottom: 2px solid var(--text-color);
     box-shadow: 0 0 10px rgba(0, 119, 255, 0.3);
-    display: flex;
+    /* display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; */
 }
 
 #themeToggle {
@@ -72,12 +74,14 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 1rem;
-    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
     border-radius: 5px;
     cursor: pointer;
-    /* margin-top: 1rem; Removed */
-    margin-left: 0.5rem; /* Ensured for spacing */
+    margin-top: 1rem; /* Removed */
+    margin-left: 0.25rem; /* Ensured for spacing */
+    margin-right: 0.25rem;
+    display: inline-block;
 }
 #themeToggle.active,
 #viewToggle.active {
@@ -90,12 +94,29 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 1rem;
-    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
     border-radius: 5px;
     cursor: pointer;
-    /* margin-top: 1rem; Removed */
-    margin-left: 0.5rem; /* Ensured for spacing */
+    margin-top: 1rem; /* Removed */
+    margin-left: 0.25rem; /* Ensured for spacing */
+    margin-right: 0.25rem;
+    display: inline-block;
+}
+
+#mobileToggle {
+    background: none;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    display: inline-block;
 }
 
 #installBtn {
@@ -103,12 +124,13 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 1rem;
-    padding: 0.35rem 0.7rem;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
     border-radius: 5px;
     cursor: pointer;
-    /* margin-top: 1rem; Removed */
-    margin-left: 0.5rem; /* Ensured for spacing */
+    margin-top: 1rem; /* Removed */
+    margin-left: 0.25rem; /* Ensured for spacing */
+    margin-right: 0.25rem;
     display: inline-block;
 }
 
@@ -180,31 +202,45 @@ header {
     padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
-    /* position: fixed, top, left, z-index removed */
-    /* transition: left removed */
-    margin-right: 1rem; /* Added for spacing in header */
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100;
+    transition: left 0.3s ease;
 }
 
 /* Removed #sidebar.open related rules for #sidebarToggle */
 
+body.sidebar-open #sidebarToggle {
+    left: calc(200px + 1rem); /* Adjust if sidebar width changes */
+}
+
+body.sidebar-open header,
+body.sidebar-open main,
+body.sidebar-open footer {
+    margin-left: 200px; /* Adjust if sidebar width changes */
+    width: calc(100% - 200px); /* Adjust if sidebar width changes */
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
 #header-favicon {
-    /* display: block; Removed */
-    width: 40px; /* Slightly smaller */
-    height: 40px; /* Slightly smaller */
-    /* margin: 0 auto 10px auto; Removed */
-    margin-right: 1rem; /* Added for spacing */
+    display: block; /* Removed */
+    width: 50px; /* Slightly smaller */
+    height: 50px; /* Slightly smaller */
+    margin: 0 auto 10px auto; /* Removed */
+    /* margin-right: 1rem; */ /* Added for spacing */
 }
 
 header h1 {
-    font-size: 2rem; /* Adjusted size */
+    font-size: 2.5rem; /* Adjusted size */
     margin: 0;
     text-transform: uppercase; /* Keeping, can be reviewed */
     letter-spacing: 3px;
     overflow: hidden;
-    /* display: block; Removed */
+    display: block; /* Removed */
     word-wrap: break-word;
-    flex-grow: 1; /* Allow title to take available space */
-    text-align: left; /* Align title to the left */
+    /* flex-grow: 1; */ /* Allow title to take available space */
+    /* text-align: left; */ /* Align title to the left */
 }
 
 .typing-effect::after {
@@ -266,7 +302,8 @@ body.block-view .category {
 
 #searchInput:focus {
     outline: none;
-    box-shadow: 0 0 8px rgba(0, 119, 255, 0.3);
+    /* box-shadow: 0 0 8px rgba(0, 119, 255, 0.3); */
+    animation: glow 1.2s ease-in-out infinite alternate;
 }
 
 .no-results {
@@ -277,11 +314,19 @@ body.block-view .category {
 }
 
 .category {
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.category:hover {
+    box-shadow: 0 0 12px rgba(0, 119, 255, 0.4);
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-2px);
 }
 
 .category h2 {
     background: var(--section-gradient);
-    padding: 1rem;
+    padding: 0.85rem;
+    padding-right: calc(0.85rem + var(--scrollbar-width)); /* Adjusted to keep consistent with other paddings */
     margin: 0;
     cursor: pointer;
     font-size: 1.8rem;
@@ -290,13 +335,15 @@ body.block-view .category {
     align-items: center;
     box-sizing: border-box;
     border: 2px solid var(--text-color);
-    border-radius: 6px;
+    border-radius: 10px;
     box-shadow: 0 0 5px rgba(0, 119, 255, 0.2);
     transition: box-shadow 0.3s ease;
 }
 
 .category h2:hover {
-    box-shadow: 0 0 10px rgba(0, 119, 255, 0.3);
+    box-shadow: 0 0 12px rgba(0, 119, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
 }
 
 .chevron {
@@ -343,7 +390,7 @@ body.block-view .category {
     backdrop-filter: blur(3px);
     border: 2px solid var(--text-color);
     border-top: none;
-    border-radius: 0 0 6px 6px;
+    border-radius: 0 0 10px 10px;
     max-height: 0;
     opacity: 0;
     overflow-y: hidden;
@@ -358,6 +405,7 @@ body.block-view .category {
     max-height: var(--category-max-height);
     overflow-y: auto;
     overflow-x: hidden;
+    padding-right: calc(1rem + var(--scrollbar-width));
 }
 
 .category.list-view .category-content {
@@ -368,31 +416,38 @@ body.block-view .category {
 .category.list-view .service-button {
     flex-direction: row;
     align-items: center;
+    max-width: none;
+    padding: 0.5rem 1rem; /* Reset padding for list view */
     /* justify-content: space-between; is NOT inherited or applied here by default, which is fine.
        The flex-grow on .service-info and margin on .favorite-star will manage spacing. */
 }
 .category.list-view .service-name {
     margin-bottom: 0;
-    margin-right: 0; /* Removed margin-right, .service-info handles spacing */
+    margin-right: 0.5rem; /* Removed margin-right, .service-info handles spacing */
+    font-size: 1.2rem;
 }
 .category.list-view .service-thumbnail {
     width: 80px;
     max-height: 60px;
     margin-right: 0.5rem;
     margin-bottom: 0;
+    border-radius: 4px;
 }
 
 .service-button {
     display: flex;
-    flex-direction: row; /* Changed from column */
-    align-items: center; /* Vertically center items */
-    justify-content: space-between; /* Push items apart */
+    flex-direction: column; /* Changed from column */
+    /* align-items: center; */ /* Vertically center items */
+    /* justify-content: space-between; */ /* Push items apart */
     background: var(--button-gradient);
-    padding: 1rem; /* Removed general padding-right, will target text elements */
+    padding: 0.75rem; /* Removed general padding-right, will target text elements */
+    padding-right: 2rem;
+    max-width: var(--card-max-width);
+    margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
     border: 2px solid var(--accent-color);
-    border-radius: 8px;
+    border-radius: 15px;
     text-decoration: none;
     color: var(--accent-color);
     box-shadow: inset 0 0 3px rgba(0, 119, 255, 0.3), 0 0 3px rgba(0, 119, 255, 0.2);
@@ -403,7 +458,9 @@ body.block-view .category {
 }
 
 .service-button:hover {
-    box-shadow: inset 0 0 5px rgba(0, 119, 255, 0.5), 0 0 8px rgba(0, 119, 255, 0.3);
+    box-shadow: inset 0 0 8px rgba(0, 119, 255, 0.6), 0 0 12px rgba(0, 119, 255, 0.5);
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(4px);
     transform: translateY(-2px);
     animation: none;
 }
@@ -411,6 +468,11 @@ body.block-view .category {
 @keyframes pulse {
     0%, 100% { box-shadow: inset 0 0 3px rgba(0, 119, 255, 0.3), 0 0 3px rgba(0, 119, 255, 0.2); }
     50% { box-shadow: inset 0 0 5px rgba(0, 119, 255, 0.5), 0 0 5px rgba(0, 119, 255, 0.3); }
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); }
+    to { box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
 }
 
 .service-favicon {
@@ -424,10 +486,10 @@ body.block-view .category {
     width: 100%;
     max-height: 150px;
     object-fit: cover;
-    margin-bottom: 0; /* Removed margin-bottom */
-    margin-right: 0.75rem; /* Added margin-right for row layout */
-    border-radius: 4px;
-    flex-shrink: 0; /* Prevent thumbnail from shrinking too much */
+    margin-bottom: 0.5rem; /* Removed margin-bottom */
+    /* margin-right: 0.75rem; */ /* Added margin-right for row layout */
+    border-radius: 8px;
+    /* flex-shrink: 0; */ /* Prevent thumbnail from shrinking too much */
 }
 
 /* New wrapper for service name and URL to enable flex layout with the star */
@@ -443,10 +505,12 @@ body.block-view .category {
 
 .favorite-star {
     cursor: pointer;
-    font-size: 2rem; /* Increased from 1.6rem */
+    font-size: 1.5rem; /* Increased from 1.6rem */
     color: #ccc;
-    margin-left: 0.5rem; /* Space from the text content */
-    /* position: absolute, top, right REMOVED */
+    /* margin-left: 0.5rem; */ /* Space from the text content */
+    position: absolute;
+    top: 0.5rem;
+    right: 0.25rem;
 }
 .favorite-star:focus {
     outline: 2px solid var(--text-color);
@@ -457,10 +521,24 @@ body.block-view .category {
     color: gold;
 }
 
+#themeToggle:hover,
+#viewToggle:hover,
+#mobileToggle:hover,
+#installBtn:hover,
+#clearFavoritesBtn:hover,
+#sidebarToggle:hover,
+.category-view-toggle:hover,
+.favorite-star:hover {
+    box-shadow: 0 0 12px rgba(0, 119, 255, 0.6); /* Use current project accent */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    transform: translateY(-2px);
+}
+
 .service-name {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
@@ -478,7 +556,7 @@ body.block-view .category {
 }
 
 .service-url {
-    font-size: 1rem;
+    font-size: 0.8rem;
     word-break: break-all; /* Existing: breaks anywhere if needed */
     white-space: normal; /* Allow wrapping */
     overflow-wrap: break-word; /* Better word breaking */
@@ -488,7 +566,8 @@ body.block-view .category {
 }
 
 .category.list-view .service-url {
-    margin-left: 0; /* Removed margin-left: auto; */
+    margin-left: auto; /* Removed margin-left: auto; */
+    font-size: 0.9rem;
 }
 
 .service-tags {
@@ -497,7 +576,7 @@ body.block-view .category {
 
 footer {
     background: var(--footer-gradient);
-    padding: 0.75rem 1rem; /* Adjusted padding */
+    padding: 0.8rem; /* Adjusted padding */
     text-align: center;
     border-top: 2px solid var(--text-color);
     box-shadow: 0 -2px 8px rgba(0, 119, 255, 0.2);
@@ -505,8 +584,8 @@ footer {
 }
 
 footer p {
-    margin: 0.5rem 0;
-    font-size: 1.2rem;
+    margin: 0.4rem 0;
+    font-size: 1rem;
 }
 
 footer a {
@@ -514,7 +593,7 @@ footer a {
 }
 
 footer .thanks {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--thanks-color);
 }
 
@@ -525,6 +604,24 @@ footer .thanks a {
 
 footer .thanks a:hover {
     text-decoration: underline;
+}
+
+/* --- Mobile View Specific Styles (from NathanNeurotic/AI) --- */
+
+body.mobile-view .category-content {
+    grid-template-columns: 1fr; /* Overrides default grid to single column */
+}
+
+body.mobile-view header h1 {
+    font-size: 1.6rem; /* Smaller header text in mobile view */
+}
+
+body.mobile-view .category h2 {
+    font-size: 1.2rem; /* Smaller category headers in mobile view */
+}
+
+body.mobile-view #searchInput {
+    width: 90%; /* Wider search input for mobile */
 }
 
 /* Responsive Design */
