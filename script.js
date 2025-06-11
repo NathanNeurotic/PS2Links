@@ -91,13 +91,11 @@ async function loadServices() {
             return acc;
         }, {});
         const normalize = (name) => name.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim().toLowerCase();
-        const sortedCategoryNames = Object.keys(categories)
-            .sort((a, b) => normalize(a).localeCompare(normalize(b)));
+        const sortedCategoryNames = Object.keys(categories).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const categoryName of sortedCategoryNames) {
             const servicesInCategory = categories[categoryName];
             servicesInCategory.sort((a, b) => a.name.localeCompare(b.name));
-            const categoryId = categoryName.toLowerCase().replace(/\s+/g, '-').r
-eplace(/[^a-z0-9-]/g, '');
+            const categoryId = categoryName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
             const categorySection = document.createElement('section');
             categorySection.className = 'category';
             categorySection.id = categoryId;
@@ -115,14 +113,10 @@ eplace(/[^a-z0-9-]/g, '');
             let emojiSpan = '';
             let textContent = categoryName;
             if (emojiMatch) {
-                emojiSpan = `<span class="category-emoji">${emojiMatch[0].trim()
-}</span> `;
-                textContent = categoryName.substring(emojiMatch[0].length).trim(
-);
+                emojiSpan = `<span class="category-emoji">${emojiMatch[0].trim()}</span> `;
+                textContent = categoryName.substring(emojiMatch[0].length).trim();
             }
-            categoryHeader.innerHTML = `${emojiSpan}<span class="category-title"
->${textContent}</span> <span class="chevron">▼</span><span class="category-view-
-toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
+            categoryHeader.innerHTML = `${emojiSpan}<span class="category-title">${textContent}</span> <span class="chevron">▼</span><span class="category-view-toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
             const viewToggle = categoryHeader.querySelector('.category-view-toggle');
             viewToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -187,23 +181,17 @@ function setupSearch() {
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase().trim();
         document.querySelectorAll('.service-button').forEach(button => {
-            const name = button.querySelector('.service-name').textContent.toLow
-erCase();
-            const url = button.querySelector('.service-url').textContent.toLower
-Case();
+            const name = button.querySelector('.service-name').textContent.toLowerCase();
+            const url = button.querySelector('.service-url').textContent.toLowerCase();
             const tagsSpan = button.querySelector('.service-tags');
             let tagsMatch = false;
             if (tagsSpan && tagsSpan.textContent) {
                 const tagsArray = tagsSpan.textContent.toLowerCase().split(',').
-map(tag => tag.trim());
-                tagsMatch = tagsArray.some(tag => tag.includes(query));
+map(tag => tag.trim());                tagsMatch = tagsArray.some(tag => tag.includes(query));
             }
-            button.style.display = (name.includes(query) || url.includes(query)
-|| tagsMatch) ? 'flex' : 'none';
+            button.style.display = (name.includes(query) || url.includes(query)|| tagsMatch) ? 'flex' : 'none';
         });
-
-        const visibleButtons = Array.from(document.querySelectorAll('.service-button'))
-            .filter(btn => btn.style.display !== 'none').length;
+        const visibleButtons = Array.from(document.querySelectorAll('.service-button'))            .filter(btn => btn.style.display !== 'none').length;
         const noResultsEl = document.getElementById('noResults');
         if (noResultsEl) {
             if (query !== '' && visibleButtons === 0) {
