@@ -331,8 +331,19 @@ function createServiceButton(service, favoritesSet, categoryName) {
     if (thumbnail) {
         serviceButton.appendChild(thumbnail);
     }
-    serviceButton.appendChild(serviceNameSpan);
-    serviceButton.appendChild(serviceUrlSpan);
+
+    // Create the .service-info wrapper div
+    const serviceInfo = document.createElement('div');
+    serviceInfo.className = 'service-info';
+
+    // Append name and URL to the serviceInfo div
+    serviceInfo.appendChild(serviceNameSpan);
+    serviceInfo.appendChild(serviceUrlSpan);
+
+    // Append serviceInfo to the main button
+    serviceButton.appendChild(serviceInfo);
+
+    // Append tags and star after serviceInfo
     serviceButton.appendChild(serviceTagsSpan);
     serviceButton.appendChild(star);
 
