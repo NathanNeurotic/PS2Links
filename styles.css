@@ -405,7 +405,7 @@ body.block-view .category {
     animation: pulse 2s infinite;
     transition: box-shadow 0.3s ease, transform 0.2s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible; /* Allow child elements (like service-info with scrollbars) to be visible */
 }
 
 .service-button:hover {
@@ -444,6 +444,7 @@ body.block-view .category {
     /* justify-content: center; /* If you want name/url block centered if it's short */
     margin-right: 0.5rem; /* Ensure some space before the star if justify-content on parent isn't enough */
     min-width: 0;
+    overflow: visible; /* Ensure it doesn't clip scrollbars from children */
 }
 
 .favorite-star {
@@ -471,11 +472,24 @@ body.block-view .category {
     gap: 0.25rem;
     word-break: break-word;
     /* padding-right: 35px; REMOVED */
+    align-items: flex-start; /* Align icon to the top when text wraps */
+}
+
+.service-name-text {
+    display: block; /* Allow block properties like max-height and overflow */
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Break long words */
+    max-height: 4.2em; /* Approx 3 lines (1.4em line height * 3) */
+    overflow-y: auto; /* Scroll if more than 3 lines */
 }
 
 .service-url {
     font-size: 1rem;
-    word-break: break-all;
+    word-break: break-all; /* Existing: breaks anywhere if needed */
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word; /* Better word breaking */
+    max-height: 3em; /* Approx 3 lines (1em line height * 3) */
+    overflow-y: auto; /* Scroll if more than 3 lines */
     /* padding-right: 35px; REMOVED */
 }
 

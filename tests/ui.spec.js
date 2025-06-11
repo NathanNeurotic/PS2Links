@@ -302,3 +302,51 @@ test('No horizontal scrollbar in block view on wider screens', async ({ page }) 
   const bodyClientWidth = await page.evaluate(() => document.body.clientWidth);
   expect(bodyScrollWidth).toBeLessThanOrEqual(bodyClientWidth);
 });
+
+test('should handle long service names with wrapping and scrolling', async ({ page }) => {
+  const mockServices = [
+    {
+      "name": "ThisIsAnExtremelyLongServiceNameDesignedToTestTheUIWrappingAndScrollingBehaviorItJustKeepsGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingOnAndOnAndOn",
+      "url": "http://example.com/longname",
+      "favicon_url": "./favicon.ico",
+      "category": "Long Text Test",
+      "tags": ["test", "longname"],
+      "thumbnail_url": ""
+    },
+    {
+      "name": "Normal Service 1",
+      "url": "http://example.com/normal1",
+      "favicon_url": "./favicon.ico",
+      "category": "Long Text Test",
+      "tags": ["test"],
+      "thumbnail_url": ""
+    }
+  ];
+
+  await page.route('**/services.json', route => {
+    route.fulfill({
+      status: 200,
+      contentType: 'application/json',
+      body: JSON.stringify(mockServices)
+    });
+  });
+
+  await page.goto(BASE_URL); // Navigate after setting up the route
+
+  // Wait for the specific category and service buttons to be rendered from mock data
+  await page.waitForSelector('.category:has-text("Long Text Test") .service-button');
+
+  const serviceCard = page.locator('.service-button', { hasText: 'ThisIsAnExtremelyLongServiceNameDesignedToTestTheUIWrappingAndScrollingBehaviorItJustKeepsGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingOnAndOnAndOn' });
+  const serviceNameTextElement = serviceCard.locator('.service-name-text');
+
+  await expect(serviceNameTextElement).toBeVisible();
+  // Using a partial match for the text content assertion as the full string is very long
+  await expect(serviceNameTextElement).toHaveText(/ThisIsAnExtremelyLongServiceNameDesignedToTestTheUIWrappingAndScrollingBehavior/);
+  await expect(serviceNameTextElement).toHaveCSS('overflow-y', 'auto');
+  await expect(serviceNameTextElement).toHaveCSS('max-height', '4.2em'); // From styles.css
+  await expect(serviceNameTextElement).toHaveCSS('display', 'block'); // From styles.css
+
+  // Also check the service name (parent of service-name-text) for its align-items property
+  const serviceNameElement = serviceCard.locator('.service-name');
+  await expect(serviceNameElement).toHaveCSS('align-items', 'flex-start'); // From styles.css
+});
