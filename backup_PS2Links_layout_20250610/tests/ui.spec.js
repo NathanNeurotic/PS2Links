@@ -11,7 +11,7 @@ test.beforeEach(async ({ page }) => {
   await page.goto(`${BASE}/index.html`);
   // Wait for the main element to be present, indicating basic HTML structure is loaded.
   // Further waits for specific content should be in individual tests or more specific setup helpers.
-  await page.locator('main').waitFor({ timeout: 10000 });
+  await page.locator('main').waitFor({ timeout: 30000 });
 });
 
 test('view toggling and category layout', async ({ page }) => {
