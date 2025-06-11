@@ -272,3 +272,33 @@ test('Sidebar toggles and links work', async ({ page }) => {
   const targetSection = page.locator(`#${targetSectionId}`);
   await expect(targetSection).toBeInViewport();
 });
+
+test('No horizontal scrollbar in block view on wider screens', async ({ page }) => {
+  await page.setViewportSize({ width: 1200, height: 800 });
+
+  // Ensure categories are loaded after viewport change (beforeEach might have used a different default)
+  // A reload can help, or re-waiting for a key element that depends on categories.
+  // Given beforeEach already waits for '.category', a click should be fine if elements are present.
+  // However, to be absolutely sure styles are applied to the new viewport before interaction:
+  await page.reload();
+  await page.waitForSelector('.category', { timeout: 15000 }); // Wait for services to load after reload
+
+  const body = page.locator('body');
+  const viewToggle = page.locator('#viewToggle');
+
+  // Ensure body is in block-view. Click toggle if it's not.
+  if (!await body.evaluate(el => el.classList.contains('block-view'))) {
+    await viewToggle.click();
+  }
+  await expect(body).toHaveClass(/block-view/);
+
+  // Assert that there is no horizontal scrollbar on the documentElement
+  const scrollWidth = await page.evaluate(() => document.documentElement.scrollWidth);
+  const clientWidth = await page.evaluate(() => document.documentElement.clientWidth);
+  expect(scrollWidth).toBeLessThanOrEqual(clientWidth);
+
+  // Optional: Also check body, though documentElement is usually sufficient for page scrollbars
+  const bodyScrollWidth = await page.evaluate(() => document.body.scrollWidth);
+  const bodyClientWidth = await page.evaluate(() => document.body.clientWidth);
+  expect(bodyScrollWidth).toBeLessThanOrEqual(bodyClientWidth);
+});
