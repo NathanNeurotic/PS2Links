@@ -43,7 +43,7 @@ npm install
 npm test
 ```
 
-The tests start a local server automatically and cover view toggling, theme switching, and favorites persistence.
+The tests start a local server automatically by running `npx http-server -p 3000` before executing the test suite. They cover view toggling, theme switching, and favorites persistence.
 
 
 ## License
