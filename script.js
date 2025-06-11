@@ -1,3 +1,11 @@
+function displayErrorInMain(message) {
+    const mainContainer = document.querySelector('main');
+    if (mainContainer) {
+        mainContainer.innerHTML = `<p class='error-message' style='color: red; text-align: center; padding: 20px;'><strong>Initialization Error:</strong> ${message}</p>`;
+    }
+    console.error(message); // Keep console error as well
+}
+
 let allServices = [];
 let deferredPrompt = null;
 const MAX_CATEGORY_HEIGHT =
@@ -69,14 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadServices() {
+    const mainContainer = document.querySelector('main'); // Moved for early access
     try {
         const response = await fetch('./services.json');
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! Failed to fetch services.json. Status: ${response.status}`);
         }
         const services = await response.json();
+        if (!services || !Array.isArray(services) || services.length === 0) {
+            throw new Error('services.json was loaded but is empty or not a valid array of services.');
+        }
         allServices = services;
-        const mainContainer = document.querySelector('main');
 
         // Clear existing static categories if any (optional, if HTML is pre-pop
 ulated)
@@ -203,11 +214,8 @@ T);
         setupSearch();
 
     } catch (error) {
-        console.error('Failed to load services:', error);
-        const mainContainer = document.querySelector('main');
-        mainContainer.innerHTML = '<p class="error-message">Failed to load servi
-ces. Please try again later.</p>';
-    }
+    displayErrorInMain('Failed to load or process services.json: ' + error.message);
+}
 }
 
 
@@ -541,26 +549,12 @@ ling);
         btn.disabled = favoriteServices.length === 0;
     }
 
-    // Determine and apply the collapsed or expanded state for the Favorites cat
-egory
     const storedState = localStorage.getItem('category-favorites');
     const chevron = header.querySelector('.chevron');
-    // Note: 'content' is favoritesSection.querySelector('.category-content')
-    //       'header' is favoritesSection.querySelector('h2')
-    //       'favoriteServices' is an array of favorite service objects
-    //       'MAX_CATEGORY_HEIGHT' is a globally available constant
-
     let shouldBeOpen = false;
-    // Determine if the category should be open:
-    // 1. If it's empty.
-    // 2. If no state is stored (first time).
-    // 3. If the stored state is 'open'.
-    if (favoriteServices.length === 0 || storedState === null || storedState ===
- 'open') {
+    if (favoriteServices.length === 0 || storedState === null || storedState === 'open') {
         shouldBeOpen = true;
     }
-    // Otherwise, it remains closed (i.e., it's not empty AND storedState is 'cl
-osed')
 
     if (shouldBeOpen) {
         content.classList.add('open');
@@ -568,22 +562,12 @@ osed')
             chevron.classList.add('open');
         }
         header.setAttribute('aria-expanded', 'true');
-
-        // Calculate and set maxHeight. This code runs after content.innerHTML i
-s populated.
         const height = Math.min(content.scrollHeight, MAX_CATEGORY_HEIGHT);
         content.style.maxHeight = height + 'px';
-
-        // If the section is empty and it was previously closed, or if it's the
-first time loading (no state stored),
-        // default to open and save this state.
-        if ((favoriteServices.length === 0 && storedState === 'closed') || store
-dState === null) {
+        if ((favoriteServices.length === 0 && storedState === 'closed') || storedState === null) {
             localStorage.setItem('category-favorites', 'open');
         }
     } else {
-        // This case means: favoriteServices.length > 0 AND storedState === 'clo
-sed'
         content.classList.remove('open');
         if (chevron) {
             chevron.classList.remove('open');
