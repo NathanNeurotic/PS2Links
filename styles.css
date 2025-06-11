@@ -369,10 +369,12 @@ body.block-view .category {
 .category.list-view .service-button {
     flex-direction: row;
     align-items: center;
+    /* justify-content: space-between; is NOT inherited or applied here by default, which is fine.
+       The flex-grow on .service-info and margin on .favorite-star will manage spacing. */
 }
 .category.list-view .service-name {
     margin-bottom: 0;
-    margin-right: 0.5rem;
+    margin-right: 0; /* Removed margin-right, .service-info handles spacing */
 }
 .category.list-view .service-thumbnail {
     width: 80px;
@@ -383,7 +385,9 @@ body.block-view .category {
 
 .service-button {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* Changed from column */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Push items apart */
     background: var(--button-gradient);
     padding: 1rem; /* Removed general padding-right, will target text elements */
     width: 100%;
@@ -420,17 +424,27 @@ body.block-view .category {
     width: 100%;
     max-height: 150px;
     object-fit: cover;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0; /* Removed margin-bottom */
+    margin-right: 0.75rem; /* Added margin-right for row layout */
     border-radius: 4px;
+    flex-shrink: 0; /* Prevent thumbnail from shrinking too much */
+}
+
+/* New wrapper for service name and URL to enable flex layout with the star */
+.service-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Takes available space, pushing star to the right if needed */
+    /* justify-content: center; /* If you want name/url block centered if it's short */
+    margin-right: 0.5rem; /* Ensure some space before the star if justify-content on parent isn't enough */
 }
 
 .favorite-star {
-    position: absolute;
-    top: 10px; /* Adjusted for larger size */
-    right: 10px; /* Adjusted for larger size */
     cursor: pointer;
-    font-size: 1.6rem; /* Increased size */
+    font-size: 2rem; /* Increased from 1.6rem */
     color: #ccc;
+    margin-left: 0.5rem; /* Space from the text content */
+    /* position: absolute, top, right REMOVED */
 }
 .favorite-star:focus {
     outline: 2px solid var(--text-color);
@@ -449,17 +463,17 @@ body.block-view .category {
     align-items: center;
     gap: 0.25rem;
     word-break: break-word;
-    padding-right: 35px; /* Space for the favorite star */
+    /* padding-right: 35px; REMOVED */
 }
 
 .service-url {
     font-size: 1rem;
     word-break: break-all;
-    padding-right: 35px; /* Space for the favorite star */
+    /* padding-right: 35px; REMOVED */
 }
 
 .category.list-view .service-url {
-    margin-left: auto;
+    margin-left: 0; /* Removed margin-left: auto; */
 }
 
 .service-tags {
@@ -500,6 +514,10 @@ footer .thanks a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
     .category-content {
         grid-template-columns: 1fr;
     }
@@ -514,5 +532,52 @@ footer .thanks a:hover {
 
     #searchInput {
         width: 90%;
+    }
+
+    body.sidebar-open header,
+    body.sidebar-open main,
+    body.sidebar-open footer {
+        /* Adjust padding to prevent overflow when sidebar is open on small screens */
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    body.sidebar-open header h1 {
+        /* Ensure h1 content also respects the reduced space */
+        font-size: 1.8rem; /* Further reduce h1 font size when sidebar is open */
+    }
+
+    main {
+        /* Override CSS variables for min-width within the mobile viewport.
+           These will be inherited by elements like .category-content and body.block-view main's grid. */
+        --card-min-width: 240px; /* Lowered value for smaller screens */
+        --category-min-width: 240px; /* Lowered value for smaller screens */
+    }
+
+    /*
+       Note: The global `body.block-view main` rule is:
+       grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
+       This will now automatically use the 240px value for --category-min-width on mobile.
+
+       The global `.category-content` rule is:
+       grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
+       However, it's overridden by a more specific rule within this media query:
+       `.category-content { grid-template-columns: 1fr; }`
+       So, the --card-min-width override in main primarily serves consistency and future-proofing
+       if the 1fr override is removed or changed.
+    */
+
+    /* Reduce button sizes on mobile */
+    #clearFavoritesBtn,
+    #themeToggle,
+    #viewToggle,
+    #installBtn {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.45rem;
+    }
+
+    #sidebarToggle {
+        font-size: 1rem; /* Reduced from 1.3rem */
+        padding: 0.3rem 0.6rem; /* Reduced from 0.4rem 0.8rem */
     }
 }
