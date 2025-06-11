@@ -26,25 +26,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
-        installBtn.style.display = 'none';
+        installBtn.disabled = true;
+        installBtn.title = 'Install becomes available when supported by your browser.';
         installBtn.addEventListener('click', async () => {
             if (!deferredPrompt) return;
             deferredPrompt.prompt();
             await deferredPrompt.userChoice;
             deferredPrompt = null;
-            installBtn.style.display = 'none';
+            installBtn.disabled = true;
+            installBtn.title = 'Install is not currently available.';
         });
     }
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
         if (installBtn) {
-            installBtn.style.display = 'inline-block';
+            installBtn.disabled = false;
+            installBtn.removeAttribute('title');
         }
     });
     window.addEventListener('appinstalled', () => {
         if (installBtn) {
-            installBtn.style.display = 'none';
+            installBtn.disabled = true;
+            installBtn.title = 'App is installed';
         }
         deferredPrompt = null;
     });
