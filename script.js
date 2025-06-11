@@ -90,8 +90,7 @@ async function loadServices() {
             acc[category].push(service);
             return acc;
         }, {});
-        const normalize = (name) => name.replace(/^(\p{Emoji_Presentation}|\p{Em
-oji})\s*/u, '').trim().toLowerCase();
+        const normalize = (name) => name.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim().toLowerCase();
         const sortedCategoryNames = Object.keys(categories).sort((a, b) => norma
 lize(a).localeCompare(normalize(b)));
         for (const categoryName of sortedCategoryNames) {
@@ -308,8 +307,7 @@ function createServiceButton(service, favoritesSet, categoryName) {
     }
 
     if (categoryName) {
-        const catText = categoryName.replace(/^(\p{Emoji_Presentation}|\p{Emoji}
-)\s*/u, '').trim();
+        const catText = categoryName.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim();
         if (!tags.includes(catText)) {
             tags.push(catText);
         }
