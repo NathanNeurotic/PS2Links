@@ -28,7 +28,7 @@ Some browsers restrict `fetch` when using the `file://` protocol. If the links d
 python3 -m http.server 3000
 ```
 
-Then visit `http://localhost:3000/index.html` in your browser. `main.js` fetches `links.json` at page load and dynamically builds the categorized link lists.
+Then visit `http://localhost:3000/index.html` in your browser. `script.js` fetches `links.json` at page load and dynamically builds the categorized link lists.
 
 ## Manual QA
 
