@@ -58,10 +58,13 @@ body {
 
 header {
     background: var(--header-gradient);
-    padding: 2rem;
-    text-align: center;
+    padding: 0.5rem 1rem; /* Compacted padding */
+    /* text-align: center; Removed */
     border-bottom: 2px solid var(--text-color);
     box-shadow: 0 0 10px rgba(0, 119, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #themeToggle {
@@ -73,7 +76,8 @@ header {
     padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
+    /* margin-top: 1rem; Removed */
+    margin-left: 0.5rem; /* Ensured for spacing */
 }
 #themeToggle.active,
 #viewToggle.active {
@@ -90,8 +94,8 @@ header {
     padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
-    margin-left: 0.5rem;
+    /* margin-top: 1rem; Removed */
+    margin-left: 0.5rem; /* Ensured for spacing */
 }
 
 #installBtn {
@@ -103,8 +107,8 @@ header {
     padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
-    margin-left: 0.5rem;
+    /* margin-top: 1rem; Removed */
+    margin-left: 0.5rem; /* Ensured for spacing */
     display: inline-block;
 }
 
@@ -176,41 +180,31 @@ header {
     padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1100;
-    transition: left 0.3s ease;
+    /* position: fixed, top, left, z-index removed */
+    /* transition: left removed */
+    margin-right: 1rem; /* Added for spacing in header */
 }
 
-#sidebar.open + header #sidebarToggle,
-#sidebar.open + #sidebarToggle {
-    left: calc(200px + 1rem);
-}
-
-body.sidebar-open header,
-body.sidebar-open main,
-body.sidebar-open footer {
-    margin-left: 200px;
-    width: calc(100% - 200px);
-    transition: margin-left 0.3s ease, width 0.3s ease;
-}
+/* Removed #sidebar.open related rules for #sidebarToggle */
 
 #header-favicon {
-    display: block;
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 10px auto;
+    /* display: block; Removed */
+    width: 40px; /* Slightly smaller */
+    height: 40px; /* Slightly smaller */
+    /* margin: 0 auto 10px auto; Removed */
+    margin-right: 1rem; /* Added for spacing */
 }
 
 header h1 {
-    font-size: 3rem;
+    font-size: 2rem; /* Adjusted size */
     margin: 0;
-    text-transform: uppercase;
+    text-transform: uppercase; /* Keeping, can be reviewed */
     letter-spacing: 3px;
     overflow: hidden;
-    display: block;
+    /* display: block; Removed */
     word-wrap: break-word;
+    flex-grow: 1; /* Allow title to take available space */
+    text-align: left; /* Align title to the left */
 }
 
 .typing-effect::after {
@@ -503,7 +497,7 @@ body.block-view .category {
 
 footer {
     background: var(--footer-gradient);
-    padding: 1rem;
+    padding: 0.75rem 1rem; /* Adjusted padding */
     text-align: center;
     border-top: 2px solid var(--text-color);
     box-shadow: 0 -2px 8px rgba(0, 119, 255, 0.2);
@@ -553,19 +547,6 @@ footer .thanks a:hover {
 
     #searchInput {
         width: 90%;
-    }
-
-    body.sidebar-open header,
-    body.sidebar-open main,
-    body.sidebar-open footer {
-        /* Adjust padding to prevent overflow when sidebar is open on small screens */
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-
-    body.sidebar-open header h1 {
-        /* Ensure h1 content also respects the reduced space */
-        font-size: 1.8rem; /* Further reduce h1 font size when sidebar is open */
     }
 
     main {
