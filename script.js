@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     applySavedTheme();
     applySavedView();
     updateToggleButtons();
+    applyMobileViewPreference(); // New function call for persistence
     buildSidebar();
     const sidebarToggle = document.getElementById('sidebarToggle');
     if (sidebarToggle) {
@@ -639,3 +640,33 @@ function toggleSidebar() {
 
 window.toggleSidebar = toggleSidebar;
 window.buildSidebar = buildSidebar;
+
+// --- Mobile View Toggle Functionality ---
+function toggleMobileView() {
+    document.body.classList.toggle('mobile-view');
+    const mobileToggle = document.getElementById('mobileToggle');
+    if (mobileToggle) {
+        mobileToggle.classList.toggle('active', document.body.classList.contains('mobile-view'));
+    }
+    if (document.body.classList.contains('mobile-view')) {
+        localStorage.setItem('mobileViewEnabled', 'true');
+    } else {
+        localStorage.removeItem('mobileViewEnabled');
+    }
+}
+window.toggleMobileView = toggleMobileView; // Make it globally accessible if index.html uses onclick
+
+function applyMobileViewPreference() {
+    if (localStorage.getItem('mobileViewEnabled') === 'true') {
+        document.body.classList.add('mobile-view');
+        const mobileToggle = document.getElementById('mobileToggle');
+        if (mobileToggle) {
+            mobileToggle.classList.add('active');
+        }
+    }
+}
+
+// Update updateToggleButtons to include mobileToggle if it needs active state updates
+// For now, mobile view active state is handled by toggleMobileView and applyMobileViewPreference.
+// If #mobileToggle needs to be part of the generic updateToggleButtons, that function would need modification.
+// The current updateToggleButtons only handles theme and block-view.
