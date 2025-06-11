@@ -69,8 +69,8 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 0.9rem; /* Reduced font size */
-    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
@@ -87,7 +87,7 @@ header {
     color: var(--text-color);
     font-family: var(--font-family);
     font-size: 1rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
@@ -100,7 +100,7 @@ header {
     color: var(--text-color);
     font-family: var(--font-family);
     font-size: 1rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
@@ -119,7 +119,7 @@ header {
     color: var(--text-color);
     font-family: var(--font-family);
     font-size: 1rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 0.5rem;
@@ -172,8 +172,8 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 1.3rem; /* Reduced font size */
-    padding: 0.4rem 0.8rem; /* Reduced padding */
+    font-size: 1rem;
+    padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
     position: fixed;
@@ -572,12 +572,12 @@ footer .thanks a:hover {
     #themeToggle,
     #viewToggle,
     #installBtn {
-        font-size: 0.85rem;
-        padding: 0.25rem 0.45rem;
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
     }
 
     #sidebarToggle {
-        font-size: 1rem; /* Reduced from 1.3rem */
-        padding: 0.3rem 0.6rem; /* Reduced from 0.4rem 0.8rem */
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
     }
 }
