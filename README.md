@@ -1,7 +1,7 @@
 [![image](https://github.com/user-attachments/assets/1f7709bc-493c-4f5c-9793-6466f1108e07)](https://nathanneurotic.github.io/PS2Links)
 # PS2 Resource Links
 
-PS2 Resource Links is a static collection of PlayStation 2 related sites. The page is built from `links.json` and displayed with simple JavaScript and CSS.
+PS2 Resource Links is a static collection of PlayStation 2 related sites. The page is built from `services.json` and displayed with simple JavaScript and CSS.
 
 ## Features
 
@@ -28,7 +28,7 @@ Some browsers restrict `fetch` when using the `file://` protocol. If the links d
 python3 -m http.server 3000
 ```
 
-Then visit `http://localhost:3000/index.html` in your browser. `script.js` fetches `links.json` at page load and dynamically builds the categorized link lists.
+Then visit `http://localhost:3000/index.html` in your browser. `script.js` fetches `services.json` at page load and dynamically builds the categorized link lists.
 
 ## Manual QA
 
