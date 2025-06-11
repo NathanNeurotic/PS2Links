@@ -95,7 +95,9 @@ async function loadServices() {
         for (const categoryName of sortedCategoryNames) {
             const servicesInCategory = categories[categoryName];
             servicesInCategory.sort((a, b) => a.name.localeCompare(b.name));
-            const categoryId = categoryName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+            const categoryId = categoryName.toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^a-z0-9-]/g, '');
             const categorySection = document.createElement('section');
             categorySection.className = 'category';
             categorySection.id = categoryId;
