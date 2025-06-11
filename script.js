@@ -604,7 +604,7 @@ function buildSidebar() {
         sidebar.appendChild(link);
     });
     const repoLink = document.createElement('a');
-    repoLink.href = 'https://github.com/your-repo/PS2Links';
+    repoLink.href = 'https://www.github.com/NathanNeurotic/PS2Links/';
     repoLink.textContent = 'GitHub Repository';
     repoLink.target = '_blank';
     repoLink.rel = 'noopener noreferrer';
