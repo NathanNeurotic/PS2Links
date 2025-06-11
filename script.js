@@ -91,8 +91,8 @@ async function loadServices() {
             return acc;
         }, {});
         const normalize = (name) => name.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim().toLowerCase();
-        const sortedCategoryNames = Object.keys(categories).sort((a, b) => norma
-lize(a).localeCompare(normalize(b)));
+        const sortedCategoryNames = Object.keys(categories)
+            .sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const categoryName of sortedCategoryNames) {
             const servicesInCategory = categories[categoryName];
             servicesInCategory.sort((a, b) => a.name.localeCompare(b.name));
@@ -111,8 +111,7 @@ eplace(/[^a-z0-9-]/g, '');
                     toggleCategory(categoryHeader);
                 }
             });
-            const emojiMatch = categoryName.match(/^(\p{Emoji_Presentation}|\p{E
-moji})\s*/u);
+            const emojiMatch = categoryName.match(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u);
             let emojiSpan = '';
             let textContent = categoryName;
             if (emojiMatch) {
@@ -124,8 +123,7 @@ moji})\s*/u);
             categoryHeader.innerHTML = `${emojiSpan}<span class="category-title"
 >${textContent}</span> <span class="chevron">▼</span><span class="category-view-
 toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
-            const viewToggle = categoryHeader.querySelector('.category-view-togg
-le');
+            const viewToggle = categoryHeader.querySelector('.category-view-toggle');
             viewToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 toggleCategoryView(categoryId);
@@ -161,8 +159,7 @@ le');
             const isOpen = localStorage.getItem(`category-${id}`) === 'open';
             if (isOpen) {
                 content.classList.add('open');
-                const height = Math.min(content.scrollHeight, MAX_CATEGORY_HEIGH
-T);
+                const height = Math.min(content.scrollHeight, MAX_CATEGORY_HEIGHT);
                 content.style.maxHeight = height + 'px';
                 chevron.classList.add('open');
                 header.setAttribute('aria-expanded', 'true');
@@ -205,8 +202,7 @@ map(tag => tag.trim());
 || tagsMatch) ? 'flex' : 'none';
         });
 
-        const visibleButtons = Array.from(document.querySelectorAll('.service-bu
-tton'))
+        const visibleButtons = Array.from(document.querySelectorAll('.service-button'))
             .filter(btn => btn.style.display !== 'none').length;
         const noResultsEl = document.getElementById('noResults');
         if (noResultsEl) {
@@ -219,8 +215,7 @@ tton'))
 
         document.querySelectorAll('.category').forEach(category => {
             const services = category.querySelectorAll('.service-button');
-            const allHidden = Array.from(services).every(service => service.styl
-e.display === 'none');
+            const allHidden = Array.from(services).every(service => service.style.display === 'none');
             const categoryHeader = category.querySelector('h2');
 
             if (category.id === 'favorites') {
@@ -362,8 +357,7 @@ function toggleFavorite(url) {
 }
 
 function updateStars() {
-    const favorites = new Set(JSON.parse(localStorage.getItem('favorites') || '[
-]'));
+    const favorites = new Set(JSON.parse(localStorage.getItem('favorites') || '[]'));
     document.querySelectorAll('.service-button').forEach(btn => {
         const url = btn.dataset.url;
         const star = btn.querySelector('.favorite-star');
@@ -469,11 +463,9 @@ label="Toggle category view">☰</span>`;
         ensureClearFavoritesButton(header);
         favoritesSection.appendChild(content);
 
-        const searchContainer = mainContainer.querySelector('.search-container')
-;
+        const searchContainer = mainContainer.querySelector('.search-container');
         if (searchContainer) {
-            mainContainer.insertBefore(favoritesSection, searchContainer.nextSib
-ling);
+            mainContainer.insertBefore(favoritesSection, searchContainer.nextSibling);
         } else {
             mainContainer.prepend(favoritesSection);
         }
@@ -521,8 +513,7 @@ ling);
         header.setAttribute('aria-expanded', 'true');
         const height = Math.min(content.scrollHeight, MAX_CATEGORY_HEIGHT);
         content.style.maxHeight = height + 'px';
-        if ((favoriteServices.length === 0 && storedState === 'closed') || store
-dState === null) {
+        if ((favoriteServices.length === 0 && storedState === 'closed') || storedState === null) {
             localStorage.setItem('category-favorites', 'open');
         }
     } else {
@@ -598,13 +589,11 @@ window.toggleCategoryView = toggleCategoryView;
 function updateToggleButtons() {
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn) {
-        themeBtn.classList.toggle('active', document.body.classList.contains('li
-ght-mode'));
+        themeBtn.classList.toggle('active', document.body.classList.contains('light-mode'));
     }
     const viewBtn = document.getElementById('viewToggle');
     if (viewBtn) {
-        viewBtn.classList.toggle('active', document.body.classList.contains('blo
-ck-view'));
+        viewBtn.classList.toggle('active', document.body.classList.contains('block-view'));
     }
 }
 
@@ -636,8 +625,7 @@ function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     if (!sidebar) return;
     sidebar.classList.toggle('open');
-    document.body.classList.toggle('sidebar-open', sidebar.classList.contains('o
-pen'));
+    document.body.classList.toggle('sidebar-open', sidebar.classList.contains('open'));
 }
 
 window.toggleSidebar = toggleSidebar;
