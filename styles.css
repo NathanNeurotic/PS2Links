@@ -328,6 +328,10 @@ body.block-view .category {
 .category-title {
     flex: 1;
     text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0; /* Also good for flex children */
 }
 
 .category-emoji {
@@ -401,6 +405,7 @@ body.block-view .category {
     animation: pulse 2s infinite;
     transition: box-shadow 0.3s ease, transform 0.2s ease;
     position: relative;
+    overflow: hidden;
 }
 
 .service-button:hover {
@@ -438,6 +443,7 @@ body.block-view .category {
     flex-grow: 1; /* Takes available space, pushing star to the right if needed */
     /* justify-content: center; /* If you want name/url block centered if it's short */
     margin-right: 0.5rem; /* Ensure some space before the star if justify-content on parent isn't enough */
+    min-width: 0;
 }
 
 .favorite-star {
