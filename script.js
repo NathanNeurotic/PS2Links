@@ -1,3 +1,11 @@
+function displayErrorInMain(message) {
+    const mainContainer = document.querySelector('main');
+    if (mainContainer) {
+        mainContainer.innerHTML = `<p class='error-message' style='color: red; text-align: center; padding: 20px;'><strong>Initialization Error:</strong> ${message}</p>`;
+    }
+    console.error(message); // Keep console error as well
+}
+
 let allServices = [];
 let deferredPrompt = null;
 const MAX_CATEGORY_HEIGHT =
@@ -10,46 +18,43 @@ const MAX_CATEGORY_HEIGHT =
 document.addEventListener('DOMContentLoaded', () => {
     applySavedTheme();
     applySavedView();
-    applySavedMobileView();
     updateToggleButtons();
-
+    applyMobileViewPreference(); // New function call for persistence
     buildSidebar();
-
     const sidebarToggle = document.getElementById('sidebarToggle');
     if (sidebarToggle) {
         sidebarToggle.addEventListener('click', toggleSidebar);
     }
-
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
-        installBtn.style.display = 'none';
+        installBtn.disabled = true;
+        installBtn.title = 'Install becomes available when supported by your browser.';
         installBtn.addEventListener('click', async () => {
             if (!deferredPrompt) return;
             deferredPrompt.prompt();
             await deferredPrompt.userChoice;
             deferredPrompt = null;
-            installBtn.style.display = 'none';
+            installBtn.disabled = true;
+            installBtn.title = 'Install is not currently available.';
         });
     }
-
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
         if (installBtn) {
-            installBtn.style.display = 'inline-block';
+            installBtn.disabled = false;
+            installBtn.removeAttribute('title');
         }
     });
-
     window.addEventListener('appinstalled', () => {
         if (installBtn) {
-            installBtn.style.display = 'none';
+            installBtn.disabled = true;
+            installBtn.title = 'App is installed';
         }
         deferredPrompt = null;
     });
-    // Typing Effect for Header
     const headerTextElement = document.querySelector('.typing-effect');
-    const textToType = 'AI Services Dashboard';
-
+    const textToType = 'PS2Links Hub';
     if (headerTextElement) {
         headerTextElement.textContent = '';
         let charIndex = 0;
@@ -62,29 +67,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         typeEffect();
     }
-
-    // Load services and set up functionalities only if a <main> element exists
     if (document.querySelector('main')) {
         loadServices();
     }
 });
 
 async function loadServices() {
+    const mainContainer = document.querySelector('main'); // Moved for early access for error display
     try {
         const response = await fetch('./services.json');
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! Failed to fetch services.json. Status: ${response.status}`);
         }
         const services = await response.json();
+        if (!services || !Array.isArray(services) || services.length === 0) {
+            throw new Error('services.json was loaded but is empty or not a valid array of services.');
+        }
         allServices = services;
-        const mainContainer = document.querySelector('main');
-
-        // Clear existing static categories if any (optional, if HTML is pre-pop
-ulated)
+        // Original content of try block continues here...
         const existingCategories = mainContainer.querySelectorAll('.category');
         existingCategories.forEach(cat => cat.remove());
-
-        // Group services by category
         const categories = services.reduce((acc, service) => {
             const category = service.category;
             if (!acc[category]) {
@@ -93,26 +95,20 @@ ulated)
             acc[category].push(service);
             return acc;
         }, {});
-
-        // Generate HTML for categories and services in alphabetical order
-        const normalize = (name) => name.replace(/^(\p{Emoji_Presentation}|\p{Em
-oji})\s*/u, '').trim().toLowerCase();
-        const sortedCategoryNames = Object.keys(categories).sort((a, b) => norma
-lize(a).localeCompare(normalize(b)));
+        const normalize = (name) => name.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim().toLowerCase();
+        const sortedCategoryNames = Object.keys(categories).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const categoryName of sortedCategoryNames) {
             const servicesInCategory = categories[categoryName];
             servicesInCategory.sort((a, b) => a.name.localeCompare(b.name));
-            const categoryId = categoryName.toLowerCase().replace(/\s+/g, '-').r
-eplace(/[^a-z0-9-]/g, '');
-
+            const categoryId = categoryName.toLowerCase()
+                .replace(/\s+/g, '-')
+                .replace(/[^a-z0-9-]/g, '');
             const categorySection = document.createElement('section');
             categorySection.className = 'category';
             categorySection.id = categoryId;
-
             const categoryHeader = document.createElement('h2');
             categoryHeader.setAttribute('aria-expanded', 'false');
-            categoryHeader.onclick = () => toggleCategory(categoryHeader); // Us
-e arrow function to ensure 'this' context or pass element directly
+            categoryHeader.onclick = () => toggleCategory(categoryHeader);
             categoryHeader.tabIndex = 0;
             categoryHeader.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -120,25 +116,15 @@ e arrow function to ensure 'this' context or pass element directly
                     toggleCategory(categoryHeader);
                 }
             });
-
-            // Extract emoji and text for category title
-            const emojiMatch = categoryName.match(/^(\p{Emoji_Presentation}|\p{E
-moji})\s*/u);
+            const emojiMatch = categoryName.match(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u);
             let emojiSpan = '';
             let textContent = categoryName;
-
             if (emojiMatch) {
-                emojiSpan = `<span class="category-emoji">${emojiMatch[0].trim()
-}</span> `;
-                textContent = categoryName.substring(emojiMatch[0].length).trim(
-);
+                emojiSpan = `<span class="category-emoji">${emojiMatch[0].trim()}</span> `;
+                textContent = categoryName.substring(emojiMatch[0].length).trim();
             }
-
-            categoryHeader.innerHTML = `${emojiSpan}<span class="category-title"
->${textContent}</span> <span class="chevron">▼</span><span class="category-view-
-toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
-            const viewToggle = categoryHeader.querySelector('.category-view-togg
-le');
+            categoryHeader.innerHTML = `${emojiSpan}<span class="category-title">${textContent}</span> <span class="chevron">▼</span><span class="category-view-toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
+            const viewToggle = categoryHeader.querySelector('.category-view-toggle');
             viewToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 toggleCategoryView(categoryId);
@@ -150,11 +136,8 @@ le');
                     toggleCategoryView(categoryId);
                 }
             });
-
-
             const categoryContent = document.createElement('div');
             categoryContent.className = 'category-content';
-
             servicesInCategory.forEach(service => {
                 const serviceButton = createServiceButton(
                     service,
@@ -164,15 +147,11 @@ le');
                 );
                 categoryContent.appendChild(serviceButton);
             });
-
             categorySection.appendChild(categoryHeader);
             categorySection.appendChild(categoryContent);
             mainContainer.appendChild(categorySection);
         }
-
         renderFavoritesCategory();
-
-        // Restore Category States from localStorage after dynamic loading
         document.querySelectorAll('.category').forEach(category => {
             const id = category.id;
             const header = category.querySelector('h2');
@@ -181,13 +160,11 @@ le');
             const isOpen = localStorage.getItem(`category-${id}`) === 'open';
             if (isOpen) {
                 content.classList.add('open');
-                const height = Math.min(content.scrollHeight, MAX_CATEGORY_HEIGH
-T);
+                const height = Math.min(content.scrollHeight, MAX_CATEGORY_HEIGHT);
                 content.style.maxHeight = height + 'px';
                 chevron.classList.add('open');
                 header.setAttribute('aria-expanded', 'true');
             }
-
             const view = localStorage.getItem(`view-${id}`);
             if (view === 'list') {
                 category.classList.add('list-view');
@@ -197,54 +174,31 @@ T);
                 }
             }
         });
-
         buildSidebar();
-
-        // Re-initialize search functionality
         setupSearch();
-        populateTagDropdown();
-
     } catch (error) {
-        console.error('Failed to load services:', error);
-        const mainContainer = document.querySelector('main');
-        mainContainer.innerHTML = '<p class="error-message">Failed to load servi
-ces. Please try again later.</p>';
+        displayErrorInMain('Failed to load or process services.json: ' + error.message);
     }
 }
 
-
 function setupSearch() {
     const searchInput = document.getElementById('searchInput');
-    if (!searchInput) return; // Guard clause if search input is not found
+    if (!searchInput) return;
 
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase().trim();
-        const tokens = query.split(',').map(t => t.trim()).filter(Boolean);
         document.querySelectorAll('.service-button').forEach(button => {
-            const name = button.querySelector('.service-name').textContent.toLow
-erCase();
-            const url = button.querySelector('.service-url').textContent.toLower
-Case();
+            const name = button.querySelector('.service-name').textContent.toLowerCase();
+            const url = button.querySelector('.service-url').textContent.toLowerCase();
             const tagsSpan = button.querySelector('.service-tags');
             let tagsMatch = false;
             if (tagsSpan && tagsSpan.textContent) {
-                const tagsArray = tagsSpan.textContent.toLowerCase().split(',').
-map(tag => tag.trim());
-                if (tokens.length > 0) {
-                    tagsMatch = tokens.every(token => tagsArray.some(tag => tag.
-includes(token)));
-                } else {
-                    tagsMatch = tagsArray.some(tag => tag.includes(query));
-                }
+                const tagsArray = tagsSpan.textContent.toLowerCase().split(',').map(tag => tag.trim());
+                tagsMatch = tagsArray.some(tag => tag.includes(query));
             }
-            const textMatch = name.includes(query) || url.includes(query);
-            // Show button if query matches name, URL, or tags
-            button.style.display = (textMatch || tagsMatch) ? 'flex' : 'none';
+            button.style.display = (name.includes(query) || url.includes(query)|| tagsMatch) ? 'flex' : 'none';
         });
-
-        const visibleButtons = Array.from(document.querySelectorAll('.service-bu
-tton'))
-            .filter(btn => btn.style.display !== 'none').length;
+        const visibleButtons = Array.from(document.querySelectorAll('.service-button'))            .filter(btn => btn.style.display !== 'none').length;
         const noResultsEl = document.getElementById('noResults');
         if (noResultsEl) {
             if (query !== '' && visibleButtons === 0) {
@@ -254,28 +208,23 @@ tton'))
             }
         }
 
-        // Optional: Hide categories if all services within them are hidden
         document.querySelectorAll('.category').forEach(category => {
             const services = category.querySelectorAll('.service-button');
-            const allHidden = Array.from(services).every(service => service.styl
-e.display === 'none');
+            const allHidden = Array.from(services).every(service => service.style.display === 'none');
             const categoryHeader = category.querySelector('h2');
 
             if (category.id === 'favorites') {
-                category.style.display = ''; // Always show favorites category
+                category.style.display = '';
                 if (categoryHeader) categoryHeader.style.display = '';
             } else
-            if (query === '') { // If search query is empty, show all categories
- normally
+            if (query === '') {
                 category.style.display = '';
                 if (categoryHeader) categoryHeader.style.display = '';
             } else {
                 if (allHidden) {
-                    category.style.display = 'none'; // Hide the whole category
-section
+                    category.style.display = 'none';
                 } else {
-                    category.style.display = ''; // Show category if some servic
-es are visible
+                    category.style.display = '';
                     if (categoryHeader) categoryHeader.style.display = '';
                 }
             }
@@ -284,8 +233,6 @@ es are visible
 }
 
 function toggleCategory(header) {
-    // Always target the category content element even if other elements
-    // are inserted between the header and the content (e.g. clear button)
     const content = header.parentElement.querySelector('.category-content');
     const chevron = header.querySelector('.chevron');
     const isOpen = content.classList.contains('open');
@@ -334,7 +281,11 @@ function createServiceButton(service, favoritesSet, categoryName) {
     favicon.onerror = () => { favicon.src = './favicon.ico'; };
 
     serviceNameSpan.appendChild(favicon);
-    serviceNameSpan.appendChild(document.createTextNode(service.name));
+
+    const nameText = document.createElement('span');
+    nameText.className = 'service-name-text';
+    nameText.textContent = service.name;
+    serviceNameSpan.appendChild(nameText);
 
     const serviceUrlSpan = document.createElement('span');
     serviceUrlSpan.className = 'service-url';
@@ -350,8 +301,7 @@ function createServiceButton(service, favoritesSet, categoryName) {
     }
 
     if (categoryName) {
-        const catText = categoryName.replace(/^(\p{Emoji_Presentation}|\p{Emoji}
-)\s*/u, '').trim();
+        const catText = categoryName.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim();
         if (!tags.includes(catText)) {
             tags.push(catText);
         }
@@ -386,8 +336,19 @@ function createServiceButton(service, favoritesSet, categoryName) {
     if (thumbnail) {
         serviceButton.appendChild(thumbnail);
     }
-    serviceButton.appendChild(serviceNameSpan);
-    serviceButton.appendChild(serviceUrlSpan);
+
+    // Create the .service-info wrapper div
+    const serviceInfo = document.createElement('div');
+    serviceInfo.className = 'service-info';
+
+    // Append name and URL to the serviceInfo div
+    serviceInfo.appendChild(serviceNameSpan);
+    serviceInfo.appendChild(serviceUrlSpan);
+
+    // Append serviceInfo to the main button
+    serviceButton.appendChild(serviceInfo);
+
+    // Append tags and star after serviceInfo
     serviceButton.appendChild(serviceTagsSpan);
     serviceButton.appendChild(star);
 
@@ -406,8 +367,7 @@ function toggleFavorite(url) {
 }
 
 function updateStars() {
-    const favorites = new Set(JSON.parse(localStorage.getItem('favorites') || '[
-]'));
+    const favorites = new Set(JSON.parse(localStorage.getItem('favorites') || '[]'));
     document.querySelectorAll('.service-button').forEach(btn => {
         const url = btn.dataset.url;
         const star = btn.querySelector('.favorite-star');
@@ -438,7 +398,6 @@ function ensureClearFavoritesButton(header) {
     let btn = header.querySelector('#clearFavoritesBtn');
     if (!btn) {
         btn = document.createElement('button');
-        btn.classList.add('btn-small');
         btn.id = 'clearFavoritesBtn';
         btn.textContent = 'Clear Favorites';
         btn.type = 'button';
@@ -514,11 +473,9 @@ label="Toggle category view">☰</span>`;
         ensureClearFavoritesButton(header);
         favoritesSection.appendChild(content);
 
-        const searchContainer = mainContainer.querySelector('.search-container')
-;
+        const searchContainer = mainContainer.querySelector('.search-container');
         if (searchContainer) {
-            mainContainer.insertBefore(favoritesSection, searchContainer.nextSib
-ling);
+            mainContainer.insertBefore(favoritesSection, searchContainer.nextSibling);
         } else {
             mainContainer.prepend(favoritesSection);
         }
@@ -550,26 +507,13 @@ ling);
         btn.disabled = favoriteServices.length === 0;
     }
 
-    // Determine and apply the collapsed or expanded state for the Favorites cat
-egory
     const storedState = localStorage.getItem('category-favorites');
     const chevron = header.querySelector('.chevron');
-    // Note: 'content' is favoritesSection.querySelector('.category-content')
-    //       'header' is favoritesSection.querySelector('h2')
-    //       'favoriteServices' is an array of favorite service objects
-    //       'MAX_CATEGORY_HEIGHT' is a globally available constant
-
     let shouldBeOpen = false;
-    // Determine if the category should be open:
-    // 1. If it's empty.
-    // 2. If no state is stored (first time).
-    // 3. If the stored state is 'open'.
     if (favoriteServices.length === 0 || storedState === null || storedState ===
  'open') {
         shouldBeOpen = true;
     }
-    // Otherwise, it remains closed (i.e., it's not empty AND storedState is 'cl
-osed')
 
     if (shouldBeOpen) {
         content.classList.add('open');
@@ -577,22 +521,12 @@ osed')
             chevron.classList.add('open');
         }
         header.setAttribute('aria-expanded', 'true');
-
-        // Calculate and set maxHeight. This code runs after content.innerHTML i
-s populated.
         const height = Math.min(content.scrollHeight, MAX_CATEGORY_HEIGHT);
         content.style.maxHeight = height + 'px';
-
-        // If the section is empty and it was previously closed, or if it's the
-first time loading (no state stored),
-        // default to open and save this state.
-        if ((favoriteServices.length === 0 && storedState === 'closed') || store
-dState === null) {
+        if ((favoriteServices.length === 0 && storedState === 'closed') || storedState === null) {
             localStorage.setItem('category-favorites', 'open');
         }
     } else {
-        // This case means: favoriteServices.length > 0 AND storedState === 'clo
-sed'
         content.classList.remove('open');
         if (chevron) {
             chevron.classList.remove('open');
@@ -641,13 +575,6 @@ function applySavedView() {
     }
 }
 
-function applySavedMobileView() {
-    const saved = localStorage.getItem('mobileView');
-    if (saved === 'on') {
-        document.body.classList.add('mobile-view');
-    }
-}
-
 function toggleView() {
     const isBlock = document.body.classList.toggle('block-view');
     localStorage.setItem('view', isBlock ? 'block' : 'list');
@@ -655,14 +582,6 @@ function toggleView() {
 }
 
 window.toggleView = toggleView;
-
-function toggleMobileView() {
-    const isMobile = document.body.classList.toggle('mobile-view');
-    localStorage.setItem('mobileView', isMobile ? 'on' : 'off');
-    updateToggleButtons();
-}
-
-window.toggleMobileView = toggleMobileView;
 
 function toggleCategoryView(categoryId) {
     const section = document.getElementById(categoryId);
@@ -680,18 +599,11 @@ window.toggleCategoryView = toggleCategoryView;
 function updateToggleButtons() {
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn) {
-        themeBtn.classList.toggle('active', document.body.classList.contains('li
-ght-mode'));
+        themeBtn.classList.toggle('active', document.body.classList.contains('light-mode'));
     }
     const viewBtn = document.getElementById('viewToggle');
     if (viewBtn) {
-        viewBtn.classList.toggle('active', document.body.classList.contains('blo
-ck-view'));
-    }
-    const mobileBtn = document.getElementById('mobileToggle');
-    if (mobileBtn) {
-        mobileBtn.classList.toggle('active', document.body.classList.contains('m
-obile-view'));
+        viewBtn.classList.toggle('active', document.body.classList.contains('block-view'));
     }
 }
 
@@ -712,7 +624,7 @@ function buildSidebar() {
         sidebar.appendChild(link);
     });
     const repoLink = document.createElement('a');
-    repoLink.href = 'https://www.github.com/NathanNeurotic/AI';
+    repoLink.href = 'https://www.github.com/NathanNeurotic/PS2Links/';
     repoLink.textContent = 'GitHub Repository';
     repoLink.target = '_blank';
     repoLink.rel = 'noopener noreferrer';
@@ -723,28 +635,38 @@ function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     if (!sidebar) return;
     sidebar.classList.toggle('open');
-    document.body.classList.toggle('sidebar-open', sidebar.classList.contains('o
-pen'));
+    document.body.classList.toggle('sidebar-open', sidebar.classList.contains('open'));
 }
 
 window.toggleSidebar = toggleSidebar;
 window.buildSidebar = buildSidebar;
 
-function populateTagDropdown() {
-    const datalist = document.getElementById('tagOptions');
-    if (!datalist) return;
-    const tagSet = new Set();
-    for (const service of allServices) {
-        if (Array.isArray(service.tags)) {
-            service.tags.forEach(tag => tagSet.add(tag));
+// --- Mobile View Toggle Functionality ---
+function toggleMobileView() {
+    document.body.classList.toggle('mobile-view');
+    const mobileToggle = document.getElementById('mobileToggle');
+    if (mobileToggle) {
+        mobileToggle.classList.toggle('active', document.body.classList.contains('mobile-view'));
+    }
+    if (document.body.classList.contains('mobile-view')) {
+        localStorage.setItem('mobileViewEnabled', 'true');
+    } else {
+        localStorage.removeItem('mobileViewEnabled');
+    }
+}
+window.toggleMobileView = toggleMobileView; // Make it globally accessible if index.html uses onclick
+
+function applyMobileViewPreference() {
+    if (localStorage.getItem('mobileViewEnabled') === 'true') {
+        document.body.classList.add('mobile-view');
+        const mobileToggle = document.getElementById('mobileToggle');
+        if (mobileToggle) {
+            mobileToggle.classList.add('active');
         }
     }
-    datalist.innerHTML = '';
-    Array.from(tagSet).sort().forEach(tag => {
-        const option = document.createElement('option');
-        option.value = tag;
-        datalist.appendChild(option);
-    });
 }
 
-window.populateTagDropdown = populateTagDropdown;
+// Update updateToggleButtons to include mobileToggle if it needs active state updates
+// For now, mobile view active state is handled by toggleMobileView and applyMobileViewPreference.
+// If #mobileToggle needs to be part of the generic updateToggleButtons, that function would need modification.
+// The current updateToggleButtons only handles theme and block-view.
