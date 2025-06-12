@@ -31,18 +31,18 @@ body {
 
 body.light-mode {
     /* Brighter palette with soft gradients */
-    --bg-color: linear-gradient(180deg, #f0f4f8 0%, #d9e2ec 100%);
-    --text-color: #2c3e50;
-    --accent-color: #3498db;
-    --header-gradient: linear-gradient(180deg, #f0f4f8 0%, #d9e2ec 100%);
-    --section-gradient: linear-gradient(90deg, #f0f4f8 0%, #d9e2ec 100%);
-    --content-bg: rgba(255, 255, 255, 0.9);
-    --button-gradient: linear-gradient(135deg, #eaf2f8 0%, #d5e1ef 100%);
-    --footer-gradient: linear-gradient(180deg, #d9e2ec 0%, #f0f4f8 100%);
-    --thanks-color: #3498db;
+    --bg-color: #6ea6c4;
+    --text-color: #1e507b;
+    --accent-color: #f7c859;
+    --header-gradient: linear-gradient(180deg, #3b709b, #6ea6c4);
+    --section-gradient: linear-gradient(90deg, #95cfd6, #6ea6c4);
+    --content-bg: rgba(247, 200, 89, 0.1);
+    --button-gradient: linear-gradient(135deg, #95cfd6, #3b709b);
+    --footer-gradient: linear-gradient(180deg, #3b709b, #6ea6c4);
+    --thanks-color: #1e507b;
     --font-family: 'Roboto Mono', monospace;
-    --scroll-track: #f0f0f0;
-    --scroll-thumb: #5dade2; /* Adjusted to a shade of accent color */
+    --scroll-track: #d9e2ec; /* Light color for scroll track */
+    --scroll-thumb: #3b709b; /* Medium Blue for scroll thumb */
     --scrollbar-width: 8px;
     --card-min-width: 280px;
     --card-max-width: 380px;
@@ -50,8 +50,8 @@ body.light-mode {
 }
 
 html.light-mode {
-    --scroll-track: #f0f0f0;
-    --scroll-thumb: #a8d5a8;
+    --scroll-track: #d9e2ec; /* Ensure consistency for html element */
+    --scroll-thumb: #3b709b; /* Ensure consistency for html element */
 }
 
 * {
