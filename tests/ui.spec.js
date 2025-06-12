@@ -306,20 +306,23 @@ test('No horizontal scrollbar in block view on wider screens', async ({ page }) 
 test('should handle long service names with wrapping and scrolling', async ({ page }) => {
   const mockServices = [
     {
-      "name": "ThisIsAnExtremelyLongServiceNameDesignedToTestTheUIWrappingAndScrollingBehaviorItJustKeepsGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingOnAndOnAndOn",
-      "url": "http://example.com/longname",
-      "favicon_url": "./favicon.ico",
-      "category": "Long Text Test",
-      "tags": ["test", "longname"],
-      "thumbnail_url": ""
-    },
-    {
-      "name": "Normal Service 1",
-      "url": "http://example.com/normal1",
-      "favicon_url": "./favicon.ico",
-      "category": "Long Text Test",
-      "tags": ["test"],
-      "thumbnail_url": ""
+      category: "Long Text Test",
+      links: [
+        {
+          name: "ThisIsAnExtremelyLongServiceNameDesignedToTestTheUIWrappingAndScrollingBehaviorItJustKeepsGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingOnAndOnAndOn",
+          url: "http://example.com/longname",
+          favicon_url: "./favicon.ico",
+          tags: ["test", "longname"],
+          thumbnail_url: ""
+        },
+        {
+          name: "Normal Service 1",
+          url: "http://example.com/normal1",
+          favicon_url: "./favicon.ico",
+          tags: ["test"],
+          thumbnail_url: ""
+        }
+      ]
     }
   ];
 
