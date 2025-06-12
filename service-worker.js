@@ -1,19 +1,37 @@
 // Bump cache version to ensure users receive the latest files
-const CACHE_NAME = 'ps2links-cache-v1'; // Changed cache name
+const CACHE_NAME = 'ai-dashboard-cache-v3';
 const URLS_TO_CACHE = [
   './index.html',
   './styles.css',
   './script.js',
   './services.json',
   './favicon.ico',
-  './site.webmanifest', // Corrected manifest path
-  './apple-touch-icon.png', // Added apple touch icon
-  './ps2wiki.ico' // Added ps2wiki.ico as it's used as a fallback
+  './public/manifest.json'
 ];
+self.CACHE_NAME = globalThis.CACHE_NAME = CACHE_NAME;
+self.URLS_TO_CACHE = globalThis.URLS_TO_CACHE = URLS_TO_CACHE;
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(URLS_TO_CACHE))
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      await cache.addAll(URLS_TO_CACHE);
+      try {
+        const resp = await fetch('./services.json');
+        const services = await resp.json();
+        for (const svc of services) {
+          if (svc.favicon_url) {
+            try { await cache.add(svc.favicon_url); } catch (e) { /* ignore */ }
+          }
+          if (svc.thumbnail_url) {
+            try { await cache.add(svc.thumbnail_url); } catch (e) { /* ignore */
+ }
+          }
+        }
+      } catch (err) {
+        console.error('Failed to cache service assets', err);
+      }
+    })()
   );
   self.skipWaiting();
 });
@@ -21,17 +39,20 @@ self.addEventListener('install', event => {
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key)))
+      Promise.all(keys.filter(key => key !== CACHE_NAME).map(key => caches.delet
+e(key)))
     )
   );
   self.clients.claim();
 });
 
 self.addEventListener('fetch', event => {
-  const requestUrl = new URL(event.request.url);
+  // const requestUrl = new URL(event.request.url);
+  const requestUrl = event.request.url;
 
-  // Network first for script.js and services.json to ensure they are up-to-date
-  if (requestUrl.pathname.endsWith('/script.js') || requestUrl.pathname.endsWith('/services.json')) {
+  // Network first for script.js and services.json
+  if (requestUrl.endsWith('/script.js') || requestUrl.endsWith('/services.json')
+) {
     event.respondWith(
       fetch(event.request).catch(() => caches.match(event.request))
     );
@@ -40,6 +61,7 @@ self.addEventListener('fetch', event => {
 
   // Cache first for other requests
   event.respondWith(
-    caches.match(event.request).then(response => response || fetch(event.request))
+    caches.match(event.request).then(response => response || fetch(event.request
+))
   );
 });
