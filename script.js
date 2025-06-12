@@ -75,30 +75,46 @@ async function loadServices() {
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const services = await response.json();
-        allServices = services;
+        const jsonData = await response.json(); // jsonData is an array of category groups
+
+        // Initialize allServices as a flat list of all link objects, augmented with categoryName and tags
+        allServices = [];
+        jsonData.forEach(categoryGroup => {
+            const categoryName = categoryGroup.category;
+            // Clean category name for use in tags (remove emoji)
+            const cleanCategoryName = categoryName.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim();
+            categoryGroup.links.forEach(link => {
+                // Ensure each link object in allServices has a 'tags' array including its category
+                const serviceTags = link.tags ? [...link.tags] : []; // Copy existing tags if any from links.json
+                if (!serviceTags.includes(cleanCategoryName)) {
+                    serviceTags.push(cleanCategoryName);
+                }
+                allServices.push({ ...link, category: categoryName, tags: serviceTags });
+            });
+        });
+
         const mainContainer = document.querySelector('main');
 
         // Clear existing static categories if any (optional, if HTML is pre-populated)
         const existingCategories = mainContainer.querySelectorAll('.category');
         existingCategories.forEach(cat => cat.remove());
 
-        // Group services by category
-        const categories = services.reduce((acc, service) => {
-            const category = service.category;
-            if (!acc[category]) {
-                acc[category] = [];
+        // Populate categories object: keys are category names, values are arrays of link objects
+        const localCategories = {};
+        jsonData.forEach(categoryGroup => {
+            const categoryName = categoryGroup.category;
+            if (!localCategories[categoryName]) {
+                localCategories[categoryName] = [];
             }
-            acc[category].push(service);
-            return acc;
-        }, {});
+            localCategories[categoryName].push(...categoryGroup.links);
+        });
 
         // Generate HTML for categories and services in alphabetical order
         const normalize = (name) => name.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim().toLowerCase();
-        const sortedCategoryNames = Object.keys(categories).sort((a, b) => normalize(a).localeCompare(normalize(b)));
+        const sortedCategoryNames = Object.keys(localCategories).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const categoryName of sortedCategoryNames) {
-            const servicesInCategory = categories[categoryName];
-            servicesInCategory.sort((a, b) => a.name.localeCompare(b.name));
+            const servicesInCategory = localCategories[categoryName];
+            servicesInCategory.sort((a, b) => a.name.localeCompare(b.name)); // Assuming link objects have a 'name' property
             const categoryId = categoryName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
             const categorySection = document.createElement('section');
