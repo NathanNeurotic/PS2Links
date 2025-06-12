@@ -1,2516 +1,2519 @@
 [
   {
-    "category": "Communities & Social Platforms",
-    "description": "General forums, Reddit communities, and other social platforms for PlayStation 2 enthusiasts to discuss games, homebrew, hardware, and more.",
-    "links": [
-      {
-        "name": "8BitMods Discord Server",
-        "url": "https://discord.gg/F2aKahj",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["discord", "chat", "community", "8bitmods", "hardware", "mods"]
-      },
-      {
-        "name": "Fileforums.com",
-        "url": "https://fileforums.com/index.php",
-        "favicon_url": "https://fileforums.com/favicon.ico",
-        "tags": ["forum", "files", "downloads", "discussion", "community"]
-      },
-      {
-        "name": "GBATemp's PS2 Forum",
-        "url": "https://gbatemp.net/forums/other-platforms-oldies.202/?prefix_id=61",
-        "favicon_url": "https://gbatemp.net/favicon.ico",
-        "tags": ["gbatemp", "forum", "ps2", "homebrew", "discussion", "mods", "gaming"]
-      },
-      {
-        "name": "Hardlevel Discord Server",
-        "url": "https://bit.ly/hardlevel-discord",
-        "favicon_url": "https://bit.ly/favicon.ico",
-        "tags": ["discord", "chat", "hardlevel", "gaming", "community", "portuguese", "brasil"]
-      },
-      {
-        "name": "NFOHump Forum",
-        "url": "https://www.nfohump.com/forum/index.php",
-        "favicon_url": "https://www.nfohump.com/favicon.ico",
-        "tags": ["nfo", "forum", "releases", "discussion", "scene"]
-      },
-      {
-        "name": "Obscure Gamers Discord Server",
-        "url": "https://discord.gg/pJ8Qu7qYHX",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["discord", "obscure games", "retro", "gaming", "community"]
-      },
-      {
-        "name": "OnlineConsole's PS2 Pages",
-        "url": "https://playstation2.onlineconsoles.com/phpBB2/index.php",
-        "favicon_url": "https://playstation2.onlineconsoles.com/favicon.ico",
-        "tags": ["forum", "onlineconsole", "ps2", "discussion", "phpbb"]
-      },
-      {
-        "name": "Playstation 2 Homebrew Community Discord Server (Archive)",
-        "url": "https://discord.gg/XaztguU",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["discord", "archive", "ps2", "homebrew", "development", "chat"]
-      },
-      {
-        "name": "Playstation Homebrew Discord Server",
-        "url": "https://discord.gg/qHn9fuTrJw",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["discord", "playstation", "homebrew", "ps1", "ps2", "ps3", "psp", "vita", "development"]
-      },
-      {
-        "name": "PS Gamers",
-        "url": "https://www.ps-gamers.ru/",
-        "favicon_url": "https://www.ps-gamers.ru/favicon.ico",
-        "tags": ["ps-gamers", "forum", "russian", "community", "playstation"]
-      },
-      {
-        "name": "PS-Gamers.ru Official Discord Server",
-        "url": "https://discord.gg/2V6SesJ",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["discord", "ps-gamers", "russian", "chat", "community"]
-      },
-      {
-        "name": "PS2 Homebrew Reddit",
-        "url": "https://www.reddit.com/r/ps2homebrew/",
-        "favicon_url": "https://www.reddit.com/favicon.ico",
-        "tags": ["reddit", "ps2", "homebrew", "discussion", "help", "news"]
-      },
-      {
-        "name": "PS2 Reddit",
-        "url": "https://www.reddit.com/r/ps2/",
-        "favicon_url": "https://www.reddit.com/favicon.ico",
-        "tags": ["reddit", "ps2", "general", "discussion", "gaming", "news"]
-      },
-      {
-        "name": "PS2 Scene Discord Server",
-        "url": "https://discord.gg/ZH55QuTSfT",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["discord", "ps2", "scene", "homebrew", "releases", "discussion"]
-      },
-      {
-        "name": "PS2 Space Discord Server",
-        "url": "https://discord.gg/3SWDtuVy7r",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["discord", "ps2", "community", "chat", "gaming"]
-      },
-      {
-        "name": "PS2-Home",
-        "url": "https://www.ps2-home.com/",
-        "favicon_url": "https://www.ps2-home.com/favicon.ico",
-        "tags": ["ps2-home", "forum", "homebrew", "opl", "guides", "downloads", "jay-jay"]
-      },
-      {
-        "name": "PSX-Place",
-        "url": "https://www.psx-place.com/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["psx-place", "forum", "playstation", "ps1", "ps2", "ps3", "ps4", "ps5", "homebrew", "news", "guides"]
-      },
-      {
-        "name": "PSX-Place Discord Server",
-        "url": "https://discord.com/invite/kASwQBs5",
-        "favicon_url": "https://discord.com/favicon.ico",
-        "tags": ["discord", "psx-place", "chat", "community", "playstation"]
-      },
-      {
-        "name": "PSX-Place's PS2 Forums/Messaging Boards",
-        "url": "https://www.psx-place.com/forums/#playstation-2-forums.6",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["psx-place", "forum", "ps2", "discussion", "homebrew", "support"]
-      },
-      {
-        "name": "Retro Game Boards",
-        "url": "https://www.retrogameboards.com/",
-        "favicon_url": "https://www.retrogameboards.com/favicon.ico",
-        "tags": ["forum", "retro gaming", "classic games", "discussion", "community"]
-      },
-      {
-        "name": "Romhacking.net Forum",
-        "url": "https://www.romhacking.net/forum/",
-        "favicon_url": "https://www.romhacking.net/favicon.ico",
-        "tags": ["romhacking", "forum", "translations", "mods", "patches", "discussion"]
-      },
-      {
-        "name": "Romstation.fr Forum",
-        "url": "https://www.romstation.fr/forums/forum/376-forum",
-        "favicon_url": "https://www.romstation.fr/favicon.ico",
-        "tags": ["romstation", "forum", "french", "emulation", "downloads", "community"]
-      },
-      {
-        "name": "The Cutting Room Floor Discord Server",
-        "url": "https://discord.com/invite/SGeE8dcWR6",
-        "favicon_url": "https://discord.com/favicon.ico",
-        "tags": ["discord", "tcrf", "game content", "unused", "beta", "secrets", "chat"]
-      },
-      {
-        "name": "The Cutting Room Floor Message Boards",
-        "url": "https://jul.rustedlogic.net/forum.php?id=12",
-        "favicon_url": "https://jul.rustedlogic.net/favicon.ico",
-        "tags": ["tcrf", "forum", "game content", "unused", "beta", "secrets", "discussion"]
-      },
-      {
-        "name": "The Emotion Engine Nostalgia Extrusion Concern, LLC Discord Server",
-        "url": "https://discord.gg/GyZgHhpxXT",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["discord", "emotion engine", "ps2", "nostalgia", "technical", "chat"]
-      },
-      {
-        "name": "VGBA Forums",
-        "url": "https://vgboxart.com/forums/",
-        "favicon_url": "https://vgboxart.com/favicon.ico",
-        "tags": ["vgba", "forum", "box art", "design", "community", "videogameboxart"]
-      },
-      {
-        "name": "Xtreme Elite Boot+ Discord Server",
-        "url": "https://discord.com/invite/CnPWqBkAPG",
-        "favicon_url": "https://discord.com/favicon.ico",
-        "tags": ["discord", "xeb+", "xtreme elite boot", "homebrew", "launcher", "chat"]
-      }
+    "name": "3D AI Studio",
+    "url": "https://www.3daistudio.com/",
+    "favicon_url": "https://www.3daistudio.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "modeling",
+      "design"
+    ],
+    "thumbnail_url": "https://example.com/thumbs/3d-ai-studio.png"
+  },
+  {
+    "name": "3DAIMaker",
+    "url": "https://3daimaker.com/",
+    "favicon_url": "https://3daimaker.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "creator"
     ]
   },
   {
-    "category": "Game-Specific Communities & Resources",
-    "description": "Dedicated communities, wikis, and resources focusing on specific PlayStation 2 games or game series, including fan forums and detailed game information.",
-    "links": [
-      {
-        "name": "25 to Life: Classic Discord Server",
-        "url": "https://discord.gg/gmYe84eS7q",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["25 to life", "discord", "community", "online", "multiplayer", "revival"]
-      },
-      {
-        "name": "Auto Modellista Meetup Club Discord Server",
-        "url": "https://discord.gg/h7RbJ5FCct",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["auto modellista", "discord", "community", "online", "racing", "meetup"]
-      },
-      {
-        "name": "Burnout 3 Online Revival Discord Server",
-        "url": "https://discord.gg/y9KYVrhQG7",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["burnout 3", "burnout", "discord", "community", "online", "multiplayer", "revival"]
-      },
-      {
-        "name": "Burnout PS2 Online Discord Server",
-        "url": "https://discord.gg/cjceKbhuuv",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["burnout", "ps2", "discord", "community", "online", "multiplayer"]
-      },
-      {
-        "name": "EQOA Revival Discord Server",
-        "url": "https://discord.gg/uwqdv9yKtH",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["everquest online adventures", "eqoa", "discord", "community", "revival", "mmo", "rpg"]
-      },
-      {
-        "name": "Jak & Daxter Fandom Wiki",
-        "url": "https://jakanddaxter.fandom.com/",
-        "favicon_url": "https://jakanddaxter.fandom.com/favicon.ico",
-        "tags": ["jak and daxter", "wiki", "fandom", "lore", "guide", "information", "platformer"]
-      },
-      {
-        "name": "Jack and Daxter Discord Server",
-        "url": "https://discord.gg/N358k7R",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["jak and daxter", "discord", "community", "chat", "discussion"]
-      },
-      {
-        "name": "Jack and Daxter Lore'n'Lounge Discord Server",
-        "url": "https://discord.gg/RYJPuXkHu4",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["jak and daxter", "discord", "community", "lore", "discussion", "chat"]
-      },
-      {
-        "name": "Jack and Daxter Speedrun Discord Server",
-        "url": "https://discord.gg/UPaQy8ZUAa",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["jak and daxter", "discord", "community", "speedrun", "speedrunning"]
-      },
-      {
-        "name": "Jak X Multiplayer Discord Server",
-        "url": "https://discord.gg/5VHj8sD",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["jak x", "jak and daxter", "discord", "community", "multiplayer", "online", "racing"]
-      },
-      {
-        "name": "Medal of Honor Rising Discord Server",
-        "url": "https://discord.gg/2MafefE4XH",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["medal of honor", "moh", "rising sun", "discord", "community", "online", "fps"]
-      },
-      {
-        "name": "MH Oldschool Discord Server",
-        "url": "https://discord.gg/k7d6RKd",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["medal of honor", "moh", "oldschool", "discord", "community", "online", "fps"]
-      },
-      {
-        "name": "Midnight Club 3/2/L.A Online Official Discord Server",
-        "url": "https://discord.gg/Zfj4TYN",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["midnight club", "mc3", "mc2", "la", "discord", "community", "online", "racing"]
-      },
-      {
-        "name": "Naughty Dog (Fan Server)",
-        "url": "https://discord.gg/tykmvRP",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["naughty dog", "discord", "community", "jak and daxter", "crash bandicoot", "uncharted", "the last of us"]
-      },
-      {
-        "name": "Netslum - .hack//fragment Community Discord Server",
-        "url": "https://discord.gg/DY3XEe8",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": [".hack", "fragment", "netslum", "discord", "community", "online", "mmo", "rpg"]
-      },
-      {
-        "name": "NFSOR (NeedForSpeed) Discord Server",
-        "url": "https://discord.com/invite/3chzV4BMFn",
-        "favicon_url": "https://discord.com/favicon.ico",
-        "tags": ["need for speed", "nfs", "nfsor", "discord", "community", "online", "racing"]
-      },
-      {
-        "name": "Ratchet & Clank 3 Casuals Discord Server",
-        "url": "https://discord.gg/S7h4SbzvyG",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["ratchet and clank", "ratchet & clank 3", "up your arsenal", "discord", "community", "casual", "discussion"]
-      },
-      {
-        "name": "Ratchet & Clank Discord Server",
-        "url": "https://discord.gg/UyAeTgJ",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["ratchet and clank", "discord", "community", "general", "discussion"]
-      },
-      {
-        "name": "Ratchet & Clank Horizon Online Play Discord Server",
-        "url": "https://discord.gg/KaqEVBuCUh",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["ratchet and clank", "horizon", "discord", "community", "online", "multiplayer"]
-      },
-      {
-        "name": "Ratchet & Clank Online Discord Server",
-        "url": "https://discord.gg/mUQzqGu",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["ratchet and clank", "discord", "community", "online", "multiplayer", "up your arsenal", "deadlocked"]
-      },
-      {
-        "name": "Ratchet & Clank Size Matters Online Discord Server",
-        "url": "https://discord.gg/hD23nTfDxT",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["ratchet and clank", "size matters", "discord", "community", "online", "multiplayer", "psp"]
-      },
-      {
-        "name": "Save MGO Discord Server",
-        "url": "https://discord.com/invite/h5gA3X9Zhj",
-        "favicon_url": "https://discord.com/favicon.ico",
-        "tags": ["metal gear online", "mgo", "savemgo", "discord", "community", "online", "revival", "metal gear solid"]
-      },
-      {
-        "name": "SlyCooper Discord Server",
-        "url": "https://discord.gg/ZSjCVt2DNQ",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["sly cooper", "discord", "community", "stealth", "platformer", "sucker punch"]
-      },
-      {
-        "name": "SOCOM Community Discord Server",
-        "url": "https://discord.gg/HB33DqU",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["socom", "us navy seals", "discord", "community", "online", "multiplayer", "tactical shooter"]
-      },
-      {
-        "name": "Star Wars Battlefront PS2 Online Discord Server",
-        "url": "https://discord.gg/jQDPcTQurN",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["star wars battlefront", "swbf", "swbf1", "swbf2", "discord", "community", "online", "multiplayer"]
-      },
-      {
-        "name": "SvR/WWE/F NETPLAY Discord Server",
-        "url": "https://discord.gg/Z6zqdDrKeT",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["smackdown vs raw", "wwe", "wwf", "netplay", "parsec", "pcsx2", "discord", "community", "online", "wrestling"]
-      },
-      {
-        "name": "Twisted Metal Alliance Discord Server",
-        "url": "https://discord.gg/hQbBHh3",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["twisted metal", "discord", "community", "vehicular combat", "online"]
-      },
-      {
-        "name": "zdxsv (foreign Gundam) Discord Server",
-        "url": "https://discord.gg/NtnVPuvart",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["gundam", "discord", "community", "japanese", "mech", "action"]
-      }
+    "name": "AI 3D Model Generator",
+    "url": "https://ai3dmodelgenerator.net/",
+    "favicon_url": "https://ai3dmodelgenerator.net/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
     ]
   },
   {
-    "category": "System & Software Utilities (Homebrew)",
-    "description": "Homebrew applications for managing the PS2 system, memory cards, game saves, files, and launching other homebrew software. Includes essentials like FreeMcBoot, uLaunchELF, and Open PS2 Loader (OPL).",
-    "links": [
-      {
-        "name": "AIO Project: PS2 v2.0.1 (2021) by Berion",
-        "url": "https://archive.org/details/aio-project-ps2-v201",
-        "favicon_url": "https://archive.org/favicon.ico",
-        "tags": ["aio", "all-in-one", "berion", "homebrew", "pack", "utility", "tool", "ps2"]
-      },
-      {
-        "name": "Apollo Save Tool AIO Saves Management/Conversion/Import/Export",
-        "url": "https://github.com/bucanero/apollo-ps2",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["apollo", "save tool", "save management", "vmc", "psv", "conversion", "import", "export", "bucanero", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Arceus Menu by Project Zeus",
-        "url": "https://projectzeus0101.blogspot.com/",
-        "favicon_url": "https://projectzeus0101.blogspot.com/favicon.ico",
-        "tags": ["arceus menu", "project zeus", "launcher", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "BDM Assault (enabled exFAT USB) by El_isra",
-        "url": "https://www.psx-place.com/threads/42352/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["bdm assault", "exfat", "usb", "mass storage", "el_isra", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "DKWDRV Batch Game Installer by GDX",
-        "url": "https://github.com/GDX-X/DKWDRV-Batch-Game-Installer",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["dkwdrv", "batch installer", "game installer", "hdd", "gdx", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "ESR",
-        "url": "https://www.psx-place.com/resources/esr.951/update?update=1613",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["esr", "dvd patcher", "disc loader", "backup launcher", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "FDVDB ESR Patcher GUI",
-        "url": "https://www.psx-place.com/threads/freedvdboot-by-cturt.30220/#post-255696",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["freedvdboot", "fdvdb", "esr patcher", "gui", "backup launcher", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Fortuna Launcher",
-        "url": "https://github.com/Veritas83/PS2_FORTUNA_Launcher",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["fortuna", "launcher", "exploit", "veritas83", "homebrew", "utility", "ps2", "fmcb alternative"]
-      },
-      {
-        "name": "FreeDVDBoot Official github",
-        "url": "https://github.com/ps2homebrew/FreeDVDBoot",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["freedvdboot", "exploit", "softmod", "dvd player", "homebrew", "ps2homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "FreeMCBoot Continued by El_isra",
-        "url": "https://israpps.github.io/FreeMcBoot-Installer/",
-        "favicon_url": "https://israpps.github.io/favicon.ico",
-        "tags": ["fmcb", "freemcboot", "softmod", "memory card", "bootloader", "el_isra", "homebrew", "installer", "utility", "ps2"]
-      },
-      {
-        "name": "FreeMCBoot Official Page",
-        "url": "https://sites.google.com/view/ysai187/home/projects/fmcbfhdb",
-        "favicon_url": "https://sites.google.com/favicon.ico",
-        "tags": ["fmcb", "freemcboot", "fhdb", "softmod", "memory card", "hdd", "bootloader", "homebrew", "official", "utility", "ps2"]
-      },
-      {
-        "name": "FTP Server for PS2",
-        "url": "https://github.com/ps2homebrew/ps2ftpd",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ftp", "server", "ps2ftpd", "file transfer", "network", "homebrew", "utility", "ps2", "ps2homebrew"]
-      },
-      {
-        "name": "HDL Game Installer",
-        "url": "https://github.com/ps2homebrew/HDLGameInstaller",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["hdl gameinstaller", "hdd loader", "game installer", "hdd", "homebrew", "utility", "ps2", "ps2homebrew"]
-      },
-      {
-        "name": "HDL-Batch-Installer by El_isra",
-        "url": "https://israpps.github.io/HDL-Batch-installer/",
-        "favicon_url": "https://israpps.github.io/favicon.ico",
-        "tags": ["hdl batch installer", "hdd loader", "game installer", "batch", "el_isra", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "HDL_Dump",
-        "url": "https://github.com/ps2homebrew/hdl-dump",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["hdl_dump", "hdd loader", "game installer", "command line", "pc tool", "homebrew", "utility", "ps2", "ps2homebrew"]
-      },
-      {
-        "name": "Homebrew Downloader",
-        "url": "https://github.com/Veritas83/VTSPS2-HBDL",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["homebrew downloader", "downloader", "veritas83", "vtsps2-hbdl", "utility", "ps2"]
-      },
-      {
-        "name": "KELFBINDER by El_isra",
-        "url": "https://israpps.github.io/KELFBinder/",
-        "favicon_url": "https://israpps.github.io/favicon.ico",
-        "tags": ["kelfbinder", "kelf", "elf", "packer", "el_isra", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "MCP2 OPL with Manual GameID Transmission",
-        "url": "https://install.appcenter.ms/orgs/beta-ucu9/apps/opl-with-gameid/distribution_groups/public",
-        "favicon_url": "https://install.appcenter.ms/favicon.ico",
-        "tags": ["mcp2 opl", "memcard pro 2", "opl", "gameid", "sd2psx", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "MECHAPWN",
-        "url": "https://github.com/MechaResearch/MechaPwn",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["mechapwn", "mechacon", "exploit", "softmod", "homebrew", "utility", "ps2", "mecharesearch"]
-      },
-      {
-        "name": "Memory Card Annihilator (MCA) Memory Card Tool",
-        "url": "https://www.psx-place.com/threads/memory-card-annihilator-v2-0a-a-new-version-after-more-than-11-years.36277/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["mca", "memory card annihilator", "memory card", "formatter", "manager", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "mymc Homepage",
-        "url": "http://www.csclub.uwaterloo.ca:11068/mymc/",
-        "favicon_url": "http://www.csclub.uwaterloo.ca:11068/favicon.ico",
-        "tags": ["mymc", "memory card", "pc tool", "save management", "vmc", "homebrew", "utility"]
-      },
-      {
-        "name": "mymcc github",
-        "url": "https://github.com/ps2dev/mymc",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["mymc", "memory card", "pc tool", "save management", "vmc", "command line", "ps2dev", "homebrew", "utility"]
-      },
-      {
-        "name": "mymcplus github",
-        "url": "https://github.com/thestr4ng3r/mymcplus",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["mymcplus", "memory card", "pc tool", "save management", "vmc", "gui", "thestr4ng3r", "homebrew", "utility"]
-      },
-      {
-        "name": "mymcplus Homepage",
-        "url": "https://git.sr.ht/~thestr4ng3r/mymcplus",
-        "favicon_url": "https://git.sr.ht/favicon.ico",
-        "tags": ["mymcplus", "memory card", "pc tool", "save management", "vmc", "gui", "thestr4ng3r", "homebrew", "utility"]
-      },
-      {
-        "name": "mymcplusplus github",
-        "url": "https://github.com/Adubbz/mymcplusplus",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["mymcplusplus", "memory card", "pc tool", "save management", "vmc", "adubbz", "homebrew", "utility"]
-      },
-      {
-        "name": "Neutrino",
-        "url": "https://github.com/rickgaiser/neutrino",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["neutrino", "hdd loader", "game launcher", "rickgaiser", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Neutrino Loader XEB+ Plugin by sync-on-luma",
-        "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["neutrino loader", "xeb+", "plugin", "sync-on-luma", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "nHDDl Neutrino GUI PS2 Loader by pcm720",
-        "url": "https://github.com/pcm720/nhddl",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["nhddl", "neutrino", "gui", "hdd loader", "pcm720", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Open PS2 Loader CFG Compatibility Databse by GDX",
-        "url": "https://github.com/GDX-X/PS2-OPL-CFG-Compatibility-Database",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl", "open ps2 loader", "cfg", "compatibility", "database", "gdx", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Open PS2 Loader for PSX DVR DESR consoles",
-        "url": "https://github.com/SvenGDK/Open-PS2-Loader",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl", "open ps2 loader", "psx dvr", "desr", "svengdk", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Open PS2 Loader Frontend for Neutrino",
-        "url": "https://www.psx-place.com/threads/opl-based-gui-frontend-for-neutrino.42166/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["opl", "open ps2 loader", "frontend", "gui", "neutrino", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Open PS2 Loader Official github - Official Downloads",
-        "url": "https://github.com/ps2homebrew/Open-PS2-Loader/releases",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl", "open ps2 loader", "game launcher", "usb", "hdd", "smb", "elf", "homebrew", "downloads", "releases", "official", "ps2homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Open PS2 Loader OPLServer Windows SMB Program",
-        "url": "https://github.com/elmariolo/OPL-Server",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl server", "opl", "open ps2 loader", "smb server", "windows", "pc tool", "elmariolo", "homebrew", "utility"]
-      },
-      {
-        "name": "Open PS2 Loader PC Tools github Repo",
-        "url": "https://github.com/brainstream/OPL-PC-Tools",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl pc tools", "opl", "open ps2 loader", "pc tool", "brainstream", "homebrew", "utility"]
-      },
-      {
-        "name": "Open PS2 Loader Samba (SMB) Server Docker",
-        "url": "https://github.com/milouk/docker-smb-opl",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl smb server", "opl", "open ps2 loader", "smb", "docker", "milouk", "homebrew", "utility"]
-      },
-      {
-        "name": "Open PS2 Loader SMB Server Containerized",
-        "url": "https://github.com/marcosatti/ps2smb-server",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl smb server", "opl", "open ps2 loader", "smb", "container", "marcosatti", "homebrew", "utility"]
-      },
-      {
-        "name": "Open PS2 Loader SMB Server Script",
-        "url": "https://github.com/Lumiazaine/PS2-SMB",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl smb server", "opl", "open ps2 loader", "smb", "script", "lumiazaine", "homebrew", "utility"]
-      },
-      {
-        "name": "Open PS2 Loader Theme Editor (WYSIWYG)",
-        "url": "https://github.com/IcySon55/OPL-Theme-Editor",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl theme editor", "opl", "open ps2 loader", "theme", "editor", "wysiwyg", "icyson55", "homebrew", "utility"]
-      },
-      {
-        "name": "Open PS2 Loader UDPBD",
-        "url": "https://www.psx-place.com/threads/testers-needed-udpbd-the-next-generation-of-loading-games-through-lan-on-a-ps2.40132/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["opl", "open ps2 loader", "udpbd", "lan", "network", "beta", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Open PS2 Loader Version Archive",
-        "url": "https://www.psx-place.com/resources/opl-archive.1447/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["opl", "open ps2 loader", "archive", "versions", "downloads", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "OpenTuna Installer Official Page",
-        "url": "https://github.com/ps2homebrew/opentuna-installer",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opentuna", "installer", "fortuna", "exploit", "homebrew", "utility", "ps2", "ps2homebrew"]
-      },
-      {
-        "name": "OPL Launcher",
-        "url": "https://github.com/ps2homebrew/OPL-Launcher",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl launcher", "opl", "open ps2 loader", "launcher", "homebrew", "utility", "ps2", "ps2homebrew"]
-      },
-      {
-        "name": "OPL Manager (OPLM) PC Application",
-        "url": "https://oplmanager.com/site/",
-        "favicon_url": "https://oplmanager.com/favicon.ico",
-        "tags": ["opl manager", "oplm", "pc tool", "game manager", "art manager", "homebrew", "utility"]
-      },
-      {
-        "name": "OPL Scanner",
-        "url": "https://www.psx-place.com/threads/opl-scanner.42787/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["opl scanner", "opl", "game list", "tool", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "OPLUtil OPL Tool",
-        "url": "https://github.com/IsseiYoshida/OPLUtil",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["oplutil", "opl", "tool", "isseiyoshida", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Original Memory Card Tester",
-        "url": "https://www.psx-place.com/resources/original-card-test.1504/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["memory card tester", "memory card", "hardware test", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "OSDSYS Launcher",
-        "url": "https://github.com/HowlingWolfHWC/OSDSYS-Launcher",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["osdsys launcher", "launcher", "howlingwolfhwc", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PFS-BatchKit-Manager by GDX",
-        "url": "https://github.com/GDX-X/PFS-BatchKit-Manager",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["pfs batchkit manager", "pfs", "hdd", "batch", "gdx", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PFS-BatchKit-Manager Extras by GDX",
-        "url": "https://www.mediafire.com/folder/mjrpskskupuvc/PS2",
-        "favicon_url": "https://www.mediafire.com/favicon.ico",
-        "tags": ["pfs batchkit manager", "extras", "gdx", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Playstation 2 Basic Boot Loader by El_isra",
-        "url": "https://israpps.github.io/PlayStation2-Basic-BootLoader/",
-        "favicon_url": "https://israpps.github.io/favicon.ico",
-        "tags": ["basic bootloader", "bootloader", "el_isra", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PlayStation 2 MECHACON Adjustment Program (PMAP)",
-        "url": "https://www.psx-place.com/resources/playstation-2-mechacon-adjustment-program-pmap.962/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["pmap", "mechacon adjustment program", "mechacon", "hardware tool", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PlayStation Disc Burner (PSDB) by alex-free",
-        "url": "https://alex-free.github.io/psdb/",
-        "favicon_url": "https://alex-free.github.io/favicon.ico",
-        "tags": ["psdb", "disc burner", "alex-free", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "POPS VCD Manager by El_isra",
-        "url": "https://www.psx-place.com/resources/pops-vcd-manager.1284/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["pops vcd manager", "pops", "ps1 emulator", "vcd", "el_isra", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "POPS2APPS",
-        "url": "https://www.psx-place.com/resources/pops2apps.1214/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["pops2apps", "pops", "ps1 emulator", "app loader", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "POPSLoader by El_isra",
-        "url": "https://www.psx-place.com/resources/popsloader.1396/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["popsloader", "pops", "ps1 emulator", "el_isra", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "POPSTARTER Cumulative r6 Fixes",
-        "url": "https://www.psx-place.com/threads/popstarter.19139/page-5#post-254888",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["popstarter", "pops", "ps1 emulator", "fixes", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "POPSTARTER Discs_Pooper for Auto creation DISCS.TXT and VMCDIR.TXT",
-        "url": "https://www.psx-place.com/resources/discs_pooper-bambuch0-fix.1429/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["discs_pooper", "popstarter", "pops", "ps1 emulator", "tool", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "POPSTARTER Game Installer for OPL",
-        "url": "https://www.psx-place.com/threads/popstarter-game-installer-for-opl.34243/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["popstarter game installer", "popstarter", "opl", "ps1 emulator", "installer", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "POPSTARTER Installer github (dated)",
-        "url": "https://github.com/IsseiYoshida/Instalador-POPStarter",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["popstarter installer", "popstarter", "ps1 emulator", "isseiyoshida", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "POPSTARTER Official Release and Resources Thread",
-        "url": "https://www.psx-place.com/threads/popstarter.19139/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["popstarter", "pops", "ps1 emulator", "official", "resources", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "POPSY-X XEB+ PS1 Launcher by GDX",
-        "url": "https://www.psx-place.com/resources/popsy-x.1424/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["popsy-x", "xeb+", "ps1 launcher", "pops", "gdx", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS2 Bios Dumper",
-        "url": "https://github.com/F0bes/biosdrain",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["bios dumper", "biosdrain", "bios", "f0bes", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS2 Boot Sequencer for 900xx FMCB Remote Loading",
-        "url": "https://github.com/smsry/PS2-Boot-Sequencer",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["boot sequencer", "fmcb", "remote loading", "slim", "smsry", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS2 Controller Tester",
-        "url": "https://www.psx-place.com/resources/ps2-controller-tester-by-jbit.670/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["controller tester", "hardware test", "jbit", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS2 Dummy ISO Creator",
-        "url": "https://www.mediafire.com/file/1j2obwq0v4d9rq4/%255BBlog_do_UsagiRu%255D_PS2_Dummy_Creator.zip/file",
-        "favicon_url": "https://www.mediafire.com/favicon.ico",
-        "tags": ["dummy iso creator", "iso tool", "usagiru", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS2 Icon Sys Tools",
-        "url": "https://github.com/ticky/ps2iconsys",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["icon sys tools", "icon.sys", "ticky", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS2 Image Maker for PS2 iso files",
-        "url": "https://github.com/Smartkin/PS2ImageMaker",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2 image maker", "iso tool", "smartkin", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS2 ISO Batch Renamer",
-        "url": "https://github.com/L10N37/PS2-ISO-Batch-Renamer-",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["iso batch renamer", "iso tool", "l10n37", "homebrew", "utility", "pc tool"]
-      },
-      {
-        "name": "PS2 ISO Tools - Read, Build, Edit PS2 ISOs with UDF Filesystem",
-        "url": "https://github.com/Finzenku/Ps2IsoTools",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2 iso tools", "iso tool", "udf", "finzenku", "homebrew", "utility", "pc tool"]
-      },
-      {
-        "name": "PS2 MC Browser",
-        "url": "https://github.com/caol64/ps2mc-browser",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2 mc browser", "memory card", "browser", "caol64", "pc tool", "homebrew", "utility"]
-      },
-      {
-        "name": "PS2 Save Decrypters by bucanero",
-        "url": "https://github.com/bucanero/save-decrypters",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["save decrypters", "save tool", "decrypter", "bucanero", "pc tool", "homebrew", "utility"]
-      },
-      {
-        "name": "PS2 Save Utility Converter for Save Files",
-        "url": "https://github.com/root670/PS2SaveUtility",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2saveutility", "save tool", "converter", "root670", "pc tool", "homebrew", "utility"]
-      },
-      {
-        "name": "PS2 Splash for Custom PNG Splash image on OSDSYS Launcher",
-        "url": "https://github.com/parrado/ps2splash",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2splash", "splash screen", "osdsys launcher", "parrado", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS2 VMC Tool by bucanero",
-        "url": "https://github.com/bucanero/ps2vmc-tool",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2vmc-tool", "vmc", "virtual memory card", "bucanero", "pc tool", "homebrew", "utility"]
-      },
-      {
-        "name": "PS2-VMC-GUI",
-        "url": "https://github.com/MegaBitmap/PS2-VMC-GUI",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2-vmc-gui", "vmc", "virtual memory card", "gui", "megabitmap", "pc tool", "homebrew", "utility"]
-      },
-      {
-        "name": "PS2-Yabasic-Exploit",
-        "url": "https://github.com/CTurt/PS2-Yabasic-Exploit",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["yabasic exploit", "exploit", "softmod", "cturt", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS2Ident PS2 Identification Homebrew",
-        "url": "https://github.com/ps2homebrew/PS2Ident",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2ident", "system information", "hardware info", "ps2homebrew", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PS3 MCA Exploit",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=297",
-        "favicon_url": "https://www.ps2-home.com/favicon.ico",
-        "tags": ["ps3 mca exploit", "fmcb installer", "ps3", "memory card adaptor", "exploit", "homebrew", "utility"]
-      },
-      {
-        "name": "PS3 MCA Exploit Archive",
-        "url": "https://web.archive.org/web/20241121005548/https://www.ps2-home.com/forum/viewtopic.php?t=297",
-        "favicon_url": "https://web.archive.org/favicon.ico",
-        "tags": ["ps3 mca exploit", "fmcb installer", "ps3", "memory card adaptor", "exploit", "archive", "homebrew", "utility"]
-      },
-      {
-        "name": "PSCOVERDL tool for PCSX2 and Duckstation Cover Art",
-        "url": "https://github.com/xlenore/pscoverdl",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["pscoverdl", "cover art", "pcsx2", "duckstation", "xlenore", "pc tool", "utility"]
-      },
-      {
-        "name": "PSX DVR DESR Tools github",
-        "url": "https://github.com/SvenGDK/DESR-Tools",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["desr tools", "psx dvr", "desr", "svengdk", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "PSX-XMB-Manager Homebrew Installer for the PSX DVR (DESR)",
-        "url": "https://github.com/SvenGDK/PSX-XMB-Manager",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["psx xmb manager", "xmb", "psx dvr", "desr", "svengdk", "homebrew", "installer", "utility", "ps2"]
-      },
-      {
-        "name": "PSXVCD Tool",
-        "url": "https://www.psx-place.com/resources/psxvcd.669/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["psxvcd", "vcd", "ps1 emulator", "tool", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "pypsu Library for analyzing/creating PS2 PSu Saves",
-        "url": "https://github.com/McCaulay/pypsu",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["pypsu", "psu", "save file", "library", "python", "mccaulay", "pc tool", "developer tool", "utility"]
-      },
-      {
-        "name": "Radhost Client",
-        "url": "https://www.psx-place.com/resources/rad-host-client-1-8a-sms-ule-host-compatible.629/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["radhost client", "host client", "sms", "ule", "file transfer", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "RETRO Gem Programs/Applications/Game ID by CosmicScale",
-        "url": "https://github.com/CosmicScale?tab=repositories",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["retro gem", "cosmicscale", "gameid", "homebrew", "applications", "utility", "ps2"]
-      },
-      {
-        "name": "RETROLauncher by Spaghetticode (Boon Tobias)",
-        "url": "https://github.com/Spaghetticode-Boon-Tobias/RETROLauncher",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["retrolauncher", "launcher", "spaghetticode", "boon tobias", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "SAS .psu Releases/Downloads Index",
-        "url": "https://app.filen.io/#/f/979a8ea4-5556-4d55-bee8-c9329c463db6#sUFLyL85q45reUqcrrazZWktYK0pHjk6",
-        "favicon_url": "https://app.filen.io/favicon.ico",
-        "tags": ["sas psu", "save files", ".psu", "downloads", "database", "utility"]
-      },
-      {
-        "name": "Simple Media System (SMS)",
-        "url": "https://github.com/ps2homebrew/SMS",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["sms", "simple media system", "media player", "video player", "audio player", "ps2homebrew", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "smbLaunchELF",
-        "url": "https://www.psx-place.com/resources/smblaunchelf.1190/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["smblaunchelf", "launchelf", "ule", "smb", "network", "file manager", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Tony Hawk's Pro Strcpy Exploit by Grimdoomer",
-        "url": "https://github.com/grimdoomer/TonyHawksProStrcpy",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["tony hawk strcpy exploit", "exploit", "softmod", "grimdoomer", "game exploit", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Tonyhax International by Alex-free",
-        "url": "https://alex-free.github.io/tonyhax-international/",
-        "favicon_url": "https://alex-free.github.io/favicon.ico",
-        "tags": ["tonyhax", "exploit", "softmod", "alex-free", "game exploit", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "unofficial Open PS2 Loader Grimdoomer internal exFAT Forked Version",
-        "url": "https://github.com/grimdoomer/Open-PS2-Loader/releases",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl", "open ps2 loader", "grimdoomer", "exfat", "fork", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "unofficial Open PS2 Loader Tenth Anniversary Edition Daily Build by Jay-Jay (Not recommended and abandoned)",
-        "url": "https://github.com/Jay-Jay-OPL/OPL-Daily-Builds",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["opl", "open ps2 loader", "jay-jay", "daily builds", "beta", "abandoned", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "USBUtil for Splitting ISO Files on fat32 USB for OPL",
-        "url": "https://www.psx-place.com/threads/usbutil-by-iseko.19048/#post-397442",
-        "favicon_url": "https://www.psx-place.com/favicon.ico",
-        "tags": ["usbutil", "iso splitter", "fat32", "usb", "opl", "iseko", "pc tool", "homebrew", "utility"]
-      },
-      {
-        "name": "VMC Bootcard Loader MOD by El_isra",
-        "url": "https://github.com/israpps/bootcard_igr",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["vmc bootcard loader", "vmc", "bootcard", "igr", "el_isra", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "wLaunchELF_isr Downloads Page by El_isra",
-        "url": "https://israpps.github.io/projects/wlaunchelf-isr",
-        "favicon_url": "https://israpps.github.io/favicon.ico",
-        "tags": ["wlaunchelf", "launchelf", "ule", "el_isra", "file manager", "launcher", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "wLaunchELF_isr_HDD (Injection Capable) Project Page",
-        "url": "https://github.com/israpps/wLaunchELF_ISR_HDD",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["wlaunchelf hdd", "launchelf", "ule", "hdd", "injection", "el_isra", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Xtreme Elite Boot+ Homepage",
-        "url": "http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/",
-        "favicon_url": "http://www.hwc.nat.cu/favicon.ico",
-        "tags": ["xeb+", "xtreme elite boot", "launcher", "hwc", "homebrew", "utility", "ps2"]
-      },
-      {
-        "name": "Xtreme Elite Boot+ Mirror",
-        "url": "https://web.archive.org/web/20240729132341/http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/",
-        "favicon_url": "https://web.archive.org/favicon.ico",
-        "tags": ["xeb+", "xtreme elite boot", "launcher", "hwc", "mirror", "archive", "homebrew", "utility", "ps2"]
-      }
+    "name": "AITwo",
+    "url": "https://aitwo.co/",
+    "favicon_url": "https://aitwo.co/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
     ]
   },
   {
-    "category": "Homebrew Development & Emulation",
-    "description": "Resources for PlayStation 2 homebrew development, including SDKs, programming tools, tutorials, and information related to PS2 emulators like PCSX2.",
-    "links": [
-      {
-        "name": "\"Dungeon\" test demo game",
-        "url": "https://bitbucket.org/glampert/ps2dev-tests/src/master/",
-        "favicon_url": "https://bitbucket.org/favicon.ico",
-        "tags": ["dungeon", "demo game", "test", "ps2dev", "source code", "homebrew creation", "programming"]
-      },
-      {
-        "name": "3D Pinball PS2",
-        "url": "https://github.com/headshot2017/3dpinball-ps2",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["3d pinball", "pinball", "homebrew game", "port", "source code", "homebrew creation", "headshot2017"]
-      },
-      {
-        "name": "AetherSX2 Emulator Discord Server",
-        "url": "https://discord.com/channels/914421153827794975/1063889680329879562",
-        "favicon_url": "https://discord.com/favicon.ico",
-        "tags": ["aethersx2", "emulator", "ps2 emulator", "android", "discord", "community", "support"]
-      },
-      {
-        "name": "Athena Environment",
-        "url": "https://athena-env.vercel.app/",
-        "favicon_url": "https://athena-env.vercel.app/favicon.ico",
-        "tags": ["athenaenv", "development environment", "toolchain", "ps2dev", "homebrew creation", "programming"]
-      },
-      {
-        "name": "Athena PS2 System (AthenaEnv by DanielSant0s) Discord Server",
-        "url": "https://discord.gg/E7STQHQr9d",
-        "favicon_url": "https://discord.gg/favicon.ico",
-        "tags": ["athenaenv", "discord", "community", "danielsant0s", "ps2dev", "homebrew creation", "support"]
-      },
-      {
-        "name": "AthenaEnv by DanielSant0s github",
-        "url": "https://github.com/DanielSant0s/AthenaEnv",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["athenaenv", "danielsant0s", "development environment", "toolchain", "ps2dev", "source code", "homebrew creation"]
-      },
-      {
-        "name": "CosmicScale's github featuring Retro GEM Homebrews",
-        "url": "https://github.com/CosmicScale",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["cosmicscale", "retro gem", "homebrew", "source code", "ps2dev", "programming"]
-      },
-      {
-        "name": "Discord for the PS2",
-        "url": "https://github.com/DanielSant0s/PS2Discord",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2discord", "discord client", "danielsant0s", "homebrew application", "source code", "ps2dev"]
-      },
-      {
-        "name": "DKWDRV Playstation 1 Driver for PS2",
-        "url": "https://github.com/DKWDRV",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["dkwdrv", "ps1 driver", "playstation 1", "ps2", "homebrew development", "ps2dev", "library"]
-      },
-      {
-        "name": "DobieStation",
-        "url": "https://github.com/PSI-Rockin/DobieStation",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["dobiestation", "emulator", "ps2 emulator", "psi-rockin", "source code", "development"]
-      },
-      {
-        "name": "Dungeon SDL2 Homebrew Game",
-        "url": "https://github.com/DevECoisas/PS2_Dungeon",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["dungeon", "sdl2", "homebrew game", "devecoisas", "source code", "game engine", "homebrew creation"]
-      },
-      {
-        "name": "Enceladus by DanielSant0s github",
-        "url": "https://github.com/DanielSant0s/Enceladus",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["enceladus", "ps2 save tool", "danielsant0s", "source code", "homebrew utility", "ps2dev"]
-      },
-      {
-        "name": "Ghidra EmotionEndgine Reloaded - Ghidra PS2 Addon",
-        "url": "https://github.com/chaoticgd/ghidra-emotionengine-reloaded",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ghidra", "emotion engine", "reloaded", "reverse engineering", "debugging", "chaoticgd", "ps2dev", "tool"]
-      },
-      {
-        "name": "Ghidra Processor definitions for MIPS R5900 (PS2)",
-        "url": "https://github.com/astrelsky/ghidra_MIPSR5900",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ghidra", "mips r5900", "processor definitions", "reverse engineering", "astrelsky", "ps2dev", "tool"]
-      },
-      {
-        "name": "GOG Galaxy 2.0 Integration for PS2",
-        "url": "https://github.com/AHCoder/galaxy-integration-ps2",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["gog galaxy", "integration", "pcsx2", "emulator frontend", "ahcoder", "pc utility"]
-      },
-      {
-        "name": "HowlingWolfHWC's official github",
-        "url": "https://github.com/HowlingWolfHWC",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["howlingwolfhwc", "ps2dev", "homebrew", "source code", "opl", "xeb+"]
-      },
-      {
-        "name": "KELFtool - decrypt, encrypt, and sign KELF files for PS2/1",
-        "url": "https://github.com/xfwcfw/kelftool",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["kelftool", "kelf", "elf", "decryption", "encryption", "signing", "ps1", "ps2", "xfwcfw", "developer tool"]
-      },
-      {
-        "name": "PCSX2 Emulator's Official Discord Server",
-        "url": "https://discord.com/invite/TCz3t9k",
-        "favicon_url": "https://discord.com/favicon.ico",
-        "tags": ["pcsx2", "emulator", "ps2 emulator", "discord", "community", "support", "development"]
-      },
-      {
-        "name": "PCSX2 Emulator's Official Site",
-        "url": "https://pcsx2.net/",
-        "favicon_url": "https://pcsx2.net/favicon.ico",
-        "tags": ["pcsx2", "emulator", "ps2 emulator", "windows", "linux", "macos", "official site", "downloads", "nightly builds"]
-      },
-      {
-        "name": "PCSX2 Forums",
-        "url": "https://forums.pcsx2.net/",
-        "favicon_url": "https://forums.pcsx2.net/favicon.ico",
-        "tags": ["pcsx2", "emulator", "ps2 emulator", "forum", "support", "discussion", "development"]
-      },
-      {
-        "name": "POPS Binaries",
-        "url": "https://github.com/AnimMouse/POPS-binaries",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["pops", "ps1 emulator", "binaries", "playstation 1", "animmouse", "ps2", "homebrew"]
-      },
-      {
-        "name": "Prussia",
-        "url": "https://github.com/Ravenslofty/prussia",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["prussia", "ps2 framework", "ravenslofty", "homebrew development", "ps2dev", "library", "game engine"]
-      },
-      {
-        "name": "PS2 Client",
-        "url": "https://github.com/ps2dev/ps2client",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2client", "debugging", "file transfer", "ps2dev", "toolchain", "homebrew development"]
-      },
-      {
-        "name": "PS2 Debugging Toolset",
-        "url": "https://github.com/ps2dbg/dsnet",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["dsnet", "debugging", "toolset", "ps2dbg", "homebrew development", "ps2dev", "reverse engineering"]
-      },
-      {
-        "name": "PS2 Developer github",
-        "url": "https://github.com/ps2dev",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2dev", "github", "sdk", "toolchain", "libraries", "homebrew development", "programming", "source code"]
-      },
-      {
-        "name": "PS2 Disc Saver",
-        "url": "https://github.com/FloppidyDingo/PS2-Disk-Saver/wiki/Installation-Instructions",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2 disc saver", "disc imaging", "backup tool", "floppidydingo", "homebrew utility", "ps2"]
-      },
-      {
-        "name": "PS2 Drivers (.IRX EE .a)",
-        "url": "https://github.com/fjtrujy/ps2_drivers",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2 drivers", "irx", "ee", "fjtrujy", "library", "homebrew development", "ps2dev", "low-level programming"]
-      },
-      {
-        "name": "PS2 Homebrew github",
-        "url": "https://github.com/ps2homebrew",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2homebrew", "github", "opl", "freedvdboot", "sms", "homebrew applications", "source code"]
-      },
-      {
-        "name": "PS2 Link - Side Application Loader",
-        "url": "https://github.com/ps2dev/ps2link",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2link", "application loader", "debugging", "testing", "ps2dev", "toolchain", "homebrew development"]
-      },
-      {
-        "name": "PS2 Packer - Homebrew ELF Compresser",
-        "url": "https://github.com/ps2dev/ps2-packer",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2-packer", "elf compressor", "kelf", "ps2dev", "toolchain", "homebrew development"]
-      },
-      {
-        "name": "PS2 Unpacker - Homebrew ELF Decompresser",
-        "url": "https://github.com/ps2homebrew/ps2-unpacker",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2-unpacker", "elf decompresser", "ps2homebrew", "tool", "homebrew utility"]
-      },
-      {
-        "name": "PS2Runner Remote Test Harness for PS2 via IRToy and ps2link",
-        "url": "https://github.com/telyn/ps2runner",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2runner", "remote testing", "irtoy", "ps2link", "telyn", "debugging", "homebrew development"]
-      },
-      {
-        "name": "PS2SDK",
-        "url": "https://github.com/ps2dev/ps2sdk",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["ps2sdk", "sdk", "software development kit", "toolchain", "ps2dev", "c programming", "homebrew creation", "library"]
-      },
-      {
-        "name": "RetroArch for the PS2",
-        "url": "https://docs.libretro.com/guides/install-ps2/",
-        "favicon_url": "https://docs.libretro.com/favicon.ico",
-        "tags": ["retroarch", "emulator frontend", "libretro", "multi-system emulator", "ps2 port", "homebrew application"]
-      },
-      {
-        "name": "SuperTux",
-        "url": "https://github.com/headshot2017/supertux-ps2",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["supertux", "homebrew game", "platformer", "port", "headshot2017", "source code", "homebrew creation"]
-      },
-      {
-        "name": "Tyra",
-        "url": "https://github.com/h4570/tyra/",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["tyra", "game engine", "ps2dev", "h4570", "homebrew creation", "c++", "library", "framework"]
-      },
-      {
-        "name": "TyraCraft",
-        "url": "https://github.com/Wellinator/tyracraft",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["tyracraft", "minecraft clone", "homebrew game", "tyra engine", "wellinator", "source code", "homebrew creation"]
-      },
-      {
-        "name": "Undertale for the PS2",
-        "url": "https://github.com/KreitinnSoftware/Undertale-PS2",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["undertale", "homebrew game", "port", "kreitinnsoftware", "source code", "homebrew creation", "rpg"]
-      },
-      {
-        "name": "XPF Tool for Extraction and Decompresson",
-        "url": "https://github.com/simontime/xpftool",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["xpftool", "xpf files", "extraction", "decompression", "simontime", "developer tool", "reverse engineering"]
-      },
-      {
-        "name": "ZigStation2",
-        "url": "https://github.com/FalsePattern/ZigStation2",
-        "favicon_url": "https://github.com/favicon.ico",
-        "tags": ["zigstation2", "zig language", "ps2dev", "falsepattern", "homebrew development", "programming", "toolchain"]
-      }
+    "name": "Alpha3D",
+    "url": "https://www.alpha3d.io/",
+    "favicon_url": "https://www.alpha3d.io/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
     ]
   },
   {
-    "category": "Custom Content & Game Mods",
-    "description": "Websites and tools for game modifications, including patches, translations, widescreen hacks, cheat codes, and custom content for PlayStation 2 games.",
-    "links": [
-      {
-        "name": "576p GSM",
-        "url": "https://github.com/sestain/gsm",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Art and Info for OPL and XEB+",
-        "url": "https://github.com/HowlingWolfHWC/PS2-Art-and-Info-for-OPL-and-XEBPlus",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Art DB Backups from OPLManager.com",
-        "url": "https://oplmanager.com/site/?backups",
-        "favicon_url": "https://oplmanager.com/favicon.ico"
-      },
-      {
-        "name": "Art Hi-Res Covers by Berion and Krahjohlito",
-        "url": "https://app.filen.io/#/d/84d32310-81e2-43c7-8d24-8c49ee281780#FOGFf1breawlIAm4qFvQSw2AIcymlwo4",
-        "favicon_url": "https://app.filen.io/favicon.ico"
-      },
-      {
-        "name": "Art NTSC Hi-Res 8bit for OPL",
-        "url": "https://www.mediafire.com/file/6vik1mdhtai4n48/NTSC_Hi-Res_8-bit.zip/file",
-        "favicon_url": "https://www.mediafire.com/favicon.ico"
-      },
-      {
-        "name": "Art NTSC Hi-Res 8bit for OPL (archive)",
-        "url": "https://archive.org/details/ntsc-hi-res-8-bit",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "Assorted OPL Theme Relatted Documentation",
-        "url": "https://mega.nz/folder/h6kWwZKb#TitJOS1xFjKBP9tHDA7c3Q",
-        "favicon_url": "https://mega.nz/favicon.ico"
-      },
-      {
-        "name": "BarbudimGamer's youtube OPL Themes",
-        "url": "https://www.youtube.com/@BarbudimGamer/search?query=JVSG",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "bin2code convert binaries into PS2 Cheats",
-        "url": "https://github.com/Dnawrkshp/bin2code",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Cheat Database Launcher",
-        "url": "https://www.psx-place.com/resources/cheat-database-launcher.1500/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "Cheat Device",
-        "url": "https://israpps.github.io/CheatDevicePS2/",
-        "favicon_url": "https://israpps.github.io/favicon.ico"
-      },
-      {
-        "name": "Cheat Engine Website",
-        "url": "http://www.cheatengine.org/",
-        "favicon_url": "http://www.cheatengine.org/favicon.ico"
-      },
-      {
-        "name": "CodeBreaker PS2 File Utility",
-        "url": "https://github.com/mlafeldt/cb2util",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Controversas Nerds's youtube OPL Themes",
-        "url": "https://youtube.com/playlist?list=PLYa7yhJPUuTWTbnVNZXYvyonCYneyG4-z&si=U6UJkMiwviLC9xDi",
-        "favicon_url": "https://youtube.com/favicon.ico"
-      },
-      {
-        "name": "Cover Database by SvenGDK",
-        "url": "https://github.com/SvenGDK/PSMT-Covers",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Cover Scans by Video Game Museum",
-        "url": "https://www.vgmuseum.com/scans/ps2.html",
-        "favicon_url": "https://www.vgmuseum.com/favicon.ico"
-      },
-      {
-        "name": "Cover Target Game Covers",
-        "url": "https://covertarget.com/",
-        "favicon_url": "https://covertarget.com/favicon.ico"
-      },
-      {
-        "name": "Covers by Kirkland's MANUAL LABOR",
-        "url": "http://www.atensionspan.com/evil/tn/index.html",
-        "favicon_url": "http://www.atensionspan.com/favicon.ico"
-      },
-      {
-        "name": "Covers by Kirkland's MANUAL LABOR (evilbadman.com archive)",
-        "url": "https://web.archive.org/web/20231129120159/http://evilbadman.com/",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "Covers by Kirkland's Manual Labor 4k PS2 Archive",
-        "url": "https://archive.org/details/kirklands-manual-labor-sony-playstation-2-usa-4k-version",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "Covers by LaunchBox Community Forums - Ultra HD",
-        "url": "https://forums.launchbox-app.com/files/category/187-sony-playstation-2/",
-        "favicon_url": "https://forums.launchbox-app.com/favicon.ico"
-      },
-      {
-        "name": "Crymax's blogspot OPL Themes",
-        "url": "https://crymaax.blogspot.com/",
-        "favicon_url": "https://crymaax.blogspot.com/favicon.ico"
-      },
-      {
-        "name": "Crymax's youtube OPL Themes",
-        "url": "https://www.youtube.com/@CRYMAXPS2/search?query=OPL",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Cue Maker",
-        "url": "https://github.com/tralph3/Cue-Maker",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Dirty Cheater / Touffu's Site",
-        "url": "http://blog.goo.ne.jp/touffu",
-        "favicon_url": "http://blog.goo.ne.jp/favicon.ico"
-      },
-      {
-        "name": "DNAS Bypass Cheats",
-        "url": "https://www.psx-place.com/threads/tutorial-how-to-play-online-on-ps2-dvd-games-with-cheat-device-1-7-4.29802/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "DNAS Patcher output to PNACH File Converter",
-        "url": "https://github.com/VTSTech/DNAStoPNACH",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "FEH e RICK OPL Theme Blog",
-        "url": "https://fehps2.blogspot.com/",
-        "favicon_url": "https://fehps2.blogspot.com/favicon.ico"
-      },
-      {
-        "name": "Free Master Code Finder by El_isra",
-        "url": "https://github.com/israpps/FreeMastercodeFinder",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "GaboGames's youtube OPL Themes",
-        "url": "https://youtube.com/playlist?list=PL59JnGTaT2IuezfrfgH7y7cgXudavQzwX&si=Quj_tI5xpRKzfq55",
-        "favicon_url": "https://youtube.com/favicon.ico"
-      },
-      {
-        "name": "GaboGames's youtube OPL Themes missing",
-        "url": "https://www.youtube.com/@gabogamesbol/search?query=tema",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Game Mods Collection by Nahelam",
-        "url": "https://github.com/Nahelam/PS2-Game-Mods",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "GameHacking.org - PS2",
-        "url": "https://gamehacking.org/system/ps2",
-        "favicon_url": "https://gamehacking.org/favicon.ico"
-      },
-      {
-        "name": "Gamehacking.org",
-        "url": "http://www.gamehacking.org/",
-        "favicon_url": "http://www.gamehacking.org/favicon.ico"
-      },
-      {
-        "name": "gamerman 5000's OPL Theme Guide",
-        "url": "https://www.psx-place.com/threads/opl-theme-creation-manual.41893/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "God-Hand-Tools for Conversion, Extraction, and Repacking",
-        "url": "https://github.com/akitotheanimator/God-Hand-Tools",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "HQ HD Disc Case Covers by Berion",
-        "url": "https://www.psx-place.com/threads/hq-disc-case-covers.26545/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "Leroy Gates's youtube OPL Themes",
-        "url": "https://www.youtube.com/@leroygates3239/search?query=Theme",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Master Disc Patcher",
-        "url": "https://alex-free.github.io/psdb/master-disc.html",
-        "favicon_url": "https://alex-free.github.io/favicon.ico"
-      },
-      {
-        "name": "Mega.nz OPL Themes Package 1",
-        "url": "https://mega.nz/folder/onk0gLhY#FbmAnbQmyp3ZBd5Xf8_sMQ",
-        "favicon_url": "https://mega.nz/favicon.ico"
-      },
-      {
-        "name": "Mega.nz OPL Themes Package 2",
-        "url": "https://mega.nz/folder/xudghTRZ#kLb6gl5cJhUTi4qK70qxYg",
-        "favicon_url": "https://mega.nz/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader Widescreen Cheats",
-        "url": "https://github.com/PS2-Widescreen/OPL-Widescreen-Cheats",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader Widescreen Cheats Collection (dated)",
-        "url": "https://github.com/madmodder123/OpenPS2Loader_Widescreen_Cheats",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "OPL Manager's OPL Simulator Themes Guide",
-        "url": "https://oplmanager.com/site/?docs#oplsimulator",
-        "favicon_url": "https://oplmanager.com/favicon.ico"
-      },
-      {
-        "name": "OPLMania's blogspot OPL Themes",
-        "url": "https://oplmania.blogspot.com/2018/08/tema-ps2-plus-v1.html",
-        "favicon_url": "https://oplmania.blogspot.com/favicon.ico"
-      },
-      {
-        "name": "PCSX2 Cheats Collection github",
-        "url": "https://github.com/xs1l3n7x/pcsx2_cheats_collection",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PixeliGer's github OPL Themes",
-        "url": "https://github.com/PixeliGer?tab=repositories",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PPF Relatted Softwares and Information",
-        "url": "https://consolecopyworld.com/ps2/ps2_ppf.shtml",
-        "favicon_url": "https://consolecopyworld.com/favicon.ico"
-      },
-      {
-        "name": "PS1 HDMI/Component Fix for PS2 (custom GSM)",
-        "url": "https://github.com/PhilRoll/gsm",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PS2 .PNACH Converter for OPL",
-        "url": "https://github.com/israpps/PS2-pnach-converter",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Covers github",
-        "url": "https://github.com/xlenore/ps2-covers",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Patch Engine",
-        "url": "https://www.psx-place.com/threads/ps2-patch-engine-by-pelvicthrustman.19167/#post-130158",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Patch Museum",
-        "url": "https://museudospatche.blogspot.com//",
-        "favicon_url": "https://museudospatche.blogspot.com/favicon.ico"
-      },
-      {
-        "name": "PS2-Home's OPL Themes",
-        "url": "https://www.ps2-home.com/forum/viewforum.php?f=51&sid=fcd3b52bdb73ea4c2573e11220a20dbd",
-        "favicon_url": "https://www.ps2-home.com/favicon.ico"
-      },
-      {
-        "name": "PS2-Home's OPL Themes (Archive)",
-        "url": "https://web.archive.org/web/20241122180419/https://www.ps2-home.com/forum/viewforum.php?f=51&sid=fcd3b52bdb73ea4c2573e11220a20dbd",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "PS2-Home's OPL Themes Guide",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?f=111&t=1782",
-        "favicon_url": "https://www.ps2-home.com/favicon.ico"
-      },
-      {
-        "name": "PS2-Home's OPL Themes Guide (Archive)",
-        "url": "https://web.archive.org/web/20241122180601/https://www.ps2-home.com/forum/viewtopic.php?f=111&t=1782",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "PS2infinity's blogspot OPL Themes",
-        "url": "https://ps2infinitymod.blogspot.com/",
-        "favicon_url": "https://ps2infinitymod.blogspot.com/favicon.ico"
-      },
-      {
-        "name": "PS2THM's blogspot OPL Themes",
-        "url": "https://thmps2.blogspot.com/",
-        "favicon_url": "https://thmps2.blogspot.com/favicon.ico"
-      },
-      {
-        "name": "PS2rd MOD",
-        "url": "https://www.psx-place.com/threads/ps2rdmod-by-pelvicthrustman.19168/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "PS2rd PS2 Debugging Tools",
-        "url": "https://github.com/mlafeldt/ps2rd",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PSX-Place.com OPL Themes",
-        "url": "https://www.psx-place.com/forums/themes-for-opl.229/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "Rockstar Games Uncensored PS2 Cheats",
-        "url": "https://github.com/GDX-X/Rockstar-Games-Uncensored-PS2",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "ROM Hacking .net Homepage",
-        "url": "https://www.romhacking.net/",
-        "favicon_url": "https://www.romhacking.net/favicon.ico"
-      },
-      {
-        "name": "ShaolinAssassin's OPL Theme Guide",
-        "url": "https://web.archive.org/web/20200622004109/https://bitbucket.org/ShaolinAssassin/open-ps2-loader-0.9.3-documentation-project/wiki/theme-guide",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "Skinneblack's youtube OPL Themes",
-        "url": "https://youtube.com/playlist?list=PLxne_h-fAME2ZN-0LsFjKiGVTxXJAKoZC&si=N5hpgaSNm6TXWxiC",
-        "favicon_url": "https://youtube.com/favicon.ico"
-      },
-      {
-        "name": "SKSApps OPL Theme Guide Archive (Outdated)",
-        "url": "https://web.archive.org/web/20170412171607/http://opl.sksapps.com/index.php?opl=theme.html",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "The Cover Project (Art)",
-        "url": "https://www.thecoverproject.net/view.php?cat_id=6",
-        "favicon_url": "https://www.thecoverproject.net/favicon.ico"
-      },
-      {
-        "name": "Video Game Box Art Box Design Showcase",
-        "url": "https://vgboxart.com/browse-covers/PS2/",
-        "favicon_url": "https://vgboxart.com/favicon.ico"
-      },
-      {
-        "name": "WAV to ADP Converter for OPL Theme Sounds/BGM",
-        "url": "https://www.psx-place.com/threads/wav-to-adp-converter-for-opl.21568/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "Widescreen Game Cheats by sync-on-luma",
-        "url": "https://github.com/sync-on-luma/PS2-widescreen-cheats",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Widescreen Game Patches",
-        "url": "https://forums.pcsx2.net/Thread-PCSX2-Widescreen-Game-Patches?pid=271674#pid271674",
-        "favicon_url": "https://forums.pcsx2.net/favicon.ico"
-      }
+    "name": "Backflip AI",
+    "url": "https://www.backflip.ai/",
+    "favicon_url": "https://www.backflip.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
     ]
   },
   {
-    "category": "Hardware, Mods & Accessories",
-    "description": "Retailers and informational sites for physical hardware modifications (modchips, HDMI mods), accessories (controllers, memory card alternatives like MX4SIO/SD2PSX), cables, and repair parts. Includes guides for hardware installation or repair.",
-    "links": [
-      {
-        "name": "8bitdo.com's PS2 Accessories",
-        "url": "https://www.8bitdo.com/#Products",
-        "favicon_url": "https://www.8bitdo.com/favicon.ico"
-      },
-      {
-        "name": "8bitmods.com's PS2 Accessories",
-        "url": "https://8bitmods.com/shop-by-console/sony/playstation-2/",
-        "favicon_url": "https://8bitmods.com/favicon.ico"
-      },
-      {
-        "name": "AliExpress: Additional Hardware",
-        "url": "https://www.aliexpress.us/item/3256805974551961.html",
-        "favicon_url": "https://www.aliexpress.us/favicon.ico"
-      },
-      {
-        "name": "AliExpress: Item EusgZGC",
-        "url": "https://a.aliexpress.com/_EusgZGC",
-        "favicon_url": "https://a.aliexpress.com/favicon.ico"
-      },
-      {
-        "name": "Arthrimus PS2 Mods and Parts - including Slim HDD Mod Iflash2PS2",
-        "url": "https://arthrimus.com/",
-        "favicon_url": "https://arthrimus.com/favicon.ico"
-      },
-      {
-        "name": "BitFunx Official 2.0 IDE to SATA Chip Swap for Official PS2 Network Adapters",
-        "url": "https://www.aliexpress.com/item/32809586287.html",
-        "favicon_url": "https://www.aliexpress.com/favicon.ico"
-      },
-      {
-        "name": "BitFunx Official Gamestar SATA Network (No Network) Adapter - Not recommended/Mixed Reviews",
-        "url": "https://www.aliexpress.com/item/2251832549771984.html",
-        "favicon_url": "https://www.aliexpress.com/favicon.ico"
-      },
-      {
-        "name": "BitFunx Official MX4SIO",
-        "url": "https://www.aliexpress.com/item/3256804671298047.html",
-        "favicon_url": "https://www.aliexpress.com/favicon.ico"
-      },
-      {
-        "name": "Bitfunx AliExpress Store",
-        "url": "https://bitfunx.aliexpress.com/store/1100940502/pages/all-items.html",
-        "favicon_url": "https://bitfunx.aliexpress.com/favicon.ico"
-      },
-      {
-        "name": "Bitfunx sd2psx (MemCard Gen2) mirror",
-        "url": "https://www.aliexpress.us/item/3256807978598346.html",
-        "favicon_url": "https://www.aliexpress.us/favicon.ico"
-      },
-      {
-        "name": "Bitfunx sd2psx Release(MemCard Gen2)",
-        "url": "https://www.aliexpress.us/item/3256807978476851.html",
-        "favicon_url": "https://www.aliexpress.us/favicon.ico"
-      },
-      {
-        "name": "Blue Retro Core PADEMU Device",
-        "url": "https://www.blue-retro.com/",
-        "favicon_url": "https://www.blue-retro.com/favicon.ico"
-      },
-      {
-        "name": "Brook's Wingman PS2 Controller Adapter",
-        "url": "https://www.brookaccessory.com/products/wingmanps2/index.html",
-        "favicon_url": "https://www.brookaccessory.com/favicon.ico"
-      },
-      {
-        "name": "Crystal Chip R34 v3",
-        "url": "https://github.com/saildot4k/Crystal-Chip-R34-v3",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "ElectronAnalog HDMI Mod",
-        "url": "https://electron-shepherd.com/collections/all/products/electronanalog",
-        "favicon_url": "https://electron-shepherd.com/favicon.ico"
-      },
-      {
-        "name": "ElectronPulse HDMI Plug and Play",
-        "url": "https://electron-shepherd.com/products/electronpulse",
-        "favicon_url": "https://electron-shepherd.com/favicon.ico"
-      },
-      {
-        "name": "GitHub: PSxMemCardGen2 by GameBitFunx",
-        "url": "https://github.com/gamebitfunx/PSxMemCardGen2",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "GitHub: PicoDrive by Irixxxx",
-        "url": "https://github.com/irixxxx/picodrive",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "GitHub: PicoMemcard by Dangiu",
-        "url": "https://github.com/dangiu/PicoMemcard",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Gusse Retro Shop's Mods and Parts - including Methylene",
-        "url": "https://gusse.in/",
-        "favicon_url": "https://gusse.in/favicon.ico"
-      },
-      {
-        "name": "Helder's Gametech/MC2SIO",
-        "url": "https://heldergametech.com/",
-        "favicon_url": "https://heldergametech.com/favicon.ico"
-      },
-      {
-        "name": "Kaico Gamestar SATA Network (No Network) HDD Adapter - Not recommended/Mixed Reviews",
-        "url": "https://a.co/d/6Sr3xDZ",
-        "favicon_url": "https://a.co/favicon.ico"
-      },
-      {
-        "name": "Kaico PS1/PS2 AV to HDMI Cable for all PS1 & PS2 Models - Swaps between RGB/Component",
-        "url": "https://a.co/d/dKIL69c",
-        "favicon_url": "https://a.co/favicon.ico"
-      },
-      {
-        "name": "Kaico SATA Network Adapter Upgrade",
-        "url": "https://a.co/d/7itdPZ3",
-        "favicon_url": "https://a.co/favicon.ico"
-      },
-      {
-        "name": "MOD Chip Files of Various Make",
-        "url": "https://github.com/m4x10187/ps2-modchip-files",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "MOD Chip Matrix Team Actel APA075 based modchips flash dump. (Not FPGA firmware!)",
-        "url": "https://github.com/78edu/ps2-matrix-infinity-modchip-dump",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Megidish Retro Shop",
-        "url": "https://megidish.net/",
-        "favicon_url": "https://megidish.net/favicon.ico"
-      },
-      {
-        "name": "MemCardPro2 VMC Device",
-        "url": "https://8bitmods.com/memcard-pro2-for-ps2-and-ps1-smoke-black/#tab-description",
-        "favicon_url": "https://8bitmods.com/favicon.ico"
-      },
-      {
-        "name": "MG2BOX (MX4SIO)",
-        "url": "https://www.aliexpress.us/item/3256805234828516.html",
-        "favicon_url": "https://www.aliexpress.us/favicon.ico"
-      },
-      {
-        "name": "Official Blue Retro by darthcloud",
-        "url": "https://darthcloud.itch.io/blueretro",
-        "favicon_url": "https://darthcloud.itch.io/favicon.ico"
-      },
-      {
-        "name": "Official Sony Network Adapters (Recommended via Ebay or other resellers)",
-        "url": "https://www.psdevwiki.com/ps2/Network_Adaptor",
-        "favicon_url": "https://www.psdevwiki.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Chip Modifications Wiki",
-        "url": "https://www.willsconsolemodifications.co.uk/ps2-wiki/chips.php",
-        "favicon_url": "https://www.willsconsolemodifications.co.uk/favicon.ico"
-      },
-      {
-        "name": "PS2 Controller Remapper",
-        "url": "https://www.psx-place.com/resources/ps2-controller-remapper-by-pelvicthrustman.692/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Easy HDD",
-        "url": "https://github.com/jeffqchen/PS2EasyHDD",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Laser Fix",
-        "url": "https://github.com/nostalgic-indulgences/PS2_Laserfix",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "RETRO Gem HDMI Mods",
-        "url": "https://www.pixelfx.co/product-page/retro-gem-universal-hdmi-upscaler-kit",
-        "favicon_url": "https://www.pixelfx.co/favicon.ico"
-      },
-      {
-        "name": "RETROTink Video Solutions",
-        "url": "https://www.retrotink.com/",
-        "favicon_url": "https://www.retrotink.com/favicon.ico"
-      },
-      {
-        "name": "RGEEK Gamestar SATA Network (No Network) HDD Adapter - Not recommended/Mixed Reviews",
-        "url": "https://a.co/d/2LvnbWI",
-        "favicon_url": "https://a.co/favicon.ico"
-      },
-      {
-        "name": "SD2PSX Custom GameID Detection Firmware by bbsan22",
-        "url": "https://github.com/bbsan2k/sd2psx_firmware",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "SD2PSX Official github",
-        "url": "https://github.com/sd2psx",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "SD2PSX VMC Device",
-        "url": "https://sd2psx.net/",
-        "favicon_url": "https://sd2psx.net/favicon.ico"
-      },
-      {
-        "name": "USB Optical Wireless Bluetooth Transmitter 2 in 1 Audio Transmitter Adapter Low Lantency For TV PC USB Wireless Audio Adapter",
-        "url": "https://www.aliexpress.us/item/3256806809890714.html",
-        "favicon_url": "https://www.aliexpress.us/favicon.ico"
-      },
-      {
-        "name": "pcp.tech's SD2PSX Ebay Listing - Verified SD2PSX Reseller on Ebay",
-        "url": "https://www.ebay.com/itm/314357590044",
-        "favicon_url": "https://www.ebay.com/favicon.ico"
-      }
+    "name": "Bing Video Creator",
+    "url": "https://www.bing.com/images/create?&amp;ctype=video#",
+    "favicon_url": "https://www.bing.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
     ]
   },
   {
-    "category": "Online Gaming & Network Play",
-    "description": "Resources and communities focused on PlayStation 2 online gaming, including information on custom servers (e.g., OpenSpy, PS Rewired), network configuration, and DNAS bypassing methods.",
-    "links": [
-      {
-        "name": "DNAS-net Patcher",
-        "url": "https://www.psx-place.com/threads/dnas-net-patcher.22813/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "Official OBSRV Server Discord Server",
-        "url": "https://discord.gg/r9v3DKG",
-        "favicon_url": "https://discord.gg/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader NAS SMB Troubleshooting Tips",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=12689#p49670",
-        "favicon_url": "https://www.ps2-home.com/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader NAS SMB Troubleshooting Tips (Archive)",
-        "url": "https://web.archive.org/web/20241208123804/https://www.ps2-home.com/forum/viewtopic.php?t=12689#p49670",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader SMB Guide",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=3692",
-        "favicon_url": "https://www.ps2-home.com/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader SMB Guide (Archive)",
-        "url": "https://web.archive.org/web/20241121150504/https://www.ps2-home.com/forum/viewtopic.php?t=3692",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader SMB Guide for Linux Systems",
-        "url": "https://www.psx-place.com/threads/opl-smb-linux-configuration-guide.20638/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader SMB Guide for Windows",
-        "url": "https://www.psx-place.com/threads/opl-network-connection-in-windows-10.40899/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader SMB Troubleshooting for Windows",
-        "url": "https://ps2-home.com/forum/viewtopic.php?t=4926",
-        "favicon_url": "https://ps2-home.com/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader SMB Troubleshooting for Windows (Archive)",
-        "url": "https://web.archive.org/web/20241121143157/https://ps2-home.com/forum/viewtopic.php?t=4926",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader UDPBD Linux Setup Guide by OpenAI",
-        "url": "https://chatgpt.com/share/674216e4-825c-8001-8b0b-14b03d8f8dab",
-        "favicon_url": "https://chatgpt.com/favicon.ico"
-      },
-      {
-        "name": "OpenSpy's PS2 Online Servers",
-        "url": "https://ps2online.com/",
-        "favicon_url": "https://ps2online.com/favicon.ico"
-      },
-      {
-        "name": "OpenSpy's PS2 Online's Discord Server",
-        "url": "https://discord.com/invite/zE79nWT",
-        "favicon_url": "https://discord.com/favicon.ico"
-      },
-      {
-        "name": "PS Rewired Discord Server",
-        "url": "https://discord.gg/VfeuF6ZWVb",
-        "favicon_url": "https://discord.gg/favicon.ico"
-      },
-      {
-        "name": "PS Rewired emulated Online Servers",
-        "url": "https://psrewired.com/",
-        "favicon_url": "https://psrewired.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Online Gaming",
-        "url": "https://ps2onlinegaming.com/",
-        "favicon_url": "https://ps2onlinegaming.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Online Gaming's Discord Server",
-        "url": "https://discord.gg/N2akedR",
-        "favicon_url": "https://discord.gg/favicon.ico"
-      },
-      {
-        "name": "PSORG (PS Online Returnal Games) Discord Server",
-        "url": "https://discord.gg/DQbrEb44qr",
-        "favicon_url": "https://discord.gg/favicon.ico"
-      },
-      {
-        "name": "PSX Capture (PS2 - PS5) Online Discord Server",
-        "url": "https://discord.gg/FYmVq6zmgx",
-        "favicon_url": "https://discord.gg/favicon.ico"
-      },
-      {
-        "name": "Romstation.fr Multiplayer",
-        "url": "https://www.romstation.fr/multiplayer/",
-        "favicon_url": "https://www.romstation.fr/favicon.ico"
-      },
-      {
-        "name": "Team XLink (Official) Discord Server",
-        "url": "https://discord.gg/vdf7Q3v",
-        "favicon_url": "https://discord.gg/favicon.ico"
-      },
-      {
-        "name": "Team XLink Global Network Gaming",
-        "url": "https://www.teamxlink.co.uk/",
-        "favicon_url": "https://www.teamxlink.co.uk/favicon.ico"
-      }
+    "name": "CGDream.ai",
+    "url": "https://cgdream.ai/",
+    "favicon_url": "https://cgdream.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
     ]
   },
   {
-    "category": "Technical Documentation & Preservation",
-    "description": "Wikis, databases, and websites dedicated to the technical details of PlayStation 2 hardware and software, game preservation efforts, and comprehensive game information (e.g., Redump, PSX Datacenter).",
-    "links": [
-      {
-        "name": "AEP Emulation Page",
-        "url": "http://www.aep-emu.de/",
-        "favicon_url": "http://www.aep-emu.de/favicon.ico"
-      },
-      {
-        "name": "Additional Projects by El_isra",
-        "url": "https://israpps.github.io/projects/",
-        "favicon_url": "https://israpps.github.io/favicon.ico"
-      },
-      {
-        "name": "AssemblerGames Forum Archive",
-        "url": "https://web.archive.org/web/20191206184256/https://assemblergames.com/",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "CD Media World",
-        "url": "https://cdmediaworld.com/hardware/cdrom/cd.shtml",
-        "favicon_url": "https://cdmediaworld.com/favicon.ico"
-      },
-      {
-        "name": "Console Mods PS2 Model Differences",
-        "url": "https://consolemods.org/wiki/PS2:Model_Differences",
-        "favicon_url": "https://consolemods.org/favicon.ico"
-      },
-      {
-        "name": "Console5's PS2 Wiki",
-        "url": "https://wiki.console5.com/wiki/PlayStation_2",
-        "favicon_url": "https://wiki.console5.com/favicon.ico"
-      },
-      {
-        "name": "DESR Dev github.io",
-        "url": "https://desrdev.github.io/",
-        "favicon_url": "https://desrdev.github.io/favicon.ico"
-      },
-      {
-        "name": "Emu-France",
-        "url": "http://emu-france.com/",
-        "favicon_url": "http://emu-france.com/favicon.ico"
-      },
-      {
-        "name": "EmuCR",
-        "url": "http://www.emucr.com",
-        "favicon_url": "http://www.emucr.com/favicon.ico"
-      },
-      {
-        "name": "Emudreams",
-        "url": "http://www.emudreams.pl/",
-        "favicon_url": "http://www.emudreams.pl/favicon.ico"
-      },
-      {
-        "name": "Emuparadise.me",
-        "url": "https://www.emuparadise.me/",
-        "favicon_url": "https://www.emuparadise.me/favicon.ico"
-      },
-      {
-        "name": "Fobes.dev by Fobes",
-        "url": "https://fobes.dev/",
-        "favicon_url": "https://fobes.dev/favicon.ico"
-      },
-      {
-        "name": "Game Rave Perfect Guides",
-        "url": "http://www.game-rave.com",
-        "favicon_url": "http://www.game-rave.com/favicon.ico"
-      },
-      {
-        "name": "Gamefaqs PS2 Guides, Cheats, Saves and More",
-        "url": "https://gamefaqs.gamespot.com/ps2",
-        "favicon_url": "https://gamefaqs.gamespot.com/favicon.ico"
-      },
-      {
-        "name": "Gamekult",
-        "url": "http://www.gamekult.com/",
-        "favicon_url": "http://www.gamekult.com/favicon.ico"
-      },
-      {
-        "name": "Gaming Alexandria",
-        "url": "https://www.gamingalexandria.com/wp/",
-        "favicon_url": "https://www.gamingalexandria.com/favicon.ico"
-      },
-      {
-        "name": "Haldrie's SKSApps Backup",
-        "url": "https://sksapps.haldrie.com/",
-        "favicon_url": "https://sksapps.haldrie.com/favicon.ico"
-      },
-      {
-        "name": "Hardlevel.com.br",
-        "url": "https://hardlevel.com.br/",
-        "favicon_url": "https://hardlevel.com.br/favicon.ico"
-      },
-      {
-        "name": "HDD Compatibility Chart (Incomplete)",
-        "url": "https://ps2drives.x-pec.com/",
-        "favicon_url": "https://ps2drives.x-pec.com/favicon.ico"
-      },
-      {
-        "name": "HDLoader.com Archive",
-        "url": "https://web.archive.org/web/20110106074036/http://hdloader.net/",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "ifixit's PS2 Repair Guide and Documentation",
-        "url": "https://www.ifixit.com/Device/PlayStation_2",
-        "favicon_url": "https://www.ifixit.com/favicon.ico"
-      },
-      {
-        "name": "Link World",
-        "url": "https://lnkworld.com/playstation.shtml",
-        "favicon_url": "https://lnkworld.com/favicon.ico"
-      },
-      {
-        "name": "MCP2 Manual",
-        "url": "https://qrco.de/bdiiDa",
-        "favicon_url": "https://qrco.de/favicon.ico"
-      },
-      {
-        "name": "Memory Card Groups Documentation by sync-on-luma",
-        "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin/wiki/Memory-Card-Groups",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "MOD Chip Disable Procedures and Tips",
-        "url": "https://www.psx-place.com/threads/modchip-disable-procedure.31585/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "Mobygames",
-        "url": "http://www.mobygames.com/home",
-        "favicon_url": "http://www.mobygames.com/favicon.ico"
-      },
-      {
-        "name": "Mongoose http Server on PS2 Example",
-        "url": "https://github.com/F0bes/ps2_http",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "MundoWiiHack's Wordpress - Check PS2 Sections",
-        "url": "https://mundowiihack.wordpress.com/",
-        "favicon_url": "https://mundowiihack.wordpress.com/favicon.ico"
-      },
-      {
-        "name": "Neutrino Launcher Wiki Compatibility List sync-on-luma",
-        "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin/wiki/Compatibility-List",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Obscure Gamers Archive",
-        "url": "https://archive.obscuregamers.com/",
-        "favicon_url": "https://archive.obscuregamers.com/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader Official Page",
-        "url": "https://www.ps2homebrew.org/Open-PS2-Loader/",
-        "favicon_url": "https://www.ps2homebrew.org/favicon.ico"
-      },
-      {
-        "name": "Open PS2 Loader User Guide for 0.9.3",
-        "url": "https://www.ps2homebrew.org/Open-PS2-Loader-User-Guide/",
-        "favicon_url": "https://www.ps2homebrew.org/favicon.ico"
-      },
-      {
-        "name": "Planetemu",
-        "url": "http://planetemu.net/",
-        "favicon_url": "http://planetemu.net/favicon.ico"
-      },
-      {
-        "name": "PS2 Bios Archive",
-        "url": "https://archive.org/details/the-ultimate-ps2-bios-collection",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PS2 Developer Wiki",
-        "url": "https://www.psdevwiki.com/ps2/",
-        "favicon_url": "https://www.psdevwiki.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Documentation mirror github",
-        "url": "https://github.com/ps2dev-mirror/doc",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PS2 FPU Testing Page by Fobes",
-        "url": "https://ps2.fobes.dev/",
-        "favicon_url": "https://ps2.fobes.dev/favicon.ico"
-      },
-      {
-        "name": "PS2 Homebrew.org Site",
-        "url": "https://www.ps2homebrew.org/",
-        "favicon_url": "https://www.ps2homebrew.org/favicon.ico"
-      },
-      {
-        "name": "PS2 Icon Format v0.5 Documentation",
-        "url": "http://www.csclub.uwaterloo.ca:11068/mymc/ps2icon-0.5.pdf",
-        "favicon_url": "http://www.csclub.uwaterloo.ca:11068/favicon.ico"
-      },
-      {
-        "name": "PS2 Icons Open Database",
-        "url": "https://ps2iodb.com",
-        "favicon_url": "https://ps2iodb.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Memory Card File System Documentation",
-        "url": "http://www.csclub.uwaterloo.ca:11068/mymc/ps2mcfs.html",
-        "favicon_url": "http://www.csclub.uwaterloo.ca:11068/favicon.ico"
-      },
-      {
-        "name": "PS2 Programming Documents github",
-        "url": "https://github.com/DarrenRainey/PS2-Programming-Docs",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PS2 ROM Information PDF",
-        "url": "https://app.filen.io/#/d/c936c3aa-8920-495d-a515-b34b57ac662f#BLTymcMaDnCYQDH7kmLMjRKijWUst6mQ)",
-        "favicon_url": "https://app.filen.io/favicon.ico"
-      },
-      {
-        "name": "PS2 Save Tools Homepage",
-        "url": "https://www.ps2savetools.com/",
-        "favicon_url": "https://www.ps2savetools.com/favicon.ico"
-      },
-      {
-        "name": "PS2 Vault",
-        "url": "https://howlingwolfhwc.github.io/ps2vault/",
-        "favicon_url": "https://howlingwolfhwc.github.io/favicon.ico"
-      },
-      {
-        "name": "PS2 Wiki",
-        "url": "https://ps2wiki.github.io/",
-        "favicon_url": "https://ps2wiki.github.io/favicon.ico"
-      },
-      {
-        "name": "PS2-Home Archive",
-        "url": "https://web.archive.org/web/20240914160929/https://www.ps2-home.com/forum/app.php/portal?sid=993deede5f113a38f2dc173d002446c1",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "PS2Wiki Team github",
-        "url": "https://github.com/ps2wiki",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "PS3 Memory Card Adapter Wiki",
-        "url": "https://www.psdevwiki.com/ps3/Card_Adapter",
-        "favicon_url": "https://www.psdevwiki.com/favicon.ico"
-      },
-      {
-        "name": "PSX Data Center",
-        "url": "https://psxdatacenter.com/psx2/sitenews2.html",
-        "favicon_url": "https://psxdatacenter.com/favicon.ico"
-      },
-      {
-        "name": "PSX-Place's PS2 Resources Directory",
-        "url": "https://www.psx-place.com/resources/categories/playstation-2-ps2.7/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "Redump.org's PS2 Verification Database",
-        "url": "http://redump.org/discs/system/ps2/",
-        "favicon_url": "http://redump.org/favicon.ico"
-      },
-      {
-        "name": "Restorative Land Geocities (Old)",
-        "url": "https://geocities.restorativland.org/SiliconValley/Station/8269/",
-        "favicon_url": "https://geocities.restorativland.org/favicon.ico"
-      },
-      {
-        "name": "RETRORGB's PS2 Page",
-        "url": "https://www.retrorgb.com/playstation2.html",
-        "favicon_url": "https://www.retrorgb.com/favicon.ico"
-      },
-      {
-        "name": "RFGeneration",
-        "url": "http://www.rfgeneration.com",
-        "favicon_url": "http://www.rfgeneration.com/favicon.ico"
-      },
-      {
-        "name": "Savegame Icon Library and Documentation github",
-        "url": "https://github.com/ticky/ps2icon",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "ShaolinAssassin's POPSTARTER Wiki",
-        "url": "https://bitbucket.org/ShaolinAssassin/popstarter-documentation-stuff/wiki/browse/",
-        "favicon_url": "https://bitbucket.org/favicon.ico"
-      },
-      {
-        "name": "THE INSIDERS \u2019 GUIDE TO MICROPROCESSOR: HARDWARE REPORT: Sony\u2019s Emotionally Charged Chip (VOLUME 13, NUMBER 5 APRIL 19, 1999)",
-        "url": "https://websrv.cecs.uci.edu/~papers/mpr/MPR/19990419/130501.pdf",
-        "favicon_url": "https://websrv.cecs.uci.edu/favicon.ico"
-      },
-      {
-        "name": "The Cutting Room Floor Game Content Wiki",
-        "url": "https://tcrf.net/Category:PlayStation_2_games",
-        "favicon_url": "https://tcrf.net/favicon.ico"
-      },
-      {
-        "name": "uLaunchELF Wiki",
-        "url": "http://ps2ulaunchelf.pbworks.com/w/page/19520134/FrontPage",
-        "favicon_url": "http://ps2ulaunchelf.pbworks.com/favicon.ico"
-      },
-      {
-        "name": "Usagiru's Blog",
-        "url": "https://usagiru.blogspot.com/",
-        "favicon_url": "https://usagiru.blogspot.com/favicon.ico"
-      },
-      {
-        "name": "Video Game Museum",
-        "url": "https://www.vgmuseum.com/ps2.htm",
-        "favicon_url": "https://www.vgmuseum.com/favicon.ico"
-      },
-      {
-        "name": "Wayback Machine's FreeMCBoot.info Backup",
-        "url": "https://web.archive.org/web/20130529175034/http://freemcboot.info/index.html",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "Wayback Machine's OpenPS2Loader.info Backup",
-        "url": "https://web.archive.org/web/20130601035035/http://openps2loader.info:80/",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "Wayback Machine's SKSApps Backup",
-        "url": "https://web.archive.org/web/20160818064541/http://sksapps.com:80/",
-        "favicon_url": "https://web.archive.org/favicon.ico"
-      },
-      {
-        "name": "ps2tek's PS2 Comprehensive Hardware Reference",
-        "url": "https://psi-rockin.github.io/ps2tek/",
-        "favicon_url": "https://psi-rockin.github.io/favicon.ico"
-      }
+    "name": "Creati.ai",
+    "url": "https://creati.ai/",
+    "favicon_url": "https://creati.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
     ]
   },
   {
-    "category": "PSBBN & PS2 Linux",
-    "description": "Information, downloads, and guides related to the PlayStation Broadband Navigator (PSBBN) and projects for running Linux on the PlayStation 2.",
-    "links": [
-      {
-        "name": "Bomberman Online",
-        "url": "https://archive.org/details/bomberman-online-10300-0",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "CosmicScale's PSBBN Definitive English Patch",
-        "url": "https://github.com/CosmicScale/PSBBN-Definitive-English-Patch/",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Download sony_ps2linux_install_image.tgz",
-        "url": "https://sourceforge.net/projects/kernelloader/files/Sony%20Linux%20Toolkit/",
-        "favicon_url": "https://sourceforge.net/favicon.ico"
-      },
-      {
-        "name": "Guide to install Linux on APA and upgrade to the 2.2.21 kernel",
-        "url": "http://ps2-linux.tensioncore.com/download/apa/apa_xrhino_2.2.21-pre1-xr7.html",
-        "favicon_url": "http://ps2-linux.tensioncore.com/favicon.ico"
-      },
-      {
-        "name": "Instructions for setting up dual-boot with Akmem",
-        "url": "https://hp.vector.co.jp/authors/VA008536/ps2linux/akmem.html",
-        "favicon_url": "https://hp.vector.co.jp/favicon.ico"
-      },
-      {
-        "name": "Kernelloader 3.0 for installing Linux without the Official Sony Linux RTE disc",
-        "url": "https://sourceforge.net/projects/kernelloader/files/Kernelloader/Kernelloader%203.0/",
-        "favicon_url": "https://sourceforge.net/favicon.ico"
-      },
-      {
-        "name": "Linux 2.2.1 from Sony's Linux Toolkit",
-        "url": "https://github.com/jur/linux-2.2.1-ps2",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Linux 2.4.17 Patched for PS2",
-        "url": "https://github.com/rickgaiser/linux-2.4.17-ps2",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Linux 2.6.35.4 mipsel PS2 Mod",
-        "url": "https://github.com/anikkcah/PS2Linux",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Linux Kernel 2.2.1 for PS2",
-        "url": "https://github.com/azagramac/ps2-linux",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Linux Kernel for PS2",
-        "url": "https://github.com/frno7/linux",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "Linux kernel source: linux-2.2.21-pre1-xr7.tar.gz",
-        "url": "https://archive.org/download/linux-playstation2-sources/linux-2.2.21-pre1-xr7.tar.gz",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "Linux Sources for PlayStation 2",
-        "url": "https://archive.org/details/linux-playstation2-sources",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PS2 HDD Images and Dumps",
-        "url": "https://archive.org/details/ps2-hdd-imgs-dumps",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PS2 Linux unOfficial Site",
-        "url": "https://ps2linux.no-ip.info/home/",
-        "favicon_url": "https://ps2linux.no-ip.info/favicon.ico"
-      },
-      {
-        "name": "PSBBN Archive",
-        "url": "https://archive.org/details/psbbn",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PSBBN Definitive English Patch by CosmicScale",
-        "url": "https://archive.org/details/playstation-broadband-navigator-psbbn-definitive-english-patch-v1.0",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PSBBN Definitive English Patch v2",
-        "url": "https://archive.org/details/psbbn-definitive-english-patch-v2",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PSBBN English Patch by Vitas155",
-        "url": "https://archive.org/details/bbn201311",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PSBBN Files on Archive.org",
-        "url": "https://archive.org/search?query=PSBBN",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PSBBN Footage (Feb 2020)",
-        "url": "https://archive.org/details/PSBBN-Footage-Feb-2020",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PSBBN Forum Discussion",
-        "url": "https://www.ps2-home.com/forum/viewtopic.php?t=100",
-        "favicon_url": "https://www.ps2-home.com/favicon.ico"
-      },
-      {
-        "name": "PSBBN Guide",
-        "url": "https://bungiefan.tripod.com/psbbn_01.html",
-        "favicon_url": "https://bungiefan.tripod.com/favicon.ico"
-      },
-      {
-        "name": "PSBBN Install Guide",
-        "url": "https://bungiefan.tripod.com/psbbninstall_01.html",
-        "favicon_url": "https://bungiefan.tripod.com/favicon.ico"
-      },
-      {
-        "name": "PSBBN Lost Channels",
-        "url": "https://www.psx-place.com/threads/playstation-bb-lost-channels.31940/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
-      },
-      {
-        "name": "PSBBN PKGs",
-        "url": "https://archive.org/details/psbbn-pkgs",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "PSBBN Portal by Vitas155",
-        "url": "https://psbbn.ru/",
-        "favicon_url": "https://psbbn.ru/favicon.ico"
-      },
-      {
-        "name": "PSBBN Unencrypted Loader",
-        "url": "https://archive.org/details/osdboot",
-        "favicon_url": "https://archive.org/favicon.ico"
-      },
-      {
-        "name": "Protokernal Patch for 10k Models",
-        "url": "https://github.com/jimmikaelkael/ps2-protokernel-patch",
-        "favicon_url": "https://github.com/favicon.ico"
-      },
-      {
-        "name": "SLBB-00001",
-        "url": "https://archive.org/details/SLBB-00001",
-        "favicon_url": "https://archive.org/favicon.ico"
-      }
+    "name": "CSM AI",
+    "url": "https://www.csm.ai/",
+    "favicon_url": "https://www.csm.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
     ]
   },
   {
-    "category": "Content Creators & Media",
-    "description": "YouTube channels, blogs, and other media outlets that create content about PlayStation 2 games, hardware, homebrew, and history.",
-    "links": [
-      {
-        "name": "Adam Koralik's YouTube Channel",
-        "url": "https://www.youtube.com/user/AdamKoralik",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Blaine Locklair's YouTube Channel",
-        "url": "https://www.youtube.com/@blainelocklair/search?query=PS2",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "CosmicScale's YouTube Channel",
-        "url": "https://www.youtube.com/channel/UCxptXkaMSRevkUoA3rfa3aw",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Daniel Santos YouTube Channel",
-        "url": "https://www.youtube.com/channel/UCIDx5TuDp-1IRTRr5l5JSdw",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Haldrie's YouTube Channel",
-        "url": "https://www.youtube.com/Haldrie",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Hardlevel's Youtube Channel",
-        "url": "https://youtube.com/hardlevelbr",
-        "favicon_url": "https://youtube.com/favicon.ico"
-      },
-      {
-        "name": "HugoPocked's YouTube Channel",
-        "url": "https://www.youtube.com/@hugopocked6695",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Juanky's YouTube Channel",
-        "url": "https://www.youtube.com/@JUANKYPS2",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Macho Nacho Productions Youtube Channel",
-        "url": "https://www.youtube.com/@MachoNachoProductions/search?query=ps2",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "MegaBitmap's YouTube Channel",
-        "url": "https://www.youtube.com/@MegaBitmap",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Modern Vintage Gamer's YouTube Channel",
-        "url": "https://www.youtube.com/user/ModernVintageGamer",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Mr. Mario2011's YouTube Channel",
-        "url": "https://www.youtube.com/@MrMario2011",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "MyLifeinGaming's YouTube Channel",
-        "url": "https://www.youtube.com/user/MyLifeInGaming",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Pixel Phantom's YouTube Channel",
-        "url": "https://www.youtube.com/channel/UC473GnVliV0dm5mwrR-qtsg",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Playstation 2 Evolution by Sony's YouTube Channel",
-        "url": "https://www.youtube.com/watch?v=Hvcps5dFzfc",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Prime Retro Gamer's YouTube Channel",
-        "url": "https://www.youtube.com/@PrimeRetroGamer",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Project Pheonix Media's YouTube Channel",
-        "url": "https://www.youtube.com/@ProjectPhoenixMedia",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Spaghetticode (Boon Tobias) YouTube Channel",
-        "url": "https://www.youtube.com/@Spaghetticode_Boon_Tobias",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Spawn Wave's YouTube Channel",
-        "url": "https://www.youtube.com/@SpawnWave/search?query=ps2",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "alexparrado's YouTube Channel",
-        "url": "https://www.youtube.com/@alexanderlopez-parrado3990",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "sync-on-luma's YouTube Channel",
-        "url": "https://www.youtube.com/@sync-on-luma",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Usagiru's YouTube Channel",
-        "url": "https://www.youtube.com/@UsagiRu_Games",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      },
-      {
-        "name": "Vizor's YouTube Channel",
-        "url": "https://www.youtube.com/@ViZoRRetrogames",
-        "favicon_url": "https://www.youtube.com/favicon.ico"
-      }
+    "name": "D5 Render",
+    "url": "https://www.d5render.com/",
+    "favicon_url": "https://www.d5render.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "DeepAI",
+    "url": "https://deepai.org/",
+    "favicon_url": "https://deepai.org/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "DreamFusion3D",
+    "url": "https://dreamfusion3d.github.io/",
+    "favicon_url": "https://dreamfusion3d.github.io/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Edworking 3D Model Generator",
+    "url": "https://edworking.com/ai-tools/3d-model-generator",
+    "favicon_url": "https://edworking.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Figma AI",
+    "url": "https://www.figma.com/ai/",
+    "favicon_url": "https://www.figma.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Figuro",
+    "url": "https://figuro.io/",
+    "favicon_url": "https://figuro.io/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Hunyuan3D",
+    "url": "https://hunyuan3-d.com/",
+    "favicon_url": "https://hunyuan3-d.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Hyper3D",
+    "url": "https://hyper3d.ai/",
+    "favicon_url": "https://hyper3d.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Instant3D",
+    "url": "https://www.instant3d.ai/",
+    "favicon_url": "https://www.instant3d.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Kaedim",
+    "url": "https://www.kaedim3d.com/",
+    "favicon_url": "https://www.kaedim3d.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Live3D",
+    "url": "https://live3d.io/",
+    "favicon_url": "https://live3d.io/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Luw AI",
+    "url": "https://luw.ai/",
+    "favicon_url": "https://luw.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Masterpiece X",
+    "url": "https://www.masterpiecex.com/",
+    "favicon_url": "https://www.masterpiecex.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "MazingXR",
+    "url": "https://mazingxr.com/",
+    "favicon_url": "https://mazingxr.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Meshy",
+    "url": "https://www.meshy.ai/",
+    "favicon_url": "https://www.meshy.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "NVIDIA Magic3D",
+    "url": "https://research.nvidia.com/labs/dir/magic3d/",
+    "favicon_url": "https://research.nvidia.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "PicassoIA",
+    "url": "https://picassoia.com/",
+    "favicon_url": "https://picassoia.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Pixcap",
+    "url": "https://pixcap.com/",
+    "favicon_url": "https://pixcap.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Point-E",
+    "url": "https://huggingface.co/spaces/User-2468/point-e",
+    "favicon_url": "https://openai.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "PromeAI",
+    "url": "https://www.promeai.pro/",
+    "favicon_url": "https://www.promeai.pro/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Shap-E",
+    "url": "https://huggingface.co/spaces/hysts/Shap-E",
+    "favicon_url": "https://openai.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Stable 3D",
+    "url": "https://stability.ai/stable-3d",
+    "favicon_url": "https://stability.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Tencent Hunyuan3D",
+    "url": "https://3d.hunyuan.tencent.com/",
+    "favicon_url": "https://3d.hunyuan.tencent.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "ThreeDee Design",
+    "url": "https://www.threedee.design/",
+    "favicon_url": "https://www.threedee.design/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Trellis3D",
+    "url": "https://trellis3d.ai/",
+    "favicon_url": "https://trellis3d.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Tripo3D",
+    "url": "https://www.tripo3d.ai/",
+    "favicon_url": "https://www.tripo3d.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Vidu",
+    "url": "https://www.vidu.com/",
+    "favicon_url": "https://www.vidu.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "Vondy",
+    "url": "https://www.vondy.com/",
+    "favicon_url": "https://www.vondy.com/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
+    ]
+  },
+  {
+    "name": "AGRIVI",
+    "url": "https://www.agrivi.com/",
+    "favicon_url": "https://www.agrivi.com/favicon.ico",
+    "category": "🌲 Agriculture",
+    "tags": [
+      "agriculture"
+    ]
+  },
+  {
+    "name": "CattleEye",
+    "url": "https://www.cattleeye.com/",
+    "favicon_url": "https://www.cattleeye.com/favicon.ico",
+    "category": "🌲 Agriculture",
+    "tags": [
+      "agriculture"
+    ]
+  },
+  {
+    "name": "Krishi Mitra",
+    "url": "https://www.itcagr.com/krishi-mitra",
+    "favicon_url": "https://www.itcagr.com/favicon.ico",
+    "category": "🌲 Agriculture",
+    "tags": [
+      "agriculture"
+    ]
+  },
+  {
+    "name": "Robovision",
+    "url": "https://robovision.ai/",
+    "favicon_url": "https://robovision.ai/favicon.ico",
+    "category": "🌲 Agriculture",
+    "tags": [
+      "agriculture"
+    ]
+  },
+  {
+    "name": "AI Pool Tools",
+    "url": "https://tools.aipoool.com/",
+    "favicon_url": "./favicon.ico",
+    "category": "📚 Articles and Reviews",
+    "tags": [
+      "articles",
+      "reviews"
+    ]
+  },
+  {
+    "name": "SongBeast AI Review by Decortweaks",
+    "url": "https://decortweaks.com/songbeast-ai-review/",
+    "favicon_url": "./favicon.ico",
+    "category": "📚 Articles and Reviews",
+    "tags": [
+      "articles",
+      "reviews"
+    ]
+  },
+  {
+    "name": "Character AI",
+    "url": "https://character.ai/",
+    "favicon_url": "https://character.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "ChatGPT",
+    "url": "https://www.chatgpt.com/",
+    "favicon_url": "https://www.chatgpt.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Claude",
+    "url": "https://claude.ai/new",
+    "favicon_url": "https://claude.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "anthropic",
+      "chatbot"
+    ]
+  },
+  {
+    "name": "Copy.ai",
+    "url": "https://www.copy.ai/",
+    "favicon_url": "https://www.copy.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "DeepSeek",
+    "url": "https://chat.deepseek.com/",
+    "favicon_url": "https://deepseek.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Google Gemini",
+    "url": "https://gemini.google.com/",
+    "favicon_url": "https://gemini.google.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Grok",
+    "url": "https://www.grok.com/",
+    "favicon_url": "https://www.grok.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Grok API",
+    "url": "https://x.ai/api",
+    "favicon_url": "https://x.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Grok Voice",
+    "url": "https://x.ai/grok-voice",
+    "favicon_url": "https://x.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Inflection AI",
+    "url": "https://developers.inflection.ai/login",
+    "favicon_url": "https://developers.inflection.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Intercom AI",
+    "url": "https://www.intercom.com/ai",
+    "favicon_url": "https://www.intercom.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Jasper",
+    "url": "https://www.jasper.ai/",
+    "favicon_url": "https://www.jasper.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "thumbnail_url": "https://example.com/thumbs/jasper.png",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Meta AI",
+    "url": "https://www.meta.ai/",
+    "favicon_url": "https://www.meta.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Microsoft Copilot",
+    "url": "https://copilot.microsoft.com/",
+    "favicon_url": "https://copilot.microsoft.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Minimax Chat",
+    "url": "https://chat.minimax.io/",
+    "favicon_url": "https://chat.minimax.io/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Mistral AI",
+    "url": "https://chat.mistral.ai/chat",
+    "favicon_url": "https://chat.mistral.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Notion AI",
+    "url": "https://www.notion.so/product/ai",
+    "favicon_url": "https://www.notion.so/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Perplexity",
+    "url": "https://www.perplexity.ai/",
+    "favicon_url": "https://www.perplexity.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Poe",
+    "url": "https://poe.com/",
+    "favicon_url": "https://poe.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Qwen",
+    "url": "https://chat.qwen.ai/",
+    "favicon_url": "https://chat.qwen.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Rytr",
+    "url": "https://rytr.me/",
+    "favicon_url": "https://rytr.me/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Sudowrite",
+    "url": "https://www.sudowrite.com/",
+    "favicon_url": "https://www.sudowrite.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Writer.com",
+    "url": "https://writer.com/",
+    "favicon_url": "https://writer.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "writing"
+    ]
+  },
+  {
+    "name": "Writesonic",
+    "url": "https://writesonic.com/",
+    "favicon_url": "https://writesonic.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "xAI Chat",
+    "url": "https://x.ai/chat",
+    "favicon_url": "https://x.ai/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "Zendesk AI",
+    "url": "https://www.zendesk.com/ai",
+    "favicon_url": "https://www.zendesk.com/favicon.ico",
+    "category": "👽 All-in-One",
+    "tags": [
+      "allinone"
+    ]
+  },
+  {
+    "name": "AIVA",
+    "url": "https://www.aiva.ai/",
+    "favicon_url": "https://www.aiva.ai/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "AssemblyAI",
+    "url": "https://www.assemblyai.com/",
+    "favicon_url": "https://www.assemblyai.com/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "ElevenLabs",
+    "url": "https://elevenlabs.io/app/home",
+    "favicon_url": "https://elevenlabs.io/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Freebeat.ai",
+    "url": "https://freebeat.ai/",
+    "favicon_url": "https://freebeat.ai/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Landr",
+    "url": "https://app.landr.com/",
+    "favicon_url": "https://app.landr.com/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Mubert",
+    "url": "https://mubert.com/",
+    "favicon_url": "https://mubert.com/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Murf.ai",
+    "url": "https://murf.ai/",
+    "favicon_url": "https://murf.ai/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Play.ht",
+    "url": "https://play.ht/",
+    "favicon_url": "https://play.ht/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "SongBeast AI",
+    "url": "https://songbeastai.com/",
+    "favicon_url": "https://songbeastai.com/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "SoundGen.io",
+    "url": "https://soundgen.io/",
+    "favicon_url": "https://soundgen.io/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Soundraw",
+    "url": "https://soundraw.io/",
+    "favicon_url": "https://soundraw.io/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Suno",
+    "url": "https://suno.com/invite/@nathanneurotic",
+    "favicon_url": "https://suno.com/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Suno Create",
+    "url": "https://suno.com/create?wid=default",
+    "favicon_url": "https://suno.com/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Synthesizer V",
+    "url": "https://dreamtonics.com/synthesizerv/",
+    "favicon_url": "https://dreamtonics.com/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Udio",
+    "url": "https://www.udio.com/creators/NathanNeurotic",
+    "favicon_url": "https://www.udio.com/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Udio Create",
+    "url": "https://www.udio.com/create",
+    "favicon_url": "https://www.udio.com/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "Voicemod AI Voices",
+    "url": "https://www.voicemod.net/ai-voices/",
+    "favicon_url": "https://www.voicemod.net/favicon.ico",
+    "category": "🔊 Audio, Music, and Speech",
+    "tags": [
+      "audio",
+      "music",
+      "speech"
+    ]
+  },
+  {
+    "name": "ClimateAI",
+    "url": "https://www.climate.ai/",
+    "favicon_url": "https://www.climate.ai/favicon.ico",
+    "category": "🌎 Climate",
+    "tags": [
+      "climate"
+    ]
+  },
+  {
+    "name": "Pachama",
+    "url": "https://www.pachama.com/",
+    "favicon_url": "https://www.pachama.com/favicon.ico",
+    "category": "🌎 Climate",
+    "tags": [
+      "climate"
+    ]
+  },
+  {
+    "name": "Bolt.new",
+    "url": "https://bolt.new/",
+    "favicon_url": "https://bolt.new/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Codeium",
+    "url": "https://codeium.com/",
+    "favicon_url": "https://codeium.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Codex by OpenAI",
+    "url": "https://chatgpt.com/codex",
+    "favicon_url": "https://chatgpt.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Codota",
+    "url": "https://www.tabnine.com/",
+    "favicon_url": "https://www.tabnine.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Cursor",
+    "url": "https://www.cursor.com/",
+    "favicon_url": "https://www.cursor.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "DeepCode",
+    "url": "https://www.snyk.io/deepcode/",
+    "favicon_url": "https://www.snyk.io/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "GitHub Copilot",
+    "url": "https://github.com/features/copilot",
+    "favicon_url": "https://github.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "GitHub Copilot Repo",
+    "url": "https://github.com/copilot",
+    "favicon_url": "https://github.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Google Code Assist",
+    "url": "https://codeassist.google.com/",
+    "favicon_url": "https://codeassist.google.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "thumbnail_url": "https://example.com/thumbs/google-code-assist.png",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Jules",
+    "url": "https://jules.google.com/",
+    "favicon_url": "https://jules.google.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Phind",
+    "url": "https://www.phind.com/",
+    "favicon_url": "https://www.phind.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Qodex",
+    "url": "https://www.qodex.ai/",
+    "favicon_url": "https://www.qodex.ai/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Replit",
+    "url": "https://replit.com/",
+    "favicon_url": "https://replit.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "AI21 Labs",
+    "url": "https://www.ai21.com/",
+    "favicon_url": "https://www.ai21.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Amazon SageMaker",
+    "url": "https://aws.amazon.com/sagemaker/",
+    "favicon_url": "https://aws.amazon.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Azure AI Services",
+    "url": "https://azure.microsoft.com/en-us/products/ai-services/",
+    "favicon_url": "https://azure.microsoft.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Clarifai",
+    "url": "https://www.clarifai.com/",
+    "favicon_url": "https://www.clarifai.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Cohere",
+    "url": "https://cohere.com/",
+    "favicon_url": "https://cohere.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Cortical",
+    "url": "https://www.cortical.io/",
+    "favicon_url": "https://www.cortical.io/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Databricks (Mosaic AI)",
+    "url": "https://www.databricks.com/product/ai",
+    "favicon_url": "https://www.databricks.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "DataRobot",
+    "url": "https://www.datarobot.com/",
+    "favicon_url": "https://www.datarobot.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Gemini API Docs (Garden)",
+    "url": "https://ai.google.dev/gemini-api/docs?utm_source=gfd&amp;utm_medium=referral&amp;utm_campaign=ai_logo_garden&amp;utm_content",
+    "favicon_url": "https://ai.google.dev/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Gemini Nano (Android)",
+    "url": "https://developer.android.com/ai/gemini-nano",
+    "favicon_url": "https://developer.android.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Google AI Edge",
+    "url": "https://ai.google.dev/edge",
+    "favicon_url": "https://ai.google.dev/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Google AI Studio",
+    "url": "https://aistudio.google.com/prompts/new_chat",
+    "favicon_url": "https://aistudio.google.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Google AI Studio (Garden)",
+    "url": "https://aistudio.google.com/app/prompts/new_chat?utm_source=gfd&amp;utm_medium=referral&amp;utm_campaign=home_garden&amp;utm_content=",
+    "favicon_url": "https://aistudio.google.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Google Cloud Shell",
+    "url": "https://shell.cloud.google.com/",
+    "favicon_url": "https://shell.cloud.google.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Google Cloud Solutions Catalog",
+    "url": "https://console.cloud.google.com/products/solutions/catalog?inv=1&amp;invt=Aby_hw&amp;project=engaged-timing-jxcbk",
+    "favicon_url": "https://console.cloud.google.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Google Developers",
+    "url": "https://developers.google.com/",
+    "favicon_url": "https://developers.google.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Google Home Projects Console",
+    "url": "https://console.home.google.com/projects?pli=1",
+    "favicon_url": "https://console.home.google.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Google Vertex AI",
+    "url": "https://console.cloud.google.com/vertex-ai/studio/overview",
+    "favicon_url": "https://console.cloud.google.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Google Vertex AI Studio (Engaged)",
+    "url": "https://console.cloud.google.com/vertex-ai/studio/overview?inv=1&amp;invt=Aby_kQ&amp;project=engaged-timing-jxcbk",
+    "favicon_url": "https://console.cloud.google.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Hume AI",
+    "url": "https://www.hume.ai/",
+    "favicon_url": "https://www.hume.ai/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Minimax",
+    "url": "https://www.minimax.io/",
+    "favicon_url": "https://www.minimax.io/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Ollama",
+    "url": "https://ollama.com/",
+    "favicon_url": "https://ollama.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Salesforce Einstein / AI Cloud",
+    "url": "https://www.salesforce.com/products/ai-cloud/overview/",
+    "favicon_url": "https://www.salesforce.com/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Stability AI",
+    "url": "https://stability.ai/",
+    "favicon_url": "https://stability.ai/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "developer",
+      "platforms",
+      "apis"
+    ]
+  },
+  {
+    "name": "Enel X",
+    "url": "https://www.enelx.com/",
+    "favicon_url": "https://www.enelx.com/favicon.ico",
+    "category": "💡 Energy",
+    "tags": [
+      "energy"
+    ]
+  },
+  {
+    "name": "Stem AI",
+    "url": "https://www.stem.com/",
+    "favicon_url": "https://www.stem.com/favicon.ico",
+    "category": "💡 Energy",
+    "tags": [
+      "energy"
+    ]
+  },
+  {
+    "name": "Kasisto",
+    "url": "https://kasisto.com/",
+    "favicon_url": "https://kasisto.com/favicon.ico",
+    "category": "💰 Financial",
+    "tags": [
+      "financial"
+    ]
+  },
+  {
+    "name": "Klarna AI",
+    "url": "https://www.klarna.com/ai/",
+    "favicon_url": "https://www.klarna.com/favicon.ico",
+    "category": "💰 Financial",
+    "tags": [
+      "financial"
+    ]
+  },
+  {
+    "name": "Personetics",
+    "url": "https://personetics.com/",
+    "favicon_url": "https://personetics.com/favicon.ico",
+    "category": "💰 Financial",
+    "tags": [
+      "financial"
+    ]
+  },
+  {
+    "name": "Plaid AI",
+    "url": "https://plaid.com/ai/",
+    "favicon_url": "https://plaid.com/favicon.ico",
+    "category": "💰 Financial",
+    "tags": [
+      "financial"
+    ]
+  },
+  {
+    "name": "Stripe AI",
+    "url": "https://stripe.com/ai",
+    "favicon_url": "https://stripe.com/favicon.ico",
+    "category": "💰 Financial",
+    "tags": [
+      "financial"
+    ]
+  },
+  {
+    "name": "Upstart",
+    "url": "https://www.upstart.com/",
+    "favicon_url": "https://www.upstart.com/favicon.ico",
+    "category": "💰 Financial",
+    "tags": [
+      "financial"
+    ]
+  },
+  {
+    "name": "Wealthfront",
+    "url": "https://www.wealthfront.com/",
+    "favicon_url": "https://www.wealthfront.com/favicon.ico",
+    "category": "💰 Financial",
+    "tags": [
+      "financial"
+    ]
+  },
+  {
+    "name": "Convai",
+    "url": "https://www.convai.com/",
+    "favicon_url": "https://www.convai.com/favicon.ico",
+    "category": "🎮 Games",
+    "tags": [
+      "games"
+    ]
+  },
+  {
+    "name": "Flawless AI",
+    "url": "https://www.flawlessai.com/",
+    "favicon_url": "https://www.flawlessai.com/favicon.ico",
+    "category": "🎮 Games",
+    "tags": [
+      "games"
+    ]
+  },
+  {
+    "name": "Inworld AI",
+    "url": "https://www.inworld.ai/",
+    "favicon_url": "https://www.inworld.ai/favicon.ico",
+    "category": "🎮 Games",
+    "tags": [
+      "games"
+    ]
+  },
+  {
+    "name": "Luma AI Genie",
+    "url": "https://lumalabs.ai/genie",
+    "favicon_url": "https://lumalabs.ai/favicon.ico",
+    "category": "🎮 Games",
+    "tags": [
+      "games"
+    ]
+  },
+  {
+    "name": "Promethean AI",
+    "url": "https://www.prometheanai.com/",
+    "favicon_url": "https://www.prometheanai.com/favicon.ico",
+    "category": "🎮 Games",
+    "tags": [
+      "games"
+    ]
+  },
+  {
+    "name": "Rosebud AI",
+    "url": "https://www.rosebud.ai/",
+    "favicon_url": "https://www.rosebud.ai/favicon.ico",
+    "category": "🎮 Games",
+    "tags": [
+      "games"
+    ]
+  },
+  {
+    "name": "Scenario",
+    "url": "https://www.scenario.com/",
+    "favicon_url": "https://www.scenario.com/favicon.ico",
+    "category": "🎮 Games",
+    "tags": [
+      "games"
+    ]
+  },
+  {
+    "name": "AI Google",
+    "url": "https://ai.google/",
+    "favicon_url": "https://ai.google/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google Cloud",
+    "url": "https://cloud.google.com/",
+    "favicon_url": "https://cloud.google.com/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google Code",
+    "url": "https://code.google.com/",
+    "favicon_url": "https://code.google.com/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google Code Archive",
+    "url": "https://code.google.com/archive/",
+    "favicon_url": "https://code.google.com/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google DeepMind",
+    "url": "https://deepmind.google/",
+    "favicon_url": "https://deepmind.google/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google Labs",
+    "url": "https://labs.google.com/",
+    "favicon_url": "https://labs.google.com/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google Labs Experiments",
+    "url": "https://labs.google.com/experiments",
+    "favicon_url": "https://labs.google.com/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google Labs Search",
+    "url": "https://labs.google.com/search/",
+    "favicon_url": "https://labs.google.com/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google Labs Sessions",
+    "url": "https://labs.google.com/sessions",
+    "favicon_url": "https://labs.google.com/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google Open Source",
+    "url": "https://opensource.google/",
+    "favicon_url": "https://opensource.google/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Google Research",
+    "url": "https://research.google/",
+    "favicon_url": "https://research.google/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "NotebookLM",
+    "url": "https://notebooklm.google/",
+    "favicon_url": "https://notebooklm.google/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Veo",
+    "url": "https://deepmind.google/technologies/veo/",
+    "favicon_url": "https://deepmind.google/favicon.ico",
+    "category": "✨ Google Ecosystem",
+    "tags": [
+      "google",
+      "ecosystem"
+    ]
+  },
+  {
+    "name": "Aidoc",
+    "url": "https://www.aidoc.com/",
+    "favicon_url": "https://www.aidoc.com/favicon.ico",
+    "category": "🩺 Healthcare",
+    "tags": [
+      "healthcare"
+    ]
+  },
+  {
+    "name": "DeepMind Health",
+    "url": "https://www.deepmind.com/health",
+    "favicon_url": "https://www.deepmind.com/favicon.ico",
+    "category": "🩺 Healthcare",
+    "tags": [
+      "healthcare"
+    ]
+  },
+  {
+    "name": "Merative",
+    "url": "https://www.merative.com/",
+    "favicon_url": "https://www.merative.com/favicon.ico",
+    "category": "🩺 Healthcare",
+    "tags": [
+      "healthcare"
+    ]
+  },
+  {
+    "name": "PathAI",
+    "url": "https://www.pathai.com/",
+    "favicon_url": "https://www.pathai.com/favicon.ico",
+    "category": "🩺 Healthcare",
+    "tags": [
+      "healthcare"
+    ]
+  },
+  {
+    "name": "Tempus",
+    "url": "https://www.tempus.com/",
+    "favicon_url": "https://www.tempus.com/favicon.ico",
+    "category": "🩺 Healthcare",
+    "tags": [
+      "healthcare"
+    ]
+  },
+  {
+    "name": "Viz.ai",
+    "url": "https://www.viz.ai/",
+    "favicon_url": "https://www.viz.ai/favicon.ico",
+    "category": "🩺 Healthcare",
+    "tags": [
+      "healthcare"
+    ]
+  },
+  {
+    "name": "Welltok",
+    "url": "https://www.welltok.com/",
+    "favicon_url": "https://www.welltok.com/favicon.ico",
+    "category": "🩺 Healthcare",
+    "tags": [
+      "healthcare"
+    ]
+  },
+  {
+    "name": "XpertDox",
+    "url": "https://www.xpertdox.com/",
+    "favicon_url": "https://www.xpertdox.com/favicon.ico",
+    "category": "🩺 Healthcare",
+    "tags": [
+      "healthcare"
+    ]
+  },
+  {
+    "name": "Adobe Firefly",
+    "url": "https://www.adobe.com/products/firefly/landpa.html",
+    "favicon_url": "https://www.adobe.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Artbreeder",
+    "url": "https://www.artbreeder.com/",
+    "favicon_url": "https://www.artbreeder.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Bing Image Creator",
+    "url": "https://www.bing.com/images/create",
+    "favicon_url": "https://www.bing.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Canva AI",
+    "url": "https://www.canva.com/ai/",
+    "favicon_url": "https://www.canva.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Craiyon",
+    "url": "https://www.craiyon.com/",
+    "favicon_url": "https://www.craiyon.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "D-ID",
+    "url": "https://www.d-id.com/pricing/studio/",
+    "favicon_url": "https://www.d-id.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "DALL-E",
+    "url": "https://openai.com/dall-e",
+    "favicon_url": "https://openai.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "DaVinci AI",
+    "url": "https://davinci.ai/app",
+    "favicon_url": "https://davinci.ai/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Flux",
+    "url": "https://www.fal.ai/flux",
+    "favicon_url": "https://www.fal.ai/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Higgsfield AI",
+    "url": "https://higgsfield.ai/",
+    "favicon_url": "https://higgsfield.ai/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Ideogram",
+    "url": "https://ideogram.ai/",
+    "favicon_url": "https://ideogram.ai/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Leonardo AI",
+    "url": "https://app.leonardo.ai/",
+    "favicon_url": "https://app.leonardo.ai/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Microsoft Designer",
+    "url": "https://designer.microsoft.com/",
+    "favicon_url": "https://designer.microsoft.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "MidJourney",
+    "url": "https://www.midjourney.com/explore?tab=top_month",
+    "favicon_url": "https://www.midjourney.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "NightCafe",
+    "url": "https://nightcafe.studio/",
+    "favicon_url": "https://nightcafe.studio/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "OpenArt",
+    "url": "https://openart.ai/",
+    "favicon_url": "https://openart.ai/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Stable Diffusion",
+    "url": "https://stablediffusionweb.com/",
+    "favicon_url": "https://stablediffusionweb.com/favicon.ico",
+    "category": "🎨 Image Generation and Design",
+    "tags": [
+      "image",
+      "generation",
+      "design"
+    ]
+  },
+  {
+    "name": "Casetext",
+    "url": "https://www.casetext.com/",
+    "favicon_url": "https://www.casetext.com/favicon.ico",
+    "category": "💼 Legal",
+    "tags": [
+      "legal"
+    ]
+  },
+  {
+    "name": "Clio",
+    "url": "https://www.clio.com/",
+    "favicon_url": "https://www.clio.com/favicon.ico",
+    "category": "💼 Legal",
+    "tags": [
+      "legal"
+    ]
+  },
+  {
+    "name": "Everlaw",
+    "url": "https://www.everlaw.com/",
+    "favicon_url": "https://www.everlaw.com/favicon.ico",
+    "category": "💼 Legal",
+    "tags": [
+      "legal"
+    ]
+  },
+  {
+    "name": "Harvey",
+    "url": "https://www.harvey.ai/",
+    "favicon_url": "https://www.harvey.ai/favicon.ico",
+    "category": "💼 Legal",
+    "tags": [
+      "legal"
+    ]
+  },
+  {
+    "name": "Ironclad",
+    "url": "https://ironcladapp.com/",
+    "favicon_url": "https://ironcladapp.com/favicon.ico",
+    "category": "💼 Legal",
+    "tags": [
+      "legal"
+    ]
+  },
+  {
+    "name": "Lawgeex",
+    "url": "https://www.lawgeex.com/",
+    "favicon_url": "https://www.lawgeex.com/favicon.ico",
+    "category": "💼 Legal",
+    "tags": [
+      "legal"
+    ]
+  },
+  {
+    "name": "NexLaw",
+    "url": "https://www.nexlaw.ai/",
+    "favicon_url": "https://www.nexlaw.ai/favicon.ico",
+    "category": "💼 Legal",
+    "tags": [
+      "legal"
+    ]
+  },
+  {
+    "name": "FourKites",
+    "url": "https://www.fourkites.com/",
+    "favicon_url": "https://www.fourkites.com/favicon.ico",
+    "category": "📊 Logistics",
+    "tags": [
+      "logistics"
+    ]
+  },
+  {
+    "name": "Locus.sh",
+    "url": "https://locus.sh/",
+    "favicon_url": "https://locus.sh/favicon.ico",
+    "category": "📊 Logistics",
+    "tags": [
+      "logistics"
+    ]
+  },
+  {
+    "name": "Shippeo",
+    "url": "https://www.shippeo.com/",
+    "favicon_url": "https://www.shippeo.com/favicon.ico",
+    "category": "📊 Logistics",
+    "tags": [
+      "logistics"
+    ]
+  },
+  {
+    "name": "Beautiful.ai",
+    "url": "https://www.beautiful.ai/",
+    "favicon_url": "https://www.beautiful.ai/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Duolingo",
+    "url": "https://www.duolingo.com/",
+    "favicon_url": "https://www.duolingo.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Elicit",
+    "url": "https://elicit.org/",
+    "favicon_url": "https://elicit.org/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Gamma.app",
+    "url": "https://gamma.app/",
+    "favicon_url": "https://gamma.app/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Grammarly",
+    "url": "https://www.grammarly.com/",
+    "favicon_url": "https://www.grammarly.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Hugging Face",
+    "url": "https://huggingface.co/",
+    "favicon_url": "https://huggingface.co/favicon.ico",
+    "category": "🌐 Developer Platforms and APIs",
+    "tags": [
+      "datasets",
+      "models",
+      "transformers"
+    ]
+  },
+  {
+    "name": "IBM Watson",
+    "url": "https://dataplatform.cloud.ibm.com/",
+    "favicon_url": "https://dataplatform.cloud.ibm.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Kaggle",
+    "url": "https://www.kaggle.com/",
+    "favicon_url": "https://www.kaggle.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Kahoot! AI",
+    "url": "https://kahoot.com/ai/",
+    "favicon_url": "https://kahoot.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Otio",
+    "url": "https://otio.ai/",
+    "favicon_url": "https://otio.ai/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Otter.ai",
+    "url": "https://otter.ai/",
+    "favicon_url": "https://otter.ai/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "QuillBot",
+    "url": "https://quillbot.com/",
+    "favicon_url": "https://quillbot.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Squirrel AI",
+    "url": "https://www.squirrelai.com/",
+    "favicon_url": "https://www.squirrelai.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Tableau AI",
+    "url": "https://www.tableau.com/products/ai",
+    "favicon_url": "https://www.tableau.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Wolfram Alpha",
+    "url": "https://www.wolframalpha.com/",
+    "favicon_url": "https://www.wolframalpha.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "YouChat",
+    "url": "https://you.com/",
+    "favicon_url": "https://you.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Zapier AI",
+    "url": "https://zapier.com/ai",
+    "favicon_url": "https://zapier.com/favicon.ico",
+    "category": "🔍 Research and Data Analysis",
+    "tags": [
+      "research",
+      "data",
+      "analysis"
+    ]
+  },
+  {
+    "name": "Algolia",
+    "url": "https://www.algolia.com/",
+    "favicon_url": "https://www.algolia.com/favicon.ico",
+    "category": "🛒 Retail",
+    "tags": [
+      "retail"
+    ]
+  },
+  {
+    "name": "Dynamic Yield",
+    "url": "https://www.dynamicyield.com/",
+    "favicon_url": "https://www.dynamicyield.com/favicon.ico",
+    "category": "🛒 Retail",
+    "tags": [
+      "retail"
+    ]
+  },
+  {
+    "name": "Nexla",
+    "url": "https://www.nexla.com/",
+    "favicon_url": "https://www.nexla.com/favicon.ico",
+    "category": "🛒 Retail",
+    "tags": [
+      "retail"
+    ]
+  },
+  {
+    "name": "Darktrace",
+    "url": "https://www.darktrace.com/",
+    "favicon_url": "https://www.darktrace.com/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Fireflies.ai",
+    "url": "https://fireflies.ai/",
+    "favicon_url": "https://fireflies.ai/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Gloat",
+    "url": "https://www.gloat.com/",
+    "favicon_url": "https://www.gloat.com/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Gong.io",
+    "url": "https://www.gong.io/",
+    "favicon_url": "https://www.gong.io/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Hailo",
+    "url": "https://www.hailo.ai/",
+    "favicon_url": "https://www.hailo.ai/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Lemonade",
+    "url": "https://www.lemonade.com/",
+    "favicon_url": "https://www.lemonade.com/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Microsoft Power Automate (with AI Builder)",
+    "url": "https://powerautomate.microsoft.com/en-us/ai-builder/",
+    "favicon_url": "https://powerautomate.microsoft.com/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Opendoor AI",
+    "url": "https://www.opendoor.com/ai",
+    "favicon_url": "https://www.opendoor.com/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Roofstock",
+    "url": "https://www.roofstock.com/",
+    "favicon_url": "https://www.roofstock.com/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Sportradar AI",
+    "url": "https://www.sportradar.com/ai",
+    "favicon_url": "https://www.sportradar.com/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Vellum",
+    "url": "https://www.vellum.ai/",
+    "favicon_url": "https://www.vellum.ai/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Zesty.ai",
+    "url": "https://www.zesty.ai/",
+    "favicon_url": "https://www.zesty.ai/favicon.ico",
+    "category": "🤖 Specialized",
+    "tags": [
+      "specialized"
+    ]
+  },
+  {
+    "name": "Amadeus AI",
+    "url": "https://amadeus.com/en/solutions/artificial-intelligence",
+    "favicon_url": "https://amadeus.com/favicon.ico",
+    "category": "🧭 Travel",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "name": "Hopper",
+    "url": "https://www.hopper.com/",
+    "favicon_url": "https://www.hopper.com/favicon.ico",
+    "category": "🧭 Travel",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "name": "Tripadvisor AI",
+    "url": "https://www.tripadvisor.com/ai",
+    "favicon_url": "https://www.tripadvisor.com/favicon.ico",
+    "category": "🧭 Travel",
+    "tags": [
+      "travel"
+    ]
+  },
+  {
+    "name": "CapCut",
+    "url": "https://www.capcut.com/",
+    "favicon_url": "https://www.capcut.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Clipchamp",
+    "url": "https://clipchamp.com/",
+    "favicon_url": "https://clipchamp.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Descript",
+    "url": "https://www.descript.com/",
+    "favicon_url": "https://www.descript.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "FlexClip",
+    "url": "https://www.flexclip.com/",
+    "favicon_url": "https://www.flexclip.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Hailuo AI",
+    "url": "https://hailuoai.video/",
+    "favicon_url": "https://hailuoai.video/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Hailuo AI Subscribe",
+    "url": "https://hailuoai.video/subscribe",
+    "favicon_url": "https://hailuoai.video/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Invideo AI",
+    "url": "https://invideo.io/",
+    "favicon_url": "https://invideo.io/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Jogg.ai",
+    "url": "https://www.jogg.ai/",
+    "favicon_url": "https://www.jogg.ai/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Kaiber",
+    "url": "https://kaiber.ai/",
+    "favicon_url": "https://kaiber.ai/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Kling AI",
+    "url": "https://www.klingai.com/",
+    "favicon_url": "https://www.klingai.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "LTX Studio",
+    "url": "https://app.ltx.studio/",
+    "favicon_url": "https://ltx.studio/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Neural Frames",
+    "url": "https://www.neuralframes.com/",
+    "favicon_url": "https://www.neuralframes.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Opus Clip",
+    "url": "https://www.opus.pro/",
+    "favicon_url": "https://www.opus.pro/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Pictory AI",
+    "url": "https://app.pictory.ai/",
+    "favicon_url": "https://pictory.ai/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Pika",
+    "url": "https://pika.art/login",
+    "favicon_url": "https://pika.art/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Plazmapunk",
+    "url": "https://app.plazmapunk.com/",
+    "favicon_url": "https://plazmapunk.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Revid AI",
+    "url": "https://www.revid.ai/",
+    "favicon_url": "https://www.revid.ai/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "RunwayML",
+    "url": "https://app.runwayml.com/",
+    "favicon_url": "https://app.runwayml.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Sora",
+    "url": "https://sora.chatgpt.com/",
+    "favicon_url": "https://sora.chatgpt.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Synthesia",
+    "url": "https://www.synthesia.io/",
+    "favicon_url": "https://www.synthesia.io/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Veed.io",
+    "url": "https://www.veed.io/",
+    "favicon_url": "https://www.veed.io/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Veo-2",
+    "url": "https://deepmind.google/technologies/veo/",
+    "favicon_url": "https://deepmind.google/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Vidnoz AI",
+    "url": "https://aiapp.vidnoz.com/",
+    "favicon_url": "https://vidnoz.com/favicon.ico",
+    "category": "🎬 Video Generation and Editing",
+    "tags": [
+      "video",
+      "generation",
+      "editing"
+    ]
+  },
+  {
+    "name": "Cody",
+    "url": "https://sourcegraph.com/cody",
+    "favicon_url": "https://sourcegraph.com/favicon.ico",
+    "category": "💻 Coding and Development",
+    "tags": [
+      "coding",
+      "development"
+    ]
+  },
+  {
+    "name": "Luma Labs",
+    "url": "https://lumalabs.ai/",
+    "favicon_url": "https://lumalabs.ai/favicon.ico",
+    "category": "🔮 3D Modeling",
+    "tags": [
+      "3d",
+      "modeling"
     ]
   }
 ]
-
-[end of links.json]
-
-[end of links.json]

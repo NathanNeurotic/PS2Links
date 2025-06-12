@@ -75,13 +75,13 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadServices() {
     const mainContainer = document.querySelector('main'); // Moved for early access for error display
     try {
-        const response = await fetch('./services.json');
+        const response = await fetch('./links.json');
         if (!response.ok) {
-            throw new Error(`HTTP error! Failed to fetch services.json. Status: ${response.status}`);
+            throw new Error(`HTTP error! Failed to fetch links.json. Status: ${response.status}`);
         }
         const services = await response.json();
         if (!services || !Array.isArray(services) || services.length === 0) {
-            throw new Error('services.json was loaded but is empty or not a valid array of services.');
+            throw new Error('links.json was loaded but is empty or not a valid array of services.');
         }
         allServices = services;
         // Original content of try block continues here...
@@ -177,7 +177,7 @@ async function loadServices() {
         buildSidebar();
         setupSearch();
     } catch (error) {
-        displayErrorInMain('Failed to load or process services.json: ' + error.message);
+        displayErrorInMain('Failed to load or process links.json: ' + error.message);
     }
 }
 

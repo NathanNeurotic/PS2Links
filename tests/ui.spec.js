@@ -149,7 +149,7 @@ test('Per-category view toggle works', async ({ page }) => {
 test('Search filters services and categories', async ({ page }) => {
   const searchInput = page.locator('#searchInput');
 
-  // Use a specific known service name from your services.json for a reliable test
+  // Use a specific known service name from your links.json for a reliable test
   // For this example, let's assume "8BitMods Discord Server" is in "Communities & Social Platforms"
   const testServiceName = "8BitMods Discord Server";
   const testCategoryName = "Communities & Social Platforms";
@@ -323,7 +323,7 @@ test('should handle long service names with wrapping and scrolling', async ({ pa
     }
   ];
 
-  await page.route('**/services.json', route => {
+  await page.route('**/links.json', route => {
     route.fulfill({
       status: 200,
       contentType: 'application/json',

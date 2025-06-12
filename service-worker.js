@@ -4,7 +4,7 @@ const URLS_TO_CACHE = [
   './index.html',
   './styles.css',
   './script.js',
-  './services.json',
+  './links.json',
   './favicon.ico',
   './public/manifest.json'
 ];
@@ -17,7 +17,7 @@ self.addEventListener('install', event => {
       const cache = await caches.open(CACHE_NAME);
       await cache.addAll(URLS_TO_CACHE);
       try {
-        const resp = await fetch('./services.json');
+        const resp = await fetch('./links.json');
         const services = await resp.json();
         for (const svc of services) {
           if (svc.favicon_url) {
@@ -50,8 +50,8 @@ self.addEventListener('fetch', event => {
   // const requestUrl = new URL(event.request.url);
   const requestUrl = event.request.url;
 
-  // Network first for script.js and services.json
-  if (requestUrl.endsWith('/script.js') || requestUrl.endsWith('/services.json')
+  // Network first for script.js and links.json
+  if (requestUrl.endsWith('/script.js') || requestUrl.endsWith('/links.json')
 ) {
     event.respondWith(
       fetch(event.request).catch(() => caches.match(event.request))
