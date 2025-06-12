@@ -9,12 +9,12 @@
     --footer-gradient: linear-gradient(180deg, #0A0A2A, #000010); /* Inverse of header */
     --thanks-color: #9BB6D8; /* A lighter, softer PS2 blue */
     --font-family: 'Roboto Mono', monospace;
-    --category-max-height: 400px;
+    --category-max-height: 350px;
     --scroll-track: #050510; /* Very dark for scrollbar track */
     --scroll-thumb: #0070D1; /* Accent blue for scrollbar thumb */
     --scrollbar-width: 8px;
-    --card-min-width: 300px;
-    --card-max-width: 400px;
+    --card-min-width: 280px;
+    --card-max-width: 380px;
     --category-min-width: 300px;
 }
 
@@ -44,8 +44,8 @@ body.light-mode {
     --scroll-track: #f0f0f0;
     --scroll-thumb: #a8d5a8;
     --scrollbar-width: 8px;
-    --card-min-width: 300px;
-    --card-max-width: 400px;
+    --card-min-width: 280px;
+    --card-max-width: 380px;
     --category-min-width: 300px;
 }
 
@@ -71,7 +71,7 @@ html.light-mode {
 
 header {
     background: var(--header-gradient);
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
     border-bottom: 2px solid var(--text-color);
     box-shadow: 0 0 10px rgba(0, 112, 209, 0.3); /* Updated accent color */
@@ -82,11 +82,11 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.3rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
 }
 #themeToggle.active,
 #viewToggle.active,
@@ -100,11 +100,11 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.3rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     margin-left: 0.5rem;
 }
 
@@ -113,11 +113,11 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.3rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     margin-left: 0.5rem;
 }
 
@@ -126,11 +126,11 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+    padding: 0.15rem 0.3rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 0.75rem;
     margin-left: 0.5rem;
     display: none;
 }
@@ -231,7 +231,7 @@ body.sidebar-open footer {
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -251,7 +251,7 @@ header h1 {
 
 main {
     width: 100%;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     padding: 0 1rem;
     flex: 1;
 }
@@ -259,7 +259,7 @@ main {
 body.block-view main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
-    gap: 1rem;
+    gap: 0.75rem;
 }
 
 body.block-view main > .search-container,
@@ -309,31 +309,38 @@ body.block-view .category {
 }
 
 .category {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .category h2 {
-    background: var(--section-gradient);
-    padding: 0.85rem;
+    /* background: var(--section-gradient); */
+    padding: 0.7rem;
     padding-right: calc(1rem + var(--scrollbar-width));
     margin: 0;
     cursor: pointer;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    border: 2px solid var(--text-color);
-    border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 112, 209, 0.2); /* Updated accent color */
-    transition: box-shadow 0.3s ease;
+    /* border: 2px solid var(--text-color); */
+    /* border-radius: 10px; */
+    /* box-shadow: 0 0 5px rgba(0, 112, 209, 0.2); */ /* Updated accent color */
+    transition: box-shadow 0.3s ease, background-color 0.3s ease, filter 0.3s ease; /* Added filter to transition */
+
+    background-color: var(--accent-color);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.3), 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .category h2:hover {
-    box-shadow: 0 0 12px rgba(0, 112, 209, 0.5); /* Updated accent color */
-    background: rgba(0, 112, 209, 0.1); /* Subtle blue hover */
+    /* box-shadow: 0 0 12px rgba(0, 112, 209, 0.5); */ /* Updated accent color */
+    /* background: rgba(0, 112, 209, 0.1); */ /* Subtle blue hover */
     transform: translateY(-2px);
+    filter: brightness(110%);
+    box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.4); /* Slightly enhanced shadow on hover */
 }
 
 .category:hover { /* Keep this subtle or match h2 hover */
@@ -374,8 +381,8 @@ body.block-view .category {
 .category-content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-    gap: 1rem;
-    padding: 1rem;
+    gap: 0.75rem;
+    padding: 0.75rem;
     box-sizing: border-box;
     min-width: 0;
     background: var(--content-bg);
@@ -397,7 +404,7 @@ body.block-view .category {
     max-height: var(--category-max-height);
     overflow-y: auto;
     overflow-x: hidden;
-    padding-right: calc(1rem + var(--scrollbar-width));
+    padding-right: calc(0.75rem + var(--scrollbar-width));
 }
 
 .category.list-view .category-content {
@@ -426,8 +433,8 @@ body.block-view .category {
     display: flex;
     flex-direction: column;
     background: var(--button-gradient);
-    padding: 0.75rem;
-    padding-right: 2rem; /* space for favorite star */
+    padding: 0.6rem;
+    padding-right: 1.5rem; /* space for favorite star */
     width: 100%;
     max-width: var(--card-max-width);
     margin: 0 auto;
@@ -466,7 +473,7 @@ body.block-view .category {
     width: 100%;
     max-height: 150px;
     object-fit: cover;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
     border-radius: 8px;
 }
 
@@ -507,7 +514,7 @@ body.block-view .category {
 }
 
 .service-name {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: bold;
     margin-bottom: 0.4rem;
     display: inline-flex;
@@ -517,7 +524,7 @@ body.block-view .category {
 }
 
 .service-url {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     word-break: break-all;
     display: inline-flex;
     align-items: center;

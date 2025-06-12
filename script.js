@@ -323,8 +323,25 @@ function createServiceButton(service, favoritesSet, categoryName) {
     const favicon = document.createElement('img');
     favicon.alt = `${service.name} favicon`;
     favicon.className = 'service-favicon';
-    favicon.src = service.favicon_url || './favicon.ico';
-    favicon.onerror = () => { favicon.src = './favicon.ico'; };
+
+    const customFaviconUrl = service.favicon_url;
+    const defaultFaviconUrl = './favicon.ico'; // Ensure this path is correct
+
+    favicon.src = customFaviconUrl || defaultFaviconUrl;
+
+    favicon.onerror = () => {
+        if (customFaviconUrl && favicon.src !== defaultFaviconUrl) {
+            // The custom favicon failed, and we haven't tried the default one yet in this handler.
+            favicon.src = defaultFaviconUrl;
+        } else if (favicon.src === defaultFaviconUrl || !customFaviconUrl) {
+            // The default favicon (either as fallback or initial) also failed,
+            // or there was no custom favicon in the first place and the default failed.
+            // Prevent further onerror calls for this image.
+            favicon.onerror = null;
+            // Optionally, hide the icon or set a very minimal placeholder if the default also fails:
+            // favicon.style.display = 'none';
+        }
+    };
 
     serviceNameSpan.appendChild(favicon);
     serviceNameSpan.appendChild(document.createTextNode(service.name));
