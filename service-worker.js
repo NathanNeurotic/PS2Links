@@ -1,5 +1,5 @@
 // Bump cache version to ensure users receive the latest files
-const CACHE_NAME = 'ai-dashboard-cache-v3';
+const CACHE_NAME = 'ps2links-cache-v1';
 const URLS_TO_CACHE = [
   './index.html',
   './styles.css',
