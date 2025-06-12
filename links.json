@@ -6,137 +6,164 @@
       {
         "name": "8BitMods Discord Server",
         "url": "https://discord.gg/F2aKahj",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["discord", "chat", "community", "8bitmods", "hardware", "mods"]
       },
       {
         "name": "Fileforums.com",
         "url": "https://fileforums.com/index.php",
-        "favicon_url": "https://fileforums.com/favicon.ico"
+        "favicon_url": "https://fileforums.com/favicon.ico",
+        "tags": ["forum", "files", "downloads", "discussion", "community"]
       },
       {
         "name": "GBATemp's PS2 Forum",
         "url": "https://gbatemp.net/forums/other-platforms-oldies.202/?prefix_id=61",
-        "favicon_url": "https://gbatemp.net/favicon.ico"
+        "favicon_url": "https://gbatemp.net/favicon.ico",
+        "tags": ["gbatemp", "forum", "ps2", "homebrew", "discussion", "mods", "gaming"]
       },
       {
         "name": "Hardlevel Discord Server",
         "url": "https://bit.ly/hardlevel-discord",
-        "favicon_url": "https://bit.ly/favicon.ico"
+        "favicon_url": "https://bit.ly/favicon.ico",
+        "tags": ["discord", "chat", "hardlevel", "gaming", "community", "portuguese", "brasil"]
       },
       {
         "name": "NFOHump Forum",
         "url": "https://www.nfohump.com/forum/index.php",
-        "favicon_url": "https://www.nfohump.com/favicon.ico"
+        "favicon_url": "https://www.nfohump.com/favicon.ico",
+        "tags": ["nfo", "forum", "releases", "discussion", "scene"]
       },
       {
         "name": "Obscure Gamers Discord Server",
         "url": "https://discord.gg/pJ8Qu7qYHX",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["discord", "obscure games", "retro", "gaming", "community"]
       },
       {
         "name": "OnlineConsole's PS2 Pages",
         "url": "https://playstation2.onlineconsoles.com/phpBB2/index.php",
-        "favicon_url": "https://playstation2.onlineconsoles.com/favicon.ico"
+        "favicon_url": "https://playstation2.onlineconsoles.com/favicon.ico",
+        "tags": ["forum", "onlineconsole", "ps2", "discussion", "phpbb"]
       },
       {
         "name": "Playstation 2 Homebrew Community Discord Server (Archive)",
         "url": "https://discord.gg/XaztguU",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["discord", "archive", "ps2", "homebrew", "development", "chat"]
       },
       {
         "name": "Playstation Homebrew Discord Server",
         "url": "https://discord.gg/qHn9fuTrJw",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["discord", "playstation", "homebrew", "ps1", "ps2", "ps3", "psp", "vita", "development"]
       },
       {
         "name": "PS Gamers",
         "url": "https://www.ps-gamers.ru/",
-        "favicon_url": "https://www.ps-gamers.ru/favicon.ico"
+        "favicon_url": "https://www.ps-gamers.ru/favicon.ico",
+        "tags": ["ps-gamers", "forum", "russian", "community", "playstation"]
       },
       {
         "name": "PS-Gamers.ru Official Discord Server",
         "url": "https://discord.gg/2V6SesJ",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["discord", "ps-gamers", "russian", "chat", "community"]
       },
       {
         "name": "PS2 Homebrew Reddit",
         "url": "https://www.reddit.com/r/ps2homebrew/",
-        "favicon_url": "https://www.reddit.com/favicon.ico"
+        "favicon_url": "https://www.reddit.com/favicon.ico",
+        "tags": ["reddit", "ps2", "homebrew", "discussion", "help", "news"]
       },
       {
         "name": "PS2 Reddit",
         "url": "https://www.reddit.com/r/ps2/",
-        "favicon_url": "https://www.reddit.com/favicon.ico"
+        "favicon_url": "https://www.reddit.com/favicon.ico",
+        "tags": ["reddit", "ps2", "general", "discussion", "gaming", "news"]
       },
       {
         "name": "PS2 Scene Discord Server",
         "url": "https://discord.gg/ZH55QuTSfT",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["discord", "ps2", "scene", "homebrew", "releases", "discussion"]
       },
       {
         "name": "PS2 Space Discord Server",
         "url": "https://discord.gg/3SWDtuVy7r",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["discord", "ps2", "community", "chat", "gaming"]
       },
       {
         "name": "PS2-Home",
         "url": "https://www.ps2-home.com/",
-        "favicon_url": "https://www.ps2-home.com/favicon.ico"
+        "favicon_url": "https://www.ps2-home.com/favicon.ico",
+        "tags": ["ps2-home", "forum", "homebrew", "opl", "guides", "downloads", "jay-jay"]
       },
       {
         "name": "PSX-Place",
         "url": "https://www.psx-place.com/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["psx-place", "forum", "playstation", "ps1", "ps2", "ps3", "ps4", "ps5", "homebrew", "news", "guides"]
       },
       {
         "name": "PSX-Place Discord Server",
         "url": "https://discord.com/invite/kASwQBs5",
-        "favicon_url": "https://discord.com/favicon.ico"
+        "favicon_url": "https://discord.com/favicon.ico",
+        "tags": ["discord", "psx-place", "chat", "community", "playstation"]
       },
       {
         "name": "PSX-Place's PS2 Forums/Messaging Boards",
         "url": "https://www.psx-place.com/forums/#playstation-2-forums.6",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["psx-place", "forum", "ps2", "discussion", "homebrew", "support"]
       },
       {
         "name": "Retro Game Boards",
         "url": "https://www.retrogameboards.com/",
-        "favicon_url": "https://www.retrogameboards.com/favicon.ico"
+        "favicon_url": "https://www.retrogameboards.com/favicon.ico",
+        "tags": ["forum", "retro gaming", "classic games", "discussion", "community"]
       },
       {
         "name": "Romhacking.net Forum",
         "url": "https://www.romhacking.net/forum/",
-        "favicon_url": "https://www.romhacking.net/favicon.ico"
+        "favicon_url": "https://www.romhacking.net/favicon.ico",
+        "tags": ["romhacking", "forum", "translations", "mods", "patches", "discussion"]
       },
       {
         "name": "Romstation.fr Forum",
         "url": "https://www.romstation.fr/forums/forum/376-forum",
-        "favicon_url": "https://www.romstation.fr/favicon.ico"
+        "favicon_url": "https://www.romstation.fr/favicon.ico",
+        "tags": ["romstation", "forum", "french", "emulation", "downloads", "community"]
       },
       {
         "name": "The Cutting Room Floor Discord Server",
         "url": "https://discord.com/invite/SGeE8dcWR6",
-        "favicon_url": "https://discord.com/favicon.ico"
+        "favicon_url": "https://discord.com/favicon.ico",
+        "tags": ["discord", "tcrf", "game content", "unused", "beta", "secrets", "chat"]
       },
       {
         "name": "The Cutting Room Floor Message Boards",
         "url": "https://jul.rustedlogic.net/forum.php?id=12",
-        "favicon_url": "https://jul.rustedlogic.net/favicon.ico"
+        "favicon_url": "https://jul.rustedlogic.net/favicon.ico",
+        "tags": ["tcrf", "forum", "game content", "unused", "beta", "secrets", "discussion"]
       },
       {
         "name": "The Emotion Engine Nostalgia Extrusion Concern, LLC Discord Server",
         "url": "https://discord.gg/GyZgHhpxXT",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["discord", "emotion engine", "ps2", "nostalgia", "technical", "chat"]
       },
       {
         "name": "VGBA Forums",
         "url": "https://vgboxart.com/forums/",
-        "favicon_url": "https://vgboxart.com/favicon.ico"
+        "favicon_url": "https://vgboxart.com/favicon.ico",
+        "tags": ["vgba", "forum", "box art", "design", "community", "videogameboxart"]
       },
       {
         "name": "Xtreme Elite Boot+ Discord Server",
         "url": "https://discord.com/invite/CnPWqBkAPG",
-        "favicon_url": "https://discord.com/favicon.ico"
+        "favicon_url": "https://discord.com/favicon.ico",
+        "tags": ["discord", "xeb+", "xtreme elite boot", "homebrew", "launcher", "chat"]
       }
     ]
   },
@@ -147,142 +174,170 @@
       {
         "name": "25 to Life: Classic Discord Server",
         "url": "https://discord.gg/gmYe84eS7q",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["25 to life", "discord", "community", "online", "multiplayer", "revival"]
       },
       {
         "name": "Auto Modellista Meetup Club Discord Server",
         "url": "https://discord.gg/h7RbJ5FCct",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["auto modellista", "discord", "community", "online", "racing", "meetup"]
       },
       {
         "name": "Burnout 3 Online Revival Discord Server",
         "url": "https://discord.gg/y9KYVrhQG7",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["burnout 3", "burnout", "discord", "community", "online", "multiplayer", "revival"]
       },
       {
         "name": "Burnout PS2 Online Discord Server",
         "url": "https://discord.gg/cjceKbhuuv",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["burnout", "ps2", "discord", "community", "online", "multiplayer"]
       },
       {
         "name": "EQOA Revival Discord Server",
         "url": "https://discord.gg/uwqdv9yKtH",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["everquest online adventures", "eqoa", "discord", "community", "revival", "mmo", "rpg"]
       },
       {
         "name": "Jak & Daxter Fandom Wiki",
         "url": "https://jakanddaxter.fandom.com/",
-        "favicon_url": "https://jakanddaxter.fandom.com/favicon.ico"
+        "favicon_url": "https://jakanddaxter.fandom.com/favicon.ico",
+        "tags": ["jak and daxter", "wiki", "fandom", "lore", "guide", "information", "platformer"]
       },
       {
         "name": "Jack and Daxter Discord Server",
         "url": "https://discord.gg/N358k7R",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["jak and daxter", "discord", "community", "chat", "discussion"]
       },
       {
         "name": "Jack and Daxter Lore'n'Lounge Discord Server",
         "url": "https://discord.gg/RYJPuXkHu4",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["jak and daxter", "discord", "community", "lore", "discussion", "chat"]
       },
       {
         "name": "Jack and Daxter Speedrun Discord Server",
         "url": "https://discord.gg/UPaQy8ZUAa",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["jak and daxter", "discord", "community", "speedrun", "speedrunning"]
       },
       {
         "name": "Jak X Multiplayer Discord Server",
         "url": "https://discord.gg/5VHj8sD",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["jak x", "jak and daxter", "discord", "community", "multiplayer", "online", "racing"]
       },
       {
         "name": "Medal of Honor Rising Discord Server",
         "url": "https://discord.gg/2MafefE4XH",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["medal of honor", "moh", "rising sun", "discord", "community", "online", "fps"]
       },
       {
         "name": "MH Oldschool Discord Server",
         "url": "https://discord.gg/k7d6RKd",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["medal of honor", "moh", "oldschool", "discord", "community", "online", "fps"]
       },
       {
         "name": "Midnight Club 3/2/L.A Online Official Discord Server",
         "url": "https://discord.gg/Zfj4TYN",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["midnight club", "mc3", "mc2", "la", "discord", "community", "online", "racing"]
       },
       {
         "name": "Naughty Dog (Fan Server)",
         "url": "https://discord.gg/tykmvRP",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["naughty dog", "discord", "community", "jak and daxter", "crash bandicoot", "uncharted", "the last of us"]
       },
       {
         "name": "Netslum - .hack//fragment Community Discord Server",
         "url": "https://discord.gg/DY3XEe8",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": [".hack", "fragment", "netslum", "discord", "community", "online", "mmo", "rpg"]
       },
       {
         "name": "NFSOR (NeedForSpeed) Discord Server",
         "url": "https://discord.com/invite/3chzV4BMFn",
-        "favicon_url": "https://discord.com/favicon.ico"
+        "favicon_url": "https://discord.com/favicon.ico",
+        "tags": ["need for speed", "nfs", "nfsor", "discord", "community", "online", "racing"]
       },
       {
         "name": "Ratchet & Clank 3 Casuals Discord Server",
         "url": "https://discord.gg/S7h4SbzvyG",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["ratchet and clank", "ratchet & clank 3", "up your arsenal", "discord", "community", "casual", "discussion"]
       },
       {
         "name": "Ratchet & Clank Discord Server",
         "url": "https://discord.gg/UyAeTgJ",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["ratchet and clank", "discord", "community", "general", "discussion"]
       },
       {
         "name": "Ratchet & Clank Horizon Online Play Discord Server",
         "url": "https://discord.gg/KaqEVBuCUh",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["ratchet and clank", "horizon", "discord", "community", "online", "multiplayer"]
       },
       {
         "name": "Ratchet & Clank Online Discord Server",
         "url": "https://discord.gg/mUQzqGu",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["ratchet and clank", "discord", "community", "online", "multiplayer", "up your arsenal", "deadlocked"]
       },
       {
         "name": "Ratchet & Clank Size Matters Online Discord Server",
         "url": "https://discord.gg/hD23nTfDxT",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["ratchet and clank", "size matters", "discord", "community", "online", "multiplayer", "psp"]
       },
       {
         "name": "Save MGO Discord Server",
         "url": "https://discord.com/invite/h5gA3X9Zhj",
-        "favicon_url": "https://discord.com/favicon.ico"
+        "favicon_url": "https://discord.com/favicon.ico",
+        "tags": ["metal gear online", "mgo", "savemgo", "discord", "community", "online", "revival", "metal gear solid"]
       },
       {
         "name": "SlyCooper Discord Server",
         "url": "https://discord.gg/ZSjCVt2DNQ",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["sly cooper", "discord", "community", "stealth", "platformer", "sucker punch"]
       },
       {
         "name": "SOCOM Community Discord Server",
         "url": "https://discord.gg/HB33DqU",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["socom", "us navy seals", "discord", "community", "online", "multiplayer", "tactical shooter"]
       },
       {
         "name": "Star Wars Battlefront PS2 Online Discord Server",
         "url": "https://discord.gg/jQDPcTQurN",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["star wars battlefront", "swbf", "swbf1", "swbf2", "discord", "community", "online", "multiplayer"]
       },
       {
         "name": "SvR/WWE/F NETPLAY Discord Server",
         "url": "https://discord.gg/Z6zqdDrKeT",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["smackdown vs raw", "wwe", "wwf", "netplay", "parsec", "pcsx2", "discord", "community", "online", "wrestling"]
       },
       {
         "name": "Twisted Metal Alliance Discord Server",
         "url": "https://discord.gg/hQbBHh3",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["twisted metal", "discord", "community", "vehicular combat", "online"]
       },
       {
         "name": "zdxsv (foreign Gundam) Discord Server",
         "url": "https://discord.gg/NtnVPuvart",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["gundam", "discord", "community", "japanese", "mech", "action"]
       }
     ]
   },
@@ -293,502 +348,602 @@
       {
         "name": "AIO Project: PS2 v2.0.1 (2021) by Berion",
         "url": "https://archive.org/details/aio-project-ps2-v201",
-        "favicon_url": "https://archive.org/favicon.ico"
+        "favicon_url": "https://archive.org/favicon.ico",
+        "tags": ["aio", "all-in-one", "berion", "homebrew", "pack", "utility", "tool", "ps2"]
       },
       {
         "name": "Apollo Save Tool AIO Saves Management/Conversion/Import/Export",
         "url": "https://github.com/bucanero/apollo-ps2",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["apollo", "save tool", "save management", "vmc", "psv", "conversion", "import", "export", "bucanero", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Arceus Menu by Project Zeus",
         "url": "https://projectzeus0101.blogspot.com/",
-        "favicon_url": "https://projectzeus0101.blogspot.com/favicon.ico"
+        "favicon_url": "https://projectzeus0101.blogspot.com/favicon.ico",
+        "tags": ["arceus menu", "project zeus", "launcher", "homebrew", "utility", "ps2"]
       },
       {
         "name": "BDM Assault (enabled exFAT USB) by El_isra",
         "url": "https://www.psx-place.com/threads/42352/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["bdm assault", "exfat", "usb", "mass storage", "el_isra", "homebrew", "utility", "ps2"]
       },
       {
         "name": "DKWDRV Batch Game Installer by GDX",
         "url": "https://github.com/GDX-X/DKWDRV-Batch-Game-Installer",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["dkwdrv", "batch installer", "game installer", "hdd", "gdx", "homebrew", "utility", "ps2"]
       },
       {
         "name": "ESR",
         "url": "https://www.psx-place.com/resources/esr.951/update?update=1613",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["esr", "dvd patcher", "disc loader", "backup launcher", "homebrew", "utility", "ps2"]
       },
       {
         "name": "FDVDB ESR Patcher GUI",
         "url": "https://www.psx-place.com/threads/freedvdboot-by-cturt.30220/#post-255696",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["freedvdboot", "fdvdb", "esr patcher", "gui", "backup launcher", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Fortuna Launcher",
         "url": "https://github.com/Veritas83/PS2_FORTUNA_Launcher",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["fortuna", "launcher", "exploit", "veritas83", "homebrew", "utility", "ps2", "fmcb alternative"]
       },
       {
         "name": "FreeDVDBoot Official github",
         "url": "https://github.com/ps2homebrew/FreeDVDBoot",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["freedvdboot", "exploit", "softmod", "dvd player", "homebrew", "ps2homebrew", "utility", "ps2"]
       },
       {
         "name": "FreeMCBoot Continued by El_isra",
         "url": "https://israpps.github.io/FreeMcBoot-Installer/",
-        "favicon_url": "https://israpps.github.io/favicon.ico"
+        "favicon_url": "https://israpps.github.io/favicon.ico",
+        "tags": ["fmcb", "freemcboot", "softmod", "memory card", "bootloader", "el_isra", "homebrew", "installer", "utility", "ps2"]
       },
       {
         "name": "FreeMCBoot Official Page",
         "url": "https://sites.google.com/view/ysai187/home/projects/fmcbfhdb",
-        "favicon_url": "https://sites.google.com/favicon.ico"
+        "favicon_url": "https://sites.google.com/favicon.ico",
+        "tags": ["fmcb", "freemcboot", "fhdb", "softmod", "memory card", "hdd", "bootloader", "homebrew", "official", "utility", "ps2"]
       },
       {
         "name": "FTP Server for PS2",
         "url": "https://github.com/ps2homebrew/ps2ftpd",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ftp", "server", "ps2ftpd", "file transfer", "network", "homebrew", "utility", "ps2", "ps2homebrew"]
       },
       {
         "name": "HDL Game Installer",
         "url": "https://github.com/ps2homebrew/HDLGameInstaller",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["hdl gameinstaller", "hdd loader", "game installer", "hdd", "homebrew", "utility", "ps2", "ps2homebrew"]
       },
       {
         "name": "HDL-Batch-Installer by El_isra",
         "url": "https://israpps.github.io/HDL-Batch-installer/",
-        "favicon_url": "https://israpps.github.io/favicon.ico"
+        "favicon_url": "https://israpps.github.io/favicon.ico",
+        "tags": ["hdl batch installer", "hdd loader", "game installer", "batch", "el_isra", "homebrew", "utility", "ps2"]
       },
       {
         "name": "HDL_Dump",
         "url": "https://github.com/ps2homebrew/hdl-dump",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["hdl_dump", "hdd loader", "game installer", "command line", "pc tool", "homebrew", "utility", "ps2", "ps2homebrew"]
       },
       {
         "name": "Homebrew Downloader",
         "url": "https://github.com/Veritas83/VTSPS2-HBDL",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["homebrew downloader", "downloader", "veritas83", "vtsps2-hbdl", "utility", "ps2"]
       },
       {
         "name": "KELFBINDER by El_isra",
         "url": "https://israpps.github.io/KELFBinder/",
-        "favicon_url": "https://israpps.github.io/favicon.ico"
+        "favicon_url": "https://israpps.github.io/favicon.ico",
+        "tags": ["kelfbinder", "kelf", "elf", "packer", "el_isra", "homebrew", "utility", "ps2"]
       },
       {
         "name": "MCP2 OPL with Manual GameID Transmission",
         "url": "https://install.appcenter.ms/orgs/beta-ucu9/apps/opl-with-gameid/distribution_groups/public",
-        "favicon_url": "https://install.appcenter.ms/favicon.ico"
+        "favicon_url": "https://install.appcenter.ms/favicon.ico",
+        "tags": ["mcp2 opl", "memcard pro 2", "opl", "gameid", "sd2psx", "homebrew", "utility", "ps2"]
       },
       {
         "name": "MECHAPWN",
         "url": "https://github.com/MechaResearch/MechaPwn",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["mechapwn", "mechacon", "exploit", "softmod", "homebrew", "utility", "ps2", "mecharesearch"]
       },
       {
         "name": "Memory Card Annihilator (MCA) Memory Card Tool",
         "url": "https://www.psx-place.com/threads/memory-card-annihilator-v2-0a-a-new-version-after-more-than-11-years.36277/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["mca", "memory card annihilator", "memory card", "formatter", "manager", "homebrew", "utility", "ps2"]
       },
       {
         "name": "mymc Homepage",
         "url": "http://www.csclub.uwaterloo.ca:11068/mymc/",
-        "favicon_url": "http://www.csclub.uwaterloo.ca:11068/favicon.ico"
+        "favicon_url": "http://www.csclub.uwaterloo.ca:11068/favicon.ico",
+        "tags": ["mymc", "memory card", "pc tool", "save management", "vmc", "homebrew", "utility"]
       },
       {
         "name": "mymcc github",
         "url": "https://github.com/ps2dev/mymc",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["mymc", "memory card", "pc tool", "save management", "vmc", "command line", "ps2dev", "homebrew", "utility"]
       },
       {
         "name": "mymcplus github",
         "url": "https://github.com/thestr4ng3r/mymcplus",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["mymcplus", "memory card", "pc tool", "save management", "vmc", "gui", "thestr4ng3r", "homebrew", "utility"]
       },
       {
         "name": "mymcplus Homepage",
         "url": "https://git.sr.ht/~thestr4ng3r/mymcplus",
-        "favicon_url": "https://git.sr.ht/favicon.ico"
+        "favicon_url": "https://git.sr.ht/favicon.ico",
+        "tags": ["mymcplus", "memory card", "pc tool", "save management", "vmc", "gui", "thestr4ng3r", "homebrew", "utility"]
       },
       {
         "name": "mymcplusplus github",
         "url": "https://github.com/Adubbz/mymcplusplus",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["mymcplusplus", "memory card", "pc tool", "save management", "vmc", "adubbz", "homebrew", "utility"]
       },
       {
         "name": "Neutrino",
         "url": "https://github.com/rickgaiser/neutrino",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["neutrino", "hdd loader", "game launcher", "rickgaiser", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Neutrino Loader XEB+ Plugin by sync-on-luma",
         "url": "https://github.com/sync-on-luma/xebplus-neutrino-loader-plugin",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["neutrino loader", "xeb+", "plugin", "sync-on-luma", "homebrew", "utility", "ps2"]
       },
       {
         "name": "nHDDl Neutrino GUI PS2 Loader by pcm720",
         "url": "https://github.com/pcm720/nhddl",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["nhddl", "neutrino", "gui", "hdd loader", "pcm720", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Open PS2 Loader CFG Compatibility Databse by GDX",
         "url": "https://github.com/GDX-X/PS2-OPL-CFG-Compatibility-Database",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl", "open ps2 loader", "cfg", "compatibility", "database", "gdx", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Open PS2 Loader for PSX DVR DESR consoles",
         "url": "https://github.com/SvenGDK/Open-PS2-Loader",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl", "open ps2 loader", "psx dvr", "desr", "svengdk", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Open PS2 Loader Frontend for Neutrino",
         "url": "https://www.psx-place.com/threads/opl-based-gui-frontend-for-neutrino.42166/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["opl", "open ps2 loader", "frontend", "gui", "neutrino", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Open PS2 Loader Official github - Official Downloads",
         "url": "https://github.com/ps2homebrew/Open-PS2-Loader/releases",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl", "open ps2 loader", "game launcher", "usb", "hdd", "smb", "elf", "homebrew", "downloads", "releases", "official", "ps2homebrew", "utility", "ps2"]
       },
       {
         "name": "Open PS2 Loader OPLServer Windows SMB Program",
         "url": "https://github.com/elmariolo/OPL-Server",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl server", "opl", "open ps2 loader", "smb server", "windows", "pc tool", "elmariolo", "homebrew", "utility"]
       },
       {
         "name": "Open PS2 Loader PC Tools github Repo",
         "url": "https://github.com/brainstream/OPL-PC-Tools",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl pc tools", "opl", "open ps2 loader", "pc tool", "brainstream", "homebrew", "utility"]
       },
       {
         "name": "Open PS2 Loader Samba (SMB) Server Docker",
         "url": "https://github.com/milouk/docker-smb-opl",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl smb server", "opl", "open ps2 loader", "smb", "docker", "milouk", "homebrew", "utility"]
       },
       {
         "name": "Open PS2 Loader SMB Server Containerized",
         "url": "https://github.com/marcosatti/ps2smb-server",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl smb server", "opl", "open ps2 loader", "smb", "container", "marcosatti", "homebrew", "utility"]
       },
       {
         "name": "Open PS2 Loader SMB Server Script",
         "url": "https://github.com/Lumiazaine/PS2-SMB",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl smb server", "opl", "open ps2 loader", "smb", "script", "lumiazaine", "homebrew", "utility"]
       },
       {
         "name": "Open PS2 Loader Theme Editor (WYSIWYG)",
         "url": "https://github.com/IcySon55/OPL-Theme-Editor",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl theme editor", "opl", "open ps2 loader", "theme", "editor", "wysiwyg", "icyson55", "homebrew", "utility"]
       },
       {
         "name": "Open PS2 Loader UDPBD",
         "url": "https://www.psx-place.com/threads/testers-needed-udpbd-the-next-generation-of-loading-games-through-lan-on-a-ps2.40132/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["opl", "open ps2 loader", "udpbd", "lan", "network", "beta", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Open PS2 Loader Version Archive",
         "url": "https://www.psx-place.com/resources/opl-archive.1447/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["opl", "open ps2 loader", "archive", "versions", "downloads", "homebrew", "utility", "ps2"]
       },
       {
         "name": "OpenTuna Installer Official Page",
         "url": "https://github.com/ps2homebrew/opentuna-installer",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opentuna", "installer", "fortuna", "exploit", "homebrew", "utility", "ps2", "ps2homebrew"]
       },
       {
         "name": "OPL Launcher",
         "url": "https://github.com/ps2homebrew/OPL-Launcher",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl launcher", "opl", "open ps2 loader", "launcher", "homebrew", "utility", "ps2", "ps2homebrew"]
       },
       {
         "name": "OPL Manager (OPLM) PC Application",
         "url": "https://oplmanager.com/site/",
-        "favicon_url": "https://oplmanager.com/favicon.ico"
+        "favicon_url": "https://oplmanager.com/favicon.ico",
+        "tags": ["opl manager", "oplm", "pc tool", "game manager", "art manager", "homebrew", "utility"]
       },
       {
         "name": "OPL Scanner",
         "url": "https://www.psx-place.com/threads/opl-scanner.42787/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["opl scanner", "opl", "game list", "tool", "homebrew", "utility", "ps2"]
       },
       {
         "name": "OPLUtil OPL Tool",
         "url": "https://github.com/IsseiYoshida/OPLUtil",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["oplutil", "opl", "tool", "isseiyoshida", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Original Memory Card Tester",
         "url": "https://www.psx-place.com/resources/original-card-test.1504/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["memory card tester", "memory card", "hardware test", "homebrew", "utility", "ps2"]
       },
       {
         "name": "OSDSYS Launcher",
         "url": "https://github.com/HowlingWolfHWC/OSDSYS-Launcher",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["osdsys launcher", "launcher", "howlingwolfhwc", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PFS-BatchKit-Manager by GDX",
         "url": "https://github.com/GDX-X/PFS-BatchKit-Manager",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["pfs batchkit manager", "pfs", "hdd", "batch", "gdx", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PFS-BatchKit-Manager Extras by GDX",
         "url": "https://www.mediafire.com/folder/mjrpskskupuvc/PS2",
-        "favicon_url": "https://www.mediafire.com/favicon.ico"
+        "favicon_url": "https://www.mediafire.com/favicon.ico",
+        "tags": ["pfs batchkit manager", "extras", "gdx", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Playstation 2 Basic Boot Loader by El_isra",
         "url": "https://israpps.github.io/PlayStation2-Basic-BootLoader/",
-        "favicon_url": "https://israpps.github.io/favicon.ico"
+        "favicon_url": "https://israpps.github.io/favicon.ico",
+        "tags": ["basic bootloader", "bootloader", "el_isra", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PlayStation 2 MECHACON Adjustment Program (PMAP)",
         "url": "https://www.psx-place.com/resources/playstation-2-mechacon-adjustment-program-pmap.962/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["pmap", "mechacon adjustment program", "mechacon", "hardware tool", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PlayStation Disc Burner (PSDB) by alex-free",
         "url": "https://alex-free.github.io/psdb/",
-        "favicon_url": "https://alex-free.github.io/favicon.ico"
+        "favicon_url": "https://alex-free.github.io/favicon.ico",
+        "tags": ["psdb", "disc burner", "alex-free", "homebrew", "utility", "ps2"]
       },
       {
         "name": "POPS VCD Manager by El_isra",
         "url": "https://www.psx-place.com/resources/pops-vcd-manager.1284/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["pops vcd manager", "pops", "ps1 emulator", "vcd", "el_isra", "homebrew", "utility", "ps2"]
       },
       {
         "name": "POPS2APPS",
         "url": "https://www.psx-place.com/resources/pops2apps.1214/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["pops2apps", "pops", "ps1 emulator", "app loader", "homebrew", "utility", "ps2"]
       },
       {
         "name": "POPSLoader by El_isra",
         "url": "https://www.psx-place.com/resources/popsloader.1396/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["popsloader", "pops", "ps1 emulator", "el_isra", "homebrew", "utility", "ps2"]
       },
       {
         "name": "POPSTARTER Cumulative r6 Fixes",
         "url": "https://www.psx-place.com/threads/popstarter.19139/page-5#post-254888",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["popstarter", "pops", "ps1 emulator", "fixes", "homebrew", "utility", "ps2"]
       },
       {
         "name": "POPSTARTER Discs_Pooper for Auto creation DISCS.TXT and VMCDIR.TXT",
         "url": "https://www.psx-place.com/resources/discs_pooper-bambuch0-fix.1429/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["discs_pooper", "popstarter", "pops", "ps1 emulator", "tool", "homebrew", "utility", "ps2"]
       },
       {
         "name": "POPSTARTER Game Installer for OPL",
         "url": "https://www.psx-place.com/threads/popstarter-game-installer-for-opl.34243/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["popstarter game installer", "popstarter", "opl", "ps1 emulator", "installer", "homebrew", "utility", "ps2"]
       },
       {
         "name": "POPSTARTER Installer github (dated)",
         "url": "https://github.com/IsseiYoshida/Instalador-POPStarter",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["popstarter installer", "popstarter", "ps1 emulator", "isseiyoshida", "homebrew", "utility", "ps2"]
       },
       {
         "name": "POPSTARTER Official Release and Resources Thread",
         "url": "https://www.psx-place.com/threads/popstarter.19139/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["popstarter", "pops", "ps1 emulator", "official", "resources", "homebrew", "utility", "ps2"]
       },
       {
         "name": "POPSY-X XEB+ PS1 Launcher by GDX",
         "url": "https://www.psx-place.com/resources/popsy-x.1424/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["popsy-x", "xeb+", "ps1 launcher", "pops", "gdx", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS2 Bios Dumper",
         "url": "https://github.com/F0bes/biosdrain",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["bios dumper", "biosdrain", "bios", "f0bes", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS2 Boot Sequencer for 900xx FMCB Remote Loading",
         "url": "https://github.com/smsry/PS2-Boot-Sequencer",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["boot sequencer", "fmcb", "remote loading", "slim", "smsry", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS2 Controller Tester",
         "url": "https://www.psx-place.com/resources/ps2-controller-tester-by-jbit.670/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["controller tester", "hardware test", "jbit", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS2 Dummy ISO Creator",
         "url": "https://www.mediafire.com/file/1j2obwq0v4d9rq4/%255BBlog_do_UsagiRu%255D_PS2_Dummy_Creator.zip/file",
-        "favicon_url": "https://www.mediafire.com/favicon.ico"
+        "favicon_url": "https://www.mediafire.com/favicon.ico",
+        "tags": ["dummy iso creator", "iso tool", "usagiru", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS2 Icon Sys Tools",
         "url": "https://github.com/ticky/ps2iconsys",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["icon sys tools", "icon.sys", "ticky", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS2 Image Maker for PS2 iso files",
         "url": "https://github.com/Smartkin/PS2ImageMaker",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2 image maker", "iso tool", "smartkin", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS2 ISO Batch Renamer",
         "url": "https://github.com/L10N37/PS2-ISO-Batch-Renamer-",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["iso batch renamer", "iso tool", "l10n37", "homebrew", "utility", "pc tool"]
       },
       {
         "name": "PS2 ISO Tools - Read, Build, Edit PS2 ISOs with UDF Filesystem",
         "url": "https://github.com/Finzenku/Ps2IsoTools",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2 iso tools", "iso tool", "udf", "finzenku", "homebrew", "utility", "pc tool"]
       },
       {
         "name": "PS2 MC Browser",
         "url": "https://github.com/caol64/ps2mc-browser",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2 mc browser", "memory card", "browser", "caol64", "pc tool", "homebrew", "utility"]
       },
       {
         "name": "PS2 Save Decrypters by bucanero",
         "url": "https://github.com/bucanero/save-decrypters",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["save decrypters", "save tool", "decrypter", "bucanero", "pc tool", "homebrew", "utility"]
       },
       {
         "name": "PS2 Save Utility Converter for Save Files",
         "url": "https://github.com/root670/PS2SaveUtility",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2saveutility", "save tool", "converter", "root670", "pc tool", "homebrew", "utility"]
       },
       {
         "name": "PS2 Splash for Custom PNG Splash image on OSDSYS Launcher",
         "url": "https://github.com/parrado/ps2splash",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2splash", "splash screen", "osdsys launcher", "parrado", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS2 VMC Tool by bucanero",
         "url": "https://github.com/bucanero/ps2vmc-tool",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2vmc-tool", "vmc", "virtual memory card", "bucanero", "pc tool", "homebrew", "utility"]
       },
       {
         "name": "PS2-VMC-GUI",
         "url": "https://github.com/MegaBitmap/PS2-VMC-GUI",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2-vmc-gui", "vmc", "virtual memory card", "gui", "megabitmap", "pc tool", "homebrew", "utility"]
       },
       {
         "name": "PS2-Yabasic-Exploit",
         "url": "https://github.com/CTurt/PS2-Yabasic-Exploit",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["yabasic exploit", "exploit", "softmod", "cturt", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS2Ident PS2 Identification Homebrew",
         "url": "https://github.com/ps2homebrew/PS2Ident",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2ident", "system information", "hardware info", "ps2homebrew", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PS3 MCA Exploit",
         "url": "https://www.ps2-home.com/forum/viewtopic.php?t=297",
-        "favicon_url": "https://www.ps2-home.com/favicon.ico"
+        "favicon_url": "https://www.ps2-home.com/favicon.ico",
+        "tags": ["ps3 mca exploit", "fmcb installer", "ps3", "memory card adaptor", "exploit", "homebrew", "utility"]
       },
       {
         "name": "PS3 MCA Exploit Archive",
         "url": "https://web.archive.org/web/20241121005548/https://www.ps2-home.com/forum/viewtopic.php?t=297",
-        "favicon_url": "https://web.archive.org/favicon.ico"
+        "favicon_url": "https://web.archive.org/favicon.ico",
+        "tags": ["ps3 mca exploit", "fmcb installer", "ps3", "memory card adaptor", "exploit", "archive", "homebrew", "utility"]
       },
       {
         "name": "PSCOVERDL tool for PCSX2 and Duckstation Cover Art",
         "url": "https://github.com/xlenore/pscoverdl",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["pscoverdl", "cover art", "pcsx2", "duckstation", "xlenore", "pc tool", "utility"]
       },
       {
         "name": "PSX DVR DESR Tools github",
         "url": "https://github.com/SvenGDK/DESR-Tools",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["desr tools", "psx dvr", "desr", "svengdk", "homebrew", "utility", "ps2"]
       },
       {
         "name": "PSX-XMB-Manager Homebrew Installer for the PSX DVR (DESR)",
         "url": "https://github.com/SvenGDK/PSX-XMB-Manager",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["psx xmb manager", "xmb", "psx dvr", "desr", "svengdk", "homebrew", "installer", "utility", "ps2"]
       },
       {
         "name": "PSXVCD Tool",
         "url": "https://www.psx-place.com/resources/psxvcd.669/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["psxvcd", "vcd", "ps1 emulator", "tool", "homebrew", "utility", "ps2"]
       },
       {
         "name": "pypsu Library for analyzing/creating PS2 PSu Saves",
         "url": "https://github.com/McCaulay/pypsu",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["pypsu", "psu", "save file", "library", "python", "mccaulay", "pc tool", "developer tool", "utility"]
       },
       {
         "name": "Radhost Client",
         "url": "https://www.psx-place.com/resources/rad-host-client-1-8a-sms-ule-host-compatible.629/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["radhost client", "host client", "sms", "ule", "file transfer", "homebrew", "utility", "ps2"]
       },
       {
         "name": "RETRO Gem Programs/Applications/Game ID by CosmicScale",
         "url": "https://github.com/CosmicScale?tab=repositories",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["retro gem", "cosmicscale", "gameid", "homebrew", "applications", "utility", "ps2"]
       },
       {
         "name": "RETROLauncher by Spaghetticode (Boon Tobias)",
         "url": "https://github.com/Spaghetticode-Boon-Tobias/RETROLauncher",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["retrolauncher", "launcher", "spaghetticode", "boon tobias", "homebrew", "utility", "ps2"]
       },
       {
         "name": "SAS .psu Releases/Downloads Index",
         "url": "https://app.filen.io/#/f/979a8ea4-5556-4d55-bee8-c9329c463db6#sUFLyL85q45reUqcrrazZWktYK0pHjk6",
-        "favicon_url": "https://app.filen.io/favicon.ico"
+        "favicon_url": "https://app.filen.io/favicon.ico",
+        "tags": ["sas psu", "save files", ".psu", "downloads", "database", "utility"]
       },
       {
         "name": "Simple Media System (SMS)",
         "url": "https://github.com/ps2homebrew/SMS",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["sms", "simple media system", "media player", "video player", "audio player", "ps2homebrew", "homebrew", "utility", "ps2"]
       },
       {
         "name": "smbLaunchELF",
         "url": "https://www.psx-place.com/resources/smblaunchelf.1190/",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["smblaunchelf", "launchelf", "ule", "smb", "network", "file manager", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Tony Hawk's Pro Strcpy Exploit by Grimdoomer",
         "url": "https://github.com/grimdoomer/TonyHawksProStrcpy",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["tony hawk strcpy exploit", "exploit", "softmod", "grimdoomer", "game exploit", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Tonyhax International by Alex-free",
         "url": "https://alex-free.github.io/tonyhax-international/",
-        "favicon_url": "https://alex-free.github.io/favicon.ico"
+        "favicon_url": "https://alex-free.github.io/favicon.ico",
+        "tags": ["tonyhax", "exploit", "softmod", "alex-free", "game exploit", "homebrew", "utility", "ps2"]
       },
       {
         "name": "unofficial Open PS2 Loader Grimdoomer internal exFAT Forked Version",
         "url": "https://github.com/grimdoomer/Open-PS2-Loader/releases",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl", "open ps2 loader", "grimdoomer", "exfat", "fork", "homebrew", "utility", "ps2"]
       },
       {
         "name": "unofficial Open PS2 Loader Tenth Anniversary Edition Daily Build by Jay-Jay (Not recommended and abandoned)",
         "url": "https://github.com/Jay-Jay-OPL/OPL-Daily-Builds",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["opl", "open ps2 loader", "jay-jay", "daily builds", "beta", "abandoned", "homebrew", "utility", "ps2"]
       },
       {
         "name": "USBUtil for Splitting ISO Files on fat32 USB for OPL",
         "url": "https://www.psx-place.com/threads/usbutil-by-iseko.19048/#post-397442",
-        "favicon_url": "https://www.psx-place.com/favicon.ico"
+        "favicon_url": "https://www.psx-place.com/favicon.ico",
+        "tags": ["usbutil", "iso splitter", "fat32", "usb", "opl", "iseko", "pc tool", "homebrew", "utility"]
       },
       {
         "name": "VMC Bootcard Loader MOD by El_isra",
         "url": "https://github.com/israpps/bootcard_igr",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["vmc bootcard loader", "vmc", "bootcard", "igr", "el_isra", "homebrew", "utility", "ps2"]
       },
       {
         "name": "wLaunchELF_isr Downloads Page by El_isra",
         "url": "https://israpps.github.io/projects/wlaunchelf-isr",
-        "favicon_url": "https://israpps.github.io/favicon.ico"
+        "favicon_url": "https://israpps.github.io/favicon.ico",
+        "tags": ["wlaunchelf", "launchelf", "ule", "el_isra", "file manager", "launcher", "homebrew", "utility", "ps2"]
       },
       {
         "name": "wLaunchELF_isr_HDD (Injection Capable) Project Page",
         "url": "https://github.com/israpps/wLaunchELF_ISR_HDD",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["wlaunchelf hdd", "launchelf", "ule", "hdd", "injection", "el_isra", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Xtreme Elite Boot+ Homepage",
         "url": "http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/",
-        "favicon_url": "http://www.hwc.nat.cu/favicon.ico"
+        "favicon_url": "http://www.hwc.nat.cu/favicon.ico",
+        "tags": ["xeb+", "xtreme elite boot", "launcher", "hwc", "homebrew", "utility", "ps2"]
       },
       {
         "name": "Xtreme Elite Boot+ Mirror",
         "url": "https://web.archive.org/web/20240729132341/http://www.hwc.nat.cu/ps2-vault/hwc-projects/xebplus/",
-        "favicon_url": "https://web.archive.org/favicon.ico"
+        "favicon_url": "https://web.archive.org/favicon.ico",
+        "tags": ["xeb+", "xtreme elite boot", "launcher", "hwc", "mirror", "archive", "homebrew", "utility", "ps2"]
       }
     ]
   },
@@ -799,202 +954,242 @@
       {
         "name": "\"Dungeon\" test demo game",
         "url": "https://bitbucket.org/glampert/ps2dev-tests/src/master/",
-        "favicon_url": "https://bitbucket.org/favicon.ico"
+        "favicon_url": "https://bitbucket.org/favicon.ico",
+        "tags": ["dungeon", "demo game", "test", "ps2dev", "source code", "homebrew creation", "programming"]
       },
       {
         "name": "3D Pinball PS2",
         "url": "https://github.com/headshot2017/3dpinball-ps2",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["3d pinball", "pinball", "homebrew game", "port", "source code", "homebrew creation", "headshot2017"]
       },
       {
         "name": "AetherSX2 Emulator Discord Server",
         "url": "https://discord.com/channels/914421153827794975/1063889680329879562",
-        "favicon_url": "https://discord.com/favicon.ico"
+        "favicon_url": "https://discord.com/favicon.ico",
+        "tags": ["aethersx2", "emulator", "ps2 emulator", "android", "discord", "community", "support"]
       },
       {
         "name": "Athena Environment",
         "url": "https://athena-env.vercel.app/",
-        "favicon_url": "https://athena-env.vercel.app/favicon.ico"
+        "favicon_url": "https://athena-env.vercel.app/favicon.ico",
+        "tags": ["athenaenv", "development environment", "toolchain", "ps2dev", "homebrew creation", "programming"]
       },
       {
         "name": "Athena PS2 System (AthenaEnv by DanielSant0s) Discord Server",
         "url": "https://discord.gg/E7STQHQr9d",
-        "favicon_url": "https://discord.gg/favicon.ico"
+        "favicon_url": "https://discord.gg/favicon.ico",
+        "tags": ["athenaenv", "discord", "community", "danielsant0s", "ps2dev", "homebrew creation", "support"]
       },
       {
         "name": "AthenaEnv by DanielSant0s github",
         "url": "https://github.com/DanielSant0s/AthenaEnv",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["athenaenv", "danielsant0s", "development environment", "toolchain", "ps2dev", "source code", "homebrew creation"]
       },
       {
         "name": "CosmicScale's github featuring Retro GEM Homebrews",
         "url": "https://github.com/CosmicScale",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["cosmicscale", "retro gem", "homebrew", "source code", "ps2dev", "programming"]
       },
       {
         "name": "Discord for the PS2",
         "url": "https://github.com/DanielSant0s/PS2Discord",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2discord", "discord client", "danielsant0s", "homebrew application", "source code", "ps2dev"]
       },
       {
         "name": "DKWDRV Playstation 1 Driver for PS2",
         "url": "https://github.com/DKWDRV",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["dkwdrv", "ps1 driver", "playstation 1", "ps2", "homebrew development", "ps2dev", "library"]
       },
       {
         "name": "DobieStation",
         "url": "https://github.com/PSI-Rockin/DobieStation",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["dobiestation", "emulator", "ps2 emulator", "psi-rockin", "source code", "development"]
       },
       {
         "name": "Dungeon SDL2 Homebrew Game",
         "url": "https://github.com/DevECoisas/PS2_Dungeon",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["dungeon", "sdl2", "homebrew game", "devecoisas", "source code", "game engine", "homebrew creation"]
       },
       {
         "name": "Enceladus by DanielSant0s github",
         "url": "https://github.com/DanielSant0s/Enceladus",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["enceladus", "ps2 save tool", "danielsant0s", "source code", "homebrew utility", "ps2dev"]
       },
       {
         "name": "Ghidra EmotionEndgine Reloaded - Ghidra PS2 Addon",
         "url": "https://github.com/chaoticgd/ghidra-emotionengine-reloaded",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ghidra", "emotion engine", "reloaded", "reverse engineering", "debugging", "chaoticgd", "ps2dev", "tool"]
       },
       {
         "name": "Ghidra Processor definitions for MIPS R5900 (PS2)",
         "url": "https://github.com/astrelsky/ghidra_MIPSR5900",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ghidra", "mips r5900", "processor definitions", "reverse engineering", "astrelsky", "ps2dev", "tool"]
       },
       {
         "name": "GOG Galaxy 2.0 Integration for PS2",
         "url": "https://github.com/AHCoder/galaxy-integration-ps2",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["gog galaxy", "integration", "pcsx2", "emulator frontend", "ahcoder", "pc utility"]
       },
       {
         "name": "HowlingWolfHWC's official github",
         "url": "https://github.com/HowlingWolfHWC",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["howlingwolfhwc", "ps2dev", "homebrew", "source code", "opl", "xeb+"]
       },
       {
         "name": "KELFtool - decrypt, encrypt, and sign KELF files for PS2/1",
         "url": "https://github.com/xfwcfw/kelftool",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["kelftool", "kelf", "elf", "decryption", "encryption", "signing", "ps1", "ps2", "xfwcfw", "developer tool"]
       },
       {
         "name": "PCSX2 Emulator's Official Discord Server",
         "url": "https://discord.com/invite/TCz3t9k",
-        "favicon_url": "https://discord.com/favicon.ico"
+        "favicon_url": "https://discord.com/favicon.ico",
+        "tags": ["pcsx2", "emulator", "ps2 emulator", "discord", "community", "support", "development"]
       },
       {
         "name": "PCSX2 Emulator's Official Site",
         "url": "https://pcsx2.net/",
-        "favicon_url": "https://pcsx2.net/favicon.ico"
+        "favicon_url": "https://pcsx2.net/favicon.ico",
+        "tags": ["pcsx2", "emulator", "ps2 emulator", "windows", "linux", "macos", "official site", "downloads", "nightly builds"]
       },
       {
         "name": "PCSX2 Forums",
         "url": "https://forums.pcsx2.net/",
-        "favicon_url": "https://forums.pcsx2.net/favicon.ico"
+        "favicon_url": "https://forums.pcsx2.net/favicon.ico",
+        "tags": ["pcsx2", "emulator", "ps2 emulator", "forum", "support", "discussion", "development"]
       },
       {
         "name": "POPS Binaries",
         "url": "https://github.com/AnimMouse/POPS-binaries",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["pops", "ps1 emulator", "binaries", "playstation 1", "animmouse", "ps2", "homebrew"]
       },
       {
         "name": "Prussia",
         "url": "https://github.com/Ravenslofty/prussia",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["prussia", "ps2 framework", "ravenslofty", "homebrew development", "ps2dev", "library", "game engine"]
       },
       {
         "name": "PS2 Client",
         "url": "https://github.com/ps2dev/ps2client",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2client", "debugging", "file transfer", "ps2dev", "toolchain", "homebrew development"]
       },
       {
         "name": "PS2 Debugging Toolset",
         "url": "https://github.com/ps2dbg/dsnet",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["dsnet", "debugging", "toolset", "ps2dbg", "homebrew development", "ps2dev", "reverse engineering"]
       },
       {
         "name": "PS2 Developer github",
         "url": "https://github.com/ps2dev",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2dev", "github", "sdk", "toolchain", "libraries", "homebrew development", "programming", "source code"]
       },
       {
         "name": "PS2 Disc Saver",
         "url": "https://github.com/FloppidyDingo/PS2-Disk-Saver/wiki/Installation-Instructions",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2 disc saver", "disc imaging", "backup tool", "floppidydingo", "homebrew utility", "ps2"]
       },
       {
         "name": "PS2 Drivers (.IRX EE .a)",
         "url": "https://github.com/fjtrujy/ps2_drivers",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2 drivers", "irx", "ee", "fjtrujy", "library", "homebrew development", "ps2dev", "low-level programming"]
       },
       {
         "name": "PS2 Homebrew github",
         "url": "https://github.com/ps2homebrew",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2homebrew", "github", "opl", "freedvdboot", "sms", "homebrew applications", "source code"]
       },
       {
         "name": "PS2 Link - Side Application Loader",
         "url": "https://github.com/ps2dev/ps2link",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2link", "application loader", "debugging", "testing", "ps2dev", "toolchain", "homebrew development"]
       },
       {
         "name": "PS2 Packer - Homebrew ELF Compresser",
         "url": "https://github.com/ps2dev/ps2-packer",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2-packer", "elf compressor", "kelf", "ps2dev", "toolchain", "homebrew development"]
       },
       {
         "name": "PS2 Unpacker - Homebrew ELF Decompresser",
         "url": "https://github.com/ps2homebrew/ps2-unpacker",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2-unpacker", "elf decompresser", "ps2homebrew", "tool", "homebrew utility"]
       },
       {
         "name": "PS2Runner Remote Test Harness for PS2 via IRToy and ps2link",
         "url": "https://github.com/telyn/ps2runner",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2runner", "remote testing", "irtoy", "ps2link", "telyn", "debugging", "homebrew development"]
       },
       {
         "name": "PS2SDK",
         "url": "https://github.com/ps2dev/ps2sdk",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["ps2sdk", "sdk", "software development kit", "toolchain", "ps2dev", "c programming", "homebrew creation", "library"]
       },
       {
         "name": "RetroArch for the PS2",
         "url": "https://docs.libretro.com/guides/install-ps2/",
-        "favicon_url": "https://docs.libretro.com/favicon.ico"
+        "favicon_url": "https://docs.libretro.com/favicon.ico",
+        "tags": ["retroarch", "emulator frontend", "libretro", "multi-system emulator", "ps2 port", "homebrew application"]
       },
       {
         "name": "SuperTux",
         "url": "https://github.com/headshot2017/supertux-ps2",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["supertux", "homebrew game", "platformer", "port", "headshot2017", "source code", "homebrew creation"]
       },
       {
         "name": "Tyra",
         "url": "https://github.com/h4570/tyra/",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["tyra", "game engine", "ps2dev", "h4570", "homebrew creation", "c++", "library", "framework"]
       },
       {
         "name": "TyraCraft",
         "url": "https://github.com/Wellinator/tyracraft",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["tyracraft", "minecraft clone", "homebrew game", "tyra engine", "wellinator", "source code", "homebrew creation"]
       },
       {
         "name": "Undertale for the PS2",
         "url": "https://github.com/KreitinnSoftware/Undertale-PS2",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["undertale", "homebrew game", "port", "kreitinnsoftware", "source code", "homebrew creation", "rpg"]
       },
       {
         "name": "XPF Tool for Extraction and Decompresson",
         "url": "https://github.com/simontime/xpftool",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["xpftool", "xpf files", "extraction", "decompression", "simontime", "developer tool", "reverse engineering"]
       },
       {
         "name": "ZigStation2",
         "url": "https://github.com/FalsePattern/ZigStation2",
-        "favicon_url": "https://github.com/favicon.ico"
+        "favicon_url": "https://github.com/favicon.ico",
+        "tags": ["zigstation2", "zig language", "ps2dev", "falsepattern", "homebrew development", "programming", "toolchain"]
       }
     ]
   },
@@ -2315,3 +2510,7 @@
     ]
   }
 ]
+
+[end of links.json]
+
+[end of links.json]

@@ -31,18 +31,18 @@ body {
 
 body.light-mode {
     /* Brighter palette with soft gradients */
-    --bg-color: radial-gradient(circle at top left, #ffffff 0%, #e9f3ff 100%);
-    --text-color: #333333;
-    --accent-color: #007acc;
-    --header-gradient: linear-gradient(180deg, #ffffff 0%, #dfe9ff 100%);
-    --section-gradient: linear-gradient(90deg, #f8fbff 0%, #e0ecff 100%);
-    --content-bg: rgba(255, 255, 255, 0.85);
-    --button-gradient: linear-gradient(135deg, #ffffff 0%, #e6f3ff 100%);
-    --footer-gradient: linear-gradient(180deg, #e0ecff 0%, #ffffff 100%);
-    --thanks-color: #007acc;
+    --bg-color: linear-gradient(180deg, #f0f4f8 0%, #d9e2ec 100%);
+    --text-color: #2c3e50;
+    --accent-color: #3498db;
+    --header-gradient: linear-gradient(180deg, #f0f4f8 0%, #d9e2ec 100%);
+    --section-gradient: linear-gradient(90deg, #f0f4f8 0%, #d9e2ec 100%);
+    --content-bg: rgba(255, 255, 255, 0.9);
+    --button-gradient: linear-gradient(135deg, #eaf2f8 0%, #d5e1ef 100%);
+    --footer-gradient: linear-gradient(180deg, #d9e2ec 0%, #f0f4f8 100%);
+    --thanks-color: #3498db;
     --font-family: 'Roboto Mono', monospace;
     --scroll-track: #f0f0f0;
-    --scroll-thumb: #a8d5a8;
+    --scroll-thumb: #5dade2; /* Adjusted to a shade of accent color */
     --scrollbar-width: 8px;
     --card-min-width: 280px;
     --card-max-width: 380px;
@@ -273,6 +273,36 @@ body.block-view .category {
 .search-container {
     margin-bottom: 2rem;
     text-align: center;
+    position: relative; /* For positioning suggestions container */
+}
+
+#suggestionsContainer {
+    position: absolute;
+    background-color: var(--content-bg);
+    border: 1px solid var(--accent-color);
+    border-top: none;
+    width: 80%; /* Match searchInput */
+    left: 10%; /* Center it like searchInput */
+    max-width: 600px; /* Match searchInput */
+    z-index: 100;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: none; /* Initially hidden */
+    border-radius: 0 0 10px 10px; /* Optional: match searchInput bottom radius */
+}
+
+.suggestion-item {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: var(--text-color);
+    font-family: var(--font-family); /* Ensure consistent font */
+    font-size: 0.9rem; /* Slightly smaller than search input */
+}
+
+.suggestion-item:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color); /* Ensure text is readable on hover */
 }
 
 #searchInput {
@@ -532,7 +562,11 @@ body.block-view .category {
 }
 
 .service-tags {
-    display: none;
+    display: block; /* Or display: flex; if tags need to wrap and be aligned */
+    margin-top: 0.5rem;
+    font-size: 0.7rem;
+    color: var(--text-color);
+    opacity: 0.7;
 }
 
 footer {
