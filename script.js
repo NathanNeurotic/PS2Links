@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // Typing Effect for Header
     const headerTextElement = document.querySelector('.typing-effect');
-    const textToType = 'AI Services Dashboard';
+    const textToType = 'PS2Links Hub';
 
     if (headerTextElement) {
         headerTextElement.textContent = '';
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadServices() {
     try {
-        const response = await fetch('./services.json');
+        const response = await fetch('./links.json');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -674,7 +674,7 @@ function buildSidebar() {
         sidebar.appendChild(link);
     });
     const repoLink = document.createElement('a');
-    repoLink.href = 'https://www.github.com/NathanNeurotic/AI';
+    repoLink.href = 'https://www.github.com/NathanNeurotic/PS2Links/';
     repoLink.textContent = 'GitHub Repository';
     repoLink.target = '_blank';
     repoLink.rel = 'noopener noreferrer';
