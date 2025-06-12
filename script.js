@@ -67,6 +67,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.querySelector('main')) {
         loadServices();
     }
+
+    // Global click listener to hide suggestions
+    document.addEventListener('click', (event) => {
+        const searchInput = document.getElementById('searchInput');
+        const suggestionsContainer = document.getElementById('suggestionsContainer');
+        if (suggestionsContainer && searchInput) {
+            if (event.target !== searchInput && !suggestionsContainer.contains(event.target)) {
+                suggestionsContainer.style.display = 'none';
+            }
+        }
+    });
 });
 
 async function loadServices() {
@@ -203,6 +214,15 @@ async function loadServices() {
 
         buildSidebar();
 
+        // Create suggestions container
+        const searchContainer = document.querySelector('.search-container');
+        if (searchContainer) {
+            const suggestionsContainer = document.createElement('div');
+            suggestionsContainer.id = 'suggestionsContainer';
+            // Initial styles are set via CSS (e.g., display: none)
+            searchContainer.appendChild(suggestionsContainer);
+        }
+
         // Re-initialize search functionality
         setupSearch();
         populateTagDropdown();
@@ -217,10 +237,72 @@ async function loadServices() {
 
 function setupSearch() {
     const searchInput = document.getElementById('searchInput');
-    if (!searchInput) return; // Guard clause if search input is not found
+    const suggestionsContainer = document.getElementById('suggestionsContainer');
+    if (!searchInput || !suggestionsContainer) return;
 
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase().trim();
+        suggestionsContainer.innerHTML = ''; // Clear previous suggestions
+
+        if (query === '') {
+            suggestionsContainer.style.display = 'none';
+            // Restore visibility of all services and categories when query is cleared
+            document.querySelectorAll('.service-button').forEach(button => button.style.display = 'flex');
+            document.querySelectorAll('.category').forEach(category => category.style.display = '');
+            const noResultsEl = document.getElementById('noResults');
+            if (noResultsEl) noResultsEl.hidden = true;
+            return;
+        }
+
+        const uniqueSuggestions = new Set();
+        const maxSuggestions = 7; // Max number of suggestions to show
+
+        allServices.forEach(service => {
+            if (uniqueSuggestions.size >= maxSuggestions) return;
+            if (service.name.toLowerCase().includes(query)) {
+                uniqueSuggestions.add(service.name);
+            }
+            if (uniqueSuggestions.size >= maxSuggestions) return;
+            if (Array.isArray(service.tags)) {
+                service.tags.forEach(tag => {
+                    if (uniqueSuggestions.size >= maxSuggestions) return;
+                    if (tag.toLowerCase().includes(query)) {
+                        uniqueSuggestions.add(tag);
+                    }
+                });
+            }
+        });
+
+        // Also search category names for suggestions
+        const categoryElements = document.querySelectorAll('.category .category-title');
+        categoryElements.forEach(catTitleElement => {
+            if (uniqueSuggestions.size >= maxSuggestions) return;
+            const catName = catTitleElement.textContent.toLowerCase();
+            if(catName.includes(query)) {
+                uniqueSuggestions.add(catTitleElement.textContent.trim()); // Add original case for display
+            }
+        });
+
+
+        if (uniqueSuggestions.size > 0) {
+            suggestionsContainer.style.display = 'block';
+            uniqueSuggestions.forEach(suggestion => {
+                const item = document.createElement('div');
+                item.className = 'suggestion-item';
+                item.textContent = suggestion;
+                item.addEventListener('click', () => {
+                    searchInput.value = suggestion;
+                    suggestionsContainer.innerHTML = '';
+                    suggestionsContainer.style.display = 'none';
+                    searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+                });
+                suggestionsContainer.appendChild(item);
+            });
+        } else {
+            suggestionsContainer.style.display = 'none';
+        }
+
+        // Original search filtering logic
         const tokens = query.split(',').map(t => t.trim()).filter(Boolean);
         document.querySelectorAll('.service-button').forEach(button => {
             const name = button.querySelector('.service-name').textContent.toLowerCase();
@@ -229,14 +311,13 @@ function setupSearch() {
             let tagsMatch = false;
             if (tagsSpan && tagsSpan.textContent) {
                 const tagsArray = tagsSpan.textContent.toLowerCase().split(',').map(tag => tag.trim());
-                if (tokens.length > 0) {
+                if (tokens.length > 0) { // Multi-token/tag search
                     tagsMatch = tokens.every(token => tagsArray.some(tag => tag.includes(token)));
-                } else {
+                } else { // Single term search
                     tagsMatch = tagsArray.some(tag => tag.includes(query));
                 }
             }
             const textMatch = name.includes(query) || url.includes(query);
-            // Show button if query matches name, URL, or tags
             button.style.display = (textMatch || tagsMatch) ? 'flex' : 'none';
         });
 
@@ -244,14 +325,9 @@ function setupSearch() {
             .filter(btn => btn.style.display !== 'none').length;
         const noResultsEl = document.getElementById('noResults');
         if (noResultsEl) {
-            if (query !== '' && visibleButtons === 0) {
-                noResultsEl.hidden = false;
-            } else {
-                noResultsEl.hidden = true;
-            }
+            noResultsEl.hidden = !(query !== '' && visibleButtons === 0);
         }
 
-        // Optional: Hide categories if all services within them are hidden
         document.querySelectorAll('.category').forEach(category => {
             const services = category.querySelectorAll('.service-button');
             const allHidden = Array.from(services).every(service => service.style.display === 'none');
