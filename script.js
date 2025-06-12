@@ -480,6 +480,7 @@ function createServiceButton(service, favoritesSet, categoryName) {
     serviceButton.appendChild(serviceTagsSpan);
     serviceButton.appendChild(star);
 
+    serviceButton.title = service.url; // Add title attribute for native tooltip
     return serviceButton;
 }
 
