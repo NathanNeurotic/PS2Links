@@ -178,15 +178,13 @@ async function loadServices() {
                     categoryName
                 );
                 categoryContent.appendChild(serviceButton);
-                console.log('Created and appended service button: ' + service.name + ' in category: ' + categoryName);
             });
 
             categorySection.appendChild(categoryHeader);
             categorySection.appendChild(categoryContent);
             mainContainer.appendChild(categorySection);
         }
-        console.log('Finished processing categories. Total categories processed: ' + sortedCategoryNames.length);
-
+        
         renderFavoritesCategory();
 
         // Restore Category States from localStorage after dynamic loading
