@@ -1,11 +1,3 @@
-function displayErrorInMain(message) {
-    const mainContainer = document.querySelector('main');
-    if (mainContainer) {
-        mainContainer.innerHTML = `<p class='error-message' style='color: red; text-align: center; padding: 20px;'><strong>Initialization Error:</strong> ${message}</p>`;
-    }
-    console.error(message); // Keep console error as well
-}
-
 let allServices = [];
 let deferredPrompt = null;
 const MAX_CATEGORY_HEIGHT =
@@ -18,43 +10,46 @@ const MAX_CATEGORY_HEIGHT =
 document.addEventListener('DOMContentLoaded', () => {
     applySavedTheme();
     applySavedView();
+    applySavedMobileView();
     updateToggleButtons();
-    applyMobileViewPreference(); // New function call for persistence
+
     buildSidebar();
+
     const sidebarToggle = document.getElementById('sidebarToggle');
     if (sidebarToggle) {
         sidebarToggle.addEventListener('click', toggleSidebar);
     }
+
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
-        installBtn.disabled = true;
-        installBtn.title = 'Install becomes available when supported by your browser.';
+        installBtn.style.display = 'none';
         installBtn.addEventListener('click', async () => {
             if (!deferredPrompt) return;
             deferredPrompt.prompt();
             await deferredPrompt.userChoice;
             deferredPrompt = null;
-            installBtn.disabled = true;
-            installBtn.title = 'Install is not currently available.';
+            installBtn.style.display = 'none';
         });
     }
+
     window.addEventListener('beforeinstallprompt', (e) => {
         e.preventDefault();
         deferredPrompt = e;
         if (installBtn) {
-            installBtn.disabled = false;
-            installBtn.removeAttribute('title');
+            installBtn.style.display = 'inline-block';
         }
     });
+
     window.addEventListener('appinstalled', () => {
         if (installBtn) {
-            installBtn.disabled = true;
-            installBtn.title = 'App is installed';
+            installBtn.style.display = 'none';
         }
         deferredPrompt = null;
     });
+    // Typing Effect for Header
     const headerTextElement = document.querySelector('.typing-effect');
-    const textToType = 'PS2Links Hub';
+    const textToType = 'AI Services Dashboard';
+
     if (headerTextElement) {
         headerTextElement.textContent = '';
         let charIndex = 0;
@@ -67,26 +62,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         typeEffect();
     }
+
+    // Load services and set up functionalities only if a <main> element exists
     if (document.querySelector('main')) {
         loadServices();
     }
 });
 
 async function loadServices() {
-    const mainContainer = document.querySelector('main'); // Moved for early access for error display
     try {
         const response = await fetch('./services.json');
         if (!response.ok) {
-            throw new Error(`HTTP error! Failed to fetch services.json. Status: ${response.status}`);
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
         const services = await response.json();
-        if (!services || !Array.isArray(services) || services.length === 0) {
-            throw new Error('services.json was loaded but is empty or not a valid array of services.');
-        }
         allServices = services;
-        // Original content of try block continues here...
+        const mainContainer = document.querySelector('main');
+
+        // Clear existing static categories if any (optional, if HTML is pre-populated)
         const existingCategories = mainContainer.querySelectorAll('.category');
         existingCategories.forEach(cat => cat.remove());
+
+        // Group services by category
         const categories = services.reduce((acc, service) => {
             const category = service.category;
             if (!acc[category]) {
@@ -95,20 +92,22 @@ async function loadServices() {
             acc[category].push(service);
             return acc;
         }, {});
+
+        // Generate HTML for categories and services in alphabetical order
         const normalize = (name) => name.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim().toLowerCase();
         const sortedCategoryNames = Object.keys(categories).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const categoryName of sortedCategoryNames) {
             const servicesInCategory = categories[categoryName];
             servicesInCategory.sort((a, b) => a.name.localeCompare(b.name));
-            const categoryId = categoryName.toLowerCase()
-                .replace(/\s+/g, '-')
-                .replace(/[^a-z0-9-]/g, '');
+            const categoryId = categoryName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
             const categorySection = document.createElement('section');
             categorySection.className = 'category';
             categorySection.id = categoryId;
+
             const categoryHeader = document.createElement('h2');
             categoryHeader.setAttribute('aria-expanded', 'false');
-            categoryHeader.onclick = () => toggleCategory(categoryHeader);
+            categoryHeader.onclick = () => toggleCategory(categoryHeader); // Use arrow function to ensure 'this' context or pass element directly
             categoryHeader.tabIndex = 0;
             categoryHeader.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -116,13 +115,17 @@ async function loadServices() {
                     toggleCategory(categoryHeader);
                 }
             });
+
+            // Extract emoji and text for category title
             const emojiMatch = categoryName.match(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u);
             let emojiSpan = '';
             let textContent = categoryName;
+
             if (emojiMatch) {
                 emojiSpan = `<span class="category-emoji">${emojiMatch[0].trim()}</span> `;
                 textContent = categoryName.substring(emojiMatch[0].length).trim();
             }
+
             categoryHeader.innerHTML = `${emojiSpan}<span class="category-title">${textContent}</span> <span class="chevron">▼</span><span class="category-view-toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
             const viewToggle = categoryHeader.querySelector('.category-view-toggle');
             viewToggle.addEventListener('click', (e) => {
@@ -136,22 +139,28 @@ async function loadServices() {
                     toggleCategoryView(categoryId);
                 }
             });
+
+
             const categoryContent = document.createElement('div');
             categoryContent.className = 'category-content';
+
             servicesInCategory.forEach(service => {
                 const serviceButton = createServiceButton(
                     service,
-                    new Set(JSON.parse(localStorage.getItem('favorites') || '[]'
-)),
+                    new Set(JSON.parse(localStorage.getItem('favorites') || '[]')),
                     categoryName
                 );
                 categoryContent.appendChild(serviceButton);
             });
+
             categorySection.appendChild(categoryHeader);
             categorySection.appendChild(categoryContent);
             mainContainer.appendChild(categorySection);
         }
+
         renderFavoritesCategory();
+
+        // Restore Category States from localStorage after dynamic loading
         document.querySelectorAll('.category').forEach(category => {
             const id = category.id;
             const header = category.querySelector('h2');
@@ -165,6 +174,7 @@ async function loadServices() {
                 chevron.classList.add('open');
                 header.setAttribute('aria-expanded', 'true');
             }
+
             const view = localStorage.getItem(`view-${id}`);
             if (view === 'list') {
                 category.classList.add('list-view');
@@ -174,19 +184,28 @@ async function loadServices() {
                 }
             }
         });
+
         buildSidebar();
+
+        // Re-initialize search functionality
         setupSearch();
+        populateTagDropdown();
+
     } catch (error) {
-        displayErrorInMain('Failed to load or process services.json: ' + error.message);
+        console.error('Failed to load services:', error);
+        const mainContainer = document.querySelector('main');
+        mainContainer.innerHTML = '<p class="error-message">Failed to load services. Please try again later.</p>';
     }
 }
 
+
 function setupSearch() {
     const searchInput = document.getElementById('searchInput');
-    if (!searchInput) return;
+    if (!searchInput) return; // Guard clause if search input is not found
 
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase().trim();
+        const tokens = query.split(',').map(t => t.trim()).filter(Boolean);
         document.querySelectorAll('.service-button').forEach(button => {
             const name = button.querySelector('.service-name').textContent.toLowerCase();
             const url = button.querySelector('.service-url').textContent.toLowerCase();
@@ -194,11 +213,19 @@ function setupSearch() {
             let tagsMatch = false;
             if (tagsSpan && tagsSpan.textContent) {
                 const tagsArray = tagsSpan.textContent.toLowerCase().split(',').map(tag => tag.trim());
-                tagsMatch = tagsArray.some(tag => tag.includes(query));
+                if (tokens.length > 0) {
+                    tagsMatch = tokens.every(token => tagsArray.some(tag => tag.includes(token)));
+                } else {
+                    tagsMatch = tagsArray.some(tag => tag.includes(query));
+                }
             }
-            button.style.display = (name.includes(query) || url.includes(query)|| tagsMatch) ? 'flex' : 'none';
+            const textMatch = name.includes(query) || url.includes(query);
+            // Show button if query matches name, URL, or tags
+            button.style.display = (textMatch || tagsMatch) ? 'flex' : 'none';
         });
-        const visibleButtons = Array.from(document.querySelectorAll('.service-button'))            .filter(btn => btn.style.display !== 'none').length;
+
+        const visibleButtons = Array.from(document.querySelectorAll('.service-button'))
+            .filter(btn => btn.style.display !== 'none').length;
         const noResultsEl = document.getElementById('noResults');
         if (noResultsEl) {
             if (query !== '' && visibleButtons === 0) {
@@ -208,23 +235,24 @@ function setupSearch() {
             }
         }
 
+        // Optional: Hide categories if all services within them are hidden
         document.querySelectorAll('.category').forEach(category => {
             const services = category.querySelectorAll('.service-button');
             const allHidden = Array.from(services).every(service => service.style.display === 'none');
             const categoryHeader = category.querySelector('h2');
 
             if (category.id === 'favorites') {
-                category.style.display = '';
+                category.style.display = ''; // Always show favorites category
                 if (categoryHeader) categoryHeader.style.display = '';
             } else
-            if (query === '') {
+            if (query === '') { // If search query is empty, show all categories normally
                 category.style.display = '';
                 if (categoryHeader) categoryHeader.style.display = '';
             } else {
                 if (allHidden) {
-                    category.style.display = 'none';
+                    category.style.display = 'none'; // Hide the whole category section
                 } else {
-                    category.style.display = '';
+                    category.style.display = ''; // Show category if some services are visible
                     if (categoryHeader) categoryHeader.style.display = '';
                 }
             }
@@ -233,6 +261,8 @@ function setupSearch() {
 }
 
 function toggleCategory(header) {
+    // Always target the category content element even if other elements
+    // are inserted between the header and the content (e.g. clear button)
     const content = header.parentElement.querySelector('.category-content');
     const chevron = header.querySelector('.chevron');
     const isOpen = content.classList.contains('open');
@@ -281,11 +311,7 @@ function createServiceButton(service, favoritesSet, categoryName) {
     favicon.onerror = () => { favicon.src = './favicon.ico'; };
 
     serviceNameSpan.appendChild(favicon);
-
-    const nameText = document.createElement('span');
-    nameText.className = 'service-name-text';
-    nameText.textContent = service.name;
-    serviceNameSpan.appendChild(nameText);
+    serviceNameSpan.appendChild(document.createTextNode(service.name));
 
     const serviceUrlSpan = document.createElement('span');
     serviceUrlSpan.className = 'service-url';
@@ -336,19 +362,8 @@ function createServiceButton(service, favoritesSet, categoryName) {
     if (thumbnail) {
         serviceButton.appendChild(thumbnail);
     }
-
-    // Create the .service-info wrapper div
-    const serviceInfo = document.createElement('div');
-    serviceInfo.className = 'service-info';
-
-    // Append name and URL to the serviceInfo div
-    serviceInfo.appendChild(serviceNameSpan);
-    serviceInfo.appendChild(serviceUrlSpan);
-
-    // Append serviceInfo to the main button
-    serviceButton.appendChild(serviceInfo);
-
-    // Append tags and star after serviceInfo
+    serviceButton.appendChild(serviceNameSpan);
+    serviceButton.appendChild(serviceUrlSpan);
     serviceButton.appendChild(serviceTagsSpan);
     serviceButton.appendChild(star);
 
@@ -398,6 +413,7 @@ function ensureClearFavoritesButton(header) {
     let btn = header.querySelector('#clearFavoritesBtn');
     if (!btn) {
         btn = document.createElement('button');
+        btn.classList.add('btn-small');
         btn.id = 'clearFavoritesBtn';
         btn.textContent = 'Clear Favorites';
         btn.type = 'button';
@@ -441,8 +457,7 @@ function renderFavoritesCategory() {
             `<span class="category-emoji">⭐</span>
              <span class="category-title">Favorites</span>
              <span class="chevron">▼</span>
-             <span class="category-view-toggle" role="button" tabindex="0" aria-
-label="Toggle category view">☰</span>`;
+             <span class="category-view-toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
         header.setAttribute('aria-expanded', 'true');
         header.onclick = () => toggleCategory(header);
         header.tabIndex = 0;
@@ -507,13 +522,23 @@ label="Toggle category view">☰</span>`;
         btn.disabled = favoriteServices.length === 0;
     }
 
+    // Determine and apply the collapsed or expanded state for the Favorites category
     const storedState = localStorage.getItem('category-favorites');
     const chevron = header.querySelector('.chevron');
+    // Note: 'content' is favoritesSection.querySelector('.category-content')
+    //       'header' is favoritesSection.querySelector('h2')
+    //       'favoriteServices' is an array of favorite service objects
+    //       'MAX_CATEGORY_HEIGHT' is a globally available constant
+
     let shouldBeOpen = false;
-    if (favoriteServices.length === 0 || storedState === null || storedState ===
- 'open') {
+    // Determine if the category should be open:
+    // 1. If it's empty.
+    // 2. If no state is stored (first time).
+    // 3. If the stored state is 'open'.
+    if (favoriteServices.length === 0 || storedState === null || storedState === 'open') {
         shouldBeOpen = true;
     }
+    // Otherwise, it remains closed (i.e., it's not empty AND storedState is 'closed')
 
     if (shouldBeOpen) {
         content.classList.add('open');
@@ -521,12 +546,18 @@ label="Toggle category view">☰</span>`;
             chevron.classList.add('open');
         }
         header.setAttribute('aria-expanded', 'true');
+
+        // Calculate and set maxHeight. This code runs after content.innerHTML is populated.
         const height = Math.min(content.scrollHeight, MAX_CATEGORY_HEIGHT);
         content.style.maxHeight = height + 'px';
+
+        // If the section is empty and it was previously closed, or if it's the first time loading (no state stored),
+        // default to open and save this state.
         if ((favoriteServices.length === 0 && storedState === 'closed') || storedState === null) {
             localStorage.setItem('category-favorites', 'open');
         }
     } else {
+        // This case means: favoriteServices.length > 0 AND storedState === 'closed'
         content.classList.remove('open');
         if (chevron) {
             chevron.classList.remove('open');
@@ -575,6 +606,13 @@ function applySavedView() {
     }
 }
 
+function applySavedMobileView() {
+    const saved = localStorage.getItem('mobileView');
+    if (saved === 'on') {
+        document.body.classList.add('mobile-view');
+    }
+}
+
 function toggleView() {
     const isBlock = document.body.classList.toggle('block-view');
     localStorage.setItem('view', isBlock ? 'block' : 'list');
@@ -582,6 +620,14 @@ function toggleView() {
 }
 
 window.toggleView = toggleView;
+
+function toggleMobileView() {
+    const isMobile = document.body.classList.toggle('mobile-view');
+    localStorage.setItem('mobileView', isMobile ? 'on' : 'off');
+    updateToggleButtons();
+}
+
+window.toggleMobileView = toggleMobileView;
 
 function toggleCategoryView(categoryId) {
     const section = document.getElementById(categoryId);
@@ -605,6 +651,10 @@ function updateToggleButtons() {
     if (viewBtn) {
         viewBtn.classList.toggle('active', document.body.classList.contains('block-view'));
     }
+    const mobileBtn = document.getElementById('mobileToggle');
+    if (mobileBtn) {
+        mobileBtn.classList.toggle('active', document.body.classList.contains('mobile-view'));
+    }
 }
 
 function buildSidebar() {
@@ -624,7 +674,7 @@ function buildSidebar() {
         sidebar.appendChild(link);
     });
     const repoLink = document.createElement('a');
-    repoLink.href = 'https://www.github.com/NathanNeurotic/PS2Links/';
+    repoLink.href = 'https://www.github.com/NathanNeurotic/AI';
     repoLink.textContent = 'GitHub Repository';
     repoLink.target = '_blank';
     repoLink.rel = 'noopener noreferrer';
@@ -641,32 +691,22 @@ function toggleSidebar() {
 window.toggleSidebar = toggleSidebar;
 window.buildSidebar = buildSidebar;
 
-// --- Mobile View Toggle Functionality ---
-function toggleMobileView() {
-    document.body.classList.toggle('mobile-view');
-    const mobileToggle = document.getElementById('mobileToggle');
-    if (mobileToggle) {
-        mobileToggle.classList.toggle('active', document.body.classList.contains('mobile-view'));
-    }
-    if (document.body.classList.contains('mobile-view')) {
-        localStorage.setItem('mobileViewEnabled', 'true');
-    } else {
-        localStorage.removeItem('mobileViewEnabled');
-    }
-}
-window.toggleMobileView = toggleMobileView; // Make it globally accessible if index.html uses onclick
-
-function applyMobileViewPreference() {
-    if (localStorage.getItem('mobileViewEnabled') === 'true') {
-        document.body.classList.add('mobile-view');
-        const mobileToggle = document.getElementById('mobileToggle');
-        if (mobileToggle) {
-            mobileToggle.classList.add('active');
+function populateTagDropdown() {
+    const datalist = document.getElementById('tagOptions');
+    if (!datalist) return;
+    const tagSet = new Set();
+    for (const service of allServices) {
+        if (Array.isArray(service.tags)) {
+            service.tags.forEach(tag => tagSet.add(tag));
         }
     }
+    datalist.innerHTML = '';
+    Array.from(tagSet).sort().forEach(tag => {
+        const option = document.createElement('option');
+        option.value = tag;
+        datalist.appendChild(option);
+    });
 }
 
-// Update updateToggleButtons to include mobileToggle if it needs active state updates
-// For now, mobile view active state is handled by toggleMobileView and applyMobileViewPreference.
-// If #mobileToggle needs to be part of the generic updateToggleButtons, that function would need modification.
-// The current updateToggleButtons only handles theme and block-view.
+window.populateTagDropdown = populateTagDropdown;
+

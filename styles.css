@@ -1,35 +1,21 @@
 :root {
-    --bg-color: #0D0D1A;
-    --text-color: #33AADD;
-    --accent-color: #0077FF;
-    --header-gradient: linear-gradient(180deg, #00001A, #0D0D26);
-    --section-gradient: linear-gradient(90deg, #00001A, #0D0D26);
-    --content-bg: rgba(10, 20, 40, 0.7);
-    --button-gradient: linear-gradient(135deg, #1A1A33, #004488);
-    --footer-gradient: linear-gradient(180deg, #0D0D26, #00001A);
-    --thanks-color: #55CCFF;
+    --bg-color: #1a1a1a;
+    --text-color: #66b266;
+    --accent-color: #5faa6f;
+    --header-gradient: linear-gradient(180deg, #0a0a0a, #1a2a1a);
+    --section-gradient: linear-gradient(90deg, #0a0a0a, #1a2a1a);
+    --content-bg: rgba(42, 42, 42, 0.7);
+    --button-gradient: linear-gradient(135deg, rgba(20, 20, 20, 0.9), rgba(40, 60, 40, 0.9));
+    --footer-gradient: linear-gradient(180deg, #1a2a1a, #0a0a0a);
+    --thanks-color: #4d8c4d;
     --font-family: 'Roboto Mono', monospace;
     --category-max-height: 400px;
-    --scroll-track: #0A0A14;
-    --scroll-thumb: #0077FF;
-    --card-min-width: 300px;
-    --category-min-width: 300px;
-    --card-max-width: 400px;
+    --scroll-track: #0a0a0a;
+    --scroll-thumb: #5faa6f;
     --scrollbar-width: 8px;
-}
-
-.light-mode {
-    --bg-color: #F0F0F0;
-    --text-color: #333333;
-    --accent-color: #007BFF;
-    --header-gradient: linear-gradient(180deg, #E0E0E0, #F0F0F0);
-    --section-gradient: linear-gradient(90deg, #E0E0E0, #F0F0F0);
-    --content-bg: rgba(255, 255, 255, 0.8);
-    --button-gradient: linear-gradient(135deg, #E0E0E0, #007BFF);
-    --footer-gradient: linear-gradient(180deg, #F0F0F0, #E0E0E0);
-    --thanks-color: #0056b3;
-    --scroll-track: #E0E0E0;
-    --scroll-thumb: #007BFF;
+    --card-min-width: 300px;
+    --card-max-width: 400px;
+    --category-min-width: 300px;
 }
 
 body {
@@ -43,12 +29,37 @@ body {
     flex-direction: column;
 }
 
+body.light-mode {
+    /* Brighter palette with soft gradients */
+    --bg-color: radial-gradient(circle at top left, #ffffff 0%, #e9f3ff 100%);
+    --text-color: #333333;
+    --accent-color: #007acc;
+    --header-gradient: linear-gradient(180deg, #ffffff 0%, #dfe9ff 100%);
+    --section-gradient: linear-gradient(90deg, #f8fbff 0%, #e0ecff 100%);
+    --content-bg: rgba(255, 255, 255, 0.85);
+    --button-gradient: linear-gradient(135deg, #ffffff 0%, #e6f3ff 100%);
+    --footer-gradient: linear-gradient(180deg, #e0ecff 0%, #ffffff 100%);
+    --thanks-color: #007acc;
+    --font-family: 'Roboto Mono', monospace;
+    --scroll-track: #f0f0f0;
+    --scroll-thumb: #a8d5a8;
+    --scrollbar-width: 8px;
+    --card-min-width: 300px;
+    --card-max-width: 400px;
+    --category-min-width: 300px;
+}
+
+html.light-mode {
+    --scroll-track: #f0f0f0;
+    --scroll-thumb: #a8d5a8;
+}
+
 * {
     scrollbar-color: var(--scroll-thumb) var(--scroll-track);
     box-sizing: border-box;
 }
 ::-webkit-scrollbar {
-    width: 8px;
+    width: var(--scrollbar-width);
 }
 ::-webkit-scrollbar-track {
     background: var(--scroll-track);
@@ -60,13 +71,10 @@ body {
 
 header {
     background: var(--header-gradient);
-    padding: 1.5rem; /* Compacted padding */
-    text-align: center; /* Removed */
+    padding: 1.5rem;
+    text-align: center;
     border-bottom: 2px solid var(--text-color);
-    box-shadow: 0 0 10px rgba(0, 119, 255, 0.3);
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between; */
+    box-shadow: 0 0 10px rgba(102, 178, 102, 0.3);
 }
 
 #themeToggle {
@@ -78,13 +86,11 @@ header {
     padding: 0.2rem 0.4rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem; /* Removed */
-    margin-left: 0.25rem; /* Ensured for spacing */
-    margin-right: 0.25rem;
-    display: inline-block;
+    margin-top: 1rem;
 }
 #themeToggle.active,
-#viewToggle.active {
+#viewToggle.active,
+#mobileToggle.active {
     background: var(--accent-color);
     color: var(--bg-color);
 }
@@ -98,10 +104,8 @@ header {
     padding: 0.2rem 0.4rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem; /* Removed */
-    margin-left: 0.25rem; /* Ensured for spacing */
-    margin-right: 0.25rem;
-    display: inline-block;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
 }
 
 #mobileToggle {
@@ -114,9 +118,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 1rem;
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-    display: inline-block;
+    margin-left: 0.5rem;
 }
 
 #installBtn {
@@ -128,15 +130,9 @@ header {
     padding: 0.2rem 0.4rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem; /* Removed */
-    margin-left: 0.25rem; /* Ensured for spacing */
-    margin-right: 0.25rem;
-    display: inline-block;
-}
-
-#installBtn[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    display: none;
 }
 
 #clearFavoritesBtn {
@@ -144,12 +140,17 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 1rem;
-    padding: 0.35rem 0.7rem;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 0.5rem;
     margin: 0.5rem;
+    font-size: 0.6rem;
+    padding: 0.1rem 0.2rem;
+}
+
+.btn-small {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.2rem;
 }
 
 #sidebar {
@@ -199,7 +200,7 @@ header {
     color: var(--text-color);
     font-family: var(--font-family);
     font-size: 1rem;
-    padding: 0.35rem 0.7rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 5px;
     cursor: pointer;
     position: fixed;
@@ -209,38 +210,34 @@ header {
     transition: left 0.3s ease;
 }
 
-/* Removed #sidebar.open related rules for #sidebarToggle */
-
-body.sidebar-open #sidebarToggle {
-    left: calc(200px + 1rem); /* Adjust if sidebar width changes */
+#sidebar.open + header #sidebarToggle,
+#sidebar.open + #sidebarToggle {
+    left: calc(200px + 1rem);
 }
 
 body.sidebar-open header,
 body.sidebar-open main,
 body.sidebar-open footer {
-    margin-left: 200px; /* Adjust if sidebar width changes */
-    width: calc(100% - 200px); /* Adjust if sidebar width changes */
+    margin-left: 200px;
+    width: calc(100% - 200px);
     transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
 #header-favicon {
-    display: block; /* Removed */
-    width: 50px; /* Slightly smaller */
-    height: 50px; /* Slightly smaller */
-    margin: 0 auto 10px auto; /* Removed */
-    /* margin-right: 1rem; */ /* Added for spacing */
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px auto;
 }
 
 header h1 {
-    font-size: 2.5rem; /* Adjusted size */
+    font-size: 2.5rem;
     margin: 0;
-    text-transform: uppercase; /* Keeping, can be reviewed */
+    text-transform: uppercase;
     letter-spacing: 3px;
     overflow: hidden;
-    display: block; /* Removed */
+    display: block;
     word-wrap: break-word;
-    /* flex-grow: 1; */ /* Allow title to take available space */
-    /* text-align: left; */ /* Align title to the left */
 }
 
 .typing-effect::after {
@@ -257,17 +254,12 @@ main {
     margin: 2rem auto;
     padding: 0 1rem;
     flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
 }
 
 body.block-view main {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1
-fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
     gap: 1rem;
-    overflow-x: hidden; /* Prevent horizontal overflow from grid calculations */
 }
 
 body.block-view main > .search-container,
@@ -276,8 +268,6 @@ body.block-view main > #favorites {
 }
 
 body.block-view .category {
-    display: block;
-    width: 100%;
     margin-bottom: 0;
 }
 
@@ -296,14 +286,19 @@ body.block-view .category {
     padding: 0.5rem 1rem;
     width: 80%;
     max-width: 600px;
-    border-radius: 6px;
-    box-shadow: 0 0 5px rgba(0, 119, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(102, 178, 102, 0.2);
 }
 
 #searchInput:focus {
     outline: none;
-    /* box-shadow: 0 0 8px rgba(0, 119, 255, 0.3); */
+    box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
     animation: glow 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); }
+    to { box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
 }
 
 .no-results {
@@ -314,35 +309,36 @@ body.block-view .category {
 }
 
 .category {
+    margin-bottom: 1.5rem;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.category:hover {
-    box-shadow: 0 0 12px rgba(0, 119, 255, 0.4);
-    background: rgba(255, 255, 255, 0.03);
-    transform: translateY(-2px);
 }
 
 .category h2 {
     background: var(--section-gradient);
     padding: 0.85rem;
-    padding-right: calc(0.85rem + var(--scrollbar-width)); /* Adjusted to keep consistent with other paddings */
+    padding-right: calc(1rem + var(--scrollbar-width));
     margin: 0;
     cursor: pointer;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
     border: 2px solid var(--text-color);
     border-radius: 10px;
-    box-shadow: 0 0 5px rgba(0, 119, 255, 0.2);
+    box-shadow: 0 0 5px rgba(102, 178, 102, 0.2);
     transition: box-shadow 0.3s ease;
 }
 
 .category h2:hover {
-    box-shadow: 0 0 12px rgba(0, 119, 255, 0.5);
+    box-shadow: 0 0 12px rgba(95, 170, 111, 0.5);
     background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.category:hover {
+    box-shadow: 0 0 12px rgba(95, 170, 111, 0.4);
+    background: rgba(255, 255, 255, 0.03);
     transform: translateY(-2px);
 }
 
@@ -369,10 +365,6 @@ body.block-view .category {
 .category-title {
     flex: 1;
     text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    min-width: 0; /* Also good for flex children */
 }
 
 .category-emoji {
@@ -381,11 +373,11 @@ body.block-view .category {
 
 .category-content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr))
-;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
     gap: 1rem;
     padding: 1rem;
     box-sizing: border-box;
+    min-width: 0;
     background: var(--content-bg);
     backdrop-filter: blur(3px);
     border: 2px solid var(--text-color);
@@ -416,69 +408,57 @@ body.block-view .category {
 .category.list-view .service-button {
     flex-direction: row;
     align-items: center;
+    width: 100%;
     max-width: none;
-    padding: 0.5rem 1rem; /* Reset padding for list view */
-    /* justify-content: space-between; is NOT inherited or applied here by default, which is fine.
-       The flex-grow on .service-info and margin on .favorite-star will manage spacing. */
 }
 .category.list-view .service-name {
     margin-bottom: 0;
-    margin-right: 0.5rem; /* Removed margin-right, .service-info handles spacing */
-    font-size: 1.2rem;
+    margin-right: 0.5rem;
 }
 .category.list-view .service-thumbnail {
     width: 80px;
     max-height: 60px;
     margin-right: 0.5rem;
     margin-bottom: 0;
-    border-radius: 4px;
 }
 
 .service-button {
     display: flex;
-    flex-direction: column; /* Changed from column */
-    /* align-items: center; */ /* Vertically center items */
-    /* justify-content: space-between; */ /* Push items apart */
+    flex-direction: column;
     background: var(--button-gradient);
-    padding: 0.75rem; /* Removed general padding-right, will target text elements */
-    padding-right: 2rem;
+    padding: 0.75rem;
+    padding-right: 2rem; /* space for favorite star */
+    width: 100%;
     max-width: var(--card-max-width);
     margin: 0 auto;
-    width: 100%;
+    min-width: 0;
     box-sizing: border-box;
     border: 2px solid var(--accent-color);
     border-radius: 15px;
     text-decoration: none;
     color: var(--accent-color);
-    box-shadow: inset 0 0 3px rgba(0, 119, 255, 0.3), 0 0 3px rgba(0, 119, 255, 0.2);
+    box-shadow: inset 0 0 3px rgba(95, 170, 111, 0.3), 0 0 3px rgba(95, 170, 111, 0.2);
     animation: pulse 2s infinite;
     transition: box-shadow 0.3s ease, transform 0.2s ease;
     position: relative;
-    overflow: visible; /* Allow child elements (like service-info with scrollbars) to be visible */
 }
 
 .service-button:hover {
-    box-shadow: inset 0 0 8px rgba(0, 119, 255, 0.6), 0 0 12px rgba(0, 119, 255, 0.5);
-    background: rgba(255,255,255,0.05);
+    box-shadow: inset 0 0 8px rgba(95, 170, 111, 0.6), 0 0 12px rgba(95, 170, 111, 0.5);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     transform: translateY(-2px);
     animation: none;
 }
 
 @keyframes pulse {
-    0%, 100% { box-shadow: inset 0 0 3px rgba(0, 119, 255, 0.3), 0 0 3px rgba(0, 119, 255, 0.2); }
-    50% { box-shadow: inset 0 0 5px rgba(0, 119, 255, 0.5), 0 0 5px rgba(0, 119, 255, 0.3); }
-}
-
-@keyframes glow {
-    from { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); }
-    to { box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
+    0%, 100% { box-shadow: inset 0 0 3px rgba(95, 170, 111, 0.3), 0 0 3px rgba(95, 170, 111, 0.2); }
+    50% { box-shadow: inset 0 0 5px rgba(95, 170, 111, 0.5), 0 0 5px rgba(95, 170, 111, 0.3); }
 }
 
 .service-favicon {
     width: 16px;
     height: 16px;
-    margin-right: 4px;
     vertical-align: middle;
 }
 
@@ -486,28 +466,14 @@ body.block-view .category {
     width: 100%;
     max-height: 150px;
     object-fit: cover;
-    margin-bottom: 0.5rem; /* Removed margin-bottom */
-    /* margin-right: 0.75rem; */ /* Added margin-right for row layout */
+    margin-bottom: 0.5rem;
     border-radius: 8px;
-    /* flex-shrink: 0; */ /* Prevent thumbnail from shrinking too much */
-}
-
-/* New wrapper for service name and URL to enable flex layout with the star */
-.service-info {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Takes available space, pushing star to the right if needed */
-    /* justify-content: center; /* If you want name/url block centered if it's short */
-    margin-right: 0.5rem; /* Ensure some space before the star if justify-content on parent isn't enough */
-    min-width: 0;
-    overflow: visible; /* Ensure it doesn't clip scrollbars from children */
 }
 
 .favorite-star {
     cursor: pointer;
-    font-size: 1.5rem; /* Increased from 1.6rem */
+    font-size: 1.5rem;
     color: #ccc;
-    /* margin-left: 0.5rem; */ /* Space from the text content */
     position: absolute;
     top: 0.5rem;
     right: 0.25rem;
@@ -529,10 +495,15 @@ body.block-view .category {
 #sidebarToggle:hover,
 .category-view-toggle:hover,
 .favorite-star:hover {
-    box-shadow: 0 0 12px rgba(0, 119, 255, 0.6); /* Use current project accent */
+    box-shadow: 0 0 12px rgba(95, 170, 111, 0.6);
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     transform: translateY(-2px);
+}
+
+#sidebar a:hover {
+    background: var(--button-gradient);
+    border-radius: 5px;
 }
 
 .service-name {
@@ -543,31 +514,18 @@ body.block-view .category {
     align-items: center;
     gap: 0.25rem;
     word-break: break-word;
-    /* padding-right: 35px; REMOVED */
-    align-items: flex-start; /* Align icon to the top when text wraps */
-}
-
-.service-name-text {
-    display: block; /* Allow block properties like max-height and overflow */
-    white-space: normal; /* Allow wrapping */
-    overflow-wrap: break-word; /* Break long words */
-    max-height: 4.2em; /* Approx 3 lines (1.4em line height * 3) */
-    overflow-y: auto; /* Scroll if more than 3 lines */
 }
 
 .service-url {
     font-size: 0.8rem;
-    word-break: break-all; /* Existing: breaks anywhere if needed */
-    white-space: normal; /* Allow wrapping */
-    overflow-wrap: break-word; /* Better word breaking */
-    max-height: 3em; /* Approx 3 lines (1em line height * 3) */
-    overflow-y: auto; /* Scroll if more than 3 lines */
-    /* padding-right: 35px; REMOVED */
+    word-break: break-all;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 .category.list-view .service-url {
-    margin-left: auto; /* Removed margin-left: auto; */
-    font-size: 0.9rem;
+    margin-left: auto;
 }
 
 .service-tags {
@@ -576,10 +534,10 @@ body.block-view .category {
 
 footer {
     background: var(--footer-gradient);
-    padding: 0.8rem; /* Adjusted padding */
+    padding: 0.8rem;
     text-align: center;
     border-top: 2px solid var(--text-color);
-    box-shadow: 0 -2px 8px rgba(0, 119, 255, 0.2);
+    box-shadow: 0 -2px 8px rgba(102, 178, 102, 0.2);
     margin-top: 2rem;
 }
 
@@ -606,77 +564,50 @@ footer .thanks a:hover {
     text-decoration: underline;
 }
 
-/* --- Mobile View Specific Styles (from NathanNeurotic/AI) --- */
+/* Responsive Design */
 
 body.mobile-view .category-content {
-    grid-template-columns: 1fr; /* Overrides default grid to single column */
+    grid-template-columns: 1fr;
 }
 
 body.mobile-view header h1 {
-    font-size: 1.6rem; /* Smaller header text in mobile view */
+    font-size: 1.6rem;
 }
 
 body.mobile-view .category h2 {
-    font-size: 1.2rem; /* Smaller category headers in mobile view */
+    font-size: 1.2rem;
 }
 
 body.mobile-view #searchInput {
-    width: 90%; /* Wider search input for mobile */
+    width: 90%;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
+/* Hide the view toggle when mobile layout is active */
+body.mobile-view #viewToggle {
+    display: none;
+}
 
+@media (max-width: 768px) {
+    #viewToggle {
+        display: none;
+    }
     .category-content {
         grid-template-columns: 1fr;
     }
 
+    body.block-view main {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
     header h1 {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 
     .category h2 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
 
     #searchInput {
         width: 90%;
-    }
-
-    main {
-        /* Override CSS variables for min-width within the mobile viewport.
-           These will be inherited by elements like .category-content and body.block-view main's grid. */
-        --card-min-width: 240px; /* Lowered value for smaller screens */
-        --category-min-width: 240px; /* Lowered value for smaller screens */
-    }
-
-    /*
-       Note: The global `body.block-view main` rule is:
-       grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
-       This will now automatically use the 240px value for --category-min-width on mobile.
-
-       The global `.category-content` rule is:
-       grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-       However, it's overridden by a more specific rule within this media query:
-       `.category-content { grid-template-columns: 1fr; }`
-       So, the --card-min-width override in main primarily serves consistency and future-proofing
-       if the 1fr override is removed or changed.
-    */
-
-    /* Reduce button sizes on mobile */
-    #clearFavoritesBtn,
-    #themeToggle,
-    #viewToggle,
-    #installBtn {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.6rem;
-    }
-
-    #sidebarToggle {
-        font-size: 0.9rem;
-        padding: 0.3rem 0.6rem;
     }
 }
