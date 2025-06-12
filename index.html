@@ -3,42 +3,53 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="A curated list of essential PlayStation 2 links, resources, and communities." />
-    <meta property="og:title" content="PS2Links - Your PlayStation 2 Resource Hub" />
-    <meta property="og:description" content="A curated list of essential PlayStation 2 links, resources, and communities." />
+    <meta name="description" content="Curated dashboard of AI services" />
+    <meta property="og:title" content="AI Services Dashboard" />
+    <meta property="og:description" content="Curated dashboard of AI services" /
+>
     <meta property="og:image" content="./favicon.ico" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="PS2Links - Your PlayStation 2 Resource Hub" />
-    <meta name="twitter:description" content="A curated list of essential PlayStation 2 links, resources, and communities." />
+    <meta name="twitter:title" content="AI Services Dashboard" />
+    <meta name="twitter:description" content="Curated dashboard of AI services"
+/>
     <meta name="twitter:image" content="./favicon.ico" />
-    <title>PS2Links - Your PlayStation 2 Resource Hub</title>
-    <link rel="manifest" href="./site.webmanifest" />
+    <title>AI Services Dashboard</title>
+    <link rel="manifest" href="public/manifest.json" />
     <link rel="stylesheet" href="./styles.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto
++Mono:wght@400;700&amp;display=swap" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="./public/icon-192x192.png">
 </head>
 <body>
-    <button id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
     <nav id="sidebar"></nav>
+    <button id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
     <header>
-        <img id="header-favicon" src="./favicon.ico" alt="PS2Links Favicon" />
-        <h1 class="typing-effect">PS2Links Hub</h1>
-        <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">Toggle Theme</button>
-        <button id="viewToggle" onclick="toggleView()" aria-label="Toggle category view">Toggle View</button>
-        <button id="mobileToggle" onclick="toggleMobileView()" aria-label="Toggle mobile view">Mobile View</button>
+        <img id="header-favicon" src="./favicon.ico" alt="AI Services Dashboard
+Favicon" />
+        <h1 class="typing-effect">AI Services Dashboard</h1>
+        <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle them
+e">Toggle Theme</button>
+        <button id="viewToggle" onclick="toggleView()" aria-label="Toggle catego
+ry view">Toggle View</button>
+        <button id="mobileToggle" onclick="toggleMobileView()" aria-label="Toggl
+e mobile view">Mobile View</button>
         <button id="installBtn" aria-label="Install app">Install App</button>
     </header>
     <main>
         <div class="search-container">
-            <input id="searchInput" type="text" placeholder="Search services..." aria-label="Search AI services" />
+            <input id="searchInput" type="text" placeholder="Search services..."
+ aria-label="Search AI services" list="tagOptions" />
+            <datalist id="tagOptions"></datalist>
         </div>
         <p id="noResults" class="no-results" hidden>No results found.</p>
         <!-- Service listings will be dynamically injected here by script.js -->
     </main>
     <footer>
-        <p>© 2025 NathanNeurotic and PS2Wiki. All links courtesy of the community.</p>
-        <p><a href="https://www.github.com/NathanNeurotic/PS2Links/" target="_blank" rel="noopener noreferrer">PS2Links on GitHub</a></p>
+        <p>© 2025 <a href="https://www.github.com/NathanNeurotic/" target="_blan
+k" rel="noopener noreferrer">NathanNeurotic</a>. All rights reserved.</p>
+        <p><a href="https://www.github.com/NathanNeurotic/AI" target="_blank" re
+l="noopener noreferrer">GitHub Repository</a></p>
     </footer>
     <script src="./script.js"></script>
     <script>
