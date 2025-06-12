@@ -87,6 +87,7 @@ header {
     border-radius: 5px;
     cursor: pointer;
     margin-top: 0.75rem;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 #themeToggle.active,
 #viewToggle.active,
@@ -106,6 +107,7 @@ header {
     cursor: pointer;
     margin-top: 0.75rem;
     margin-left: 0.5rem;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 #mobileToggle {
@@ -119,6 +121,7 @@ header {
     cursor: pointer;
     margin-top: 0.75rem;
     margin-left: 0.5rem;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 #installBtn {
@@ -133,6 +136,7 @@ header {
     margin-top: 0.75rem;
     margin-left: 0.5rem;
     display: none;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 #clearFavoritesBtn {
@@ -146,6 +150,7 @@ header {
     margin: 0.5rem;
     font-size: 0.6rem;
     padding: 0.1rem 0.2rem;
+    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-small {
@@ -207,7 +212,7 @@ header {
     top: 1rem;
     left: 1rem;
     z-index: 1100;
-    transition: left 0.3s ease;
+    transition: left 0.3s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 body.sidebar-open #sidebarToggle {
@@ -354,19 +359,19 @@ body.block-view .category {
     box-sizing: border-box;
     transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 
-    background-color: #000000; /* Black background */
-    color: var(--text-color); /* Luminous Yellow/Gold text (#f7ce3e) */
-    border: 1px solid var(--accent-color); /* Gold border (#ffd700) */
-    border-radius: 0; /* Sharp corners */
-    box-shadow: inset 0 0 3px rgba(255, 215, 0, 0.2); /* Subtle inner gold glow */
+    background-color: #000000;
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 0; /* Sharp corners, assuming this is desired */
+    box-shadow: inset 0 0 3px rgba(255, 215, 0, 0.2);
 }
 
 .category h2:hover {
-    background-color: #1a2930; /* Dark Slate Blue/Grey on hover */
-    border-color: #f7ce3e; /* Luminous Yellow/Gold border on hover */
-    box-shadow: inset 0 0 5px rgba(255, 215, 0, 0.4), 0 0 5px rgba(255, 215, 0, 0.3); /* Enhanced glow on hover */
-    transform: none; /* Remove previous transform */
-    filter: none; /* Remove previous filter */
+    background-color: #1a2930;
+    border-color: var(--text-color);
+    box-shadow: inset 0 0 5px rgba(255, 215, 0, 0.4), 0 0 5px rgba(255, 215, 0, 0.3);
+    transform: none; /* Remove previous transform if any */
+    filter: none; /* Remove previous filter if any */
 }
 
 .category:hover { /* Keep this subtle or match h2 hover */
@@ -386,6 +391,7 @@ body.block-view .category {
 .category-view-toggle {
     margin-left: 0.5rem;
     cursor: pointer;
+    transition: color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease; /* Added transitions */
 }
 .category-view-toggle:focus {
     outline: 2px solid var(--text-color);
@@ -471,8 +477,8 @@ body.block-view .category {
     text-decoration: none;
     color: var(--accent-color);
     box-shadow: inset 0 0 3px rgba(0, 112, 209, 0.3), 0 0 3px rgba(0, 112, 209, 0.2); /* Updated accent color */
-    animation: pulse 2s infinite;
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    /* animation: pulse 2s infinite; */
+    transition: box-shadow 0.3s ease, transform 0.2s ease, background-color 0.3s ease; /* Added background-color to transition */
     position: relative;
 }
 
@@ -481,7 +487,33 @@ body.block-view .category {
     background: rgba(0, 112, 209, 0.15); /* Subtle blue hover, slightly more intense */
     backdrop-filter: blur(4px);
     transform: translateY(-2px);
-    animation: none;
+    /* animation: none; */ /* Ensure pulse is overridden, already handled by removing from base or specific override */
+}
+
+/* Featured Service Button Style */
+.service-button.featured {
+    border-color: var(--accent-color); /* A more prominent border color */
+    box-shadow: 0 0 10px var(--accent-color), inset 0 0 5px var(--accent-color); /* A noticeable glow */
+    /* Using a modified gradient - original button-gradient is linear-gradient(135deg, #1a2930, #0a1612) */
+    /* We'll make it blend towards the accent color */
+    background-image: linear-gradient(135deg, #1a2930, var(--accent-color));
+    position: relative; /* To allow for pseudo-elements if needed for badges */
+}
+
+/* Optional: Example of a small badge using a pseudo-element */
+.service-button.featured::after {
+    content: "Featured"; /* Or a star icon ★ */
+    position: absolute;
+    top: -8px;   /* Adjusted for better visual placement */
+    right: -8px; /* Adjusted for better visual placement */
+    background-color: var(--accent-color);
+    color: var(--bg-color); /* Contrasting text color from root variables */
+    padding: 3px 6px; /* Slightly increased padding */
+    font-size: 0.7rem; /* Slightly increased font size */
+    border-radius: 4px; /* Slightly increased border-radius */
+    font-weight: bold;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4); /* Slightly adjusted shadow */
+    z-index: 1; /* Ensure badge is above the button content */
 }
 
 @keyframes pulse {
@@ -510,6 +542,7 @@ body.block-view .category {
     position: absolute;
     top: 0.5rem;
     right: 0.25rem;
+    transition: color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease; /* Added transitions */
 }
 .favorite-star:focus {
     outline: 2px solid var(--text-color);
@@ -530,9 +563,24 @@ body.block-view .category {
 .favorite-star:hover {
     box-shadow: 0 0 12px rgba(0, 112, 209, 0.6); /* Updated accent color */
     background: rgba(0, 112, 209, 0.1);  /* Subtle blue hover */
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px); /* Be mindful of performance on complex pages */
     transform: translateY(-2px);
 }
+
+/* Shared focus styles for buttons that don't have a specific outline focus */
+#themeToggle:focus,
+#viewToggle:focus,
+#mobileToggle:focus,
+#installBtn:focus,
+#clearFavoritesBtn:focus,
+#sidebarToggle:focus {
+    /* Using similar styles to hover for consistency, but ensure it's distinguishable or sufficient for focus */
+    box-shadow: 0 0 15px rgba(0, 150, 255, 0.7); /* Slightly more intense blue glow for focus */
+    background: rgba(0, 112, 209, 0.2);
+    transform: translateY(-2px);
+    outline: none; /* Remove default outline as box-shadow provides visual cue */
+}
+
 
 #sidebar a:hover {
     background: var(--button-gradient);
