@@ -232,7 +232,11 @@ async function loadServices() {
     } catch (error) {
         console.error('Failed to load services:', error);
         const mainContainer = document.querySelector('main');
-        mainContainer.innerHTML = '<p class="error-message">Failed to load services. Please try again later.</p>';
+        const failureMsg =
+            `<p class="error-message">Failed to load services. If you opened this page using the file:// protocol, start a local server and reload the page:<br><code>python3 -m http.server</code></p>`;
+        if (mainContainer) {
+            mainContainer.innerHTML = failureMsg;
+        }
     }
 }
 
