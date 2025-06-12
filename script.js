@@ -231,7 +231,7 @@ async function loadServices() {
         console.error('Failed to load services:', error);
         const mainContainer = document.querySelector('main');
         const failureMsg =
-            `<p class="error-message">Failed to load services. If you opened this page using the file:// protocol, start a local server and reload the page:<br><code>python3 -m http.server</code></p>`;
+            `<p class="error-message">Failed to load services: ${error.message}. If you opened this page using the file:// protocol, start a local server and reload the page:<br><code>python3 -m http.server</code></p>`;
         if (mainContainer) {
             mainContainer.innerHTML = failureMsg;
         }
