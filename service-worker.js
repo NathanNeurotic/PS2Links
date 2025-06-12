@@ -17,15 +17,16 @@ self.addEventListener('install', event => {
       const cache = await caches.open(CACHE_NAME);
       await cache.addAll(URLS_TO_CACHE);
       try {
-        const resp = await fetch('./links.json');
-        const services = await resp.json();
-        for (const svc of services) {
-          if (svc.favicon_url) {
-            try { await cache.add(svc.favicon_url); } catch (e) { /* ignore */ }
-          }
-          if (svc.thumbnail_url) {
-            try { await cache.add(svc.thumbnail_url); } catch (e) { /* ignore */
- }
+        const resp = await fetch("./links.json");
+        const categories = await resp.json();
+        for (const cat of categories) {
+          for (const svc of cat.links) {
+            if (svc.favicon_url) {
+              try { await cache.add(svc.favicon_url); } catch (e) { /* ignore */ }
+            }
+            if (svc.thumbnail_url) {
+              try { await cache.add(svc.thumbnail_url); } catch (e) { /* ignore */ }
+            }
           }
         }
       } catch (err) {
