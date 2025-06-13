@@ -374,7 +374,10 @@ function createServiceButton(service, favoritesSet, categoryName) {
     favicon.onerror = () => { favicon.src = './favicon.ico'; };
 
     serviceNameSpan.appendChild(favicon);
-    serviceNameSpan.appendChild(document.createTextNode(service.name));
+    const serviceNameText = document.createElement('span'); // Create a new span for the text
+    serviceNameText.className = 'service-name-text';    // Add the class
+    serviceNameText.appendChild(document.createTextNode(service.name));
+    serviceNameSpan.appendChild(serviceNameText);        // Append the new span
 
     const serviceUrlSpan = document.createElement('span');
     serviceUrlSpan.className = 'service-url';

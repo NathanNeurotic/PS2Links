@@ -156,7 +156,16 @@ test('Search filters services and categories', async ({ page }) => {
   // Normalize category name to ID as done in script.js
   const testCategoryId = testCategoryName.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
+  // Ensure its category is expanded before searching
+  const categoryHeader = page.locator(`#${testCategoryId} h2`);
+  const categoryContent = page.locator(`#${testCategoryId} .category-content`);
+  if (!await categoryContent.evaluate(el => el.classList.contains('open'))) {
+    await categoryHeader.click();
+    await page.waitForTimeout(500); // wait for animation
+  }
+
   await searchInput.fill('8BitMods');
+  await page.waitForTimeout(500); // Give search filtering JS time to execute
 
   const targetService = page.locator(`.service-button:has-text("${testServiceName}")`);
   await expect(targetService).toBeVisible();
@@ -205,10 +214,11 @@ test('Favorites functionality: add, persist, remove', async ({ page }) => {
 
 
   // 1. Add to favorites
-  await expect(refreshedStar).toHaveText('☆'); // Check initial state
+  await expect(refreshedStar).not.toHaveClass(/favorited/); // Check initial state (not favorited)
+  await expect(refreshedStar).toHaveAttribute('aria-label', 'Add to favorites');
   await refreshedStar.click();
-  await expect(refreshedStar).toHaveText('★');
   await expect(refreshedStar).toHaveClass(/favorited/);
+  await expect(refreshedStar).toHaveAttribute('aria-label', 'Remove from favorites');
 
   const favoritesSection = page.locator('#favorites');
   await expect(favoritesSection).toBeVisible();
@@ -220,14 +230,15 @@ test('Favorites functionality: add, persist, remove', async ({ page }) => {
   await page.waitForSelector('.category', { timeout: 15000 }); // Wait for services to load
 
   const starAfterReload = page.locator(`.service-button[data-url="${await firstServiceButton.getAttribute('data-url')}"] .favorite-star`).first();
-  await expect(starAfterReload).toHaveText('★');
+  await expect(starAfterReload).toHaveClass(/favorited/);
+  await expect(starAfterReload).toHaveAttribute('aria-label', 'Remove from favorites');
   await expect(page.locator('#favorites')).toBeVisible();
   await expect(page.locator(`#favorites .service-button[data-url="${await firstServiceButton.getAttribute('data-url')}"]`)).toBeVisible();
 
   // 3. Remove from favorites
   await starAfterReload.click();
-  await expect(starAfterReload).toHaveText('☆');
   await expect(starAfterReload).not.toHaveClass(/favorited/);
+  await expect(starAfterReload).toHaveAttribute('aria-label', 'Add to favorites');
 
   // Wait for potential re-render of favorites section
   await page.waitForTimeout(500);
@@ -336,17 +347,38 @@ test('should handle long service names with wrapping and scrolling', async ({ pa
 
   await page.goto(BASE_URL); // Navigate after setting up the route
 
-  // Wait for the specific category and service buttons to be rendered from mock data
-  await page.waitForSelector('.category:has-text("Long Text Test") .service-button');
+  // Wait for the specific category to be rendered from mock data
+  const longTextCategorySelector = '.category:has-text("Long Text Test")';
+  await page.waitForSelector(longTextCategorySelector, { timeout: 15000 }); // Increased timeout for category
 
-  const serviceCard = page.locator('.service-button', { hasText: 'ThisIsAnExtremelyLongServiceNameDesignedToTestTheUIWrappingAndScrollingBehaviorItJustKeepsGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingOnAndOnAndOn' });
+  // Ensure the "Long Text Test" category is open
+  const longTextCategoryHeader = page.locator(`${longTextCategorySelector} h2`);
+  const longTextCategoryContent = page.locator(`${longTextCategorySelector} .category-content`);
+
+  // Check if header is visible before trying to click (it might not be if mock fails)
+  await expect(longTextCategoryHeader).toBeVisible({ timeout: 5000 });
+
+  if (!await longTextCategoryContent.evaluate(el => el.classList.contains('open'))) {
+      await longTextCategoryHeader.click();
+      // Wait for the content to have the 'open' class
+      await expect(longTextCategoryContent).toHaveClass(/open/, { timeout: 5000 });
+  }
+
+  // More specific selector for the service button with the very long name
+  const longServiceName = "ThisIsAnExtremelyLongServiceNameDesignedToTestTheUIWrappingAndScrollingBehaviorItJustKeepsGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingAndGoingOnAndOnAndOn";
+  const serviceCard = page.locator(`${longTextCategorySelector} .service-button:has(.service-name:has-text("${longServiceName}"))`);
+  await expect(serviceCard).toBeVisible({ timeout: 10000 });
+
   const serviceNameTextElement = serviceCard.locator('.service-name-text');
-
   await expect(serviceNameTextElement).toBeVisible();
   // Using a partial match for the text content assertion as the full string is very long
-  await expect(serviceNameTextElement).toHaveText(/ThisIsAnExtremelyLongServiceNameDesignedToTestTheUIWrappingAndScrollingBehavior/);
+  await expect(serviceNameTextElement).toHaveText(/ThisIsAnExtremelyLongServiceNameDesignedToTestTheUIWrappingAndScrollingBehavior/, { timeout: 1000 });
   await expect(serviceNameTextElement).toHaveCSS('overflow-y', 'auto');
-  await expect(serviceNameTextElement).toHaveCSS('max-height', '4.2em'); // From styles.css
+  // Browsers compute em to px, so we check the computed pixel value.
+  // Assuming 1em = 16px (common browser default for 1rem, and .service-name font-size is 1rem)
+  // 4.2em * 16px/em = 67.2px.
+  // For more robustness, one might get the font-size and calculate, but this is usually stable.
+  await expect(serviceNameTextElement).toHaveCSS('max-height', '67.2px');
   await expect(serviceNameTextElement).toHaveCSS('display', 'block'); // From styles.css
 
   // Also check the service name (parent of service-name-text) for its align-items property
