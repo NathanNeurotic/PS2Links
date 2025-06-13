@@ -17,9 +17,34 @@ const CLOSE_ICON = '&times;'; // HTML entity for '×'
 document.addEventListener('DOMContentLoaded', () => {
     applySavedTheme();
     applySavedView(); // For body.block-view
-    applySavedDesktopView(); // Apply desktop first
-    applySavedMobileView(); // Mobile applied after desktop
-    updateHeaderButtonStates(); // Renamed and updated
+    applySavedDesktopView();
+    applySavedMobileView();
+
+    // New logic to enforce mutual exclusivity and default
+    let desktopIsActuallyActive = document.body.classList.contains('desktop-view');
+    let mobileIsActuallyActive = document.body.classList.contains('mobile-view');
+
+    if (desktopIsActuallyActive && mobileIsActuallyActive) {
+        // Conflict: both classes are on body. Prioritize desktop.
+        document.body.classList.remove('mobile-view');
+        localStorage.setItem('mobileViewActive', 'false');
+        mobileIsActuallyActive = false; // update local flag
+    } else if (!desktopIsActuallyActive && !mobileIsActuallyActive) {
+        // Neither is active (e.g., first visit or cleared storage). Default to desktop.
+        document.body.classList.add('desktop-view');
+        localStorage.setItem('desktopViewActive', 'true');
+        localStorage.setItem('mobileViewActive', 'false'); // Ensure mobile is marked false
+    } else if (desktopIsActuallyActive && !mobileIsActuallyActive) {
+        // Desktop is solely active, ensure localStorage reflects this if it was ambiguous
+        localStorage.setItem('desktopViewActive', 'true');
+        localStorage.setItem('mobileViewActive', 'false');
+    } else if (!desktopIsActuallyActive && mobileIsActuallyActive) {
+        // Mobile is solely active, ensure localStorage reflects this
+        localStorage.setItem('desktopViewActive', 'false');
+        localStorage.setItem('mobileViewActive', 'true');
+    }
+
+    updateHeaderButtonStates(); // Call once after all states applied and resolved
 
     buildSidebar();
     setupSidebarHighlighting();
@@ -680,34 +705,26 @@ function applySavedView() {
 }
 
 function applySavedDesktopView() {
-    const saved = localStorage.getItem('desktopViewActive');
-    if (saved === 'true') {
+    if (localStorage.getItem('desktopViewActive') === 'true') {
         document.body.classList.add('desktop-view');
-        document.body.classList.remove('mobile-view'); // Ensure mobile is off
-        localStorage.setItem('mobileViewActive', 'false');
     }
 }
 
 function applySavedMobileView() {
     let mobileShouldBeActive = false;
     const newMobileSetting = localStorage.getItem('mobileViewActive');
-    const oldMobileSetting = localStorage.getItem('mobileView'); // For backward compatibility
+    const oldMobileSetting = localStorage.getItem('mobileView'); // 'on'/'off'
 
     if (newMobileSetting !== null) {
         mobileShouldBeActive = newMobileSetting === 'true';
-    } else if (oldMobileSetting !== null) { // Check old key if new one isn't set
+    } else if (oldMobileSetting !== null) {
         mobileShouldBeActive = oldMobileSetting === 'on';
-        localStorage.setItem('mobileViewActive', mobileShouldBeActive ? 'true' : 'false'); // Migrate
-        // localStorage.removeItem('mobileView'); // Optional: remove old key
+        localStorage.setItem('mobileViewActive', mobileShouldBeActive ? 'true' : 'false');
+        // Consider removing old key: localStorage.removeItem('mobileView');
     }
 
     if (mobileShouldBeActive) {
         document.body.classList.add('mobile-view');
-        // If mobile is explicitly activated, ensure desktop is off
-        if (document.body.classList.contains('desktop-view')) {
-            document.body.classList.remove('desktop-view');
-            localStorage.setItem('desktopViewActive', 'false');
-        }
     }
 }
 
@@ -719,32 +736,26 @@ function toggleView() { // This is for the global list/block view
 window.toggleView = toggleView;
 
 function toggleMobileView() {
-    const isMobile = document.body.classList.toggle('mobile-view');
-    localStorage.setItem('mobileViewActive', isMobile ? 'true' : 'false');
-    if (isMobile) {
-        document.body.classList.remove('desktop-view');
-        localStorage.setItem('desktopViewActive', 'false');
-    }
-    // For backward compatibility with old key, though applySavedMobileView handles migration on load
-    localStorage.setItem('mobileView', isMobile ? 'on' : 'off');
-    updateHeaderButtonStates(); // Renamed
+    document.body.classList.add('mobile-view');
+    document.body.classList.remove('desktop-view');
+    localStorage.setItem('mobileViewActive', 'true');
+    localStorage.setItem('desktopViewActive', 'false');
+    // For backward compatibility if any other part of code reads old key before full migration
+    localStorage.setItem('mobileView', 'on');
+    updateHeaderButtonStates();
 }
 window.toggleMobileView = toggleMobileView;
 
 function toggleDesktopView() {
-    const isActive = document.body.classList.toggle('desktop-view');
-    if (isActive) {
-        document.body.classList.remove('mobile-view');
-    }
-    localStorage.setItem('desktopViewActive', isActive ? 'true' : 'false');
-    if (isActive) {
-        localStorage.setItem('mobileViewActive', 'false');
-        // Also update the old mobileView key for consistency during transition, if needed
-        localStorage.setItem('mobileView', 'false');
-    }
+    document.body.classList.add('desktop-view');
+    document.body.classList.remove('mobile-view');
+    localStorage.setItem('desktopViewActive', 'true');
+    localStorage.setItem('mobileViewActive', 'false');
+    // For backward compatibility if any other part of code reads old key
+    localStorage.setItem('mobileView', 'off');
     updateHeaderButtonStates();
 }
-// window.toggleDesktopView = toggleDesktopView; // Not called by HTML onclick
+// window.toggleDesktopView = toggleDesktopView; // Not called by HTML onclick, but by JS event listener
 
 function toggleCategoryView(categoryId) {
     const section = document.getElementById(categoryId);
