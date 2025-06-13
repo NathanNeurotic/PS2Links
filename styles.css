@@ -78,10 +78,12 @@ html.light-mode { /* Reference had this for scrollbar consistency */
 
 header { /* From reference */
     background: var(--header-gradient);
-    padding: 1.5rem;
-    text-align: center;
+    padding: 1rem 1.5rem; /* Adjusted padding slightly for better vertical alignment */
+    /* text-align: center; */ /* Flex handles alignment */
     border-bottom: 2px solid var(--text-color); /* Adjusted to use theme variable */
     box-shadow: 0 0 10px var(--focus-glow-color); /* Adjusted to use theme variable */
+    display: flex;
+    align-items: center;
 }
 
 /* Styling for buttons in header, search, etc. based on reference structure */
@@ -101,13 +103,25 @@ header { /* From reference */
     padding: 0.2rem 0.4rem;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem; /* Base from #themeToggle in reference */
+    /* margin-top: 1rem; */ /* Base from #themeToggle in reference, adjusted for flex header */
+    margin-top: 0; /* Align vertically in flex header if they are direct flex children */
 }
 /* Specific margins from reference */
-#viewToggle, #mobileToggle, #installBtn, #expandAllBtn, #collapseAllBtn { margin-left: 0.5rem; }
-#expandAllBtn, #collapseAllBtn { margin-top: 0.5rem; } /* Override general 1rem */
+#viewToggle, #mobileToggle, #installBtn { margin-left: 0.5rem; } /* Kept for header buttons */
+#expandAllBtn, #collapseAllBtn { margin-left: 0.5rem; margin-top: 0.5rem; } /* For search buttons */
 #clearFavoritesBtn { font-size: 0.6rem; padding: 0.1rem 0.2rem; margin:0.5rem; margin-left:0.5rem;} /* from ref */
-#sidebarToggle { font-size: 1rem; padding: 0.25rem 0.5rem; position:fixed; top:1rem; left:1rem; z-index:1100; transition: left 0.3s ease; margin-top:0;} /* from ref, removed fixed top/left for header buttons */
+#sidebarToggle {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    /* position:fixed; top:1rem; left:1rem; */ /* Removed for in-header flow */
+    z-index:1100; /* May still be useful if header has layers, or remove if not needed */
+    /* transition: left 0.3s ease; */ /* No longer slides with sidebar this way */
+    margin-top:0; /* Ensure it aligns in flex */
+    margin-right: 1rem; /* Add some spacing to its right */
+}
+#themeToggle { /* Ensure no left margin for the first button in the header group */
+    margin-left: 0;
+}
 
 /* Active states for toggle buttons */
 #themeToggle.active,
@@ -134,7 +148,7 @@ header { /* From reference */
     box-shadow: 0 0 8px var(--focus-glow-color); /* Use theme's focus glow */
     background: var(--button-active-bg); /* Use active background on hover */
     color: var(--button-active-text); /* Use active text color on hover */
-    /* transform: translateY(-2px); */ /* Keep transform if desired */
+    transform: translateY(-2px); /* Keep transform if desired */
 }
 
 
@@ -143,7 +157,8 @@ header { /* From reference */
 #mobileToggle svg { /* From reference */
     width: 1rem;
     height: 1rem;
-    fill: currentColor;
+    /* fill: currentColor; */ /* Changed to stroke for current SVGs */
+    stroke: currentColor; /* Ensure this matches SVG structure */
     vertical-align: middle;
 }
 
@@ -202,10 +217,14 @@ header { /* From reference */
 
 /* #sidebarToggle already handled above with other buttons */
 
-#sidebar.open + header #sidebarToggle, /* From reference */
+/*
+#sidebar.open + header #sidebarToggle,
 #sidebar.open + #sidebarToggle {
     left: calc(200px + 1rem);
 }
+This rule is no longer applicable as sidebarToggle is inside the header.
+The header itself will shift, taking the button with it.
+*/
 
 body.sidebar-open header, /* From reference */
 body.sidebar-open main,
@@ -216,20 +235,23 @@ body.sidebar-open footer {
 }
 
 #header-favicon { /* From reference */
-    display: block;
+    /* display: block; */ /* Flex item, not needed */
     width: 50px;
     height: 50px;
-    margin: 0 auto 10px auto;
+    /* margin: 0 auto 10px auto; */ /* Replaced by flex spacing */
+    margin-right: 1rem; /* Space between favicon and title */
+    margin-bottom: 0; /* Remove bottom margin if any was implied by auto */
 }
 
 header h1 { /* From reference */
-    font-size: 2.5rem;
-    margin: 0;
+    font-size: 2.5rem; /* This is for the h1 itself, .typing-effect is inside */
+    margin: 0; /* Reset margin */
     text-transform: uppercase;
     letter-spacing: 3px;
-    overflow: hidden;
-    display: block;
-    word-wrap: break-word;
+    /* overflow: hidden; */ /* May not be needed */
+    /* display: block; */ /* Flex item, not needed */
+    /* word-wrap: break-word; */ /* Default h1 behavior */
+    margin-right: auto; /* Pushes subsequent items (buttons) to the right */
 }
 
 .typing-effect::after { /* From reference */
@@ -328,7 +350,7 @@ body.block-view .category { margin-bottom: 0; } /* From reference */
 .category h2:hover { /* From reference, adapted shadow and background */
     box-shadow: 0 0 8px var(--focus-glow-color); /* Adjusted */
     /* background: rgba(255, 255, 255, 0.05); */ /* Reference had this, might be too light for dark theme */
-    /* transform: translateY(-2px); */ /* Keep or remove transform as desired */
+    transform: translateY(-2px); /* Keep or remove transform as desired */
 }
 
 .category:hover { /* From reference, adapted shadow and background */
@@ -429,7 +451,7 @@ body.block-view .category { margin-bottom: 0; } /* From reference */
     box-shadow: inset 0 0 5px var(--focus-glow-color), 0 0 8px var(--focus-glow-color); /* Adjusted */
     /* background: rgba(255, 255, 255, 0.1); */ /* May not be ideal for dark theme */
     /* backdrop-filter: blur(4px); */
-    /* transform: translateY(-2px); */
+    transform: translateY(-2px);
     /* animation: none; */
 }
 
@@ -470,9 +492,17 @@ body.block-view .category { margin-bottom: 0; } /* From reference */
     font-weight: bold;
     margin-bottom: 0.4rem;
     display: inline-flex;
-    align-items: center;
+    align-items: flex-start; /* Align items to the start for better layout with multi-line text */
     gap: 0.25rem;
     word-break: break-word;
+}
+
+.service-name-text { /* Style for the actual text span to handle overflow */
+    display: block;
+    max-height: 4.2em; /* Approx 3 lines (1.4em * 3) */
+    overflow-y: auto;
+    line-height: 1.4em; /* Consistent line height for max-height calculation */
+    /* word-break: break-all; */ /* Optional: if very long words without spaces need to break */
 }
 
 .service-url { /* From reference */
@@ -499,14 +529,18 @@ body.block-view .category { margin-bottom: 0; } /* From reference */
 
 footer { /* From reference, adapted border and shadow */
     background: var(--footer-gradient);
-    padding: 0.8rem;
-    text-align: center;
+    padding: 0.8rem 1.5rem; /* Adjusted padding to align with header/main content edges */
+    /* text-align: center; */ /* Replaced by flex properties */
     border-top: 2px solid var(--text-color); /* Adjusted */
     box-shadow: 0 -2px 8px var(--focus-glow-color); /* Adjusted */
     margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer p { margin: 0.4rem 0; font-size: 1rem; } /* From reference */
+footer p:last-child { text-align: right; } /* Push last p (GitHub link) to the right */
 footer a { color: inherit; } /* From reference */
 
 /* Removed footer .thanks and .thanks a styling from ref as it's covered by general footer p, a */

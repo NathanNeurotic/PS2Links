@@ -20,7 +20,7 @@ module.exports = defineConfig({
     // Add other browser configurations if needed
   ],
   webServer: {
-    command: 'npx http-server -p 3000',
+    command: 'npx http-server ../ -p 3000', // Serve the root directory
     port: 3000,
     timeout: 120 * 1000,
     reuseExistingServer: !process.env.CI,
