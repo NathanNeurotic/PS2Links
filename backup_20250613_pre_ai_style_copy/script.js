@@ -788,28 +788,12 @@ function updateHeaderButtonStates() { // Renamed from updateToggleButtons
     }
     const mobileBtn = document.getElementById('mobileToggle');
     if (mobileBtn) {
-        const isMobileView = document.body.classList.contains('mobile-view');
-        mobileBtn.classList.toggle('active', isMobileView);
-        if (isMobileView) {
-            mobileBtn.title = 'Switch to desktop view';
-            mobileBtn.setAttribute('aria-label', 'Switch to desktop view');
-        } else {
-            mobileBtn.title = 'Switch to mobile view';
-            mobileBtn.setAttribute('aria-label', 'Switch to mobile view');
-        }
+        mobileBtn.classList.toggle('active', document.body.classList.contains('mobile-view'));
         // SVG for mobileToggle is static in HTML, no innerHTML change needed unless icon should change
     }
     const desktopBtn = document.getElementById('desktopToggle');
     if (desktopBtn) {
-        const isDesktopView = document.body.classList.contains('desktop-view');
-        desktopBtn.classList.toggle('active', isDesktopView);
-        if (isDesktopView) {
-            desktopBtn.title = 'Switch to mobile view';
-            desktopBtn.setAttribute('aria-label', 'Switch to mobile view');
-        } else {
-            desktopBtn.title = 'Switch to desktop view';
-            desktopBtn.setAttribute('aria-label', 'Switch to desktop view');
-        }
+        desktopBtn.classList.toggle('active', document.body.classList.contains('desktop-view'));
         // Text for desktopToggle is static, no innerHTML change needed unless icon should change
     }
 }

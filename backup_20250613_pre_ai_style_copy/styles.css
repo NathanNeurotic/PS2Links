@@ -1,0 +1,600 @@
+:root {
+    --bg-color: #0a1612;
+    --text-color: #f7ce3e;
+    --accent-color: #ffd700;
+    --header-gradient: linear-gradient(180deg, #000000, #0a1612);
+    --section-gradient: linear-gradient(90deg, #000000, #0a1612);
+    --content-bg: rgba(26, 41, 48, 0.75);
+    --button-gradient: linear-gradient(135deg, #1a2930, #0a1612);
+    --footer-gradient: linear-gradient(180deg, #0a1612, #000000);
+    --thanks-color: #f7ce3e; /* Or a dimmer gold like #cca300 if needed */
+    --font-family: 'Roboto Mono', monospace;
+    --category-max-height: 400px; /* From reference */
+    --scroll-track: #000000;
+    --scroll-thumb: #ffd700;
+    --scrollbar-width: 8px; /* From reference */
+    --card-min-width: 300px; /* From reference */
+    --card-max-width: 400px; /* From reference */
+    --category-min-width: 300px; /* From reference */
+    /* PS2Links specific button state colors */
+    --button-text-color: var(--text-color);
+    --button-active-bg: var(--accent-color);
+    --button-active-text: var(--bg-color);
+    --button-border-color: var(--text-color);
+    --focus-glow-color: var(--accent-color);
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.light-mode {
+    --bg-color: #e0f0ff;
+    --text-color: #1e507b;
+    --accent-color: #f7c859;
+    --header-gradient: linear-gradient(180deg, #a0c8e0, #e0f0ff);
+    --section-gradient: linear-gradient(90deg, #b0d8f0, #e0f0ff);
+    --content-bg: rgba(255, 255, 255, 0.8);
+    --button-gradient: linear-gradient(135deg, #b0d8f0, #90b8d0);
+    --footer-gradient: linear-gradient(180deg, #e0f0ff, #a0c8e0);
+    --thanks-color: #1c486b;
+    --font-family: 'Roboto Mono', monospace; /* Ensure font consistency */
+    --scroll-track: #d0e0f0;
+    --scroll-thumb: #1e507b;
+    /* PS2Links specific button state colors for light mode */
+    --button-text-color: var(--text-color);
+    --button-active-bg: var(--accent-color);
+    --button-active-text: #ffffff; /* White text on orange accent */
+    --button-border-color: var(--text-color);
+    --focus-glow-color: var(--accent-color);
+}
+
+html.light-mode { /* Reference had this for scrollbar consistency */
+    --scroll-track: var(--scroll-track); /* Use the one from body.light-mode */
+    --scroll-thumb: var(--scroll-thumb); /* Use the one from body.light-mode */
+}
+
+* {
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}
+::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 4px;
+}
+
+header { /* From reference */
+    background: var(--header-gradient);
+    padding: 1rem 1.5rem; /* Adjusted padding slightly for better vertical alignment */
+    /* text-align: center; */ /* Flex handles alignment */
+    border-bottom: 2px solid var(--text-color); /* Adjusted to use theme variable */
+    box-shadow: 0 0 10px var(--focus-glow-color); /* Adjusted to use theme variable */
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for buttons in header, search, etc. based on reference structure */
+#themeToggle,
+#viewToggle,
+#mobileToggle,
+#desktopToggle,
+#headerExpandAllBtn,
+#headerCollapseAllBtn,
+#installBtn,
+#expandAllBtn, /* Old, can be removed later if not reused */
+#collapseAllBtn, /* Old, can be removed later if not reused */
+#clearFavoritesBtn,
+#sidebarToggle {
+    background: var(--button-gradient);
+    border: 1px solid var(--button-border-color); /* Using 1px for now, can be 2px */
+    color: var(--button-text-color);
+    font-family: var(--font-family);
+    font-size: 0.8rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-top: 1rem; */ /* Base from #themeToggle in reference, adjusted for flex header */
+    margin-top: 0; /* Align vertically in flex header if they are direct flex children */
+}
+/* Specific margins from reference */
+#viewToggle, #mobileToggle, #desktopToggle, #headerExpandAllBtn, #headerCollapseAllBtn, #installBtn { margin-left: 0.5rem; } /* Kept for header buttons, added new ones */
+#expandAllBtn, #collapseAllBtn { margin-left: 0.5rem; margin-top: 0.5rem; } /* For old search buttons, can be removed later */
+#clearFavoritesBtn { font-size: 0.6rem; padding: 0.1rem 0.2rem; margin:0.5rem; margin-left:0.5rem;} /* from ref */
+#sidebarToggle {
+    font-size: 1rem;
+    padding: 0.25rem 0.5rem;
+    /* position:fixed; top:1rem; left:1rem; */ /* Removed for in-header flow */
+    z-index:1100; /* May still be useful if header has layers, or remove if not needed */
+    /* transition: left 0.3s ease; */ /* No longer slides with sidebar this way */
+    margin-top:0; /* Ensure it aligns in flex */
+    margin-right: 1rem; /* Add some spacing to its right */
+}
+#themeToggle { /* Ensure no left margin for the first button in the header group */
+    margin-left: 0;
+}
+
+/* Active states for toggle buttons */
+#themeToggle.active,
+#viewToggle.active,
+#mobileToggle.active,
+#desktopToggle.active {
+    background: var(--button-active-bg);
+    color: var(--button-active-text);
+    border-color: var(--button-active-bg); /* Match border to active background */
+}
+
+/* Hover states for buttons, adapted from reference */
+#themeToggle:hover,
+#viewToggle:hover,
+#mobileToggle:hover,
+#installBtn:hover,
+#expandAllBtn:hover,
+#collapseAllBtn:hover,
+#clearFavoritesBtn:hover,
+#sidebarToggle:hover,
+.category-view-toggle:hover, /* Added category-view-toggle to this group */
+.favorite-star:hover { /* Added favorite-star to this group */
+    /* Reference used: box-shadow: 0 0 12px rgba(95, 170, 111, 0.6); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(4px); transform: translateY(-2px); */
+    /* Adapting for PS2Links theme: */
+    box-shadow: 0 0 8px var(--focus-glow-color); /* Use theme's focus glow */
+    background: var(--button-active-bg); /* Use active background on hover */
+    color: var(--button-active-text); /* Use active text color on hover */
+    transform: translateY(-2px); /* Keep transform if desired */
+}
+
+
+#themeToggle svg,
+#viewToggle svg,
+#mobileToggle svg,
+#desktopToggle svg { /* From reference */
+    width: 1rem;
+    height: 1rem;
+    /* fill: currentColor; */ /* Changed to stroke for current SVGs */
+    stroke: currentColor; /* Ensure this matches SVG structure */
+    vertical-align: middle;
+}
+
+#installBtn { display: none; } /* From reference, JS handles display */
+
+
+.btn-small { /* From reference */
+    font-size: 0.6rem;
+    padding: 0.1rem 0.2rem;
+}
+
+#sidebar { /* From reference */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background: var(--content-bg);
+    backdrop-filter: blur(3px);
+    border-right: 2px solid var(--text-color); /* Adjusted */
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+#sidebar.open { /* From reference */
+    transform: translateX(0);
+}
+
+#sidebar a { /* From reference */
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0 0.25rem 1rem;
+    border-bottom: 1px solid var(--text-color); /* Adjusted */
+    position: relative;
+}
+
+#sidebar a.active { /* From reference, adapted */
+    background: var(--button-active-bg); /* Use theme variable */
+    border-radius: 5px;
+    color: var(--button-active-text); /* Use theme variable */
+}
+
+#sidebar a::before { /* From reference */
+    content: "\2022"; /* bullet */
+    position: absolute;
+    left: 0;
+}
+
+#sidebar a:last-child { border-bottom: none; } /* From reference */
+
+/* #sidebarToggle already handled above with other buttons */
+
+/*
+#sidebar.open + header #sidebarToggle,
+#sidebar.open + #sidebarToggle {
+    left: calc(200px + 1rem);
+}
+This rule is no longer applicable as sidebarToggle is inside the header.
+The header itself will shift, taking the button with it.
+*/
+
+body.sidebar-open header, /* From reference */
+body.sidebar-open main,
+body.sidebar-open footer {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+body.sidebar-open {
+    overflow: hidden; /* Prevent body scroll when sidebar is open */
+}
+
+#header-favicon { /* From reference */
+    /* display: block; */ /* Flex item, not needed */
+    width: 50px;
+    height: 50px;
+    /* margin: 0 auto 10px auto; */ /* Replaced by flex spacing */
+    margin-right: 1rem; /* Space between favicon and title */
+    margin-bottom: 0; /* Remove bottom margin if any was implied by auto */
+}
+
+header h1 { /* From reference */
+    font-size: 2.5rem; /* This is for the h1 itself, .typing-effect is inside */
+    margin: 0; /* Reset margin */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    /* overflow: hidden; */ /* May not be needed */
+    /* display: block; */ /* Flex item, not needed */
+    /* word-wrap: break-word; */ /* Default h1 behavior */
+    margin-right: auto; /* Pushes subsequent items (buttons) to the right */
+}
+
+.typing-effect::after { /* From reference */
+    content: '|';
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink { 50% { opacity: 0; } } /* From reference */
+
+main { /* From reference */
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+}
+
+body.block-view main { /* From reference */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
+    gap: 1rem;
+}
+
+body.block-view main > .search-container, /* From reference */
+body.block-view main > #favorites {
+    grid-column: 1 / -1;
+}
+
+body.block-view .category { margin-bottom: 0; } /* From reference */
+
+.search-container { /* From reference */
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.tag-hint { /* From reference */
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--thanks-color); /* Adjusted */
+}
+
+#searchInput { /* From reference, adapted border and shadow */
+    background: var(--content-bg);
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--button-border-color); /* Adjusted */
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--focus-glow-color); /* Adjusted */
+}
+
+#searchInput:focus { /* From reference, adapted shadow */
+    outline: none;
+    box-shadow: 0 0 10px var(--focus-glow-color), 0 0 20px var(--focus-glow-color); /* Adjusted */
+    /* animation: glow 1.2s ease-in-out infinite alternate; */ /* Glow animation can be intense, check if needed */
+}
+
+/* @keyframes glow {  From reference, remove if too much
+    from { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); }
+    to { box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
+} */
+
+.no-results { /* From reference */
+    color: var(--text-color);
+    text-align: center;
+    font-family: var(--font-family);
+    margin-top: 1rem;
+}
+
+.category { /* From reference, adapted shadow */
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.category h2 { /* From reference, adapted border, shadow, hover */
+    background: var(--section-gradient);
+    padding: 0.85rem;
+    padding-right: calc(1rem + var(--scrollbar-width));
+    margin: 0;
+    cursor: pointer;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid var(--button-border-color); /* Adjusted */
+    border-radius: 10px;
+    box-shadow: 0 0 5px var(--focus-glow-color); /* Adjusted */
+    transition: box-shadow 0.3s ease;
+}
+
+.category h2:hover { /* From reference, adapted shadow and background */
+    box-shadow: 0 0 8px var(--focus-glow-color); /* Adjusted */
+    /* background: rgba(255, 255, 255, 0.05); */ /* Reference had this, might be too light for dark theme */
+    transform: translateY(-2px); /* Keep or remove transform as desired */
+}
+
+.category:hover { /* From reference, adapted shadow and background */
+    box-shadow: 0 0 8px var(--focus-glow-color); /* Adjusted */
+    /* background: rgba(255, 255, 255, 0.03); */
+    /* transform: translateY(-2px); */
+}
+
+.chevron { /* From reference */
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.chevron.open { transform: rotate(180deg); } /* From reference */
+
+.category-view-toggle { /* From reference */
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+.category-view-toggle:focus { /* From reference */
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+}
+.category-view-toggle.active { color: var(--accent-color); } /* From reference, uses theme variable */
+
+.category-title { flex: 1; text-align: center; } /* From reference */
+.category-emoji { margin-right: 0.5rem; } /* From reference */
+
+.category-content { /* From reference, adapted border */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    min-width: 0;
+    background: var(--content-bg);
+    backdrop-filter: blur(3px);
+    border: 1px solid var(--button-border-color); /* Adjusted */
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    max-height: 0;
+    opacity: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    visibility: hidden;
+}
+
+.category-content.open { /* From reference */
+    opacity: 1;
+    visibility: visible;
+    max-height: var(--category-max-height);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: calc(1rem + var(--scrollbar-width));
+}
+
+.category.list-view .category-content { display: flex; flex-direction: column; } /* From reference */
+
+.category.list-view .service-button { /* From reference */
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    max-width: none;
+}
+.category.list-view .service-name { margin-bottom: 0; margin-right: 0.5rem; } /* From reference */
+.category.list-view .service-thumbnail { /* From reference */
+    width: 80px;
+    max-height: 60px;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+}
+
+.service-button { /* From reference, adapted border, color, shadow, animation */
+    display: flex;
+    flex-direction: column;
+    background: var(--button-gradient); /* Use theme variable */
+    padding: 0.75rem;
+    padding-right: 2rem; /* space for favorite star */
+    width: 100%;
+    max-width: var(--card-max-width);
+    margin: 0 auto;
+    min-width: 0;
+    box-sizing: border-box;
+    border: 1px solid var(--accent-color); /* Use theme variable, adjusted thickness */
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--text-color); /* Use theme variable for text inside card */
+    box-shadow: inset 0 0 2px var(--focus-glow-color), 0 0 2px var(--focus-glow-color); /* Adjusted shadow */
+    /* animation: pulse 2s infinite; */ /* Pulse can be distracting, remove or adjust */
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+.service-button:hover { /* From reference, adapted shadow and background */
+    box-shadow: inset 0 0 5px var(--focus-glow-color), 0 0 8px var(--focus-glow-color); /* Adjusted */
+    /* background: rgba(255, 255, 255, 0.1); */ /* May not be ideal for dark theme */
+    /* backdrop-filter: blur(4px); */
+    transform: translateY(-2px);
+    /* animation: none; */
+}
+
+/* @keyframes pulse {  Remove or adjust if too distracting
+    0%, 100% { box-shadow: inset 0 0 3px rgba(95, 170, 111, 0.3), 0 0 3px rgba(95, 170, 111, 0.2); }
+    50% { box-shadow: inset 0 0 5px rgba(95, 170, 111, 0.5), 0 0 5px rgba(95, 170, 111, 0.3); }
+} */
+
+.service-favicon { width: 16px; height: 16px; vertical-align: middle; } /* From reference */
+.service-thumbnail { /* From reference */
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+}
+
+.favorite-star { /* From reference */
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.25rem;
+    display: inline-block;
+    color: #ccc; /* Default un-favorited color from reference */
+}
+.favorite-star svg { width: 100%; height: 100%; fill: currentColor; } /* From reference */
+.favorite-star:focus { outline: 2px solid var(--text-color); outline-offset: 2px; } /* From reference */
+
+.favorite-star.favorited { color: var(--accent-color); } /* Use theme accent for favorited, was 'gold' */
+
+/* General hover for sidebar link already handled by its own .active state or general button hover */
+/* #sidebar a:hover { background: var(--button-gradient); border-radius: 5px; } */
+
+.service-name { /* From reference */
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+    display: inline-flex;
+    align-items: flex-start; /* Align items to the start for better layout with multi-line text */
+    gap: 0.25rem;
+    word-break: break-word;
+}
+
+.service-name-text { /* Style for the actual text span to handle overflow */
+    display: block;
+    max-height: 4.2em; /* Approx 3 lines (1.4em * 3) */
+    overflow-y: auto;
+    line-height: 1.4em; /* Consistent line height for max-height calculation */
+    /* word-break: break-all; */ /* Optional: if very long words without spaces need to break */
+}
+
+.service-url { /* From reference */
+    font-size: 0.8rem;
+    word-break: break-all;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--thanks-color); /* Make URL dimmer using thanks-color */
+}
+
+.copy-link { /* From reference */
+    border: none;
+    background: transparent;
+    color: inherit; /* Inherit from .service-url */
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.8rem;
+}
+.copy-link:focus { outline: 2px solid var(--text-color); outline-offset: 2px; } /* From reference */
+
+.category.list-view .service-url { margin-left: auto; } /* From reference */
+.service-tags { display: none; } /* From reference */
+
+footer { /* From reference, adapted border and shadow */
+    background: var(--footer-gradient);
+    padding: 0.8rem 1.5rem; /* Adjusted padding to align with header/main content edges */
+    /* text-align: center; */ /* Replaced by flex properties */
+    border-top: 2px solid var(--text-color); /* Adjusted */
+    box-shadow: 0 -2px 8px var(--focus-glow-color); /* Adjusted */
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p { margin: 0.4rem 0; font-size: 1rem; } /* From reference */
+footer p:last-child { text-align: right; } /* Push last p (GitHub link) to the right */
+footer a { color: inherit; } /* From reference */
+
+/* Removed footer .thanks and .thanks a styling from ref as it's covered by general footer p, a */
+
+/* Responsive Design from reference */
+body.mobile-view .category-content { grid-template-columns: 1fr; }
+body.mobile-view header h1 { font-size: 1.6rem; }
+body.mobile-view .category h2 { font-size: 1.2rem; }
+body.mobile-view #searchInput { width: 90%; }
+/* Ensure #viewToggle is visible by default, removing specific hiding rules */
+/* body.mobile-view #viewToggle, body.desktop-view #viewToggle { display: none; } */
+
+/* Desktop view specific styles (mimicking block-view) */
+body.desktop-view main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
+    gap: 1rem;
+}
+body.desktop-view main > .search-container,
+body.desktop-view main > #favorites {
+    grid-column: 1 / -1; /* Make search and favorites span full width */
+}
+body.desktop-view .category {
+    margin-bottom: 0; /* Consistent with block-view category margin */
+}
+/* .category-content in desktop-view will use its default grid styling, which is desired. */
+
+@media (max-width: 768px) { /* General mobile styles from reference */
+    /* #viewToggle { display: none; } */ /* Ensure #viewToggle is visible by default */
+    .category-content { grid-template-columns: 1fr; }
+    body.block-view main { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); } /* Ref's seems to allow smaller cards on mobile in block view */
+    header h1 { font-size: 1.6rem; }
+    .category h2 { font-size: 1.2rem; }
+    #searchInput { width: 90%; }
+}
+
+#updateNotification { /* From reference, adapted colors */
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    color: var(--button-active-text); /* Use active button text color for contrast */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: none; /* JS handles visibility */
+}
+#updateNotification[hidden] { display: none !important; } /* Ensure hidden takes precedence */

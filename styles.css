@@ -1,27 +1,28 @@
 :root {
-    --bg-color: #0a1612;
-    --text-color: #f7ce3e;
-    --accent-color: #ffd700;
-    --header-gradient: linear-gradient(180deg, #000000, #0a1612);
-    --section-gradient: linear-gradient(90deg, #000000, #0a1612);
-    --content-bg: rgba(26, 41, 48, 0.75);
-    --button-gradient: linear-gradient(135deg, #1a2930, #0a1612);
-    --footer-gradient: linear-gradient(180deg, #0a1612, #000000);
-    --thanks-color: #f7ce3e; /* Or a dimmer gold like #cca300 if needed */
-    --font-family: 'Roboto Mono', monospace;
-    --category-max-height: 400px; /* From reference */
-    --scroll-track: #000000;
-    --scroll-thumb: #ffd700;
-    --scrollbar-width: 8px; /* From reference */
-    --card-min-width: 300px; /* From reference */
-    --card-max-width: 400px; /* From reference */
-    --category-min-width: 300px; /* From reference */
-    /* PS2Links specific button state colors */
+    --bg-color: #121212; /* AI */
+    --text-color: #e0e0e0; /* AI */
+    --accent-color: #5faaaF; /* AI Teal accent */
+    --header-gradient: linear-gradient(180deg, #1f1f1f, #121212); /* AI */
+    --section-gradient: linear-gradient(90deg, #1a1a1a, #121212); /* AI */
+    --content-bg: rgba(30, 30, 30, 0.85); /* AI Slightly more opaque */
+    --button-gradient: linear-gradient(135deg, rgba(95, 170, 175, 0.2), rgba(95, 170, 175, 0.1)); /* AI Subtle gradient */
+    --footer-gradient: linear-gradient(180deg, #121212, #1f1f1f); /* AI */
+    --thanks-color: #a0a0a0; /* AI Lighter grey for thanks */
+    --font-family: 'Roboto Mono', monospace; /* Consistent */
+    --category-max-height: 400px; /* PS2Links - keep for now */
+    --scroll-track: #2c2c2c; /* AI */
+    --scroll-thumb: #5faaaF; /* AI */
+    --scrollbar-width: 10px; /* AI */
+    --card-min-width: 300px; /* PS2Links - keep for now */
+    --card-max-width: 400px; /* PS2Links - keep for now */
+    --category-min-width: 300px; /* PS2Links - keep for now */
+    /* Unused PS2Links button variables (will be removed or adapted):
     --button-text-color: var(--text-color);
     --button-active-bg: var(--accent-color);
     --button-active-text: var(--bg-color);
     --button-border-color: var(--text-color);
     --focus-glow-color: var(--accent-color);
+    */
 }
 
 body {
@@ -33,32 +34,38 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    line-height: 1.6; /* AI */
 }
 
 body.light-mode {
-    --bg-color: #e0f0ff;
-    --text-color: #1e507b;
-    --accent-color: #f7c859;
-    --header-gradient: linear-gradient(180deg, #a0c8e0, #e0f0ff);
-    --section-gradient: linear-gradient(90deg, #b0d8f0, #e0f0ff);
-    --content-bg: rgba(255, 255, 255, 0.8);
-    --button-gradient: linear-gradient(135deg, #b0d8f0, #90b8d0);
-    --footer-gradient: linear-gradient(180deg, #e0f0ff, #a0c8e0);
-    --thanks-color: #1c486b;
-    --font-family: 'Roboto Mono', monospace; /* Ensure font consistency */
-    --scroll-track: #d0e0f0;
-    --scroll-thumb: #1e507b;
-    /* PS2Links specific button state colors for light mode */
+    --bg-color: #f0f4f8; /* AI Light blue-grey */
+    --text-color: #2c3e50; /* AI Dark blue-grey text */
+    --accent-color: #3498db; /* AI Brighter blue accent */
+    --header-gradient: linear-gradient(180deg, #ffffff, #f0f4f8); /* AI */
+    --section-gradient: linear-gradient(90deg, #ffffff, #f0f4f8); /* AI */
+    --content-bg: rgba(255, 255, 255, 0.9); /* AI */
+    --button-gradient: linear-gradient(135deg, rgba(52, 152, 219, 0.2), rgba(52, 152, 219, 0.1)); /* AI */
+    --footer-gradient: linear-gradient(180deg, #f0f4f8, #ffffff); /* AI */
+    --thanks-color: #555555; /* AI */
+    --font-family: 'Roboto Mono', monospace; /* Consistent */
+    --scroll-track: #d5dbe0; /* AI */
+    --scroll-thumb: #3498db; /* AI */
+    /* Unused PS2Links button variables for light mode:
     --button-text-color: var(--text-color);
     --button-active-bg: var(--accent-color);
-    --button-active-text: #ffffff; /* White text on orange accent */
+    --button-active-text: #ffffff;
     --button-border-color: var(--text-color);
     --focus-glow-color: var(--accent-color);
+    */
 }
 
-html.light-mode { /* Reference had this for scrollbar consistency */
-    --scroll-track: var(--scroll-track); /* Use the one from body.light-mode */
-    --scroll-thumb: var(--scroll-thumb); /* Use the one from body.light-mode */
+html.light-mode {
+    /* This selector might be redundant if body.light-mode vars are inherited properly.
+       However, keeping it if AI styles specifically target html.light-mode for scrollbars.
+       The AI styles provided don't show this, so it might be removable.
+       For now, ensure vars used by scrollbar selectors are available. */
+    --scroll-track: var(--scroll-track); /* Ensure it uses the updated light mode var */
+    --scroll-thumb: var(--scroll-thumb); /* Ensure it uses the updated light mode var */
 }
 
 * {
@@ -73,165 +80,154 @@ html.light-mode { /* Reference had this for scrollbar consistency */
 }
 ::-webkit-scrollbar-thumb {
     background: var(--scroll-thumb);
-    border-radius: 4px;
+    border-radius: 5px; /* AI */
 }
 
-header { /* From reference */
+header {
     background: var(--header-gradient);
-    padding: 1rem 1.5rem; /* Adjusted padding slightly for better vertical alignment */
-    /* text-align: center; */ /* Flex handles alignment */
-    border-bottom: 2px solid var(--text-color); /* Adjusted to use theme variable */
-    box-shadow: 0 0 10px var(--focus-glow-color); /* Adjusted to use theme variable */
-    display: flex;
-    align-items: center;
+    padding: 1.5rem; /* AI */
+    /* text-align: center; */ /* AI specified, but PS2Links uses flex. Keep flex for now. */
+    border-bottom: 2px solid var(--text-color); /* Consistent */
+    box-shadow: 0 0 8px var(--text-color);
+    display: flex; /* PS2Links - Retain flex for header layout */
+    align-items: center; /* PS2Links - Retain flex for header layout */
 }
 
-/* Styling for buttons in header, search, etc. based on reference structure */
+/* General Button Styling (AI Repo Adaptation) */
 #themeToggle,
 #viewToggle,
 #mobileToggle,
 #desktopToggle,
-#headerExpandAllBtn,
-#headerCollapseAllBtn,
+#headerExpandAllBtn, /* PS2Links specific, ensure it gets AI styling */
+#headerCollapseAllBtn, /* PS2Links specific, ensure it gets AI styling */
 #installBtn,
-#expandAllBtn, /* Old, can be removed later if not reused */
-#collapseAllBtn, /* Old, can be removed later if not reused */
+#expandAllBtn, /* Old PS2Links button, gets AI styling if still used */
+#collapseAllBtn, /* Old PS2Links button, gets AI styling if still used */
 #clearFavoritesBtn,
 #sidebarToggle {
-    background: var(--button-gradient);
-    border: 1px solid var(--button-border-color); /* Using 1px for now, can be 2px */
-    color: var(--button-text-color);
-    font-family: var(--font-family);
-    font-size: 0.8rem;
-    padding: 0.2rem 0.4rem;
-    border-radius: 5px;
+    background: none; /* AI */
+    border: 2px solid var(--text-color); /* AI */
+    color: var(--text-color); /* AI */
+    font-family: var(--font-family); /* Consistent */
+    font-size: 0.9rem; /* AI - Slightly larger base */
+    padding: 0.4rem 0.8rem; /* AI - Adjust padding */
+    border-radius: 8px; /* AI - More rounded */
     cursor: pointer;
-    /* margin-top: 1rem; */ /* Base from #themeToggle in reference, adjusted for flex header */
-    margin-top: 0; /* Align vertically in flex header if they are direct flex children */
-}
-/* Specific margins from reference */
-#viewToggle, #mobileToggle, #desktopToggle, #headerExpandAllBtn, #headerCollapseAllBtn, #installBtn { margin-left: 0.5rem; } /* Kept for header buttons, added new ones */
-#expandAllBtn, #collapseAllBtn { margin-left: 0.5rem; margin-top: 0.5rem; } /* For old search buttons, can be removed later */
-#clearFavoritesBtn { font-size: 0.6rem; padding: 0.1rem 0.2rem; margin:0.5rem; margin-left:0.5rem;} /* from ref */
-#sidebarToggle {
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
-    /* position:fixed; top:1rem; left:1rem; */ /* Removed for in-header flow */
-    z-index:1100; /* May still be useful if header has layers, or remove if not needed */
-    /* transition: left 0.3s ease; */ /* No longer slides with sidebar this way */
-    margin-top:0; /* Ensure it aligns in flex */
-    margin-right: 1rem; /* Add some spacing to its right */
-}
-#themeToggle { /* Ensure no left margin for the first button in the header group */
-    margin-left: 0;
+    /* margin: 0.25rem; */ /* AI - Uniform margin, but PS2Links header has specific needs */
+    transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease; /* AI */
+    margin-top: 0; /* PS2Links - Align vertically in flex header */
 }
 
-/* Active states for toggle buttons */
+/* Specific margins for PS2Links header buttons - attempt to merge */
+#themeToggle { margin-left: 0; } /* PS2Links - first button */
+#viewToggle, #mobileToggle, #desktopToggle, #headerExpandAllBtn, #headerCollapseAllBtn, #installBtn { margin-left: 0.5rem; } /* PS2Links */
+#clearFavoritesBtn { font-size: 0.7rem; padding: 0.2rem 0.4rem; margin-left:0.5rem;} /* Adapted from PS2Links, with slightly larger AI-style font */
+#sidebarToggle {
+    /* font-size: 1rem; */ /* Covered by group */
+    /* padding: 0.25rem 0.5rem; */ /* Covered by group */
+    margin-right: 1rem; /* PS2Links - spacing to its right */
+    z-index:1100; /* PS2Links - keep if needed */
+}
+
+
+/* Active states for toggle buttons (AI style) */
 #themeToggle.active,
 #viewToggle.active,
 #mobileToggle.active,
-#desktopToggle.active {
-    background: var(--button-active-bg);
-    color: var(--button-active-text);
-    border-color: var(--button-active-bg); /* Match border to active background */
+#desktopToggle.active,
+#sidebarToggle.active { /* Added #sidebarToggle.active here */
+    background: var(--accent-color); /* AI */
+    color: var(--bg-color); /* AI - Text color that contrasts with accent */
+    border-color: var(--accent-color); /* AI */
 }
 
-/* Hover states for buttons, adapted from reference */
+/* Hover states for buttons (AI style) */
 #themeToggle:hover,
 #viewToggle:hover,
 #mobileToggle:hover,
+#desktopToggle:hover, /* Added desktopToggle to match AI example */
+#headerExpandAllBtn:hover,
+#headerCollapseAllBtn:hover,
 #installBtn:hover,
 #expandAllBtn:hover,
 #collapseAllBtn:hover,
 #clearFavoritesBtn:hover,
-#sidebarToggle:hover,
-.category-view-toggle:hover, /* Added category-view-toggle to this group */
-.favorite-star:hover { /* Added favorite-star to this group */
-    /* Reference used: box-shadow: 0 0 12px rgba(95, 170, 111, 0.6); background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(4px); transform: translateY(-2px); */
-    /* Adapting for PS2Links theme: */
-    box-shadow: 0 0 8px var(--focus-glow-color); /* Use theme's focus glow */
-    background: var(--button-active-bg); /* Use active background on hover */
-    color: var(--button-active-text); /* Use active text color on hover */
-    transform: translateY(-2px); /* Keep transform if desired */
+#sidebarToggle:hover {
+    /* .category-view-toggle and .favorite-star will have their own hovers if different */
+    box-shadow: 0 0 12px var(--accent-color);
+    background: rgba(255, 255, 255, 0.1); /* AI Subtle white hover */
+    backdrop-filter: blur(4px); /* AI */
+    transform: translateY(-2px); /* AI */
+    /* Ensure text color on hover is still readable, AI example implies it doesn't change from default var(--text-color) unless active */
 }
 
 
-#themeToggle svg,
-#viewToggle svg,
-#mobileToggle svg,
-#desktopToggle svg { /* From reference */
+#themeToggle svg, /* PS2Links specific, keep for now */
+#viewToggle svg, /* PS2Links specific, keep for now */
+#mobileToggle svg, /* PS2Links specific, keep for now */
+#desktopToggle svg { /* PS2Links specific, keep for now */
     width: 1rem;
     height: 1rem;
-    /* fill: currentColor; */ /* Changed to stroke for current SVGs */
-    stroke: currentColor; /* Ensure this matches SVG structure */
+    stroke: currentColor;
     vertical-align: middle;
 }
 
-#installBtn { display: none; } /* From reference, JS handles display */
+#installBtn { display: none; } /* Consistent */
 
 
-.btn-small { /* From reference */
-    font-size: 0.6rem;
-    padding: 0.1rem 0.2rem;
+.btn-small { /* PS2Links specific, review if used by AI style buttons */
+    font-size: 0.7rem; /* Adjusted to be slightly larger */
+    padding: 0.2rem 0.4rem; /* Adjusted */
 }
 
-#sidebar { /* From reference */
+#sidebar {
     position: fixed;
     top: 0;
     left: 0;
     width: 200px;
     height: 100%;
-    background: var(--content-bg);
-    backdrop-filter: blur(3px);
-    border-right: 2px solid var(--text-color); /* Adjusted */
+    background: var(--content-bg); /* AI */
+    backdrop-filter: blur(5px); /* AI */
+    border-right: 2px solid var(--text-color); /* AI */
     padding: 1rem;
     box-sizing: border-box;
     overflow-y: auto;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    z-index: 1000;
+    z-index: 1000; /* Consistent */
 }
 
-#sidebar.open { /* From reference */
-    transform: translateX(0);
+#sidebar.open {
+    transform: translateX(0); /* Consistent */
 }
 
-#sidebar a { /* From reference */
+#sidebar a {
     display: block;
-    color: var(--text-color);
+    color: var(--text-color); /* AI */
     text-decoration: none;
     margin-bottom: 0.5rem;
-    padding: 0.25rem 0 0.25rem 1rem;
-    border-bottom: 1px solid var(--text-color); /* Adjusted */
-    position: relative;
+    padding: 0.25rem 0 0.25rem 1rem; /* PS2Links padding for bullet */
+    border-bottom: 1px solid var(--text-color); /* AI */
+    position: relative; /* PS2Links for bullet */
 }
 
-#sidebar a.active { /* From reference, adapted */
-    background: var(--button-active-bg); /* Use theme variable */
-    border-radius: 5px;
-    color: var(--button-active-text); /* Use theme variable */
+#sidebar a.active {
+    background: var(--accent-color); /* AI */
+    border-radius: 5px; /* AI */
+    color: var(--bg-color); /* AI */
 }
 
-#sidebar a::before { /* From reference */
-    content: "\2022"; /* bullet */
+#sidebar a::before { /* PS2Links specific, keep for custom bullet */
+    content: "\2022";
     position: absolute;
     left: 0;
 }
 
-#sidebar a:last-child { border-bottom: none; } /* From reference */
+#sidebar a:last-child { border-bottom: none; } /* Consistent */
 
-/* #sidebarToggle already handled above with other buttons */
+/* Sidebar toggle positioning logic from PS2Links (related to body.sidebar-open) is kept */
 
-/*
-#sidebar.open + header #sidebarToggle,
-#sidebar.open + #sidebarToggle {
-    left: calc(200px + 1rem);
-}
-This rule is no longer applicable as sidebarToggle is inside the header.
-The header itself will shift, taking the button with it.
-*/
-
-body.sidebar-open header, /* From reference */
+body.sidebar-open header,
 body.sidebar-open main,
 body.sidebar-open footer {
     margin-left: 200px;
@@ -240,237 +236,246 @@ body.sidebar-open footer {
 }
 
 body.sidebar-open {
-    overflow: hidden; /* Prevent body scroll when sidebar is open */
+    overflow: hidden;
 }
 
-#header-favicon { /* From reference */
-    /* display: block; */ /* Flex item, not needed */
+#header-favicon { /* PS2Links specific, keep */
     width: 50px;
     height: 50px;
-    /* margin: 0 auto 10px auto; */ /* Replaced by flex spacing */
-    margin-right: 1rem; /* Space between favicon and title */
-    margin-bottom: 0; /* Remove bottom margin if any was implied by auto */
+    margin-right: 1rem;
+    margin-bottom: 0;
 }
 
-header h1 { /* From reference */
-    font-size: 2.5rem; /* This is for the h1 itself, .typing-effect is inside */
-    margin: 0; /* Reset margin */
+header h1 { /* PS2Links specific, keep */
+    font-size: 2.5rem;
+    margin: 0;
     text-transform: uppercase;
     letter-spacing: 3px;
-    /* overflow: hidden; */ /* May not be needed */
-    /* display: block; */ /* Flex item, not needed */
-    /* word-wrap: break-word; */ /* Default h1 behavior */
-    margin-right: auto; /* Pushes subsequent items (buttons) to the right */
+    margin-right: auto;
 }
 
-.typing-effect::after { /* From reference */
+.typing-effect::after { /* Consistent, assuming blink animation is desired */
     content: '|';
     animation: blink 0.7s infinite;
 }
 
-@keyframes blink { 50% { opacity: 0; } } /* From reference */
+@keyframes blink { 50% { opacity: 0; } } /* Consistent */
 
-main { /* From reference */
-    width: 100%;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    flex: 1;
+/* Add AI's glow and pulse keyframes */
+@keyframes glow {
+    from { box-shadow: 0 0 8px var(--accent-color), 0 0 16px var(--accent-color); } /* AI */
+    to { box-shadow: 0 0 16px var(--accent-color), 0 0 24px var(--accent-color); } /* AI */
 }
 
-body.block-view main { /* From reference */
+@keyframes pulse {
+    0%, 100% { box-shadow: inset 0 0 4px color-mix(in srgb, var(--accent-color) 40%, transparent), 0 0 4px color-mix(in srgb, var(--accent-color) 30%, transparent); } /* Adjusted from AI Green */
+    50% { box-shadow: inset 0 0 8px color-mix(in srgb, var(--accent-color) 60%, transparent), 0 0 8px color-mix(in srgb, var(--accent-color) 50%, transparent); } /* Adjusted from AI Green */
+}
+
+
+main {
+    width: 100%;
+    margin: 2rem auto; /* Consistent */
+    padding: 0 1rem; /* Consistent */
+    flex: 1; /* Consistent */
+}
+
+body.block-view main { /* PS2Links specific layout, keep */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
     gap: 1rem;
 }
 
-body.block-view main > .search-container, /* From reference */
+body.block-view main > .search-container, /* PS2Links specific layout, keep */
 body.block-view main > #favorites {
     grid-column: 1 / -1;
 }
 
-body.block-view .category { margin-bottom: 0; } /* From reference */
+body.block-view .category { margin-bottom: 0; } /* PS2Links specific layout, keep */
 
-.search-container { /* From reference */
+.search-container { /* Consistent */
     margin-bottom: 2rem;
     text-align: center;
 }
 
-.tag-hint { /* From reference */
+.tag-hint { /* PS2Links specific, keep but use AI --thanks-color */
     display: block;
     margin-top: 0.25rem;
     font-size: 0.8rem;
-    color: var(--thanks-color); /* Adjusted */
+    color: var(--thanks-color); /* AI thanks color */
 }
 
-#searchInput { /* From reference, adapted border and shadow */
-    background: var(--content-bg);
-    backdrop-filter: blur(3px);
-    border: 1px solid var(--button-border-color); /* Adjusted */
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 0 5px var(--focus-glow-color); /* Adjusted */
+#searchInput {
+    background: var(--content-bg); /* AI */
+    backdrop-filter: blur(5px); /* AI - Slightly more blur */
+    border: 2px solid var(--text-color); /* AI */
+    color: var(--text-color); /* AI */
+    font-family: var(--font-family); /* Consistent */
+    font-size: 1.2rem; /* Consistent */
+    padding: 0.6rem 1.2rem; /* AI - More padding */
+    width: 70%; /* AI */
+    max-width: 550px; /* AI - Slightly smaller max-width */
+    border-radius: 8px; /* AI */
+    box-shadow: 0 0 5px var(--text-color);
+    transition: box-shadow 0.3s ease; /* AI */
 }
 
-#searchInput:focus { /* From reference, adapted shadow */
-    outline: none;
-    box-shadow: 0 0 10px var(--focus-glow-color), 0 0 20px var(--focus-glow-color); /* Adjusted */
-    /* animation: glow 1.2s ease-in-out infinite alternate; */ /* Glow animation can be intense, check if needed */
+#searchInput:focus {
+    outline: none; /* Consistent */
+    box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); /* AI */
+    animation: glow 1.2s ease-in-out infinite alternate; /* AI - uses @keyframes glow */
 }
 
-/* @keyframes glow {  From reference, remove if too much
-    from { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); }
-    to { box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
-} */
+/* @keyframes glow is now defined above with AI's version */
 
-.no-results { /* From reference */
-    color: var(--text-color);
-    text-align: center;
-    font-family: var(--font-family);
-    margin-top: 1rem;
+.no-results {
+    color: var(--text-color); /* Consistent */
+    text-align: center; /* Consistent */
+    font-family: var(--font-family); /* Consistent */
+    margin-top: 1rem; /* Consistent */
 }
 
-.category { /* From reference, adapted shadow */
-    margin-bottom: 1.5rem;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
+.category {
+    margin-bottom: 1.5rem; /* Consistent with PS2Links default view */
+    transition: transform 0.2s ease, box-shadow 0.3s ease; /* PS2Links, keep */
 }
 
-.category h2 { /* From reference, adapted border, shadow, hover */
-    background: var(--section-gradient);
-    padding: 0.85rem;
-    padding-right: calc(1rem + var(--scrollbar-width));
-    margin: 0;
-    cursor: pointer;
-    font-size: 1.6rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-    border: 1px solid var(--button-border-color); /* Adjusted */
-    border-radius: 10px;
-    box-shadow: 0 0 5px var(--focus-glow-color); /* Adjusted */
-    transition: box-shadow 0.3s ease;
+.category h2 {
+    background: var(--section-gradient); /* AI */
+    padding: 0.75rem 1.25rem; /* AI - Adjusted padding */
+    /* padding-right for scrollbar from PS2Links is good, let's try to keep it */
+    padding-right: calc(1.25rem + var(--scrollbar-width)); /* AI padding + PS2Links scrollbar */
+    margin: 0; /* Consistent */
+    cursor: pointer; /* Consistent */
+    font-size: 1.5rem; /* AI - Slightly smaller */
+    display: flex; /* Consistent */
+    justify-content: space-between; /* Consistent */
+    align-items: center; /* Consistent */
+    box-sizing: border-box; /* Consistent */
+    border: 2px solid var(--text-color); /* AI */
+    border-radius: 8px; /* AI - More rounded */
+    box-shadow: 0 0 5px var(--text-color);
+    transition: box-shadow 0.3s ease, background 0.2s ease, transform 0.2s ease; /* AI */
 }
 
-.category h2:hover { /* From reference, adapted shadow and background */
-    box-shadow: 0 0 8px var(--focus-glow-color); /* Adjusted */
-    /* background: rgba(255, 255, 255, 0.05); */ /* Reference had this, might be too light for dark theme */
-    transform: translateY(-2px); /* Keep or remove transform as desired */
+.category h2:hover {
+    box-shadow: 0 0 12px var(--accent-color);
+    background: rgba(255, 255, 255, 0.05); /* AI Subtle white hover */
+    transform: translateY(-2px); /* AI */
 }
 
-.category:hover { /* From reference, adapted shadow and background */
-    box-shadow: 0 0 8px var(--focus-glow-color); /* Adjusted */
-    /* background: rgba(255, 255, 255, 0.03); */
-    /* transform: translateY(-2px); */
-}
+/* .category:hover from PS2Links is removed as AI h2:hover is more specific */
 
-.chevron { /* From reference */
+.chevron { /* PS2Links specific, keep */
     width: 1rem;
     height: 1rem;
     fill: currentColor;
     transition: transform 0.3s ease;
 }
 
-.chevron.open { transform: rotate(180deg); } /* From reference */
+.chevron.open { transform: rotate(180deg); } /* PS2Links specific, keep */
 
-.category-view-toggle { /* From reference */
+.category-view-toggle { /* PS2Links specific, styled like a button now, needs AI hover */
     margin-left: 0.5rem;
     cursor: pointer;
+    /* Basic text color from var(--text-color) or var(--accent-color) if active */
 }
-.category-view-toggle:focus { /* From reference */
+.category-view-toggle:focus { /* PS2Links specific, keep */
     outline: 2px solid var(--text-color);
     outline-offset: 2px;
 }
-.category-view-toggle.active { color: var(--accent-color); } /* From reference, uses theme variable */
+.category-view-toggle.active { color: var(--accent-color); } /* Consistent */
 
-.category-title { flex: 1; text-align: center; } /* From reference */
-.category-emoji { margin-right: 0.5rem; } /* From reference */
-
-.category-content { /* From reference, adapted border */
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-    gap: 1rem;
-    padding: 1rem;
-    box-sizing: border-box;
-    min-width: 0;
-    background: var(--content-bg);
-    backdrop-filter: blur(3px);
-    border: 1px solid var(--button-border-color); /* Adjusted */
-    border-top: none;
-    border-radius: 0 0 10px 10px;
-    max-height: 0;
-    opacity: 0;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    visibility: hidden;
+/* Hover for .category-view-toggle (similar to AI buttons but simpler as it's not a bordered button) */
+.category-view-toggle:hover {
+    color: var(--accent-color); /* Emphasize on hover */
+    transform: translateY(-1px); /* Slight lift */
 }
 
-.category-content.open { /* From reference */
-    opacity: 1;
-    visibility: visible;
-    max-height: var(--category-max-height);
-    overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: calc(1rem + var(--scrollbar-width));
+
+.category-title { flex: 1; text-align: center; } /* PS2Links specific, keep */
+.category-emoji { margin-right: 0.5rem; } /* PS2Links specific, keep */
+
+.category-content {
+    display: grid; /* Consistent */
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr)); /* Consistent */
+    gap: 1rem; /* Consistent */
+    padding: 1.25rem; /* AI - More padding */
+    box-sizing: border-box; /* Consistent */
+    min-width: 0; /* Consistent */
+    background: var(--content-bg); /* AI */
+    backdrop-filter: blur(5px); /* AI - More blur */
+    border: 2px solid var(--text-color); /* AI */
+    border-top: none; /* AI */
+    border-radius: 0 0 8px 8px; /* AI - Match h2 rounding */
+    max-height: 0; /* Consistent */
+    opacity: 0; /* Consistent */
+    overflow-y: hidden; /* Consistent */
+    overflow-x: hidden; /* Consistent */
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out; /* Added visibility */
+    visibility: hidden; /* Consistent */
 }
 
-.category.list-view .category-content { display: flex; flex-direction: column; } /* From reference */
+.category-content.open {
+    opacity: 1; /* Consistent */
+    visibility: visible; /* Consistent */
+    max-height: var(--category-max-height); /* Consistent */
+    overflow-y: auto; /* Consistent */
+    overflow-x: hidden; /* Consistent */
+    /* padding-right for scrollbar from PS2Links is good, let's try to keep it */
+    padding-right: calc(1.25rem + var(--scrollbar-width)); /* AI padding + PS2Links scrollbar */
+}
 
-.category.list-view .service-button { /* From reference */
+.category.list-view .category-content { display: flex; flex-direction: column; } /* PS2Links specific, keep */
+
+.category.list-view .service-button { /* PS2Links specific, keep */
     flex-direction: row;
     align-items: center;
     width: 100%;
     max-width: none;
 }
-.category.list-view .service-name { margin-bottom: 0; margin-right: 0.5rem; } /* From reference */
-.category.list-view .service-thumbnail { /* From reference */
+.category.list-view .service-name { margin-bottom: 0; margin-right: 0.5rem; } /* PS2Links specific, keep */
+.category.list-view .service-thumbnail { /* PS2Links specific, keep */
     width: 80px;
     max-height: 60px;
     margin-right: 0.5rem;
     margin-bottom: 0;
 }
 
-.service-button { /* From reference, adapted border, color, shadow, animation */
-    display: flex;
-    flex-direction: column;
-    background: var(--button-gradient); /* Use theme variable */
-    padding: 0.75rem;
-    padding-right: 2rem; /* space for favorite star */
-    width: 100%;
-    max-width: var(--card-max-width);
-    margin: 0 auto;
-    min-width: 0;
-    box-sizing: border-box;
-    border: 1px solid var(--accent-color); /* Use theme variable, adjusted thickness */
-    border-radius: 15px;
-    text-decoration: none;
-    color: var(--text-color); /* Use theme variable for text inside card */
-    box-shadow: inset 0 0 2px var(--focus-glow-color), 0 0 2px var(--focus-glow-color); /* Adjusted shadow */
-    /* animation: pulse 2s infinite; */ /* Pulse can be distracting, remove or adjust */
-    transition: box-shadow 0.3s ease, transform 0.2s ease;
-    position: relative;
+.service-button {
+    display: flex; /* Consistent */
+    flex-direction: column; /* Consistent */
+    background: var(--content-bg); /* AI - Use content-bg as base */
+    padding: 1rem; /* AI - Adjust padding */
+    /* padding-right for favorite star from PS2Links, ensure it's preserved or adapted */
+    padding-right: 2rem; /* PS2Links - keep for fav star */
+    width: 100%; /* Consistent */
+    max-width: var(--card-max-width); /* Consistent */
+    margin: 0 auto; /* Consistent */
+    min-width: 0; /* Consistent */
+    box-sizing: border-box; /* Consistent */
+    border: 2px solid var(--accent-color); /* AI - Accent color border */
+    border-radius: 10px; /* AI - More rounded */
+    text-decoration: none; /* Consistent */
+    color: var(--accent-color); /* AI - Text color matches accent for emphasis */
+    box-shadow: inset 0 0 4px color-mix(in srgb, var(--accent-color) 30%, transparent), 0 0 3px color-mix(in srgb, var(--accent-color) 20%, transparent);
+    animation: pulse 2s infinite; /* AI - uses @keyframes pulse */
+    transition: box-shadow 0.3s ease, transform 0.2s ease, background 0.2s ease; /* AI */
+    position: relative; /* Consistent */
 }
 
-.service-button:hover { /* From reference, adapted shadow and background */
-    box-shadow: inset 0 0 5px var(--focus-glow-color), 0 0 8px var(--focus-glow-color); /* Adjusted */
-    /* background: rgba(255, 255, 255, 0.1); */ /* May not be ideal for dark theme */
-    /* backdrop-filter: blur(4px); */
-    transform: translateY(-2px);
-    /* animation: none; */
+.service-button:hover {
+    box-shadow: inset 0 0 8px color-mix(in srgb, var(--accent-color) 60%, transparent), 0 0 12px color-mix(in srgb, var(--accent-color) 50%, transparent);
+    background: rgba(255, 255, 255, 0.1); /* AI Subtle white hover */
+    backdrop-filter: blur(4px); /* AI - Add blur on hover */
+    transform: translateY(-2px); /* AI */
+    animation: none; /* AI - Stop pulse on hover */
 }
 
-/* @keyframes pulse {  Remove or adjust if too distracting
-    0%, 100% { box-shadow: inset 0 0 3px rgba(95, 170, 111, 0.3), 0 0 3px rgba(95, 170, 111, 0.2); }
-    50% { box-shadow: inset 0 0 5px rgba(95, 170, 111, 0.5), 0 0 5px rgba(95, 170, 111, 0.3); }
-} */
+/* @keyframes pulse is now defined above with AI's version */
 
-.service-favicon { width: 16px; height: 16px; vertical-align: middle; } /* From reference */
-.service-thumbnail { /* From reference */
+.service-favicon { width: 16px; height: 16px; vertical-align: middle; } /* PS2Links specific, keep */
+.service-thumbnail { /* PS2Links specific, keep */
     width: 100%;
     max-height: 150px;
     object-fit: cover;
@@ -478,91 +483,108 @@ body.block-view .category { margin-bottom: 0; } /* From reference */
     border-radius: 8px;
 }
 
-.favorite-star { /* From reference */
+.favorite-star { /* PS2Links specific, keep styling, ensure color use accent */
     cursor: pointer;
     width: 1.5rem;
     height: 1.5rem;
     position: absolute;
     top: 0.5rem;
-    right: 0.25rem;
+    right: 0.25rem; /* PS2Links had 0.25rem, AI example might differ, stick to this for now */
     display: inline-block;
-    color: #ccc; /* Default un-favorited color from reference */
+    color: #ccc; /* Default un-favorited color */
 }
-.favorite-star svg { width: 100%; height: 100%; fill: currentColor; } /* From reference */
-.favorite-star:focus { outline: 2px solid var(--text-color); outline-offset: 2px; } /* From reference */
+.favorite-star svg { width: 100%; height: 100%; fill: currentColor; }
+.favorite-star:focus { outline: 2px solid var(--text-color); outline-offset: 2px; }
 
-.favorite-star.favorited { color: var(--accent-color); } /* Use theme accent for favorited, was 'gold' */
+.favorite-star.favorited { color: var(--accent-color); } /* Use AI accent */
 
-/* General hover for sidebar link already handled by its own .active state or general button hover */
-/* #sidebar a:hover { background: var(--button-gradient); border-radius: 5px; } */
+/* Hover for .favorite-star (similar to .category-view-toggle) */
+.favorite-star:hover {
+    color: var(--accent-color); /* Emphasize on hover */
+    transform: scale(1.1); /* Slight scale effect */
+}
 
-.service-name { /* From reference */
-    font-size: 1rem;
+
+.service-name { /* PS2Links specific, ensure color comes from .service-button */
+    font-size: 1rem; /* Text inside card should be readable */
     font-weight: bold;
     margin-bottom: 0.4rem;
     display: inline-flex;
-    align-items: flex-start; /* Align items to the start for better layout with multi-line text */
+    align-items: flex-start;
     gap: 0.25rem;
     word-break: break-word;
+    color: var(--accent-color); /* Explicitly set from .service-button's main text color */
 }
 
-.service-name-text { /* Style for the actual text span to handle overflow */
+.service-name-text { /* PS2Links specific, keep */
     display: block;
-    max-height: 4.2em; /* Approx 3 lines (1.4em * 3) */
+    max-height: 4.2em;
     overflow-y: auto;
-    line-height: 1.4em; /* Consistent line height for max-height calculation */
-    /* word-break: break-all; */ /* Optional: if very long words without spaces need to break */
+    line-height: 1.4em;
+    color: var(--accent-color); /* Ensure this also inherits or is set */
 }
 
-.service-url { /* From reference */
+.service-url { /* PS2Links specific, use AI --thanks-color for dimmer effect */
     font-size: 0.8rem;
     word-break: break-all;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    color: var(--thanks-color); /* Make URL dimmer using thanks-color */
+    color: var(--thanks-color); /* AI thanks color for dimmer URL */
 }
 
-.copy-link { /* From reference */
+.copy-link { /* PS2Links specific, keep */
     border: none;
     background: transparent;
-    color: inherit; /* Inherit from .service-url */
+    color: inherit;
     cursor: pointer;
     padding: 0;
     font-size: 0.8rem;
 }
-.copy-link:focus { outline: 2px solid var(--text-color); outline-offset: 2px; } /* From reference */
+.copy-link:focus { outline: 2px solid var(--text-color); outline-offset: 2px; }
 
-.category.list-view .service-url { margin-left: auto; } /* From reference */
-.service-tags { display: none; } /* From reference */
+.category.list-view .service-url { margin-left: auto; } /* PS2Links specific, keep */
+.service-tags { display: none; } /* PS2Links specific, keep */
 
-footer { /* From reference, adapted border and shadow */
-    background: var(--footer-gradient);
-    padding: 0.8rem 1.5rem; /* Adjusted padding to align with header/main content edges */
-    /* text-align: center; */ /* Replaced by flex properties */
-    border-top: 2px solid var(--text-color); /* Adjusted */
-    box-shadow: 0 -2px 8px var(--focus-glow-color); /* Adjusted */
-    margin-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+footer {
+    background: var(--footer-gradient); /* AI */
+    padding: 0.8rem; /* AI - Simpler padding */
+    text-align: center; /* AI */
+    border-top: 2px solid var(--text-color); /* AI */
+    box-shadow: 0 -2px 8px var(--text-color);
+    margin-top: 2rem; /* Consistent */
+    /* PS2Links flex layout for footer content is removed in favor of AI's text-align: center */
+    /* If specific PS2Links footer structure is complex, this might need review */
 }
 
-footer p { margin: 0.4rem 0; font-size: 1rem; } /* From reference */
-footer p:last-child { text-align: right; } /* Push last p (GitHub link) to the right */
-footer a { color: inherit; } /* From reference */
+footer p {
+    margin: 0.3rem 0; /* AI */
+    font-size: 0.9rem; /* AI */
+    /* text-align for specific p elements from PS2Links is removed due to global text-align:center */
+}
+footer a {
+    color: var(--accent-color); /* AI - Accent color for links */
+    text-decoration: none; /* AI */
+}
+footer a:hover { text-decoration: underline; } /* AI */
 
-/* Removed footer .thanks and .thanks a styling from ref as it's covered by general footer p, a */
+/* Add AI's footer .thanks styling */
+footer .thanks {
+    color: var(--thanks-color); /* AI */
+    font-size: 0.85rem; /* AI */
+}
+footer .thanks a {
+    color: var(--accent-color); /* AI - Or var(--thanks-color) if preferred */
+}
 
-/* Responsive Design from reference */
-body.mobile-view .category-content { grid-template-columns: 1fr; }
-body.mobile-view header h1 { font-size: 1.6rem; }
-body.mobile-view .category h2 { font-size: 1.2rem; }
-body.mobile-view #searchInput { width: 90%; }
-/* Ensure #viewToggle is visible by default, removing specific hiding rules */
-/* body.mobile-view #viewToggle, body.desktop-view #viewToggle { display: none; } */
 
-/* Desktop view specific styles (mimicking block-view) */
+/* Responsive Design - largely keep PS2Links, ensure consistency with AI choices */
+body.mobile-view .category-content { grid-template-columns: 1fr; } /* Consistent */
+body.mobile-view header h1 { font-size: 1.6rem; } /* Consistent */
+body.mobile-view .category h2 { font-size: 1.2rem; } /* Consistent */
+body.mobile-view #searchInput { width: 90%; } /* Consistent */
+
+/* Desktop view specific styles (PS2Links) - keep */
 body.desktop-view main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
@@ -570,31 +592,31 @@ body.desktop-view main {
 }
 body.desktop-view main > .search-container,
 body.desktop-view main > #favorites {
-    grid-column: 1 / -1; /* Make search and favorites span full width */
+    grid-column: 1 / -1;
 }
 body.desktop-view .category {
-    margin-bottom: 0; /* Consistent with block-view category margin */
+    margin-bottom: 0;
 }
-/* .category-content in desktop-view will use its default grid styling, which is desired. */
 
-@media (max-width: 768px) { /* General mobile styles from reference */
-    /* #viewToggle { display: none; } */ /* Ensure #viewToggle is visible by default */
+@media (max-width: 768px) { /* General mobile styles */
     .category-content { grid-template-columns: 1fr; }
-    body.block-view main { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); } /* Ref's seems to allow smaller cards on mobile in block view */
-    header h1 { font-size: 1.6rem; }
-    .category h2 { font-size: 1.2rem; }
-    #searchInput { width: 90%; }
+    /* AI doesn't specify body.block-view main for mobile, PS2Links does. Keep PS2Links for now. */
+    body.block-view main { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); } /* Slightly larger min for cards on mobile */
+    header h1 { font-size: 1.6rem; } /* Consistent */
+    .category h2 { font-size: 1.2rem; } /* Consistent */
+    #searchInput { width: 90%; } /* Consistent */
 }
 
-#updateNotification { /* From reference, adapted colors */
+#updateNotification { /* PS2Links specific, adapt with AI colors */
     position: fixed;
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--accent-color);
-    color: var(--button-active-text); /* Use active button text color for contrast */
+    background: var(--accent-color); /* AI accent */
+    color: var(--bg-color); /* AI bg for contrast (like active buttons) */
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    display: none; /* JS handles visibility */
+    display: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Add a subtle shadow */
 }
-#updateNotification[hidden] { display: none !important; } /* Ensure hidden takes precedence */
+#updateNotification[hidden] { display: none !important; }
