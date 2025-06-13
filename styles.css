@@ -250,6 +250,8 @@ body.block-view main { /* From reference */
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
     gap: 1rem;
+
+
 }
 
 body.block-view main > .search-container, /* From reference */
@@ -376,6 +378,7 @@ body.block-view .category { margin-bottom: 0; } /* From reference */
     overflow-y: hidden;
     overflow-x: hidden;
     transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+
     visibility: hidden;
 }
 
@@ -539,3 +542,4 @@ body.mobile-view #viewToggle { display: none; } /* Hide global view toggle */
     display: none; /* JS handles visibility */
 }
 #updateNotification[hidden] { display: none !important; } /* Ensure hidden takes precedence */
+

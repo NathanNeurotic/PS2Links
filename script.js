@@ -1,6 +1,6 @@
 let allServices = [];
 let deferredPrompt = null;
-let sidebarObserver = null;
+// let sidebarObserver = null; // Removed
 const MAX_CATEGORY_HEIGHT =
     parseInt(
         getComputedStyle(document.documentElement).getPropertyValue(
@@ -18,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
     applySavedMobileView();
     updateToggleButtons();
 
-    buildSidebar();
-    setupSidebarHighlighting();
+    // buildSidebar(); // Removed
+    // setupSidebarHighlighting(); // Removed
 
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', toggleSidebar);
-    }
+    // const sidebarToggle = document.getElementById('sidebarToggle'); // Element still exists
+    // if (sidebarToggle) {
+        // sidebarToggle.addEventListener('click', toggleSidebar); // Removed listener
+    // }
 
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
@@ -770,6 +770,7 @@ function setupSidebarHighlighting() {
 
     sections.forEach(section => sidebarObserver.observe(section));
 }
+
 
 
 function populateTagDropdown() {
