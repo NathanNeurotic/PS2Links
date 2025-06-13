@@ -615,6 +615,16 @@ body.desktop-view.block-view .category {
     /* AI doesn't specify body.block-view main for mobile, PS2Links does. Keep PS2Links for now. */
     body.block-view main { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); } /* Slightly larger min for cards on mobile */
     header h1 { font-size: 1.6rem; } /* Consistent */
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    header h1 {
+        flex-basis: 100%;
+        text-align: center;
+    }
     .category h2 { font-size: 1.2rem; } /* Consistent */
     #searchInput { width: 90%; } /* Consistent */
 }
