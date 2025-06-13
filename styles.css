@@ -4,7 +4,7 @@
     --accent-color: #ffd700;
     --header-gradient: linear-gradient(180deg, #000000, #0a1612);
     --section-gradient: linear-gradient(90deg, #000000, #0a1612);
-    --content-bg: rgba(26, 41, 48, 0.75); /* Used for sidebar, cards, search */
+    --content-bg: rgba(26, 41, 48, 0.75);
     --button-gradient: linear-gradient(135deg, #1a2930, #0a1612);
     --footer-gradient: linear-gradient(180deg, #0a1612, #000000);
     --thanks-color: #f7ce3e; /* For less prominent text like tag hint */
@@ -13,15 +13,26 @@
     --scroll-track: #000000;
     --scroll-thumb: #ffd700;
     --scrollbar-width: 8px;
-    --card-min-width: 280px;
-    --card-max-width: 1fr; /* Allow cards to take full width in single column */
+    --card-min-width: 300px; /* Adjusted from 280px */
+    --card-max-width: 400px; /* Retained from reference */
     --category-min-width: 300px;
-    --sidebar-width: 250px; /* New variable for sidebar width */
-    --button-text-color: var(--text-color); /* Default button text */
+    /* New/Updated Button and Focus Variables */
+    --button-text-color: var(--text-color);
     --button-active-bg: var(--accent-color);
     --button-active-text: var(--bg-color);
     --button-border-color: var(--text-color);
     --focus-glow-color: var(--accent-color);
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 body.light-mode {
@@ -34,432 +45,628 @@ body.light-mode {
     --button-gradient: linear-gradient(135deg, #b0d8f0, #90b8d0);
     --footer-gradient: linear-gradient(180deg, #e0f0ff, #a0c8e0);
     --thanks-color: #1c486b;
+    --font-family: 'Roboto Mono', monospace; /* Retained */
     --scroll-track: #d0e0f0;
     --scroll-thumb: #1e507b;
+    --scrollbar-width: 8px; /* Retained */
+    --card-min-width: 300px; /* Retained */
+    --card-max-width: 400px; /* Retained */
+    --category-min-width: 300px; /* Retained */
+    /* New/Updated Button and Focus Variables for Light Mode */
     --button-text-color: var(--text-color);
     --button-active-bg: var(--accent-color);
-    --button-active-text: #ffffff; /* White text on orange accent for light mode */
+    --button-active-text: #ffffff; /* White text on orange accent */
     --button-border-color: var(--text-color);
     --focus-glow-color: var(--accent-color);
 }
 
-/* Basic Reset & Scrollbar */
-* {
-    box-sizing: border-box;
-    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+html.light-mode { /* This block might be redundant if body.light-mode covers all needs */
+    --scroll-track: #d0e0f0; /* Ensure consistency with body.light-mode */
+    --scroll-thumb: #1e507b; /* Ensure consistency with body.light-mode */
 }
-body {
-    background: var(--bg-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
-}
-::-webkit-scrollbar { width: var(--scrollbar-width); }
-::-webkit-scrollbar-track { background: var(--scroll-track); }
-::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 4px; }
 
-/* Sidebar Styles */
+* {
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: var(--scrollbar-width);
+}
+::-webkit-scrollbar-track {
+    background: var(--scroll-track);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 4px;
+}
+
+header {
+    background: var(--header-gradient);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid var(--text-color);
+    box-shadow: 0 0 10px var(--accent-color); /* Use accent color for shadow */
+}
+
+/* Unified Button Styling */
+#themeToggle,
+#viewToggle,
+#mobileToggle,
+#installBtn,
+#expandAllBtn,
+#collapseAllBtn,
+#clearFavoritesBtn,
+#sidebarToggle {
+    background: var(--button-gradient);
+    border: 1px solid var(--button-border-color); /* Default border */
+    color: var(--button-text-color);
+    font-family: var(--font-family);
+    font-size: 0.8rem; /* Base size, can be overridden */
+    padding: 0.2rem 0.4rem; /* Base padding */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    /* Retain margin-top and margin-left where specified previously */
+}
+
+/* Specific Margins - these were outside the unified block before, so preserving them */
+#themeToggle, #viewToggle, #mobileToggle, #installBtn { margin-top: 1rem; }
+#viewToggle, #mobileToggle, #installBtn, #expandAllBtn, #collapseAllBtn { margin-left: 0.5rem; }
+#expandAllBtn, #collapseAllBtn { margin-top: 0.5rem; } /* Overrides the 1rem from above */
+#clearFavoritesBtn { margin: 0.5rem; margin-left: 0.5rem; } /* Specific margin */
+
+
+/* Active State for Toggles */
+#themeToggle.active,
+#viewToggle.active,
+#mobileToggle.active {
+    background: var(--button-active-bg);
+    color: var(--button-active-text);
+    border-color: var(--button-active-bg); /* Match border to active background */
+}
+
+/* Hover State for All Buttons */
+#themeToggle:hover,
+#viewToggle:hover,
+#mobileToggle:hover,
+#installBtn:hover,
+#expandAllBtn:hover,
+#collapseAllBtn:hover,
+#clearFavoritesBtn:hover,
+#sidebarToggle:hover {
+    background: var(--button-active-bg); /* Use active background for hover */
+    color: var(--button-active-text);    /* Use active text color for hover */
+    border-color: var(--button-active-bg); /* Match border */
+    box-shadow: 0 0 8px var(--focus-glow-color); /* Use focus glow for shadow */
+}
+
+
+/* Icon SVGs within buttons */
+#themeToggle svg,
+#viewToggle svg,
+#mobileToggle svg {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+    vertical-align: middle;
+}
+
+/* Specific button overrides if needed */
+#installBtn { display: none; } /* Keep as is */
+#clearFavoritesBtn { font-size: 0.6rem; padding: 0.1rem 0.2rem; } /* Keep specific size */
+#sidebarToggle { font-size: 1rem; padding: 0.25rem 0.5rem; /* Keep specific size */ }
+
+
+.btn-small { /* This class was for #clearFavoritesBtn, now covered */
+    font-size: 0.6rem;
+    padding: 0.1rem 0.2rem;
+}
+
 #sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: var(--sidebar-width);
+    width: 200px;
     height: 100%;
     background: var(--content-bg);
-    backdrop-filter: blur(5px);
-    border-right: 2px solid var(--button-border-color);
+    backdrop-filter: blur(3px);
+    border-right: 2px solid var(--text-color);
     padding: 1rem;
+    box-sizing: border-box;
     overflow-y: auto;
-    transform: translateX(calc(-1 * var(--sidebar-width)));
-    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
     z-index: 1000;
 }
+
 #sidebar.open {
     transform: translateX(0);
 }
+
 #sidebar a {
     display: block;
     color: var(--text-color);
     text-decoration: none;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-bottom: 1px solid transparent; /* For spacing, border on hover/active */
-    transition: background-color 0.2s, color 0.2s;
-    border-radius: 4px;
-}
-#sidebar a:hover {
-    background-color: rgba(255,255,255,0.1);
-}
-#sidebar a.active {
-    background: var(--button-gradient); /* Use PS2Links gradient */
-    color: var(--text-color); /* Ensure text is visible */
-    font-weight: bold;
-    border-bottom: 1px solid var(--accent-color);
-}
-#sidebar a::before {
-    content: '» '; /* Using a different bullet for style */
-    margin-right: 5px;
+    margin-bottom: 0.5rem;
+    padding: 0.25rem 0 0.25rem 1rem;
+    border-bottom: 1px solid var(--text-color);
+    position: relative;
 }
 
-/* Sidebar Toggle Button */
+#sidebar a.active {
+    background: var(--button-gradient);
+    border-radius: 5px;
+    color: var(--button-text-color); /* Sidebar links should use button text color */
+}
+
+#sidebar a::before {
+    content: "\2022"; /* bullet */
+    position: absolute;
+    left: 0;
+}
+
+#sidebar a:last-child {
+    border-bottom: none; /* Keep */
+}
+
+/* #sidebarToggle is now part of the unified button styling above */
+/* Its specific font-size and padding are handled by overrides there. */
+/* The positioning (fixed, top, left, z-index, transition) should remain. */
 #sidebarToggle {
     position: fixed;
     top: 1rem;
     left: 1rem;
-    z-index: 1100; /* Above sidebar */
-    background: var(--button-gradient);
-    border: 1px solid var(--button-border-color);
-    color: var(--button-text-color);
-    font-size: 1.2rem; /* Larger icon */
-    padding: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: left 0.3s ease-in-out, background-color 0.2s, color 0.2s;
-    line-height: 0; /* For better icon centering */
+    z-index: 1100;
+    transition: left 0.3s ease; /* Keep this transition for when it moves with sidebar */
 }
-body.sidebar-open #sidebarToggle {
-    left: calc(var(--sidebar-width) + 1rem);
+
+
+#sidebar.open + header #sidebarToggle, /* This rule selector seems complex, ensure it's needed */
+#sidebar.open + #sidebarToggle {       /* Simpler version if toggle is direct sibling of body */
+    left: calc(200px + 1rem);
 }
+
 body.sidebar-open header,
 body.sidebar-open main,
 body.sidebar-open footer {
-    margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
-    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+    margin-left: 200px;
+    width: calc(100% - 200px);
+    transition: margin-left 0.3s ease, width 0.3s ease;
 }
 
-/* Header */
-header {
-    background: var(--header-gradient);
-    padding: 1rem;
-    text-align: center;
-    border-bottom: 2px solid var(--text-color);
-    box-shadow: 0 0 6px var(--accent-color);
-    display: flex;
-    flex-direction: column; /* Retain column for favicon, h1, and then button group */
-    align-items: center;
-    gap: 0.75rem; /* Increased gap for visual separation */
-}
-#header-favicon { display: block; width: 50px; height: 50px; margin-bottom: 0.5rem; /* Adjusted margin */ }
-header h1 { font-size: 2.2rem; margin: 0 0 0.5rem 0; /* Added bottom margin */ text-transform: uppercase; letter-spacing: 3px; }
-.typing-effect::after { content: '|'; animation: blink 0.7s infinite; }
-@keyframes blink { 50% { opacity: 0; } }
-
-/* Styling for the group of header buttons */
-/* This targets all direct button children of header, and buttons inside .header-buttons if that structure is used later */
-header > button, header > .header-buttons > button {
-    background: none;
-    border: 1px solid var(--button-border-color);
-    color: var(--button-text-color);
-    font-family: var(--font-family);
-    font-size: 0.8rem;
-    padding: 0.4rem 0.6rem; /* Adjusted padding */
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.3rem;
-    margin: 0 0.25rem; /* Horizontal margin for spacing */
+#header-favicon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 10px auto;
 }
 
-/* This new rule applies flex row layout specifically to the button group if they are wrapped */
-.header-buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem; /* This will apply if .header-buttons div is used */
-}
-
-
-header > button:hover, header > .header-buttons > button:hover {
-    background-color: var(--accent-color);
-    color: var(--button-active-text);
-    box-shadow: 0 0 8px var(--accent-color);
-}
-header > button.active, header > .header-buttons > button.active {
-    background-color: var(--accent-color);
-    color: var(--button-active-text);
-}
-header > button svg, header > .header-buttons > button svg {
-    width: 16px; height: 16px; fill: currentColor;
-}
-#installBtn { display: none; /* Shown by JS */ }
-/* Remove top margin from general button styles if they were affecting header buttons */
-#clearFavoritesBtn, #expandAllBtn, #collapseAllBtn { /* These are not in header */
-   /* margin-top: 0; remove if it was part of a general rule causing issues */
-}
-
-
-/* Search Container */
-.search-container {
-    margin-bottom: 1.5rem; /* Reduced margin */
-    text-align: center;
-    position: relative;
-    display: flex; /* For layout of new buttons */
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-#searchInput {
-    background: var(--content-bg);
-    border: 1px solid var(--button-border-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: 1.1rem; /* Slightly reduced */
-    padding: 0.6rem 1rem;
-    width: 80%;
-    max-width: 500px; /* Slightly reduced */
-    border-radius: 4px;
-}
-#searchInput:focus {
-    outline: none;
-    box-shadow: 0 0 10px var(--focus-glow-color);
-}
-.tag-hint {
-    font-size: 0.8rem;
-    color: var(--thanks-color); /* Using thanks-color for less emphasis */
-}
-#expandAllBtn, #collapseAllBtn { /* Specific styling if needed, defaults are above */
-    font-size: 0.7rem;
-    padding: 0.3rem 0.6rem;
-}
-
-/* Categories */
-.category { margin-bottom: 1rem; }
-.category h2 {
-    background: var(--section-gradient);
-    padding: 0.7rem 1rem;
+header h1 {
+    font-size: 2.5rem;
     margin: 0;
-    cursor: pointer;
-    font-size: 1.3rem; /* Slightly reduced */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid var(--button-border-color);
-    border-radius: 4px 4px 0 0; /* Rounded top corners */
-    transition: background-color 0.2s;
-}
-.category h2:hover { background-color: rgba(255,255,255,0.1); }
-.category-title { flex-grow: 1; text-align: left; margin-left: 0.5rem; } /* Align title left */
-.category-emoji { margin-right: 0.5rem; }
-.chevron { width: 16px; height: 16px; fill: currentColor; transition: transform 0.3s ease; margin-left: auto; /* Push to right */ }
-.chevron.open { transform: rotate(180deg); }
-.category-view-toggle { margin-left: 0.5rem; cursor: pointer; line-height: 0; } /* For icon centering */
-.category-view-toggle.active svg { fill: var(--accent-color); }
-.category-view-toggle svg { width:16px; height:16px; fill:currentColor; }
-
-.category-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-    gap: 1rem; /* Increased gap */
-    padding: 1rem;
-    background: transparent; /* No separate bg, rely on card bg */
-    border: 1px solid var(--button-border-color);
-    border-top: none;
-    border-radius: 0 0 4px 4px;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden; /* Changed from auto to hidden for transition */
-    transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out, visibility 0.35s;
-    visibility: hidden;
-}
-.category-content.open {
-    opacity: 1;
-    visibility: visible;
-    max-height: var(--category-max-height); /* JS will set scrollHeight if larger */
-    overflow-y: auto;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    overflow: hidden;
+    display: block;
+    word-wrap: break-word;
 }
 
-/* Service Buttons (Cards) */
-.service-button {
-    display: flex;
-    flex-direction: column;
-    background: var(--content-bg); /* Use content-bg for cards */
-    backdrop-filter: blur(5px);
-    padding: 1rem;
-    border: 1px solid var(--button-border-color);
-    border-radius: 4px;
-    text-decoration: none;
-    color: var(--text-color); /* Default text color */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative; /* For favorite star positioning */
+.typing-effect::after {
+    content: '|';
+    animation: blink 0.7s infinite;
 }
-.service-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-.service-favicon { width: 16px; height: 16px; vertical-align: middle; margin-right: 0.3rem; }
-.service-thumbnail { width: 100%; max-height: 120px; object-fit: cover; margin-bottom: 0.5rem; border-radius: 3px; }
-.service-name { font-size: 1rem; font-weight: bold; margin-bottom: 0.5rem; display: flex; align-items: center; word-break: break-word; }
-.service-url { font-size: 0.8rem; word-break: break-all; color: var(--thanks-color); display: flex; align-items: center; gap: 0.3rem; margin-top: auto; /* Pushes to bottom */ }
-.copy-link {
-    background: none; border: none; color: inherit; cursor: pointer; padding: 0.2rem; margin-left: 0.3rem; font-size:0.9rem; line-height:0;
-}
-.copy-link:hover { color: var(--accent-color); }
-.favorite-star {
-    cursor: pointer; position: absolute; top: 0.5rem; right: 0.5rem; width:20px; height:20px;
-}
-.favorite-star svg { width: 100%; height: 100%; fill: #ccc; /* Default un-favorited color */ transition: fill 0.2s, transform 0.2s; }
-.favorite-star.favorited svg { fill: gold; /* PS2Links gold */ }
-.favorite-star:hover svg { transform: scale(1.1); }
-.service-tags { display: none; } /* Hidden, used by JS */
 
-/* Layout Views */
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+main {
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    flex: 1;
+}
+
 body.block-view main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
     gap: 1rem;
 }
+
 body.block-view main > .search-container,
 body.block-view main > #favorites {
-    grid-column: 1 / -1; /* Span full width */
+    grid-column: 1 / -1;
 }
+
+body.block-view .category {
+    margin-bottom: 0;
+}
+
+.search-container {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.tag-hint {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.8rem;
+    color: var(--thanks-color);
+}
+
+#searchInput {
+    background: var(--content-bg);
+    backdrop-filter: blur(3px);
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(102, 178, 102, 0.2);
+}
+
+#searchInput:focus {
+    outline: none;
+    box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
+    animation: glow 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); }
+    to { box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
+}
+
+.no-results {
+    color: var(--text-color);
+    text-align: center;
+    font-family: var(--font-family);
+    margin-top: 1rem;
+}
+
+.category {
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.category h2 {
+    background: var(--section-gradient);
+    padding: 0.85rem;
+    padding-right: calc(1rem + var(--scrollbar-width));
+    margin: 0;
+    cursor: pointer;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(102, 178, 102, 0.2);
+    transition: box-shadow 0.3s ease;
+}
+
+.category h2:hover {
+    box-shadow: 0 0 12px rgba(95, 170, 111, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.category:hover {
+    box-shadow: 0 0 12px rgba(95, 170, 111, 0.4);
+    background: rgba(255, 255, 255, 0.03);
+    transform: translateY(-2px);
+}
+
+.chevron {
+    width: 1rem;
+    height: 1rem;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.chevron.open {
+    transform: rotate(180deg);
+}
+
+.category-view-toggle {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+.category-view-toggle:focus {
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+}
+.category-view-toggle.active {
+    color: var(--accent-color);
+}
+
+.category-title {
+    flex: 1;
+    text-align: center;
+}
+
+.category-emoji {
+    margin-right: 0.5rem;
+}
+
+.category-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    min-width: 0;
+    background: var(--content-bg);
+    backdrop-filter: blur(3px);
+    border: 2px solid var(--text-color);
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    max-height: 0;
+    opacity: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    visibility: hidden;
+}
+
+.category-content.open {
+    opacity: 1;
+    visibility: visible;
+    max-height: var(--category-max-height);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: calc(1rem + var(--scrollbar-width));
+}
+
 .category.list-view .category-content {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* Tighter gap for list items */
 }
+
 .category.list-view .service-button {
     flex-direction: row;
     align-items: center;
     width: 100%;
+    max-width: none;
+}
+.category.list-view .service-name {
+    margin-bottom: 0;
+    margin-right: 0.5rem;
 }
 .category.list-view .service-thumbnail {
-    width: 60px; max-height: 40px; margin-right: 0.5rem; margin-bottom: 0;
+    width: 80px;
+    max-height: 60px;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
 }
-.category.list-view .service-name { margin-bottom: 0; flex-grow: 1; }
-.category.list-view .service-url { margin-left: auto; flex-shrink: 0; }
-.category.list-view .favorite-star { position: static; margin-left: 0.5rem; } /* Adjust star position in list view */
 
+.service-button {
+    display: flex;
+    flex-direction: column;
+    background: var(--button-gradient);
+    padding: 0.75rem;
+    padding-right: 2rem; /* space for favorite star */
+    width: 100%;
+    max-width: var(--card-max-width);
+    margin: 0 auto;
+    min-width: 0;
+    box-sizing: border-box;
+    border: 2px solid var(--accent-color);
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--accent-color);
+    box-shadow: inset 0 0 3px rgba(95, 170, 111, 0.3), 0 0 3px rgba(95, 170, 111, 0.2);
+    animation: pulse 2s infinite;
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
 
-/* Footer */
+.service-button:hover {
+    box-shadow: inset 0 0 8px rgba(95, 170, 111, 0.6), 0 0 12px rgba(95, 170, 111, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    transform: translateY(-2px);
+    animation: none;
+}
+
+@keyframes pulse {
+    0%, 100% { box-shadow: inset 0 0 3px rgba(95, 170, 111, 0.3), 0 0 3px rgba(95, 170, 111, 0.2); }
+    50% { box-shadow: inset 0 0 5px rgba(95, 170, 111, 0.5), 0 0 5px rgba(95, 170, 111, 0.3); }
+}
+
+.service-favicon {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+}
+
+.service-thumbnail {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+}
+
+.favorite-star {
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.25rem;
+    display: inline-block;
+    color: #ccc;
+}
+.favorite-star svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+.favorite-star:focus {
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+}
+
+.favorite-star.favorited {
+    color: gold;
+}
+
+/* Generic hover for category-view-toggle and favorite-star, as they are not standard buttons */
+.category-view-toggle:hover,
+.favorite-star:hover {
+    /* The original hover for these was:
+    box-shadow: 0 0 12px rgba(95, 170, 111, 0.6);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    transform: translateY(-2px);
+    */
+    /* Adapting the shadow color and keeping the rest: */
+    box-shadow: 0 0 8px var(--focus-glow-color); /* Use focus-glow for consistency */
+    background: rgba(255, 255, 255, 0.1); /* Keep light overlay for dark theme */
+    backdrop-filter: blur(4px); /* Keep */
+    transform: translateY(-2px); /* Keep */
+}
+/* Special hover for sidebar links if different from standard buttons */
+#sidebar a:hover {
+    background: var(--button-active-bg); /* Use active button background */
+    color: var(--button-active-text);    /* Use active button text color */
+    border-radius: 5px; /* Keep */
+}
+
+.service-name {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    word-break: break-word;
+}
+
+.service-url {
+    font-size: 0.8rem;
+    word-break: break-all;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.copy-link {
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.8rem;
+}
+.copy-link:focus {
+    outline: 2px solid var(--text-color);
+    outline-offset: 2px;
+}
+
+.category.list-view .service-url {
+    margin-left: auto;
+}
+
+.service-tags {
+    display: none;
+}
+
 footer {
     background: var(--footer-gradient);
-    padding: 1rem;
+    padding: 0.8rem;
     text-align: center;
     border-top: 2px solid var(--text-color);
-    margin-top: auto; /* Pushes to bottom */
+    box-shadow: 0 -2px 8px rgba(102, 178, 102, 0.2);
+    margin-top: 2rem;
 }
-footer p { margin: 0.4rem 0; font-size: 0.9rem; }
-footer a { color: inherit; text-decoration: underline; }
-footer a:hover { color: var(--accent-color); }
 
-/* PWA Update Notification */
+footer p {
+    margin: 0.4rem 0;
+    font-size: 1rem;
+}
+
+footer a {
+    color: inherit;
+}
+
+footer .thanks {
+    font-size: 0.9rem;
+    color: var(--thanks-color);
+}
+
+footer .thanks a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+footer .thanks a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+
+body.mobile-view .category-content {
+    grid-template-columns: 1fr;
+}
+
+body.mobile-view header h1 {
+    font-size: 1.6rem;
+}
+
+body.mobile-view .category h2 {
+    font-size: 1.2rem;
+}
+
+body.mobile-view #searchInput {
+    width: 90%;
+}
+
+/* Hide the view toggle when mobile layout is active */
+body.mobile-view #viewToggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #viewToggle {
+        display: none;
+    }
+    .category-content {
+        grid-template-columns: 1fr;
+    }
+
+    body.block-view main {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    .category h2 {
+        font-size: 1.2rem;
+    }
+
+    #searchInput {
+        width: 90%;
+    }
+}
+
 #updateNotification {
     position: fixed;
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    background-color: var(--accent-color);
-    color: var(--button-active-text); /* Ensure contrast */
-    padding: 0.8rem 1.2rem;
-    border-radius: 6px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-    z-index: 2000; /* Above everything */
-    font-family: var(--font-family);
+    background: var(--accent-color);
+    color: var(--bg-color);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: none;
 }
-#updateNotification[hidden] { display: none !important; }
-#refreshBtn {
-    background: var(--bg-color);
-    color: var(--accent-color);
-    border: 1px solid var(--bg-color);
-    padding: 0.3rem 0.6rem;
-    border-radius: 4px;
-    margin-left: 0.5rem;
-    cursor: pointer;
+#updateNotification[hidden] {
+    display: none;
 }
-#refreshBtn:hover {
-    opacity: 0.9;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    body.sidebar-open header,
-    body.sidebar-open main,
-    body.sidebar-open footer {
-        margin-left: 0; /* No margin shift */
-        width: 100%;
-    }
-    #sidebarToggle { /* Ensure toggle is visible when sidebar is open on mobile */
-        left: 1rem;
-    }
-    body.sidebar-open #sidebarToggle { /* If you want it to move with sidebar */
-         /* left: calc(var(--sidebar-width) + 1rem); */
-         /* Or keep it static: left: 1rem; */
-    }
-
-    header h1 { font-size: 1.8rem; }
-    .category h2 { font-size: 1.1rem; }
-    #searchInput { width: 90%; font-size: 1rem; }
-    .header-buttons { flex-direction: column; align-items: stretch; }
-    .header-buttons button { width: 100%; max-width:300px; margin: 0.2rem auto; }
-
-    /* Hide specific buttons on smaller screens */
-    #viewToggle, /* This is in .header-buttons */
-    #expandAllBtn, /* This is in .search-container */
-    #collapseAllBtn { /* This is in .search-container */
-        display: none;
-    }
-
-    /* Enforce single-column list view for all category content on small screens */
-    .category-content {
-        grid-template-columns: 1fr !important; /* Override any other grid settings */
-        display: flex !important; /* Ensure flex properties for list items */
-        flex-direction: column !important;
-    }
-    /* Ensure service buttons in this forced list view take full width */
-    .category-content .service-button {
-        width: 100% !important;
-        max-width: none !important; /* Override max-width from card view */
-        flex-direction: row !important; /* Ensure horizontal layout for item content */
-        align-items: center !important;
-    }
-    .category-content .service-button .service-thumbnail {
-        width: 60px !important;
-        max-height: 40px !important;
-        margin-right: 0.5rem !important;
-        margin-bottom: 0 !important;
-    }
-     .category-content .service-button .service-name {
-        margin-bottom: 0 !important;
-        flex-grow: 1 !important;
-    }
-    .category-content .service-button .service-url {
-        margin-left: auto !important;
-        flex-shrink: 0 !important;
-    }
-    .category-content .service-button .favorite-star {
-        position: static !important; /* Adjust star position */
-        margin-left: 0.5rem !important;
-    }
-
-
-    /* Hide per-category view toggle icon on small screens */
-    .category h2 .category-view-toggle {
-        display: none !important;
-    }
-
-    body.block-view main { /* Single column for categories in block view on mobile */
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Hide suggestions container if it's still being created by JS (orphaned code) */
-#suggestionsContainer { display: none !important; }
-
-/* Ensure mobile toggle icon is visible (it was blank) */
-#mobileToggle svg { fill: currentColor; }
-#themeToggle svg { fill: currentColor; }
-#viewToggle svg { fill: currentColor; }
-
-[end of styles.css]

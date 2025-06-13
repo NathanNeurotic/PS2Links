@@ -1,12 +1,15 @@
 // Bump cache version to ensure users receive the latest files
-const CACHE_NAME = 'ps2links-cache-v1';
+const CACHE_NAME = 'ps2links-cache-v2';
 const URLS_TO_CACHE = [
   './index.html',
   './styles.css',
   './script.js',
   './links.json',
   './favicon.ico',
-  './public/manifest.json'
+  './public/manifest.json',
+  './android-chrome-192x192.png', // Added
+  './android-chrome-512x512.png', // Added
+  './apple-touch-icon.png'        // Added
 ];
 self.CACHE_NAME = globalThis.CACHE_NAME = CACHE_NAME;
 self.URLS_TO_CACHE = globalThis.URLS_TO_CACHE = URLS_TO_CACHE;

@@ -12,24 +12,28 @@
     <meta name="twitter:description" content="A curated list of essential PlayStation 2 links, resources, and communities." />
     <meta name="twitter:image" content="./favicon.ico" />
     <title>PS2Links - Your PlayStation 2 Resource Hub</title>
-    <link rel="manifest" href="./public/manifest.json" />
+    <link rel="manifest" href="public/manifest.json" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;display=swap" />
     <link rel="icon" type="image/x-icon" href="./favicon.ico" />
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="./public/icon-192x192.png">
 </head>
 <body>
-    <button id="sidebarToggle" aria-label="Toggle sidebar" title="Toggle sidebar"></button>
     <nav id="sidebar"></nav>
+    <button id="sidebarToggle" aria-label="Toggle sidebar" title="Toggle sidebar">☰</button>
     <header>
-        <img id="header-favicon" src="./favicon.ico" alt="PS2Links Favicon" />
+        <img id="header-favicon" src="./favicon.ico" alt="AI Services Dashboard Favicon" />
         <h1 class="typing-effect">PS2Links Hub</h1>
-        <div class="header-buttons">
-            <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme"></button>
-            <button id="viewToggle" onclick="toggleView()" aria-label="Toggle category view" title="Toggle category view"></button>
-            <button id="mobileToggle" onclick="toggleMobileView()" aria-label="Toggle mobile view" title="Toggle mobile view"></button>
-            <button id="installBtn" aria-label="Install app">Install App</button>
-        </div>
+        <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme">
+            <svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button id="viewToggle" onclick="toggleView()" aria-label="Toggle category view" title="Toggle category view">
+            <svg id="viewIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </button>
+        <button id="mobileToggle" onclick="toggleMobileView()" aria-label="Toggle mobile view" title="Toggle mobile view">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </button>
+        <button id="installBtn" aria-label="Install app" title="Install app">Install App</button>
     </header>
     <main>
         <div class="search-container">
@@ -46,14 +50,9 @@
         <p>© 2025 NathanNeurotic and PS2Wiki. All links courtesy of the community.</p>
         <p><a href="https://www.github.com/NathanNeurotic/PS2Links/" target="_blank" rel="noopener noreferrer">PS2Links on GitHub</a></p>
     </footer>
-    <script src="./script.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js');
-        }
-    </script>
     <div id="updateNotification" hidden>
         New version available <button id="refreshBtn" title="Refresh to update">Refresh</button>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>
