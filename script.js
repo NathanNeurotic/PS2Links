@@ -59,12 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
         desktopToggleBtn.addEventListener('click', toggleDesktopView);
     }
 
-    // Ensure mobileToggle event listener is correctly assigned
     const mobileToggleBtn = document.getElementById('mobileToggle');
     if (mobileToggleBtn) { // Check if onclick is not already set inline
          mobileToggleBtn.addEventListener('click', toggleMobileView);
     }
-    // Ensure viewToggle event listener is correctly assigned
+
     const viewToggleBtn = document.getElementById('viewToggle');
     if (viewToggleBtn) { // Check if onclick is not already set inline
         viewToggleBtn.addEventListener('click', toggleView);
@@ -84,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (headerCollapseAllBtn) {
         headerCollapseAllBtn.addEventListener('click', collapseAllCategories);
     }
+
 
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
