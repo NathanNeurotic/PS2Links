@@ -5,9 +5,21 @@ PS2 Resource Links is a static collection of PlayStation 2 related sites. Link d
 
 ## Features
 
-- **Search** – Filter links instantly by typing in the search bar. Matching categories automatically expand while you search.
-- **Theme Toggle** – Use the **Toggle Theme** button to switch between light and dark modes. Your choice is remembered with `localStorage`.
-- **Favorites** – Click the star next to any link to add it to your favorites list. Favorites persist across page reloads and appear in their own section.
+PS2Links Hub is designed with a retro-terminal aesthetic and offers a range of features for a user-friendly experience:
+
+- **Categorized Listings:** Links are organized into collapsible categories, loaded dynamically from `links.json`.
+- **Collapsible Sections:** Easily expand and collapse categories. Your preference for which categories are open or closed is saved locally and restored on your next visit.
+- **Quick Search:** Instantly filter links by name or URL using the search bar. The search also includes tags and category names, with suggestions appearing as you type.
+- **Favorites System:** Mark any link as a favorite using the star icon. Favorites are saved locally and displayed in a dedicated 'Favorites' category for quick access.
+- **Theme Toggle:** Switch between dark (default) and light themes. Your choice is saved locally.
+- **Responsive Design:** The layout is optimized for various screen sizes, from desktop to mobile.
+- **Mobile View Toggle:** Manually switch to a single-column mobile-friendly layout at any time.
+- **Category View Toggle:** Each category's content can be displayed as a grid (default) or a list. This preference is saved per category.
+- **Sidebar Navigation:** Quickly jump to categories using the collapsible sidebar.
+- **PWA & Offline Support:** Installable as a Progressive Web App (PWA) for an app-like experience. Key assets, including link data, favicons, and thumbnails, are cached for offline availability.
+- **Alphabetical Sorting:** Categories and the links within them are automatically sorted alphabetically.
+- **Visuals:** Displays favicons for all links and thumbnails for links where a `thumbnail_url` is provided in `links.json`. Includes a typing animation in the header.
+- **Direct Links:** All links open in a new tab for convenience.
 
 ## Running Locally
 
@@ -49,4 +61,3 @@ The tests start a local server automatically by running `npx http-server -p 3000
 ## License
 
 This project is released under the [MIT License](LICENSE).
-
