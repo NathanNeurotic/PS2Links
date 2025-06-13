@@ -30,12 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('mobileViewActive', 'false');
         mobileIsActuallyActive = false; // update local flag
     } else if (!desktopIsActuallyActive && !mobileIsActuallyActive) {
-        // Neither is active (e.g., first visit or cleared storage). Default to desktop.
-        document.body.classList.add('desktop-view');
-        localStorage.setItem('desktopViewActive', 'true');
-        localStorage.setItem('mobileViewActive', 'false'); // Ensure mobile is marked false
+        // Neither is active (e.g., first visit or cleared storage). Detect and default.
+        if (window.innerWidth < 768) { // Check for mobile screen width
+            document.body.classList.add('mobile-view');
+            localStorage.setItem('mobileViewActive', 'true');
+            localStorage.setItem('desktopViewActive', 'false');
+        } else {
+            document.body.classList.add('desktop-view');
+            localStorage.setItem('desktopViewActive', 'true');
+            localStorage.setItem('mobileViewActive', 'false');
+        }
     } else if (desktopIsActuallyActive && !mobileIsActuallyActive) {
         // Desktop is solely active, ensure localStorage reflects this if it was ambiguous
+        // This case might be redundant now if the above block always sets one,
+        // but it doesn't hurt as a safeguard if applySavedDesktopView only set the class
+        // and not localStorage consistently before this block.
         localStorage.setItem('desktopViewActive', 'true');
         localStorage.setItem('mobileViewActive', 'false');
     } else if (!desktopIsActuallyActive && mobileIsActuallyActive) {
