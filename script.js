@@ -737,7 +737,30 @@ function applySavedMobileView() {
     const saved = localStorage.getItem('mobileView');
     if (saved === 'on') {
         document.body.classList.add('mobile-view');
+        setCategoriesToListForMobile(); // Apply category settings on initial load
     }
+}
+
+function setCategoriesToListForMobile() {
+    document.querySelectorAll('.category').forEach(category => {
+        const categoryId = category.id;
+        // No specific class to remove for block view, as mobile CSS handles it.
+        // Ensure list-view class is present if your general mobile CSS for .category-content
+        // doesn't already enforce list-like items (e.g. if it only sets single column grid).
+        // My CSS from previous step makes .category-content display:flex, flex-direction:column on mobile.
+        // So, direct style manipulation or adding/removing 'list-view' might not be strictly necessary here
+        // if the mobile CSS is comprehensive enough.
+        // However, to be safe and ensure localStorage consistency:
+        category.classList.add('list-view'); // Ensure it has list-view for consistency
+        localStorage.setItem(`view-${categoryId}`, 'list');
+
+        const toggle = category.querySelector('.category-view-toggle');
+        if (toggle) {
+            // Visually, this toggle is hidden by CSS on mobile, but updating its state
+            // is good for consistency if it were to become visible.
+            toggle.classList.add('active');
+        }
+    });
 }
 
 function toggleView() {
@@ -751,12 +774,21 @@ window.toggleView = toggleView;
 function toggleMobileView() {
     const isMobile = document.body.classList.toggle('mobile-view');
     localStorage.setItem('mobileView', isMobile ? 'on' : 'off');
+    if (isMobile) {
+        setCategoriesToListForMobile();
+    }
+    // If toggling *off* mobile view, categories will revert to their
+    // stored preferences (block or list) automatically when global 'block-view' is potentially re-applied,
+    // or when their own 'list-view' class takes effect without mobile overrides.
     updateToggleButtons();
 }
 
 window.toggleMobileView = toggleMobileView;
 
 function toggleCategoryView(categoryId) {
+    if (document.body.classList.contains('mobile-view')) {
+        return; // Do nothing if in mobile view, as per-category toggling is disabled/hidden
+    }
     const section = document.getElementById(categoryId);
     if (!section) return;
     const isList = section.classList.toggle('list-view');
