@@ -1,25 +1,38 @@
 [![image](https://github.com/user-attachments/assets/1f7709bc-493c-4f5c-9793-6466f1108e07)](https://nathanneurotic.github.io/PS2Links)
-# PS2 Resource Links
+# PS2Links Hub
 
-PS2 Resource Links is a static collection of PlayStation 2 related sites. Link data lives in `links.json`, which now groups services under category objects, and is displayed with simple JavaScript and CSS.
+PS2Links Hub is a static, yet feature-rich, web application that provides a curated collection of PlayStation 2 related resources. It leverages `links.json` for its data, dynamically rendering categorized links with a focus on user experience and customization. The interface has been modernized for improved usability while retaining its thematic roots.
 
-## Features
+## User Interface and Features
 
-PS2Links Hub is designed with a retro-terminal aesthetic and offers a range of features for a user-friendly experience:
+PS2Links Hub offers a comprehensive set of features:
 
-- **Categorized Listings:** Links are organized into collapsible categories, loaded dynamically from `links.json`.
-- **Collapsible Sections:** Easily expand and collapse categories. Your preference for which categories are open or closed is saved locally and restored on your next visit.
-- **Quick Search:** Instantly filter links by name or URL using the search bar. The search also includes tags and category names, with suggestions appearing as you type.
-- **Favorites System:** Mark any link as a favorite using the star icon. Favorites are saved locally and displayed in a dedicated 'Favorites' category for quick access.
-- **Theme Toggle:** Switch between dark (default) and light themes. Your choice is saved locally.
+- **Modernized Interface:** A refreshed UI that is clean, intuitive, and retains the project's thematic essence.
+- **Categorized Listings:** Links are organized into logical categories, loaded dynamically from `links.json`.
+- **Collapsible Sidebar:** Navigate quickly between categories using a sleek, collapsible sidebar. The currently viewed section is highlighted in the sidebar.
+- **Category Management:**
+    - **Expand/Collapse Individual Categories:** Easily show or hide the content of each category.
+    - **Global Controls:** "Expand All" and "Collapse All" buttons allow for quick management of all categories simultaneously.
+- **Enhanced Search & Filtering:**
+    - **Tag-Based Search:** The search bar now supports filtering by tags. Single tags (e.g., `homebrew`) or multiple comma-separated tags (e.g., `utility,opl`) can be used to find items matching *all* specified tags.
+    - **Broad Search Scope:** Search queries also match against link names, URLs, and category names.
+    - **Tag Suggestions:** As you type in the search bar, relevant tag suggestions will appear, leveraging browser's native datalist functionality.
+- **Favorites System:**
+    - **Mark Favorites:** Easily mark any link as a favorite using the star icon (⭐).
+    - **Dedicated Favorites Section:** Favorited links appear in a special "Favorites" category at the top for quick access.
+    - **Clear Favorites:** A "Clear Favorites" button is available within the Favorites section.
+- **Layout Customization:**
+    - **Global View Toggle:** A header button allows switching all categories between a "Block" (grid-like card view) or "List" layout.
+    - **Per-Category View Toggle:** Each category header contains an icon to toggle its specific view between grid and list, overriding the global setting for that category.
+- **Copy Link Functionality:** Each link entry includes a "Copy URL" button (📋) for quickly copying the link to the clipboard.
+- **Persistent Preferences:** Your preferences for theme, global and per-category view modes, and category open/closed states are saved locally in your browser and restored on subsequent visits.
+- **Theme Toggle:** Switch between dark (default) and light themes using a dedicated header button.
 - **Responsive Design:** The layout is optimized for various screen sizes, from desktop to mobile.
-- **Mobile View Toggle:** Manually switch to a single-column mobile-friendly layout at any time.
-- **Category View Toggle:** Each category's content can be displayed as a grid (default) or a list. This preference is saved per category.
-- **Sidebar Navigation:** Quickly jump to categories using the collapsible sidebar.
-- **PWA & Offline Support:** Installable as a Progressive Web App (PWA) for an app-like experience. Key assets, including link data, favicons, and thumbnails, are cached for offline availability.
-- **Alphabetical Sorting:** Categories and the links within them are automatically sorted alphabetically.
-- **Visuals:** Displays favicons for all links and thumbnails for links where a `thumbnail_url` is provided in `links.json`. Includes a typing animation in the header.
-- **Direct Links:** All links open in a new tab for convenience.
+- **Mobile View Toggle:** Manually switch to a single-column mobile-friendly layout at any time via a header button.
+- **PWA & Offline Support:** Installable as a Progressive Web App (PWA) for an app-like experience. The service worker caches key assets, including link data, favicons, and thumbnails, for offline availability. The app will also notify you if a new version is available, with a button to refresh and update.
+- **Alphabetical Sorting:** Categories and the links within them are automatically sorted alphabetically by name.
+- **Visuals:** Displays favicons for all links and thumbnails for links where a `thumbnail_url` is provided. Includes a typing animation in the header.
+- **Direct Links:** All external links open in a new tab for convenience.
 
 ## Running Locally
 
