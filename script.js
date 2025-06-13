@@ -4,7 +4,7 @@ const CHEVRON_SVG = '<svg class="chevron" viewBox="0 0 24 24" width="16" height=
 
 let allServices = [];
 let deferredPrompt = null;
-let sidebarObserver = null;
+// let sidebarObserver = null; // Removed
 const MAX_CATEGORY_HEIGHT =
     parseInt(
         getComputedStyle(document.documentElement).getPropertyValue(
@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     applySavedMobileView();
     updateToggleButtons();
 
-    buildSidebar();
-    setupSidebarHighlighting();
+    // buildSidebar(); // Removed
+    // setupSidebarHighlighting(); // Removed
 
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    if (sidebarToggle) {
-        sidebarToggle.addEventListener('click', toggleSidebar);
-    }
+    // const sidebarToggle = document.getElementById('sidebarToggle'); // Element still exists
+    // if (sidebarToggle) {
+        // sidebarToggle.addEventListener('click', toggleSidebar); // Removed listener
+    // }
 
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
@@ -264,8 +264,8 @@ async function loadServices() {
             }
         });
 
-        buildSidebar();
-        setupSidebarHighlighting();
+        // buildSidebar(); // Removed
+        // setupSidebarHighlighting(); // Removed
 
         // Create suggestions container
         const searchContainer = document.querySelector('.search-container');
@@ -847,78 +847,9 @@ function collapseAllCategories() {
 }
 window.collapseAllCategories = collapseAllCategories;
 
-function buildSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    if (!sidebar) return;
-    sidebar.innerHTML = '';
-    const sections = document.querySelectorAll('.category');
-    sections.forEach(section => {
-        const titleEl = section.querySelector('.category-title');
-        if (!titleEl) return;
-        const link = document.createElement('a');
-        link.href = `#${section.id}`;
-        link.textContent = titleEl.textContent;
-        link.addEventListener('click', () => {
-            toggleSidebar();
-        });
-        sidebar.appendChild(link);
-    });
-    const repoLink = document.createElement('a');
-    repoLink.href = 'https://www.github.com/NathanNeurotic/PS2Links/';
-    repoLink.textContent = 'GitHub Repository';
-    repoLink.target = '_blank';
-    repoLink.rel = 'noopener noreferrer';
-    sidebar.appendChild(repoLink);
-}
-
-function toggleSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    if (!sidebar) return;
-    sidebar.classList.toggle('open');
-    document.body.classList.toggle('sidebar-open', sidebar.classList.contains('open'));
-}
-
-window.toggleSidebar = toggleSidebar;
-window.buildSidebar = buildSidebar;
-
-function setupSidebarHighlighting() {
-    if (sidebarObserver) {
-        sidebarObserver.disconnect();
-    }
-    const sidebar = document.getElementById('sidebar');
-    if (!sidebar || !('IntersectionObserver' in window)) return;
-    const links = sidebar.querySelectorAll('a[href^="#"]');
-    const sections = document.querySelectorAll('.category'); // Assuming '.category' is your main section identifier
-    if (!links.length || !sections.length) return;
-
-    sidebarObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            // More lenient intersection check (e.g. partially visible at top or bottom)
-            if (entry.isIntersecting) {
-                const id = entry.target.id;
-                links.forEach(link => {
-                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-                });
-            } else {
-                // Optional: If you want to remove 'active' when it's *not* intersecting.
-                // However, the target's logic seems to only add 'active' based on a threshold,
-                // implying another one might become active.
-                // The original target used a threshold of 0.5.
-                // A simpler approach is to ensure only one is active.
-                // Let's stick to the target's way:
-                // If entry.intersectionRatio < 0.5 for an active link's target,
-                // it doesn't mean we should immediately deactivate it,
-                // another entry with >0.5 ratio will activate its link.
-            }
-        });
-    }, {
-        threshold: 0.5, // Trigger when 50% of the element is visible
-        // To make it more responsive to elements at the very top/bottom of viewport:
-        // rootMargin: "-50px 0px -50% 0px" // Example: Adjust as needed
-    });
-
-    sections.forEach(section => sidebarObserver.observe(section));
-}
+// Removed buildSidebar function
+// Removed toggleSidebar function
+// Removed setupSidebarHighlighting function
 
 function populateTagDropdown() {
     const datalist = document.getElementById('tagOptions');

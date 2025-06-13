@@ -63,102 +63,58 @@ body {
 ::-webkit-scrollbar-track { background: var(--scroll-track); }
 ::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 4px; }
 
-/* Sidebar Styles */
-#sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: var(--sidebar-width);
-    height: 100%;
-    background: var(--content-bg);
-    backdrop-filter: blur(5px);
-    border-right: 2px solid var(--button-border-color);
-    padding: 1rem;
-    overflow-y: auto;
-    transform: translateX(calc(-1 * var(--sidebar-width)));
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-}
-#sidebar.open {
-    transform: translateX(0);
-}
-#sidebar a {
-    display: block;
-    color: var(--text-color);
-    text-decoration: none;
-    margin: 0.5rem 0;
-    padding: 0.5rem;
-    border-bottom: 1px solid transparent; /* For spacing, border on hover/active */
-    transition: background-color 0.2s, color 0.2s;
-    border-radius: 4px;
-}
-#sidebar a:hover {
-    background-color: rgba(255,255,255,0.1);
-}
-#sidebar a.active {
-    background: var(--button-gradient); /* Use PS2Links gradient */
-    color: var(--text-color); /* Ensure text is visible */
-    font-weight: bold;
-    border-bottom: 1px solid var(--accent-color);
-}
-#sidebar a::before {
-    content: '» '; /* Using a different bullet for style */
-    margin-right: 5px;
-}
-
 /* Sidebar Toggle Button */
 #sidebarToggle {
     position: fixed;
     top: 1rem;
     left: 1rem;
-    z-index: 1100; /* Above sidebar */
+    z-index: 1100; /* Above other content */
     background: var(--button-gradient);
     border: 1px solid var(--button-border-color);
     color: var(--button-text-color);
-    font-size: 1.2rem; /* Larger icon */
+    font-size: 1.2rem;
     padding: 0.5rem;
     border-radius: 4px;
     cursor: pointer;
-    transition: left 0.3s ease-in-out, background-color 0.2s, color 0.2s;
+    transition: background-color 0.2s, color 0.2s; /* Removed left transition */
     line-height: 0; /* For better icon centering */
-}
-body.sidebar-open #sidebarToggle {
-    left: calc(var(--sidebar-width) + 1rem);
-}
-body.sidebar-open header,
-body.sidebar-open main,
-body.sidebar-open footer {
-    margin-left: var(--sidebar-width);
-    width: calc(100% - var(--sidebar-width));
-    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
 }
 
 /* Header */
 header {
     background: var(--header-gradient);
     padding: 1rem;
-    text-align: center;
+    /* text-align: center; */ /* Removed */
     border-bottom: 2px solid var(--text-color);
     box-shadow: 0 0 6px var(--accent-color);
     display: flex;
-    flex-direction: column; /* Retain column for favicon, h1, and then button group */
+    flex-direction: row; /* Changed to row */
     align-items: center;
-    gap: 0.75rem; /* Increased gap for visual separation */
+    justify-content: space-between; /* Added */
+    /* gap: 0.75rem; */ /* Adjust gap as needed or remove if space-between is enough */
 }
-#header-favicon { display: block; width: 50px; height: 50px; margin-bottom: 0.5rem; /* Adjusted margin */ }
-header h1 { font-size: 2.2rem; margin: 0 0 0.5rem 0; /* Added bottom margin */ text-transform: uppercase; letter-spacing: 3px; }
+/* #header-favicon removed from HTML, so no style needed */
+header h1 {
+    font-size: 1.8rem; /* Adjusted */
+    margin: 0 1rem; /* Adjusted */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 .typing-effect::after { content: '|'; animation: blink 0.7s infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Styling for the group of header buttons */
-/* This targets all direct button children of header, and buttons inside .header-buttons if that structure is used later */
-header > button, header > .header-buttons > button {
-    background: none;
+.header-buttons {
+    display: flex;
+    gap: 0.5rem; /* Ensures spacing between buttons in the group */
+}
+
+.header-buttons button { /* More specific selector for buttons inside .header-buttons */
+    background: var(--button-gradient); /* Changed from none */
     border: 1px solid var(--button-border-color);
     color: var(--button-text-color);
     font-family: var(--font-family);
     font-size: 0.8rem;
-    padding: 0.4rem 0.6rem; /* Adjusted padding */
+    padding: 0.4rem 0.6rem;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
@@ -166,30 +122,17 @@ header > button, header > .header-buttons > button {
     align-items: center;
     justify-content: center;
     gap: 0.3rem;
-    margin: 0 0.25rem; /* Horizontal margin for spacing */
+    /* margin: 0 0.25rem; */ /* Removed, gap handles spacing */
 }
 
-/* This new rule applies flex row layout specifically to the button group if they are wrapped */
-.header-buttons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem; /* This will apply if .header-buttons div is used */
-}
-
-
-header > button:hover, header > .header-buttons > button:hover {
+.header-buttons button:hover, .header-buttons button:active { /* Combined hover and active */
     background-color: var(--accent-color);
     color: var(--button-active-text);
-    box-shadow: 0 0 8px var(--accent-color);
+    box-shadow: 0 0 8px var(--accent-color); /* Keep existing hover shadow */
 }
-header > button.active, header > .header-buttons > button.active {
-    background-color: var(--accent-color);
-    color: var(--button-active-text);
-}
-header > button svg, header > .header-buttons > button svg {
+/* .header-buttons button.active can be removed if same as hover/active */
+
+.header-buttons button svg {
     width: 16px; height: 16px; fill: currentColor;
 }
 #installBtn { display: none; /* Shown by JS */ }
@@ -236,39 +179,40 @@ header > button svg, header > .header-buttons > button svg {
 /* Categories */
 .category { margin-bottom: 1rem; }
 .category h2 {
-    background: var(--section-gradient);
+    background: var(--section-gradient); /* Or var(--content-bg) if preferred */
     padding: 0.7rem 1rem;
     margin: 0;
     cursor: pointer;
-    font-size: 1.3rem; /* Slightly reduced */
+    font-size: 1.3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border: 1px solid var(--button-border-color);
-    border-radius: 4px 4px 0 0; /* Rounded top corners */
+    border-radius: 4px 4px 0 0;
     transition: background-color 0.2s;
+    /* box-shadow: none; */ /* Removed or simplified */
 }
-.category h2:hover { background-color: rgba(255,255,255,0.1); }
-.category-title { flex-grow: 1; text-align: left; margin-left: 0.5rem; } /* Align title left */
+.category h2:hover { background-color: rgba(255,255,255,0.1); } /* Keep hover or adjust */
+.category-title { flex-grow: 1; text-align: left; margin-left: 0.5rem; }
 .category-emoji { margin-right: 0.5rem; }
-.chevron { width: 16px; height: 16px; fill: currentColor; transition: transform 0.3s ease; margin-left: auto; /* Push to right */ }
+.chevron { width: 16px; height: 16px; fill: currentColor; transition: transform 0.3s ease; margin-left: auto; }
 .chevron.open { transform: rotate(180deg); }
-.category-view-toggle { margin-left: 0.5rem; cursor: pointer; line-height: 0; } /* For icon centering */
+.category-view-toggle { margin-left: 0.5rem; cursor: pointer; line-height: 0; }
 .category-view-toggle.active svg { fill: var(--accent-color); }
 .category-view-toggle svg { width:16px; height:16px; fill:currentColor; }
 
 .category-content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-    gap: 1rem; /* Increased gap */
-    padding: 1rem;
-    background: transparent; /* No separate bg, rely on card bg */
+    gap: 1rem;
+    padding: 1rem; /* Adjusted */
+    background: transparent;
     border: 1px solid var(--button-border-color);
     border-top: none;
     border-radius: 0 0 4px 4px;
     max-height: 0;
     opacity: 0;
-    overflow: hidden; /* Changed from auto to hidden for transition */
+    overflow: hidden;
     transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out, visibility 0.35s;
     visibility: hidden;
 }
@@ -283,20 +227,20 @@ header > button svg, header > .header-buttons > button svg {
 .service-button {
     display: flex;
     flex-direction: column;
-    background: var(--content-bg); /* Use content-bg for cards */
-    backdrop-filter: blur(5px);
+    background: var(--content-bg);
+    backdrop-filter: blur(5px); /* Keep if desired, or remove for simplicity */
     padding: 1rem;
     border: 1px solid var(--button-border-color);
-    border-radius: 4px;
+    border-radius: 4px; /* Adjusted */
     text-decoration: none;
-    color: var(--text-color); /* Default text color */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    color: var(--text-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Subtle shadow */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    position: relative; /* For favorite star positioning */
+    position: relative;
 }
 .service-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transform: translateY(-2px); /* Adjusted */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.3); /* Adjusted */
 }
 .service-favicon { width: 16px; height: 16px; vertical-align: middle; margin-right: 0.3rem; }
 .service-thumbnail { width: 100%; max-height: 120px; object-fit: cover; margin-bottom: 0.5rem; border-radius: 3px; }
@@ -384,25 +328,35 @@ footer a:hover { color: var(--accent-color); }
 
 /* Responsive */
 @media (max-width: 768px) {
-    body.sidebar-open header,
-    body.sidebar-open main,
-    body.sidebar-open footer {
-        margin-left: 0; /* No margin shift */
-        width: 100%;
-    }
-    #sidebarToggle { /* Ensure toggle is visible when sidebar is open on mobile */
-        left: 1rem;
-    }
-    body.sidebar-open #sidebarToggle { /* If you want it to move with sidebar */
-         /* left: calc(var(--sidebar-width) + 1rem); */
-         /* Or keep it static: left: 1rem; */
+    /* body.sidebar-open rules removed */
+
+    #sidebarToggle {
+        /* Default positioning is already top: 1rem; left: 1rem; */
+        /* No changes needed here unless you want to alter its fixed position on mobile specifically */
     }
 
-    header h1 { font-size: 1.8rem; }
+    header {
+        flex-direction: column; /* Stack header items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+    header h1 {
+        font-size: 1.5rem; /* Adjusted for mobile */
+        margin: 0.5rem 0; /* Adjust margin for stacked layout */
+        /* text-align: left; */ /* Ensure it's aligned left if needed */
+    }
+    .header-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: stretch; /* Stretch buttons to full width of their container */
+        width: 100%; /* Make button container take full width */
+    }
+    .header-buttons button {
+        width: 100%; /* Make individual buttons take full width */
+        margin: 0.25rem 0; /* Adjust margin for vertical stacking */
+        /* max-width: none; */ /* Remove max-width if they should be full width */
+    }
+
     .category h2 { font-size: 1.1rem; }
     #searchInput { width: 90%; font-size: 1rem; }
-    .header-buttons { flex-direction: column; align-items: stretch; }
-    .header-buttons button { width: 100%; max-width:300px; margin: 0.2rem auto; }
 
     /* Hide specific buttons on smaller screens */
     #viewToggle, /* This is in .header-buttons */
