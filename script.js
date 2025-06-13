@@ -11,12 +11,15 @@ const MAX_CATEGORY_HEIGHT =
 const STAR_FILLED_PATH = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.7881 3.21068C11.2364 2.13274 12.7635 2.13273 13.2118 3.21068L15.2938 8.2164L20.6979 8.64964C21.8616 8.74293 22.3335 10.1952 21.4469 10.9547L17.3295 14.4817L18.5874 19.7551C18.8583 20.8908 17.6229 21.7883 16.6266 21.1798L11.9999 18.3538L7.37329 21.1798C6.37697 21.7883 5.14158 20.8908 5.41246 19.7551L6.67038 14.4817L2.55303 10.9547C1.66639 10.1952 2.13826 8.74293 3.302 8.64964L8.70609 8.2164L10.7881 3.21068Z"/></svg>';
 const STAR_OUTLINE_PATH = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4806 3.4987C11.6728 3.03673 12.3272 3.03673 12.5193 3.4987L14.6453 8.61016C14.7263 8.80492 14.9095 8.93799 15.1197 8.95485L20.638 9.39724C21.1367 9.43722 21.339 10.0596 20.959 10.3851L16.7546 13.9866C16.5945 14.1238 16.5245 14.3391 16.5734 14.5443L17.8579 19.9292C17.974 20.4159 17.4446 20.8005 17.0176 20.5397L12.2932 17.6541C12.1132 17.5441 11.8868 17.5441 11.7068 17.6541L6.98238 20.5397C6.55539 20.8005 6.02594 20.4159 6.14203 19.9292L7.42652 14.5443C7.47546 14.3391 7.4055 14.1238 7.24531 13.9866L3.04099 10.3851C2.661 10.0596 2.86323 9.43722 3.36197 9.39724L8.88022 8.95485C9.09048 8.93799 9.27363 8.80492 9.35464 8.61016L11.4806 3.4987Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const CHEVRON_SVG = '<svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5303 16.2803C12.2374 16.5732 11.7626 16.5732 11.4697 16.2803L3.96967 8.78033C3.67678 8.48744 3.67678 8.01256 3.96967 7.71967C4.26256 7.42678 4.73744 7.42678 5.03033 7.71967L12 14.6893L18.9697 7.71967C19.2626 7.42678 19.7374 7.42678 20.0303 7.71967C20.3232 8.01256 20.3232 8.48744 20.0303 8.78033L12.5303 16.2803Z"/></svg>';
+const HAMBURGER_ICON = '☰';
+const CLOSE_ICON = '&times;'; // HTML entity for '×'
 
 document.addEventListener('DOMContentLoaded', () => {
     applySavedTheme();
-    applySavedView();
-    applySavedMobileView();
-    updateToggleButtons();
+    applySavedView(); // For body.block-view
+    applySavedDesktopView(); // Apply desktop first
+    applySavedMobileView(); // Mobile applied after desktop
+    updateHeaderButtonStates(); // Renamed and updated
 
     buildSidebar();
     setupSidebarHighlighting();
@@ -25,6 +28,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sidebarToggle) {
         sidebarToggle.addEventListener('click', toggleSidebar);
     }
+
+    const desktopToggleBtn = document.getElementById('desktopToggle');
+    if (desktopToggleBtn) {
+        desktopToggleBtn.addEventListener('click', toggleDesktopView);
+    }
+
+    // Ensure mobileToggle event listener is correctly assigned
+    const mobileToggleBtn = document.getElementById('mobileToggle');
+    if (mobileToggleBtn && !mobileToggleBtn.onclick) { // Check if onclick is not already set inline
+         mobileToggleBtn.addEventListener('click', toggleMobileView);
+    }
+    // Ensure viewToggle event listener is correctly assigned
+    const viewToggleBtn = document.getElementById('viewToggle');
+    if (viewToggleBtn && !viewToggleBtn.onclick) { // Check if onclick is not already set inline
+        viewToggleBtn.addEventListener('click', toggleView);
+    }
+
 
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
@@ -72,6 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load services and set up functionalities only if a <main> element exists
     if (document.querySelector('main')) {
         loadServices();
+    }
+
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', toggleSidebar);
     }
 
     if ('serviceWorker' in navigator) {
@@ -654,26 +679,72 @@ function applySavedView() {
     }
 }
 
-function applySavedMobileView() {
-    const saved = localStorage.getItem('mobileView');
-    if (saved === 'on') {
-        document.body.classList.add('mobile-view');
+function applySavedDesktopView() {
+    const saved = localStorage.getItem('desktopViewActive');
+    if (saved === 'true') {
+        document.body.classList.add('desktop-view');
+        document.body.classList.remove('mobile-view'); // Ensure mobile is off
+        localStorage.setItem('mobileViewActive', 'false');
     }
 }
 
-function toggleView() {
+function applySavedMobileView() {
+    let mobileShouldBeActive = false;
+    const newMobileSetting = localStorage.getItem('mobileViewActive');
+    const oldMobileSetting = localStorage.getItem('mobileView'); // For backward compatibility
+
+    if (newMobileSetting !== null) {
+        mobileShouldBeActive = newMobileSetting === 'true';
+    } else if (oldMobileSetting !== null) { // Check old key if new one isn't set
+        mobileShouldBeActive = oldMobileSetting === 'on';
+        localStorage.setItem('mobileViewActive', mobileShouldBeActive ? 'true' : 'false'); // Migrate
+        // localStorage.removeItem('mobileView'); // Optional: remove old key
+    }
+
+    if (mobileShouldBeActive) {
+        document.body.classList.add('mobile-view');
+        // If mobile is explicitly activated, ensure desktop is off
+        if (document.body.classList.contains('desktop-view')) {
+            document.body.classList.remove('desktop-view');
+            localStorage.setItem('desktopViewActive', 'false');
+        }
+    }
+}
+
+function toggleView() { // This is for the global list/block view
     const isBlock = document.body.classList.toggle('block-view');
     localStorage.setItem('view', isBlock ? 'block' : 'list');
-    updateToggleButtons();
+    updateHeaderButtonStates(); // Renamed
 }
 window.toggleView = toggleView;
 
 function toggleMobileView() {
     const isMobile = document.body.classList.toggle('mobile-view');
+    localStorage.setItem('mobileViewActive', isMobile ? 'true' : 'false');
+    if (isMobile) {
+        document.body.classList.remove('desktop-view');
+        localStorage.setItem('desktopViewActive', 'false');
+    }
+    // For backward compatibility with old key, though applySavedMobileView handles migration on load
     localStorage.setItem('mobileView', isMobile ? 'on' : 'off');
-    updateToggleButtons();
+    updateHeaderButtonStates(); // Renamed
 }
 window.toggleMobileView = toggleMobileView;
+
+function toggleDesktopView() {
+    const isActive = document.body.classList.toggle('desktop-view');
+    if (isActive) {
+        document.body.classList.remove('mobile-view');
+    }
+    localStorage.setItem('desktopViewActive', isActive ? 'true' : 'false');
+    if (isActive) {
+        localStorage.setItem('mobileViewActive', 'false');
+        // Also update the old mobileView key for consistency during transition, if needed
+        localStorage.setItem('mobileView', 'false');
+    }
+    updateHeaderButtonStates();
+}
+// window.toggleDesktopView = toggleDesktopView; // Not called by HTML onclick
 
 function toggleCategoryView(categoryId) {
     const section = document.getElementById(categoryId);
@@ -687,7 +758,7 @@ function toggleCategoryView(categoryId) {
 }
 window.toggleCategoryView = toggleCategoryView;
 
-function updateToggleButtons() {
+function updateHeaderButtonStates() { // Renamed from updateToggleButtons
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn) {
         const isLight = document.body.classList.contains('light-mode');
@@ -707,7 +778,12 @@ function updateToggleButtons() {
     const mobileBtn = document.getElementById('mobileToggle');
     if (mobileBtn) {
         mobileBtn.classList.toggle('active', document.body.classList.contains('mobile-view'));
-        mobileBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>';
+        // SVG for mobileToggle is static in HTML, no innerHTML change needed unless icon should change
+    }
+    const desktopBtn = document.getElementById('desktopToggle');
+    if (desktopBtn) {
+        desktopBtn.classList.toggle('active', document.body.classList.contains('desktop-view'));
+        // Text for desktopToggle is static, no innerHTML change needed unless icon should change
     }
 }
 
@@ -739,9 +815,22 @@ function buildSidebar() {
 
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
-    if (!sidebar) return;
+    const sidebarToggleBtn = document.getElementById('sidebarToggle');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+    if (!sidebar || !sidebarToggleBtn || !sidebarOverlay) return;
+
     sidebar.classList.toggle('open');
-    document.body.classList.toggle('sidebar-open', sidebar.classList.contains('open'));
+    const isOpen = sidebar.classList.contains('open');
+    document.body.classList.toggle('sidebar-open', isOpen);
+
+    if (isOpen) {
+        sidebarToggleBtn.innerHTML = CLOSE_ICON;
+        sidebarOverlay.classList.add('active');
+    } else {
+        sidebarToggleBtn.innerHTML = HAMBURGER_ICON;
+        sidebarOverlay.classList.remove('active');
+    }
 }
 window.toggleSidebar = toggleSidebar; // Make it globally accessible if called by HTML onclick
 // window.buildSidebar = buildSidebar; // Not typically called globally
