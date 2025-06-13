@@ -59,15 +59,29 @@ document.addEventListener('DOMContentLoaded', () => {
         desktopToggleBtn.addEventListener('click', toggleDesktopView);
     }
 
-    // Ensure mobileToggle event listener is correctly assigned
     const mobileToggleBtn = document.getElementById('mobileToggle');
-    if (mobileToggleBtn && !mobileToggleBtn.onclick) { // Check if onclick is not already set inline
-         mobileToggleBtn.addEventListener('click', toggleMobileView);
+    if (mobileToggleBtn) {
+        mobileToggleBtn.addEventListener('click', toggleMobileView);
     }
-    // Ensure viewToggle event listener is correctly assigned
+
     const viewToggleBtn = document.getElementById('viewToggle');
-    if (viewToggleBtn && !viewToggleBtn.onclick) { // Check if onclick is not already set inline
+    if (viewToggleBtn) {
         viewToggleBtn.addEventListener('click', toggleView);
+    }
+
+    const themeToggleBtn = document.getElementById('themeToggle');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', toggleTheme);
+    }
+
+    const expandAllBtn = document.getElementById('headerExpandAllBtn');
+    if (expandAllBtn) {
+        expandAllBtn.addEventListener('click', expandAllCategories);
+    }
+
+    const collapseAllBtn = document.getElementById('headerCollapseAllBtn');
+    if (collapseAllBtn) {
+        collapseAllBtn.addEventListener('click', collapseAllCategories);
     }
 
 
