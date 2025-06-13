@@ -131,6 +131,7 @@ header {
     margin-right: 1rem; /* PS2Links - spacing to its right */
     z-index:1100; /* PS2Links - keep if needed */
     transition: left 0.3s ease;
+    transform: translateZ(0); /* Added property */
 }
 
 
@@ -628,6 +629,34 @@ body.desktop-view.block-view .category {
     .category h2 { font-size: 1.2rem; } /* Consistent */
     #searchInput { width: 90%; } /* Consistent */
 }
+
+/* Enforce desktop view styles when body.desktop-view is active, overriding mobile defaults */
+body.desktop-view header h1 {
+    font-size: 2.5rem; /* Assuming this is the default desktop size */
+}
+
+body.desktop-view .category h2 {
+    font-size: 1.5rem; /* Assuming this is the default desktop size */
+}
+
+body.desktop-view .category-content {
+    grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr)); /* Desktop grid */
+}
+
+body.desktop-view #searchInput {
+    width: 70%; /* Default desktop width */
+    max-width: 550px; /* Default desktop max-width */
+}
+
+body.desktop-view header {
+    flex-wrap: nowrap; /* Assuming default is nowrap, countering 'wrap' from media query */
+}
+body.desktop-view header h1 {
+    flex-basis: auto; /* Resetting flex-basis if media query set it to 100% */
+    text-align: left; /* Assuming default is left, countering 'center' from media query */
+    /* margin-right: auto; is already on the base header h1 style */
+}
+
 
 #updateNotification { /* PS2Links specific, adapt with AI colors */
     position: fixed;
