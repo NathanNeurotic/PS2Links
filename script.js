@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     // Typing Effect for Header
     const headerTextElement = document.querySelector('.typing-effect');
-    const textToType = 'PS2Links Hub';
+    const textToType = 'PS2Links Hub'; // MODIFIED for PS2Links
 
     if (headerTextElement) {
         headerTextElement.textContent = '';
@@ -112,23 +112,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadServices() {
     try {
-        const response = await fetch('./links.json');
+        const response = await fetch('./links.json'); // MODIFIED for PS2Links
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        const jsonData = await response.json(); // Changed variable name for clarity with new structure
-        // jsonData is the direct result of await response.json() from './links.json'
-        // It's an array of category groups. We need to flatten it.
+        const jsonData = await response.json(); // jsonData is an array of category groups
+
+        // MODIFICATION START: Flatten links.json structure
         allServices = [];
         jsonData.forEach(categoryGroup => {
             const categoryName = categoryGroup.category;
-            // Ensure categoryGroup.links exists and is an array
             if (categoryGroup.links && Array.isArray(categoryGroup.links)) {
                 categoryGroup.links.forEach(link => {
-                    // Add the category name to each link object.
-                    // Preserve existing tags if any, or initialize if not.
                     const serviceTags = link.tags ? [...link.tags] : [];
-                    // Add category name as a tag if not already present (optional, but good for search)
                     const cleanCategoryName = categoryName.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim();
                     if (!serviceTags.includes(cleanCategoryName)) {
                         serviceTags.push(cleanCategoryName);
@@ -137,22 +133,14 @@ async function loadServices() {
                 });
             }
         });
-        // At this point, allServices is a flat array of service objects,
-        // each with a 'category' property and potentially augmented 'tags'.
-        // The rest of the loadServices function (grouping by category, sorting, rendering)
-        // should now work as intended with this flat allServices array.
+        // MODIFICATION END: allServices is now a flat array
 
         const mainContainer = document.querySelector('main');
-
-        // Clear existing static categories if any (optional, if HTML is pre-populated)
         const existingCategories = mainContainer.querySelectorAll('.category');
         existingCategories.forEach(cat => cat.remove());
 
-        // Group services by category - This part needs to be ADAPTED
-        // The original `services.reduce` assumed `services` was already a flat array.
-        // Now, `allServices` is the flat array we want to group.
         const categories = allServices.reduce((acc, service) => {
-            const category = service.category; // 'category' property was added in the loop above
+            const category = service.category;
             if (!acc[category]) {
                 acc[category] = [];
             }
@@ -160,7 +148,6 @@ async function loadServices() {
             return acc;
         }, {});
 
-        // Generate HTML for categories and services in alphabetical order
         const normalize = (name) => name.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim().toLowerCase();
         const sortedCategoryNames = Object.keys(categories).sort((a, b) => normalize(a).localeCompare(normalize(b)));
         for (const categoryName of sortedCategoryNames) {
@@ -174,7 +161,7 @@ async function loadServices() {
 
             const categoryHeader = document.createElement('h2');
             categoryHeader.setAttribute('aria-expanded', 'false');
-            categoryHeader.onclick = () => toggleCategory(categoryHeader); // Use arrow function to ensure 'this' context or pass element directly
+            categoryHeader.onclick = () => toggleCategory(categoryHeader);
             categoryHeader.tabIndex = 0;
             categoryHeader.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -183,7 +170,6 @@ async function loadServices() {
                 }
             });
 
-            // Extract emoji and text for category title
             const emojiMatch = categoryName.match(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u);
             let emojiSpan = '';
             let textContent = categoryName;
@@ -207,7 +193,6 @@ async function loadServices() {
                 }
             });
 
-
             const categoryContent = document.createElement('div');
             categoryContent.className = 'category-content';
 
@@ -227,7 +212,6 @@ async function loadServices() {
 
         renderFavoritesCategory();
 
-        // Restore Category States from localStorage after dynamic loading
         document.querySelectorAll('.category').forEach(category => {
             const id = category.id;
             const header = category.querySelector('h2');
@@ -254,8 +238,6 @@ async function loadServices() {
 
         buildSidebar();
         setupSidebarHighlighting();
-
-        // Re-initialize search functionality
         setupSearch();
         populateTagDropdown();
 
@@ -266,10 +248,9 @@ async function loadServices() {
     }
 }
 
-
 function setupSearch() {
     const searchInput = document.getElementById('searchInput');
-    if (!searchInput) return; // Guard clause if search input is not found
+    if (!searchInput) return;
 
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase().trim();
@@ -288,7 +269,6 @@ function setupSearch() {
                 }
             }
             const textMatch = name.includes(query) || url.includes(query);
-            // Show button if query matches name, URL, or tags
             button.style.display = (textMatch || tagsMatch) ? 'flex' : 'none';
         });
 
@@ -303,24 +283,23 @@ function setupSearch() {
             }
         }
 
-        // Optional: Hide categories if all services within them are hidden
         document.querySelectorAll('.category').forEach(category => {
             const services = category.querySelectorAll('.service-button');
             const allHidden = Array.from(services).every(service => service.style.display === 'none');
             const categoryHeader = category.querySelector('h2');
 
             if (category.id === 'favorites') {
-                category.style.display = ''; // Always show favorites category
+                category.style.display = '';
                 if (categoryHeader) categoryHeader.style.display = '';
             } else
-            if (query === '') { // If search query is empty, show all categories normally
+            if (query === '') {
                 category.style.display = '';
                 if (categoryHeader) categoryHeader.style.display = '';
             } else {
                 if (allHidden) {
-                    category.style.display = 'none'; // Hide the whole category section
+                    category.style.display = 'none';
                 } else {
-                    category.style.display = ''; // Show category if some services are visible
+                    category.style.display = '';
                     if (categoryHeader) categoryHeader.style.display = '';
                 }
             }
@@ -329,8 +308,6 @@ function setupSearch() {
 }
 
 function toggleCategory(header) {
-    // Always target the category content element even if other elements
-    // are inserted between the header and the content (e.g. clear button)
     const content = header.parentElement.querySelector('.category-content');
     const chevron = header.querySelector('.chevron');
     const isOpen = content.classList.contains('open');
@@ -393,7 +370,7 @@ function createServiceButton(service, favoritesSet, categoryName) {
     const favicon = document.createElement('img');
     favicon.alt = `${service.name} favicon`;
     favicon.className = 'service-favicon';
-    favicon.src = service.favicon_url || './favicon.ico';
+    favicon.src = service.favicon_url || './favicon.ico'; // Fallback to global favicon
     favicon.onerror = () => { favicon.src = './favicon.ico'; };
 
     serviceNameSpan.appendChild(favicon);
@@ -425,19 +402,11 @@ function createServiceButton(service, favoritesSet, categoryName) {
     const serviceTagsSpan = document.createElement('span');
     serviceTagsSpan.className = 'service-tags';
     serviceTagsSpan.style.display = 'none';
-
-    let tags = [];
+    // Tags are now pushed into service.tags directly in loadServices
     if (service.tags && Array.isArray(service.tags)) {
-        tags = service.tags.slice();
+        serviceTagsSpan.textContent = service.tags.join(',');
     }
 
-    if (categoryName) {
-        const catText = categoryName.replace(/^(\p{Emoji_Presentation}|\p{Emoji})\s*/u, '').trim();
-        if (!tags.includes(catText)) {
-            tags.push(catText);
-        }
-    }
-    serviceTagsSpan.textContent = tags.join(',');
 
     const star = document.createElement('span');
     star.classList.add('favorite-star');
@@ -509,14 +478,13 @@ function clearFavorites() {
     localStorage.removeItem('view-favorites');
     updateStars();
 }
-
 window.clearFavorites = clearFavorites;
 
 function ensureClearFavoritesButton(header) {
     let btn = header.querySelector('#clearFavoritesBtn');
     if (!btn) {
         btn = document.createElement('button');
-        btn.classList.add('btn-small');
+        btn.classList.add('btn-small'); // Reference class for small buttons
         btn.id = 'clearFavoritesBtn';
         btn.textContent = 'Clear Favorites';
         btn.title = 'Clear all favorites';
@@ -543,7 +511,7 @@ function renderFavoritesCategory() {
     const favoritesSet = new Set(favorites);
     const favoriteServices = [];
     const seen = new Set();
-    for (const service of allServices) {
+    for (const service of allServices) { // allServices is now correctly populated and flat
         if (favoritesSet.has(service.url) && !seen.has(service.url)) {
             favoriteServices.push(service);
             seen.add(service.url);
@@ -562,7 +530,7 @@ function renderFavoritesCategory() {
              <span class="category-title">Favorites</span>
              ${CHEVRON_SVG}
              <span class="category-view-toggle" role="button" tabindex="0" aria-label="Toggle category view" title="Toggle category view">☰</span>`;
-        header.setAttribute('aria-expanded', 'true');
+        header.setAttribute('aria-expanded', 'true'); // Default favorites to expanded
         header.onclick = () => toggleCategory(header);
         header.tabIndex = 0;
         header.addEventListener('keydown', (e) => {
@@ -586,10 +554,10 @@ function renderFavoritesCategory() {
         });
 
         const content = document.createElement('div');
-        content.className = 'category-content open';
+        content.className = 'category-content open'; // Default favorites to open
 
         favoritesSection.appendChild(header);
-        ensureClearFavoritesButton(header);
+        ensureClearFavoritesButton(header); // Add clear button
         favoritesSection.appendChild(content);
 
         const searchContainer = mainContainer.querySelector('.search-container');
@@ -606,7 +574,7 @@ function renderFavoritesCategory() {
     }
 
     const content = favoritesSection.querySelector('.category-content');
-    content.innerHTML = '';
+    content.innerHTML = ''; // Clear previous items
 
     if (favoriteServices.length === 0) {
         const msg = document.createElement('p');
@@ -615,57 +583,34 @@ function renderFavoritesCategory() {
         content.appendChild(msg);
     } else {
         favoriteServices.forEach(service => {
-            const btn = createServiceButton(service, favoritesSet);
+            const btn = createServiceButton(service, favoritesSet); // categoryName not strictly needed here if service.category is populated
             content.appendChild(btn);
         });
     }
 
-    ensureClearFavoritesButton(header);
-    const btn = header.querySelector('#clearFavoritesBtn');
-    if (btn) {
-        btn.disabled = favoriteServices.length === 0;
+    const clearBtn = header.querySelector('#clearFavoritesBtn'); // Query button again after ensuring it exists
+    if (clearBtn) { // Check if button exists before trying to disable it
+        clearBtn.disabled = favoriteServices.length === 0;
     }
 
-    // Determine and apply the collapsed or expanded state for the Favorites category
+
     const storedState = localStorage.getItem('category-favorites');
     const chevron = header.querySelector('.chevron');
-    // Note: 'content' is favoritesSection.querySelector('.category-content')
-    //       'header' is favoritesSection.querySelector('h2')
-    //       'favoriteServices' is an array of favorite service objects
-    //       'MAX_CATEGORY_HEIGHT' is a globally available constant
 
-    let shouldBeOpen = false;
-    // Determine if the category should be open:
-    // 1. If it's empty.
-    // 2. If no state is stored (first time).
-    // 3. If the stored state is 'open'.
-    if (favoriteServices.length === 0 || storedState === null || storedState === 'open') {
-        shouldBeOpen = true;
-    }
-    // Otherwise, it remains closed (i.e., it's not empty AND storedState is 'closed')
+    let shouldBeOpen = favoriteServices.length === 0 || storedState === null || storedState === 'open';
 
     if (shouldBeOpen) {
         content.classList.add('open');
-        if (chevron) {
-            chevron.classList.add('open');
-        }
+        if (chevron) chevron.classList.add('open');
         header.setAttribute('aria-expanded', 'true');
-
-        // Calculate and set maxHeight. This code runs after content.innerHTML is populated.
         const height = Math.min(content.scrollHeight, MAX_CATEGORY_HEIGHT);
         content.style.maxHeight = height + 'px';
-
-        // If the section is empty and it was previously closed, or if it's the first time loading (no state stored),
-        // default to open and save this state.
         if ((favoriteServices.length === 0 && storedState === 'closed') || storedState === null) {
             localStorage.setItem('category-favorites', 'open');
         }
     } else {
-        // This case means: favoriteServices.length > 0 AND storedState === 'closed'
         content.classList.remove('open');
-        if (chevron) {
-            chevron.classList.remove('open');
-        }
+        if (chevron) chevron.classList.remove('open');
         header.setAttribute('aria-expanded', 'false');
         content.style.maxHeight = '0px';
     }
@@ -674,17 +619,14 @@ function renderFavoritesCategory() {
     if (view === 'list') {
         favoritesSection.classList.add('list-view');
         const toggle = favoritesSection.querySelector('.category-view-toggle');
-        if (toggle) {
-            toggle.classList.add('active');
-        }
+        if (toggle) toggle.classList.add('active');
     } else {
         favoritesSection.classList.remove('list-view');
         const toggle = favoritesSection.querySelector('.category-view-toggle');
-        if (toggle) {
-            toggle.classList.remove('active');
-        }
+        if (toggle) toggle.classList.remove('active');
     }
 }
+
 
 function applySavedTheme() {
     const saved = localStorage.getItem('theme');
@@ -700,7 +642,6 @@ function toggleTheme() {
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
     updateToggleButtons();
 }
-
 window.toggleTheme = toggleTheme;
 
 function applySavedView() {
@@ -722,7 +663,6 @@ function toggleView() {
     localStorage.setItem('view', isBlock ? 'block' : 'list');
     updateToggleButtons();
 }
-
 window.toggleView = toggleView;
 
 function toggleMobileView() {
@@ -730,7 +670,6 @@ function toggleMobileView() {
     localStorage.setItem('mobileView', isMobile ? 'on' : 'off');
     updateToggleButtons();
 }
-
 window.toggleMobileView = toggleMobileView;
 
 function toggleCategoryView(categoryId) {
@@ -743,7 +682,6 @@ function toggleCategoryView(categoryId) {
         toggle.classList.toggle('active', isList);
     }
 }
-
 window.toggleCategoryView = toggleCategoryView;
 
 function updateToggleButtons() {
@@ -777,17 +715,19 @@ function buildSidebar() {
     const sections = document.querySelectorAll('.category');
     sections.forEach(section => {
         const titleEl = section.querySelector('.category-title');
-        if (!titleEl) return;
+        if (!titleEl) return; // Should not happen if categories are built correctly
         const link = document.createElement('a');
         link.href = `#${section.id}`;
-        link.textContent = titleEl.textContent;
-        link.addEventListener('click', () => {
-            toggleSidebar();
+        link.textContent = titleEl.textContent; // Use the text part of the title
+        link.addEventListener('click', (e) => { // Added event arg
+            e.preventDefault(); // Prevent default anchor jump
+            document.querySelector(link.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            toggleSidebar(); // Close sidebar after clicking
         });
         sidebar.appendChild(link);
     });
     const repoLink = document.createElement('a');
-    repoLink.href = 'https://www.github.com/NathanNeurotic/PS2Links/';
+    repoLink.href = 'https://www.github.com/NathanNeurotic/PS2Links/'; // MODIFIED for PS2Links
     repoLink.textContent = 'GitHub Repository';
     repoLink.target = '_blank';
     repoLink.rel = 'noopener noreferrer';
@@ -800,9 +740,8 @@ function toggleSidebar() {
     sidebar.classList.toggle('open');
     document.body.classList.toggle('sidebar-open', sidebar.classList.contains('open'));
 }
-
-window.toggleSidebar = toggleSidebar;
-window.buildSidebar = buildSidebar;
+window.toggleSidebar = toggleSidebar; // Make it globally accessible if called by HTML onclick
+// window.buildSidebar = buildSidebar; // Not typically called globally
 
 function setupSidebarHighlighting() {
     if (sidebarObserver) {
@@ -811,16 +750,20 @@ function setupSidebarHighlighting() {
     const sidebar = document.getElementById('sidebar');
     if (!sidebar || !('IntersectionObserver' in window)) return;
     const links = sidebar.querySelectorAll('a[href^="#"]');
-    const sections = document.querySelectorAll('.category');
+    const sections = Array.from(document.querySelectorAll('.category')).filter(s => s.id !== 'favorites'); // Exclude favorites from main nav highlighting
+
     if (!links.length || !sections.length) return;
 
     sidebarObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.intersectionRatio >= 0.5) {
-                const id = entry.target.id;
+            const id = entry.target.id;
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
                 links.forEach(link => {
                     link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
                 });
+            } else { // If not intersecting enough, remove active class
+                const link = sidebar.querySelector(`a[href="#${id}"]`);
+                if (link) link.classList.remove('active');
             }
         });
     }, { threshold: 0.5 });
@@ -828,16 +771,18 @@ function setupSidebarHighlighting() {
     sections.forEach(section => sidebarObserver.observe(section));
 }
 
+
 function populateTagDropdown() {
     const datalist = document.getElementById('tagOptions');
     if (!datalist) return;
     const tagSet = new Set();
+    // allServices should be populated by loadServices before this is called
     for (const service of allServices) {
         if (Array.isArray(service.tags)) {
             service.tags.forEach(tag => tagSet.add(tag));
         }
     }
-    datalist.innerHTML = '';
+    datalist.innerHTML = ''; // Clear existing options
     Array.from(tagSet).sort().forEach(tag => {
         const option = document.createElement('option');
         option.value = tag;
@@ -845,7 +790,8 @@ function populateTagDropdown() {
     });
 }
 
+// Make functions globally available if they are called via HTML onclick attributes
 window.populateTagDropdown = populateTagDropdown;
 window.expandAllCategories = expandAllCategories;
 window.collapseAllCategories = collapseAllCategories;
-window.setupSidebarHighlighting = setupSidebarHighlighting;
+// window.setupSidebarHighlighting = setupSidebarHighlighting; // Usually called internally
