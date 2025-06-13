@@ -4,20 +4,50 @@
     --accent-color: #ffd700;
     --header-gradient: linear-gradient(180deg, #000000, #0a1612);
     --section-gradient: linear-gradient(90deg, #000000, #0a1612);
-    --content-bg: rgba(26, 41, 48, 0.75);
+    --content-bg: rgba(26, 41, 48, 0.75); /* Used for sidebar, cards, search */
     --button-gradient: linear-gradient(135deg, #1a2930, #0a1612);
     --footer-gradient: linear-gradient(180deg, #0a1612, #000000);
-    --thanks-color: #f7ce3e;
+    --thanks-color: #f7ce3e; /* For less prominent text like tag hint */
     --font-family: 'Roboto Mono', monospace;
-    --category-max-height: 350px;
+    --category-max-height: 400px; /* Increased from 350px for more content */
     --scroll-track: #000000;
     --scroll-thumb: #ffd700;
     --scrollbar-width: 8px;
     --card-min-width: 280px;
-    --card-max-width: 380px;
+    --card-max-width: 1fr; /* Allow cards to take full width in single column */
     --category-min-width: 300px;
+    --sidebar-width: 250px; /* New variable for sidebar width */
+    --button-text-color: var(--text-color); /* Default button text */
+    --button-active-bg: var(--accent-color);
+    --button-active-text: var(--bg-color);
+    --button-border-color: var(--text-color);
+    --focus-glow-color: var(--accent-color);
 }
 
+body.light-mode {
+    --bg-color: #e0f0ff; /* Lighter blue background */
+    --text-color: #1e507b; /* Dark blue text */
+    --accent-color: #f7c859; /* Orange accent */
+    --header-gradient: linear-gradient(180deg, #a0c8e0, #e0f0ff);
+    --section-gradient: linear-gradient(90deg, #b0d8f0, #e0f0ff);
+    --content-bg: rgba(255, 255, 255, 0.8); /* Lighter content background */
+    --button-gradient: linear-gradient(135deg, #b0d8f0, #90b8d0);
+    --footer-gradient: linear-gradient(180deg, #e0f0ff, #a0c8e0);
+    --thanks-color: #1c486b;
+    --scroll-track: #d0e0f0;
+    --scroll-thumb: #1e507b;
+    --button-text-color: var(--text-color);
+    --button-active-bg: var(--accent-color);
+    --button-active-text: #ffffff; /* White text on orange accent for light mode */
+    --button-border-color: var(--text-color);
+    --focus-glow-color: var(--accent-color);
+}
+
+/* Basic Reset & Scrollbar */
+* {
+    box-sizing: border-box;
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+}
 body {
     background: var(--bg-color);
     color: var(--text-color);
@@ -27,672 +57,354 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: background-color 0.3s, color 0.3s; /* Smooth theme transition */
 }
+::-webkit-scrollbar { width: var(--scrollbar-width); }
+::-webkit-scrollbar-track { background: var(--scroll-track); }
+::-webkit-scrollbar-thumb { background: var(--scroll-thumb); border-radius: 4px; }
 
-body.light-mode {
-    /* Brighter palette with soft gradients */
-    --bg-color: #6ea6c4;
-    --text-color: #1e507b;
-    --accent-color: #f7c859;
-    --header-gradient: linear-gradient(180deg, #3b709b, #6ea6c4);
-    --section-gradient: linear-gradient(90deg, #95cfd6, #6ea6c4);
-    --content-bg: rgba(247, 200, 89, 0.1);
-    --button-gradient: linear-gradient(135deg, #95cfd6, #3b709b);
-    --footer-gradient: linear-gradient(180deg, #3b709b, #6ea6c4);
-    --thanks-color: #1e507b;
-    --font-family: 'Roboto Mono', monospace;
-    --scroll-track: #d9e2ec; /* Light color for scroll track */
-    --scroll-thumb: #3b709b; /* Medium Blue for scroll thumb */
-    --scrollbar-width: 8px;
-    --card-min-width: 280px;
-    --card-max-width: 380px;
-    --category-min-width: 300px;
+/* Sidebar Styles */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100%;
+    background: var(--content-bg);
+    backdrop-filter: blur(5px);
+    border-right: 2px solid var(--button-border-color);
+    padding: 1rem;
+    overflow-y: auto;
+    transform: translateX(calc(-1 * var(--sidebar-width)));
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
 }
-
-html.light-mode {
-    --scroll-track: #d9e2ec; /* Ensure consistency for html element */
-    --scroll-thumb: #3b709b; /* Ensure consistency for html element */
+#sidebar.open {
+    transform: translateX(0);
 }
-
-* {
-    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
-    box-sizing: border-box;
-}
-::-webkit-scrollbar {
-    width: var(--scrollbar-width);
-}
-::-webkit-scrollbar-track {
-    background: var(--scroll-track);
-}
-::-webkit-scrollbar-thumb {
-    background: var(--scroll-thumb);
+#sidebar a {
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-bottom: 1px solid transparent; /* For spacing, border on hover/active */
+    transition: background-color 0.2s, color 0.2s;
     border-radius: 4px;
 }
+#sidebar a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+#sidebar a.active {
+    background: var(--button-gradient); /* Use PS2Links gradient */
+    color: var(--text-color); /* Ensure text is visible */
+    font-weight: bold;
+    border-bottom: 1px solid var(--accent-color);
+}
+#sidebar a::before {
+    content: '» '; /* Using a different bullet for style */
+    margin-right: 5px;
+}
 
+/* Sidebar Toggle Button */
+#sidebarToggle {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1100; /* Above sidebar */
+    background: var(--button-gradient);
+    border: 1px solid var(--button-border-color);
+    color: var(--button-text-color);
+    font-size: 1.2rem; /* Larger icon */
+    padding: 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: left 0.3s ease-in-out, background-color 0.2s, color 0.2s;
+    line-height: 0; /* For better icon centering */
+}
+body.sidebar-open #sidebarToggle {
+    left: calc(var(--sidebar-width) + 1rem);
+}
+body.sidebar-open header,
+body.sidebar-open main,
+body.sidebar-open footer {
+    margin-left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+/* Header */
 header {
     background: var(--header-gradient);
     padding: 1rem;
     text-align: center;
     border-bottom: 2px solid var(--text-color);
-    box-shadow: 0 0 6px rgba(0, 112, 209, 0.25); /* Updated accent color */
+    box-shadow: 0 0 6px var(--accent-color);
+    display: flex; /* For aligning items */
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem; /* Space between items */
+}
+#header-favicon { display: block; width: 50px; height: 50px; margin: 0 auto 10px auto; }
+header h1 { font-size: 2.2rem; margin: 0; text-transform: uppercase; letter-spacing: 3px; }
+.typing-effect::after { content: '|'; animation: blink 0.7s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Header Buttons Container (New) */
+.header-buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center;
+    gap: 0.5rem; /* Space between buttons */
 }
 
-#themeToggle {
+/* General Button Styles (Header & Others) */
+.header-buttons button, #installBtn, .category h2 button, #clearFavoritesBtn, #expandAllBtn, #collapseAllBtn {
     background: none;
-    border: 2px solid var(--text-color);
-    color: var(--text-color);
+    border: 1px solid var(--button-border-color);
+    color: var(--button-text-color);
     font-family: var(--font-family);
-    font-size: 0.75rem;
-    padding: 0.15rem 0.3rem;
-    border-radius: 2px;
+    font-size: 0.8rem; /* Consistent font size */
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
     cursor: pointer;
-    margin-top: 0.75rem;
-    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+    display: inline-flex; /* For aligning icon and text if any */
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem; /* Space between icon and text */
 }
-#themeToggle.active,
-#viewToggle.active,
-#mobileToggle.active {
-    background: var(--accent-color);
-    color: var(--bg-color);
-}
-
-#viewToggle {
-    background: none;
-    border: 2px solid var(--text-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: 0.75rem;
-    padding: 0.15rem 0.3rem;
-    border-radius: 2px;
-    cursor: pointer;
-    margin-top: 0.75rem;
-    margin-left: 0.5rem;
-    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-
-#mobileToggle {
-    background: none;
-    border: 2px solid var(--text-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: 0.75rem;
-    padding: 0.15rem 0.3rem;
-    border-radius: 2px;
-    cursor: pointer;
-    margin-top: 0.75rem;
-    margin-left: 0.5rem;
-    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-
-#installBtn {
-    background: none;
-    border: 2px solid var(--text-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: 0.75rem;
-    padding: 0.15rem 0.3rem;
-    border-radius: 2px;
-    cursor: pointer;
-    margin-top: 0.75rem;
-    margin-left: 0.5rem;
-    display: none;
-    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-
-#clearFavoritesBtn {
-    background: none;
-    border: 2px solid var(--text-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    border-radius: 2px;
-    cursor: pointer;
-    margin-left: 0.5rem;
-    margin: 0.5rem;
-    font-size: 0.6rem;
-    padding: 0.1rem 0.2rem;
-    transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-
-.btn-small {
-    font-size: 0.6rem;
-    padding: 0.1rem 0.2rem;
-}
-
-#sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 100%;
-    background: var(--content-bg);
-    backdrop-filter: blur(3px);
-    border-right: 2px solid var(--text-color);
-    padding: 1rem;
-    box-sizing: border-box;
-    overflow-y: auto;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-}
-
-#sidebar.open {
-    transform: translateX(0);
-}
-
-#sidebar a {
-    display: block;
-    color: var(--text-color);
-    text-decoration: none;
-    margin-bottom: 0.5rem;
-    padding: 0.25rem 0 0.25rem 1rem;
-    border-bottom: 1px solid var(--text-color);
-    position: relative;
-}
-
-#sidebar a::before {
-    content: "\2022"; /* bullet */
-    position: absolute;
-    left: 0;
-}
-
-#sidebar a:last-child {
-    border-bottom: none;
-}
-
-#sidebarToggle {
-    background: var(--button-gradient);
-    border: 2px solid var(--text-color);
-    color: var(--text-color);
-    font-family: var(--font-family);
-    font-size: 1rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 2px;
-    cursor: pointer;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1100;
-    transition: left 0.3s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
-}
-
-body.sidebar-open #sidebarToggle {
-    left: calc(200px + 1rem);
-}
-
-body.sidebar-open header,
-body.sidebar-open main,
-body.sidebar-open footer {
-    margin-left: 200px;
-    width: calc(100% - 200px);
-    transition: margin-left 0.3s ease, width 0.3s ease;
-}
-
-#header-favicon {
-    display: block;
-    width: 50px;
-    height: 50px;
-    margin: 0 auto 10px auto;
-}
-
-header h1 {
-    font-size: 2.2rem;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    overflow: hidden;
-    display: block;
-    word-wrap: break-word;
-}
-
-.typing-effect::after {
-    content: '|';
-    animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-    50% { opacity: 0; }
-}
-
-main {
-    width: 100%;
-    margin: 1.5rem auto;
-    padding: 0 1rem;
-    flex: 1;
-}
-
-body.block-view main {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
-    gap: 0.75rem;
-}
-
-body.block-view main > .search-container,
-body.block-view main > #favorites {
-    grid-column: 1 / -1;
-}
-
-body.block-view .category {
-    margin-bottom: 0;
-}
-
-.search-container {
-    margin-bottom: 2rem;
-    text-align: center;
-    position: relative; /* For positioning suggestions container */
-}
-
-#suggestionsContainer {
-    position: absolute;
-    background-color: var(--content-bg);
-    border: 1px solid var(--accent-color);
-    border-top: none;
-    width: 80%; /* Match searchInput */
-    left: 10%; /* Center it like searchInput */
-    max-width: 600px; /* Match searchInput */
-    z-index: 100;
-    max-height: 200px;
-    overflow-y: auto;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    display: none; /* Initially hidden */
-    border-radius: 0 0 3px 3px; /* Optional: match searchInput bottom radius */
-}
-
-.suggestion-item {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    color: var(--text-color);
-    font-family: var(--font-family); /* Ensure consistent font */
-    font-size: 0.9rem; /* Slightly smaller than search input */
-}
-
-.suggestion-item:hover {
+.header-buttons button:hover, #installBtn:hover, .category h2 button:hover, #clearFavoritesBtn:hover, #expandAllBtn:hover, #collapseAllBtn:hover {
     background-color: var(--accent-color);
-    color: var(--bg-color); /* Ensure text is readable on hover */
+    color: var(--button-active-text);
+    box-shadow: 0 0 8px var(--accent-color);
 }
+.header-buttons button.active, #installBtn.active { /* Keep .active for JS toggles */
+    background-color: var(--accent-color);
+    color: var(--button-active-text);
+}
+.header-buttons button svg, #installBtn svg { /* Style for SVGs inside buttons */
+    width: 16px; height: 16px; fill: currentColor;
+}
+#installBtn { display: none; /* Shown by JS */ }
 
+
+/* Search Container */
+.search-container {
+    margin-bottom: 1.5rem; /* Reduced margin */
+    text-align: center;
+    position: relative;
+    display: flex; /* For layout of new buttons */
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
 #searchInput {
     background: var(--content-bg);
-    backdrop-filter: blur(3px);
-    border: 2px solid var(--text-color);
+    border: 1px solid var(--button-border-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    font-size: 1.2rem;
-    padding: 0.5rem 1rem;
+    font-size: 1.1rem; /* Slightly reduced */
+    padding: 0.6rem 1rem;
     width: 80%;
-    max-width: 600px;
-    border-radius: 3px;
-    box-shadow: 0 0 5px rgba(0, 112, 209, 0.2); /* Updated accent color */
+    max-width: 500px; /* Slightly reduced */
+    border-radius: 4px;
 }
-
 #searchInput:focus {
     outline: none;
-    box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color);
-    animation: glow 1.2s ease-in-out infinite alternate;
+    box-shadow: 0 0 10px var(--focus-glow-color);
+}
+.tag-hint {
+    font-size: 0.8rem;
+    color: var(--thanks-color); /* Using thanks-color for less emphasis */
+}
+#expandAllBtn, #collapseAllBtn { /* Specific styling if needed, defaults are above */
+    font-size: 0.7rem;
+    padding: 0.3rem 0.6rem;
 }
 
-@keyframes glow {
-    from { box-shadow: 0 0 10px var(--accent-color), 0 0 20px var(--accent-color); }
-    to { box-shadow: 0 0 20px var(--accent-color), 0 0 30px var(--accent-color); }
-}
-
-.no-results {
-    color: var(--text-color);
-    text-align: center;
-    font-family: var(--font-family);
-    margin-top: 1rem;
-}
-
-.category {
-    margin-bottom: 1rem;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
+/* Categories */
+.category { margin-bottom: 1rem; }
 .category h2 {
-    padding: 0.7rem;
-    padding-right: calc(1rem + var(--scrollbar-width)); /* Retain existing padding logic */
+    background: var(--section-gradient);
+    padding: 0.7rem 1rem;
     margin: 0;
     cursor: pointer;
-    font-size: 1.4rem;
+    font-size: 1.3rem; /* Slightly reduced */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
-    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-
-    background-color: #000000;
-    color: var(--text-color);
-    border: 1px solid var(--accent-color);
-    border-radius: 0; /* Sharp corners, assuming this is desired */
-    box-shadow: inset 0 0 3px rgba(255, 215, 0, 0.2);
+    border: 1px solid var(--button-border-color);
+    border-radius: 4px 4px 0 0; /* Rounded top corners */
+    transition: background-color 0.2s;
 }
-
-.category h2:hover {
-    background-color: #1a2930;
-    border-color: var(--text-color);
-    box-shadow: inset 0 0 5px rgba(255, 215, 0, 0.4), 0 0 5px rgba(255, 215, 0, 0.3);
-    transform: none; /* Remove previous transform if any */
-    filter: none; /* Remove previous filter if any */
-}
-
-.category:hover { /* Keep this subtle or match h2 hover */
-    box-shadow: 0 0 8px rgba(0, 112, 209, 0.3); /* Updated accent color */
-    background: rgba(0, 112, 209, 0.05); /* Subtle blue hover for category itself */
-    transform: translateY(-2px);
-}
-
-.chevron {
-    transition: transform 0.3s ease;
-}
-
-.chevron.open {
-    transform: rotate(180deg);
-}
-
-.category-view-toggle {
-    margin-left: 0.5rem;
-    cursor: pointer;
-    transition: color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease; /* Added transitions */
-}
-.category-view-toggle:focus {
-    outline: 2px solid var(--text-color);
-    outline-offset: 2px;
-}
-.category-view-toggle.active {
-    color: var(--accent-color);
-}
-
-.category-title {
-    flex: 1;
-    text-align: center;
-}
-
-.category-emoji {
-    margin-right: 0.5rem;
-}
+.category h2:hover { background-color: rgba(255,255,255,0.1); }
+.category-title { flex-grow: 1; text-align: left; margin-left: 0.5rem; } /* Align title left */
+.category-emoji { margin-right: 0.5rem; }
+.chevron { width: 16px; height: 16px; fill: currentColor; transition: transform 0.3s ease; margin-left: auto; /* Push to right */ }
+.chevron.open { transform: rotate(180deg); }
+.category-view-toggle { margin-left: 0.5rem; cursor: pointer; line-height: 0; } /* For icon centering */
+.category-view-toggle.active svg { fill: var(--accent-color); }
+.category-view-toggle svg { width:16px; height:16px; fill:currentColor; }
 
 .category-content {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--card-min-width), 1fr));
-    gap: 0.75rem;
-    padding: 0.75rem;
-    box-sizing: border-box;
-    min-width: 0;
-    background: var(--content-bg);
-    backdrop-filter: blur(3px);
-    border: 2px solid var(--text-color);
+    gap: 1rem; /* Increased gap */
+    padding: 1rem;
+    background: transparent; /* No separate bg, rely on card bg */
+    border: 1px solid var(--button-border-color);
     border-top: none;
-    border-radius: 0 0 3px 3px;
+    border-radius: 0 0 4px 4px;
     max-height: 0;
     opacity: 0;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    overflow: hidden; /* Changed from auto to hidden for transition */
+    transition: max-height 0.35s ease-in-out, opacity 0.35s ease-in-out, visibility 0.35s;
     visibility: hidden;
 }
-
 .category-content.open {
     opacity: 1;
     visibility: visible;
-    max-height: var(--category-max-height);
+    max-height: var(--category-max-height); /* JS will set scrollHeight if larger */
     overflow-y: auto;
-    overflow-x: hidden;
-    padding-right: calc(0.75rem + var(--scrollbar-width));
 }
 
+/* Service Buttons (Cards) */
+.service-button {
+    display: flex;
+    flex-direction: column;
+    background: var(--content-bg); /* Use content-bg for cards */
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    border: 1px solid var(--button-border-color);
+    border-radius: 4px;
+    text-decoration: none;
+    color: var(--text-color); /* Default text color */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* For favorite star positioning */
+}
+.service-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+.service-favicon { width: 16px; height: 16px; vertical-align: middle; margin-right: 0.3rem; }
+.service-thumbnail { width: 100%; max-height: 120px; object-fit: cover; margin-bottom: 0.5rem; border-radius: 3px; }
+.service-name { font-size: 1rem; font-weight: bold; margin-bottom: 0.5rem; display: flex; align-items: center; word-break: break-word; }
+.service-url { font-size: 0.8rem; word-break: break-all; color: var(--thanks-color); display: flex; align-items: center; gap: 0.3rem; margin-top: auto; /* Pushes to bottom */ }
+.copy-link {
+    background: none; border: none; color: inherit; cursor: pointer; padding: 0.2rem; margin-left: 0.3rem; font-size:0.9rem; line-height:0;
+}
+.copy-link:hover { color: var(--accent-color); }
+.favorite-star {
+    cursor: pointer; position: absolute; top: 0.5rem; right: 0.5rem; width:20px; height:20px;
+}
+.favorite-star svg { width: 100%; height: 100%; fill: #ccc; /* Default un-favorited color */ transition: fill 0.2s, transform 0.2s; }
+.favorite-star.favorited svg { fill: gold; /* PS2Links gold */ }
+.favorite-star:hover svg { transform: scale(1.1); }
+.service-tags { display: none; } /* Hidden, used by JS */
+
+/* Layout Views */
+body.block-view main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
+    gap: 1rem;
+}
+body.block-view main > .search-container,
+body.block-view main > #favorites {
+    grid-column: 1 / -1; /* Span full width */
+}
 .category.list-view .category-content {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem; /* Tighter gap for list items */
 }
-
 .category.list-view .service-button {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    max-width: none;
-}
-.category.list-view .service-name {
-    margin-bottom: 0;
-    margin-right: 0.5rem;
 }
 .category.list-view .service-thumbnail {
-    width: 80px;
-    max-height: 60px;
-    margin-right: 0.5rem;
-    margin-bottom: 0;
+    width: 60px; max-height: 40px; margin-right: 0.5rem; margin-bottom: 0;
 }
-
-.service-button {
-    display: flex;
-    flex-direction: column;
-    background: var(--button-gradient);
-    padding: 0.6rem;
-    padding-right: 1.5rem; /* space for favorite star */
-    width: 100%;
-    max-width: var(--card-max-width);
-    margin: 0 auto;
-    min-width: 0;
-    box-sizing: border-box;
-    border: 2px solid var(--accent-color);
-    border-radius: 4px;
-    text-decoration: none;
-    color: var(--accent-color);
-    box-shadow: inset 0 0 3px rgba(0, 112, 209, 0.3), 0 0 3px rgba(0, 112, 209, 0.2); /* Updated accent color */
-    /* animation: pulse 2s infinite; */
-    transition: box-shadow 0.3s ease, transform 0.2s ease, background-color 0.3s ease; /* Added background-color to transition */
-    position: relative;
-}
-
-.service-button:hover {
-    box-shadow: inset 0 0 6px rgba(0, 112, 209, 0.5), 0 0 8px rgba(0, 112, 209, 0.4); /* Updated accent color */
-    background: rgba(0, 112, 209, 0.15); /* Subtle blue hover, slightly more intense */
-    backdrop-filter: blur(4px);
-    transform: translateY(-2px);
-    /* animation: none; */ /* Ensure pulse is overridden, already handled by removing from base or specific override */
-}
-
-/* Featured Service Button Style */
-.service-button.featured {
-    border-color: var(--accent-color); /* A more prominent border color */
-    box-shadow: 0 0 10px var(--accent-color), inset 0 0 5px var(--accent-color); /* A noticeable glow */
-    /* Using a modified gradient - original button-gradient is linear-gradient(135deg, #1a2930, #0a1612) */
-    /* We'll make it blend towards the accent color */
-    background-image: linear-gradient(135deg, #1a2930, var(--accent-color));
-    position: relative; /* To allow for pseudo-elements if needed for badges */
-}
-
-/* Optional: Example of a small badge using a pseudo-element */
-.service-button.featured::after {
-    content: "Featured"; /* Or a star icon ★ */
-    position: absolute;
-    top: -8px;   /* Adjusted for better visual placement */
-    right: -8px; /* Adjusted for better visual placement */
-    background-color: var(--accent-color);
-    color: var(--bg-color); /* Contrasting text color from root variables */
-    padding: 3px 6px; /* Slightly increased padding */
-    font-size: 0.7rem; /* Slightly increased font size */
-    border-radius: 4px; /* Slightly increased border-radius */
-    font-weight: bold;
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.4); /* Slightly adjusted shadow */
-    z-index: 1; /* Ensure badge is above the button content */
-}
-
-@keyframes pulse {
-    0%, 100% { box-shadow: inset 0 0 3px rgba(0, 112, 209, 0.3), 0 0 3px rgba(0, 112, 209, 0.2); } /* Updated accent color */
-    50% { box-shadow: inset 0 0 5px rgba(0, 112, 209, 0.5), 0 0 5px rgba(0, 112, 209, 0.3); } /* Updated accent color */
-}
-
-.service-favicon {
-    width: 16px;
-    height: 16px;
-    vertical-align: middle;
-}
-
-.service-thumbnail {
-    width: 100%;
-    max-height: 150px;
-    object-fit: cover;
-    margin-bottom: 0.4rem;
-    border-radius: 8px;
-}
-
-.favorite-star {
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #ccc;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.25rem;
-    transition: color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease; /* Added transitions */
-}
-.favorite-star:focus {
-    outline: 2px solid var(--text-color);
-    outline-offset: 2px;
-}
-
-.favorite-star.favorited {
-    color: gold;
-}
-
-#themeToggle:hover,
-#viewToggle:hover,
-#mobileToggle:hover,
-#installBtn:hover,
-#clearFavoritesBtn:hover,
-#sidebarToggle:hover,
-.category-view-toggle:hover,
-.favorite-star:hover {
-    box-shadow: 0 0 8px rgba(0, 112, 209, 0.3); /* Updated accent color */
-    background: rgba(0, 112, 209, 0.1);  /* Subtle blue hover */
-    backdrop-filter: blur(4px); /* Be mindful of performance on complex pages */
-    transform: translateY(-2px);
-}
-
-/* Shared focus styles for buttons that don't have a specific outline focus */
-#themeToggle:focus,
-#viewToggle:focus,
-#mobileToggle:focus,
-#installBtn:focus,
-#clearFavoritesBtn:focus,
-#sidebarToggle:focus {
-    /* Using similar styles to hover for consistency, but ensure it's distinguishable or sufficient for focus */
-    box-shadow: 0 0 15px rgba(0, 150, 255, 0.7); /* Slightly more intense blue glow for focus */
-    background: rgba(0, 112, 209, 0.2);
-    transform: translateY(-2px);
-    outline: none; /* Remove default outline as box-shadow provides visual cue */
-}
+.category.list-view .service-name { margin-bottom: 0; flex-grow: 1; }
+.category.list-view .service-url { margin-left: auto; flex-shrink: 0; }
+.category.list-view .favorite-star { position: static; margin-left: 0.5rem; } /* Adjust star position in list view */
 
 
-#sidebar a:hover {
-    background: var(--button-gradient);
-    border-radius: 2px;
-}
-
-.service-name {
-    font-size: 0.95rem;
-    font-weight: bold;
-    margin-bottom: 0.4rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-    word-break: break-word;
-}
-
-.service-url {
-    font-size: 0.75rem;
-    word-break: break-all;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-}
-
-.category.list-view .service-url {
-    margin-left: auto;
-}
-
-.service-tags {
-    display: block; /* Or display: flex; if tags need to wrap and be aligned */
-    margin-top: 0.5rem;
-    font-size: 0.7rem;
-    color: var(--text-color);
-    opacity: 0.7;
-}
-
+/* Footer */
 footer {
     background: var(--footer-gradient);
-    padding: 0.8rem;
+    padding: 1rem;
     text-align: center;
     border-top: 2px solid var(--text-color);
-    box-shadow: 0 -2px 5px rgba(0, 112, 209, 0.15); /* Updated accent color */
-    margin-top: 2rem;
+    margin-top: auto; /* Pushes to bottom */
+}
+footer p { margin: 0.4rem 0; font-size: 0.9rem; }
+footer a { color: inherit; text-decoration: underline; }
+footer a:hover { color: var(--accent-color); }
+
+/* PWA Update Notification */
+#updateNotification {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent-color);
+    color: var(--button-active-text); /* Ensure contrast */
+    padding: 0.8rem 1.2rem;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    z-index: 2000; /* Above everything */
+    font-family: var(--font-family);
+}
+#updateNotification[hidden] { display: none !important; }
+#refreshBtn {
+    background: var(--bg-color);
+    color: var(--accent-color);
+    border: 1px solid var(--bg-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+#refreshBtn:hover {
+    opacity: 0.9;
 }
 
-footer p {
-    margin: 0.4rem 0;
-    font-size: 1rem;
-}
-
-footer a {
-    color: inherit;
-}
-
-footer .thanks {
-    font-size: 0.9rem;
-    color: var(--thanks-color);
-}
-
-footer .thanks a {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-footer .thanks a:hover {
-    text-decoration: underline;
-}
-
-/* Responsive Design */
-
-body.mobile-view .category-content {
-    grid-template-columns: 1fr;
-}
-
-body.mobile-view header h1 {
-    font-size: 1.6rem;
-}
-
-body.mobile-view .category h2 {
-    font-size: 1.2rem;
-}
-
-body.mobile-view #searchInput {
-    width: 90%;
-}
-
-/* Hide the view toggle when mobile layout is active */
-body.mobile-view #viewToggle {
-    display: none;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-    #viewToggle {
-        display: none;
+    body.sidebar-open header,
+    body.sidebar-open main,
+    body.sidebar-open footer {
+        margin-left: 0; /* No margin shift */
+        width: 100%;
     }
-    .category-content {
+    #sidebarToggle { /* Ensure toggle is visible when sidebar is open on mobile */
+        left: 1rem;
+    }
+    body.sidebar-open #sidebarToggle { /* If you want it to move with sidebar */
+         /* left: calc(var(--sidebar-width) + 1rem); */
+         /* Or keep it static: left: 1rem; */
+    }
+
+    header h1 { font-size: 1.8rem; }
+    .category h2 { font-size: 1.1rem; }
+    #searchInput { width: 90%; font-size: 1rem; }
+    .header-buttons { flex-direction: column; align-items: stretch; }
+    .header-buttons button { width: 100%; max-width:300px; margin: 0.2rem auto; }
+
+    body.block-view main { /* Single column for categories in block view on mobile */
         grid-template-columns: 1fr;
     }
-
-    body.block-view main {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    header h1 {
-        font-size: 1.6rem;
-    }
-
-    .category h2 {
-        font-size: 1.2rem;
-    }
-
-    #searchInput {
-        width: 90%;
-    }
 }
+
+/* Hide suggestions container if it's still being created by JS (orphaned code) */
+#suggestionsContainer { display: none !important; }
+
+/* Ensure mobile toggle icon is visible (it was blank) */
+#mobileToggle svg { fill: currentColor; }
+#themeToggle svg { fill: currentColor; }
+#viewToggle svg { fill: currentColor; }
+
+[end of styles.css]

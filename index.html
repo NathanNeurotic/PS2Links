@@ -19,19 +19,23 @@
     <link rel="apple-touch-icon" href="./apple-touch-icon.png">
 </head>
 <body>
-    <button id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+    <button id="sidebarToggle" aria-label="Toggle sidebar" title="Toggle sidebar"></button>
     <nav id="sidebar"></nav>
     <header>
         <img id="header-favicon" src="./favicon.ico" alt="PS2Links Favicon" />
         <h1 class="typing-effect">PS2Links Hub</h1>
-        <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">Toggle Theme</button>
-        <button id="viewToggle" onclick="toggleView()" aria-label="Toggle category view">Toggle View</button>
-        <button id="mobileToggle" onclick="toggleMobileView()" aria-label="Toggle mobile view">Mobile View</button>
+        <button id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle theme"></button>
+        <button id="viewToggle" onclick="toggleView()" aria-label="Toggle category view" title="Toggle category view"></button>
+        <button id="mobileToggle" onclick="toggleMobileView()" aria-label="Toggle mobile view" title="Toggle mobile view"></button>
         <button id="installBtn" aria-label="Install app">Install App</button>
     </header>
     <main>
         <div class="search-container">
-            <input id="searchInput" type="text" placeholder="Search links..." aria-label="Search PS2 links" />
+            <input id="searchInput" type="text" placeholder="Search links..." aria-label="Search PS2 links" list="tagOptions" />
+            <datalist id="tagOptions"></datalist>
+            <small class="tag-hint">Search by tag using "tag1,tag2"</small>
+            <button id="expandAllBtn" onclick="expandAllCategories()" type="button" title="Expand all categories">Expand All</button>
+            <button id="collapseAllBtn" onclick="collapseAllCategories()" type="button" title="Collapse all categories">Collapse All</button>
         </div>
         <p id="noResults" class="no-results" hidden>No results found.</p>
         <!-- Service listings will be dynamically injected here by script.js -->
@@ -46,5 +50,8 @@
             navigator.serviceWorker.register('service-worker.js');
         }
     </script>
+    <div id="updateNotification" hidden>
+        New version available <button id="refreshBtn" title="Refresh to update">Refresh</button>
+    </div>
 </body>
 </html>

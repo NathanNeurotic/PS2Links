@@ -74,7 +74,7 @@ header {
     padding: 1rem;
     text-align: center;
     border-bottom: 2px solid var(--text-color);
-    box-shadow: 0 0 10px rgba(0, 112, 209, 0.3); /* Updated accent color */
+    box-shadow: 0 0 6px rgba(0, 112, 209, 0.25); /* Updated accent color */
 }
 
 #themeToggle {
@@ -84,7 +84,7 @@ header {
     font-family: var(--font-family);
     font-size: 0.75rem;
     padding: 0.15rem 0.3rem;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     margin-top: 0.75rem;
     transition: box-shadow 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
@@ -103,7 +103,7 @@ header {
     font-family: var(--font-family);
     font-size: 0.75rem;
     padding: 0.15rem 0.3rem;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     margin-top: 0.75rem;
     margin-left: 0.5rem;
@@ -117,7 +117,7 @@ header {
     font-family: var(--font-family);
     font-size: 0.75rem;
     padding: 0.15rem 0.3rem;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     margin-top: 0.75rem;
     margin-left: 0.5rem;
@@ -131,7 +131,7 @@ header {
     font-family: var(--font-family);
     font-size: 0.75rem;
     padding: 0.15rem 0.3rem;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     margin-top: 0.75rem;
     margin-left: 0.5rem;
@@ -144,7 +144,7 @@ header {
     border: 2px solid var(--text-color);
     color: var(--text-color);
     font-family: var(--font-family);
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     margin-left: 0.5rem;
     margin: 0.5rem;
@@ -206,7 +206,7 @@ header {
     font-family: var(--font-family);
     font-size: 1rem;
     padding: 0.25rem 0.5rem;
-    border-radius: 5px;
+    border-radius: 2px;
     cursor: pointer;
     position: fixed;
     top: 1rem;
@@ -294,7 +294,7 @@ body.block-view .category {
     overflow-y: auto;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     display: none; /* Initially hidden */
-    border-radius: 0 0 10px 10px; /* Optional: match searchInput bottom radius */
+    border-radius: 0 0 3px 3px; /* Optional: match searchInput bottom radius */
 }
 
 .suggestion-item {
@@ -320,7 +320,7 @@ body.block-view .category {
     padding: 0.5rem 1rem;
     width: 80%;
     max-width: 600px;
-    border-radius: 10px;
+    border-radius: 3px;
     box-shadow: 0 0 5px rgba(0, 112, 209, 0.2); /* Updated accent color */
 }
 
@@ -375,7 +375,7 @@ body.block-view .category {
 }
 
 .category:hover { /* Keep this subtle or match h2 hover */
-    box-shadow: 0 0 12px rgba(0, 112, 209, 0.4); /* Updated accent color */
+    box-shadow: 0 0 8px rgba(0, 112, 209, 0.3); /* Updated accent color */
     background: rgba(0, 112, 209, 0.05); /* Subtle blue hover for category itself */
     transform: translateY(-2px);
 }
@@ -421,7 +421,7 @@ body.block-view .category {
     backdrop-filter: blur(3px);
     border: 2px solid var(--text-color);
     border-top: none;
-    border-radius: 0 0 10px 10px;
+    border-radius: 0 0 3px 3px;
     max-height: 0;
     opacity: 0;
     overflow-y: hidden;
@@ -473,7 +473,7 @@ body.block-view .category {
     min-width: 0;
     box-sizing: border-box;
     border: 2px solid var(--accent-color);
-    border-radius: 15px;
+    border-radius: 4px;
     text-decoration: none;
     color: var(--accent-color);
     box-shadow: inset 0 0 3px rgba(0, 112, 209, 0.3), 0 0 3px rgba(0, 112, 209, 0.2); /* Updated accent color */
@@ -483,7 +483,7 @@ body.block-view .category {
 }
 
 .service-button:hover {
-    box-shadow: inset 0 0 8px rgba(0, 112, 209, 0.6), 0 0 12px rgba(0, 112, 209, 0.5); /* Updated accent color */
+    box-shadow: inset 0 0 6px rgba(0, 112, 209, 0.5), 0 0 8px rgba(0, 112, 209, 0.4); /* Updated accent color */
     background: rgba(0, 112, 209, 0.15); /* Subtle blue hover, slightly more intense */
     backdrop-filter: blur(4px);
     transform: translateY(-2px);
@@ -561,7 +561,7 @@ body.block-view .category {
 #sidebarToggle:hover,
 .category-view-toggle:hover,
 .favorite-star:hover {
-    box-shadow: 0 0 12px rgba(0, 112, 209, 0.6); /* Updated accent color */
+    box-shadow: 0 0 8px rgba(0, 112, 209, 0.3); /* Updated accent color */
     background: rgba(0, 112, 209, 0.1);  /* Subtle blue hover */
     backdrop-filter: blur(4px); /* Be mindful of performance on complex pages */
     transform: translateY(-2px);
@@ -584,7 +584,7 @@ body.block-view .category {
 
 #sidebar a:hover {
     background: var(--button-gradient);
-    border-radius: 5px;
+    border-radius: 2px;
 }
 
 .service-name {
@@ -622,7 +622,7 @@ footer {
     padding: 0.8rem;
     text-align: center;
     border-top: 2px solid var(--text-color);
-    box-shadow: 0 -2px 8px rgba(0, 112, 209, 0.2); /* Updated accent color */
+    box-shadow: 0 -2px 5px rgba(0, 112, 209, 0.15); /* Updated accent color */
     margin-top: 2rem;
 }
 

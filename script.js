@@ -1,11 +1,23 @@
+const STAR_FILLED_PATH = '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.7881 3.21068C11.2364 2.13274 12.7635 2.13273 13.2118 3.21068L15.2938 8.2164L20.6979 8.64964C21.8616 8.74293 22.3335 10.1952 21.4469 10.9547L17.3295 14.4817L18.5874 19.7551C18.8583 20.8908 17.6229 21.7883 16.6266 21.1798L11.9999 18.3538L7.37329 21.1798C6.37697 21.7883 5.14158 20.8908 5.41246 19.7551L6.67038 14.4817L2.55303 10.9547C1.66639 10.1952 2.13826 8.74293 3.302 8.64964L8.70609 8.2164L10.7881 3.21068Z"/></svg>';
+const STAR_OUTLINE_PATH = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.4806 3.4987C11.6728 3.03673 12.3272 3.03673 12.5193 3.4987L14.6453 8.61016C14.7263 8.80492 14.9095 8.93799 15.1197 8.95485L20.638 9.39724C21.1367 9.43722 21.339 10.0596 20.959 10.3851L16.7546 13.9866C16.5945 14.1238 16.5245 14.3391 16.5734 14.5443L17.8579 19.9292C17.974 20.4159 17.4446 20.8005 17.0176 20.5397L12.2932 17.6541C12.1132 17.5441 11.8868 17.5441 11.7068 17.6541L6.98238 20.5397C6.55539 20.8005 6.02594 20.4159 6.14203 19.9292L7.42652 14.5443C7.47546 14.3391 7.4055 14.1238 7.24531 13.9866L3.04099 10.3851C2.661 10.0596 2.86323 9.43722 3.36197 9.39724L8.88022 8.95485C9.09048 8.93799 9.27363 8.80492 9.35464 8.61016L11.4806 3.4987Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const CHEVRON_SVG = '<svg class="chevron" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.5303 16.2803C12.2374 16.5732 11.7626 16.5732 11.4697 16.2803L3.96967 8.78033C3.67678 8.48744 3.67678 8.01256 3.96967 7.71967C4.26256 7.42678 4.73744 7.42678 5.03033 7.71967L12 14.6893L18.9697 7.71967C19.2626 7.42678 19.7374 7.42678 20.0303 7.71967C20.3232 8.01256 20.3232 8.48744 20.0303 8.78033L12.5303 16.2803Z"/></svg>';
+
 let allServices = [];
 let deferredPrompt = null;
+let sidebarObserver = null;
 const MAX_CATEGORY_HEIGHT =
     parseInt(
         getComputedStyle(document.documentElement).getPropertyValue(
             '--category-max-height'
         )
     ) || 400; // px - limit for open category height
+
+function setStarState(star, filled) {
+    star.innerHTML = filled ? STAR_FILLED_PATH : STAR_OUTLINE_PATH;
+    star.classList.toggle('favorited', filled);
+    star.setAttribute('aria-label', filled ? 'Remove from favorites' : 'Add to favorites');
+    star.title = filled ? 'Remove from favorites' : 'Add to favorites';
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     applySavedTheme();
@@ -14,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateToggleButtons();
 
     buildSidebar();
+    setupSidebarHighlighting();
 
     const sidebarToggle = document.getElementById('sidebarToggle');
     if (sidebarToggle) {
@@ -71,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Global click listener to hide suggestions
     document.addEventListener('click', (event) => {
         const searchInput = document.getElementById('searchInput');
+        // Note: suggestionsContainer might be null if removed by previous steps, ensure checks
         const suggestionsContainer = document.getElementById('suggestionsContainer');
         if (suggestionsContainer && searchInput) {
             if (event.target !== searchInput && !suggestionsContainer.contains(event.target)) {
@@ -78,6 +92,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Service Worker Registration and Update Logic
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js').then(reg => {
+            function notify(worker) {
+                const bar = document.getElementById('updateNotification');
+                if (!bar) return;
+                bar.hidden = false; // Make the notification visible
+                const refresh = document.getElementById('refreshBtn');
+                if (refresh) {
+                    refresh.onclick = () => {
+                        worker.postMessage({ type: 'SKIP_WAITING' });
+                    };
+                }
+            }
+
+            if (reg.waiting) { // If a service worker is already waiting
+                notify(reg.waiting);
+            }
+
+            reg.addEventListener('updatefound', () => { // When an update is found and installation starts
+                const newWorker = reg.installing;
+                if (newWorker) {
+                    newWorker.addEventListener('statechange', () => {
+                        // When the new service worker has successfully installed and is waiting
+                        if (newWorker.state === 'installed' && reg.waiting) {
+                            notify(reg.waiting);
+                        }
+                    });
+                }
+            });
+
+            // When a new service worker takes control
+            navigator.serviceWorker.addEventListener('controllerchange', () => {
+                window.location.reload();
+            });
+        });
+    }
 });
 
 async function loadServices() {
@@ -153,7 +205,7 @@ async function loadServices() {
                 textContent = categoryName.substring(emojiMatch[0].length).trim();
             }
 
-            categoryHeader.innerHTML = `${emojiSpan}<span class="category-title">${textContent}</span> <span class="chevron">▼</span><span class="category-view-toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
+            categoryHeader.innerHTML = `${emojiSpan}<span class="category-title">${textContent}</span> ${CHEVRON_SVG}<span class="category-view-toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
             const viewToggle = categoryHeader.querySelector('.category-view-toggle');
             viewToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -213,6 +265,7 @@ async function loadServices() {
         });
 
         buildSidebar();
+        setupSidebarHighlighting();
 
         // Create suggestions container
         const searchContainer = document.querySelector('.search-container');
@@ -241,15 +294,14 @@ async function loadServices() {
 
 function setupSearch() {
     const searchInput = document.getElementById('searchInput');
-    const suggestionsContainer = document.getElementById('suggestionsContainer');
-    if (!searchInput || !suggestionsContainer) return;
+    if (!searchInput) return; // suggestionsContainer is removed
 
     searchInput.addEventListener('input', () => {
         const query = searchInput.value.toLowerCase().trim();
-        suggestionsContainer.innerHTML = ''; // Clear previous suggestions
+
+        // suggestionsContainer logic is removed here
 
         if (query === '') {
-            suggestionsContainer.style.display = 'none';
             // Restore visibility of all services and categories when query is cleared
             document.querySelectorAll('.service-button').forEach(button => button.style.display = 'flex');
             document.querySelectorAll('.category').forEach(category => category.style.display = '');
@@ -258,53 +310,7 @@ function setupSearch() {
             return;
         }
 
-        const uniqueSuggestions = new Set();
-        const maxSuggestions = 7; // Max number of suggestions to show
-
-        allServices.forEach(service => {
-            if (uniqueSuggestions.size >= maxSuggestions) return;
-            if (service.name.toLowerCase().includes(query)) {
-                uniqueSuggestions.add(service.name);
-            }
-            if (uniqueSuggestions.size >= maxSuggestions) return;
-            if (Array.isArray(service.tags)) {
-                service.tags.forEach(tag => {
-                    if (uniqueSuggestions.size >= maxSuggestions) return;
-                    if (tag.toLowerCase().includes(query)) {
-                        uniqueSuggestions.add(tag);
-                    }
-                });
-            }
-        });
-
-        // Also search category names for suggestions
-        const categoryElements = document.querySelectorAll('.category .category-title');
-        categoryElements.forEach(catTitleElement => {
-            if (uniqueSuggestions.size >= maxSuggestions) return;
-            const catName = catTitleElement.textContent.toLowerCase();
-            if(catName.includes(query)) {
-                uniqueSuggestions.add(catTitleElement.textContent.trim()); // Add original case for display
-            }
-        });
-
-
-        if (uniqueSuggestions.size > 0) {
-            suggestionsContainer.style.display = 'block';
-            uniqueSuggestions.forEach(suggestion => {
-                const item = document.createElement('div');
-                item.className = 'suggestion-item';
-                item.textContent = suggestion;
-                item.addEventListener('click', () => {
-                    searchInput.value = suggestion;
-                    suggestionsContainer.innerHTML = '';
-                    suggestionsContainer.style.display = 'none';
-                    searchInput.dispatchEvent(new Event('input', { bubbles: true }));
-                });
-                suggestionsContainer.appendChild(item);
-            });
-        } else {
-            suggestionsContainer.style.display = 'none';
-        }
+        // uniqueSuggestions and suggestionsContainer population logic is removed.
 
         // Original search filtering logic
         const tokens = query.split(',').map(t => t.trim()).filter(Boolean);
@@ -428,7 +434,29 @@ function createServiceButton(service, favoritesSet, categoryName) {
 
     const serviceUrlSpan = document.createElement('span');
     serviceUrlSpan.className = 'service-url';
-    serviceUrlSpan.textContent = service.url;
+    serviceUrlSpan.textContent = service.url; // Keep this if you want the URL text visible
+
+    const copyBtn = document.createElement('button');
+    copyBtn.type = 'button';
+    copyBtn.className = 'copy-link'; // Ensure this class is styled in styles.css
+    copyBtn.textContent = '📋'; // Or an SVG icon
+    copyBtn.setAttribute('aria-label', `Copy ${service.name} URL`);
+    copyBtn.title = `Copy ${service.name} URL`;
+    copyBtn.addEventListener('click', (e) => {
+        e.preventDefault(); // Prevent navigation if the serviceButton is an <a> tag
+        e.stopPropagation(); // Prevent triggering other listeners on the serviceButton
+        navigator.clipboard.writeText(service.url).then(() => {
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+            }, 1000);
+        }).catch(err => {
+            console.error('Failed to copy URL: ', err);
+            // Optionally provide user feedback on copy failure
+        });
+    });
+    serviceUrlSpan.appendChild(copyBtn); // Append to the URL span or directly to serviceButton
 
     const serviceTagsSpan = document.createElement('span');
     serviceTagsSpan.className = 'service-tags';
@@ -451,14 +479,7 @@ function createServiceButton(service, favoritesSet, categoryName) {
     star.className = 'favorite-star';
     star.tabIndex = 0;
     star.setAttribute('role', 'button');
-    if (favoritesSet.has(service.url)) {
-        star.textContent = '★';
-        star.classList.add('favorited');
-        star.setAttribute('aria-label', 'Remove from favorites');
-    } else {
-        star.textContent = '☆';
-        star.setAttribute('aria-label', 'Add to favorites');
-    }
+    setStarState(star, favoritesSet.has(service.url)); // Use setStarState here
     star.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
@@ -501,15 +522,7 @@ function updateStars() {
         const url = btn.dataset.url;
         const star = btn.querySelector('.favorite-star');
         if (!star) return;
-        if (favorites.has(url)) {
-            star.textContent = '★';
-            star.classList.add('favorited');
-            star.setAttribute('aria-label', 'Remove from favorites');
-        } else {
-            star.textContent = '☆';
-            star.classList.remove('favorited');
-            star.setAttribute('aria-label', 'Add to favorites');
-        }
+        setStarState(star, favorites.has(url)); // Use setStarState here
     });
     renderFavoritesCategory();
 }
@@ -570,7 +583,7 @@ function renderFavoritesCategory() {
         header.innerHTML =
             `<span class="category-emoji">⭐</span>
              <span class="category-title">Favorites</span>
-             <span class="chevron">▼</span>
+             ${CHEVRON_SVG}
              <span class="category-view-toggle" role="button" tabindex="0" aria-label="Toggle category view">☰</span>`;
         header.setAttribute('aria-expanded', 'true');
         header.onclick = () => toggleCategory(header);
@@ -759,17 +772,48 @@ window.toggleCategoryView = toggleCategoryView;
 function updateToggleButtons() {
     const themeBtn = document.getElementById('themeToggle');
     if (themeBtn) {
-        themeBtn.classList.toggle('active', document.body.classList.contains('light-mode'));
+        const isLight = document.body.classList.contains('light-mode');
+        themeBtn.classList.toggle('active', isLight);
+        themeBtn.innerHTML = isLight ?
+            '<svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>' : // Sun icon
+            '<svg id="themeIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'; // Moon icon
     }
     const viewBtn = document.getElementById('viewToggle');
     if (viewBtn) {
-        viewBtn.classList.toggle('active', document.body.classList.contains('block-view'));
+        const isBlock = document.body.classList.contains('block-view');
+        viewBtn.classList.toggle('active', isBlock);
+        viewBtn.innerHTML = isBlock ?
+            '<svg id="viewIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>' : // List icon
+            '<svg id="viewIcon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>'; // Grid/Block icon
     }
     const mobileBtn = document.getElementById('mobileToggle');
     if (mobileBtn) {
         mobileBtn.classList.toggle('active', document.body.classList.contains('mobile-view'));
+        mobileBtn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>';
     }
 }
+
+function expandAllCategories() {
+    document.querySelectorAll('.category h2').forEach(header => {
+        const content = header.parentElement.querySelector('.category-content');
+        // Check if associated content exists and if it's not already open
+        if (content && !content.classList.contains('open')) {
+            toggleCategory(header); // toggleCategory handles the logic to open it
+        }
+    });
+}
+window.expandAllCategories = expandAllCategories;
+
+function collapseAllCategories() {
+    document.querySelectorAll('.category h2').forEach(header => {
+        const content = header.parentElement.querySelector('.category-content');
+        // Check if associated content exists and if it's currently open
+        if (content && content.classList.contains('open')) {
+            toggleCategory(header); // toggleCategory handles the logic to close it
+        }
+    });
+}
+window.collapseAllCategories = collapseAllCategories;
 
 function buildSidebar() {
     const sidebar = document.getElementById('sidebar');
@@ -805,16 +849,55 @@ function toggleSidebar() {
 window.toggleSidebar = toggleSidebar;
 window.buildSidebar = buildSidebar;
 
+function setupSidebarHighlighting() {
+    if (sidebarObserver) {
+        sidebarObserver.disconnect();
+    }
+    const sidebar = document.getElementById('sidebar');
+    if (!sidebar || !('IntersectionObserver' in window)) return;
+    const links = sidebar.querySelectorAll('a[href^="#"]');
+    const sections = document.querySelectorAll('.category'); // Assuming '.category' is your main section identifier
+    if (!links.length || !sections.length) return;
+
+    sidebarObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            // More lenient intersection check (e.g. partially visible at top or bottom)
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                links.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+                });
+            } else {
+                // Optional: If you want to remove 'active' when it's *not* intersecting.
+                // However, the target's logic seems to only add 'active' based on a threshold,
+                // implying another one might become active.
+                // The original target used a threshold of 0.5.
+                // A simpler approach is to ensure only one is active.
+                // Let's stick to the target's way:
+                // If entry.intersectionRatio < 0.5 for an active link's target,
+                // it doesn't mean we should immediately deactivate it,
+                // another entry with >0.5 ratio will activate its link.
+            }
+        });
+    }, {
+        threshold: 0.5, // Trigger when 50% of the element is visible
+        // To make it more responsive to elements at the very top/bottom of viewport:
+        // rootMargin: "-50px 0px -50% 0px" // Example: Adjust as needed
+    });
+
+    sections.forEach(section => sidebarObserver.observe(section));
+}
+
 function populateTagDropdown() {
     const datalist = document.getElementById('tagOptions');
-    if (!datalist) return;
+    if (!datalist) return; // Should exist due to index.html changes
     const tagSet = new Set();
-    for (const service of allServices) {
+    for (const service of allServices) { // allServices should be populated by loadServices
         if (Array.isArray(service.tags)) {
             service.tags.forEach(tag => tagSet.add(tag));
         }
     }
-    datalist.innerHTML = '';
+    datalist.innerHTML = ''; // Clear existing options
     Array.from(tagSet).sort().forEach(tag => {
         const option = document.createElement('option');
         option.value = tag;
