@@ -140,53 +140,63 @@ header {
     text-align: center;
     border-bottom: 2px solid var(--text-color);
     box-shadow: 0 0 6px var(--accent-color);
-    display: flex; /* For aligning items */
-    flex-direction: column;
+    display: flex;
+    flex-direction: column; /* Retain column for favicon, h1, and then button group */
     align-items: center;
-    gap: 0.5rem; /* Space between items */
+    gap: 0.75rem; /* Increased gap for visual separation */
 }
-#header-favicon { display: block; width: 50px; height: 50px; margin: 0 auto 10px auto; }
-header h1 { font-size: 2.2rem; margin: 0; text-transform: uppercase; letter-spacing: 3px; }
+#header-favicon { display: block; width: 50px; height: 50px; margin-bottom: 0.5rem; /* Adjusted margin */ }
+header h1 { font-size: 2.2rem; margin: 0 0 0.5rem 0; /* Added bottom margin */ text-transform: uppercase; letter-spacing: 3px; }
 .typing-effect::after { content: '|'; animation: blink 0.7s infinite; }
 @keyframes blink { 50% { opacity: 0; } }
 
-/* Header Buttons Container (New) */
-.header-buttons {
-    display: flex;
-    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-    justify-content: center;
-    gap: 0.5rem; /* Space between buttons */
-}
-
-/* General Button Styles (Header & Others) */
-.header-buttons button, #installBtn, .category h2 button, #clearFavoritesBtn, #expandAllBtn, #collapseAllBtn {
+/* Styling for the group of header buttons */
+/* This targets all direct button children of header, and buttons inside .header-buttons if that structure is used later */
+header > button, header > .header-buttons > button {
     background: none;
     border: 1px solid var(--button-border-color);
     color: var(--button-text-color);
     font-family: var(--font-family);
-    font-size: 0.8rem; /* Consistent font size */
-    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem; /* Adjusted padding */
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-    display: inline-flex; /* For aligning icon and text if any */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.3rem; /* Space between icon and text */
+    gap: 0.3rem;
+    margin: 0 0.25rem; /* Horizontal margin for spacing */
 }
-.header-buttons button:hover, #installBtn:hover, .category h2 button:hover, #clearFavoritesBtn:hover, #expandAllBtn:hover, #collapseAllBtn:hover {
+
+/* This new rule applies flex row layout specifically to the button group if they are wrapped */
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem; /* This will apply if .header-buttons div is used */
+}
+
+
+header > button:hover, header > .header-buttons > button:hover {
     background-color: var(--accent-color);
     color: var(--button-active-text);
     box-shadow: 0 0 8px var(--accent-color);
 }
-.header-buttons button.active, #installBtn.active { /* Keep .active for JS toggles */
+header > button.active, header > .header-buttons > button.active {
     background-color: var(--accent-color);
     color: var(--button-active-text);
 }
-.header-buttons button svg, #installBtn svg { /* Style for SVGs inside buttons */
+header > button svg, header > .header-buttons > button svg {
     width: 16px; height: 16px; fill: currentColor;
 }
 #installBtn { display: none; /* Shown by JS */ }
+/* Remove top margin from general button styles if they were affecting header buttons */
+#clearFavoritesBtn, #expandAllBtn, #collapseAllBtn { /* These are not in header */
+   /* margin-top: 0; remove if it was part of a general rule causing issues */
+}
 
 
 /* Search Container */
@@ -393,6 +403,51 @@ footer a:hover { color: var(--accent-color); }
     #searchInput { width: 90%; font-size: 1rem; }
     .header-buttons { flex-direction: column; align-items: stretch; }
     .header-buttons button { width: 100%; max-width:300px; margin: 0.2rem auto; }
+
+    /* Hide specific buttons on smaller screens */
+    #viewToggle, /* This is in .header-buttons */
+    #expandAllBtn, /* This is in .search-container */
+    #collapseAllBtn { /* This is in .search-container */
+        display: none;
+    }
+
+    /* Enforce single-column list view for all category content on small screens */
+    .category-content {
+        grid-template-columns: 1fr !important; /* Override any other grid settings */
+        display: flex !important; /* Ensure flex properties for list items */
+        flex-direction: column !important;
+    }
+    /* Ensure service buttons in this forced list view take full width */
+    .category-content .service-button {
+        width: 100% !important;
+        max-width: none !important; /* Override max-width from card view */
+        flex-direction: row !important; /* Ensure horizontal layout for item content */
+        align-items: center !important;
+    }
+    .category-content .service-button .service-thumbnail {
+        width: 60px !important;
+        max-height: 40px !important;
+        margin-right: 0.5rem !important;
+        margin-bottom: 0 !important;
+    }
+     .category-content .service-button .service-name {
+        margin-bottom: 0 !important;
+        flex-grow: 1 !important;
+    }
+    .category-content .service-button .service-url {
+        margin-left: auto !important;
+        flex-shrink: 0 !important;
+    }
+    .category-content .service-button .favorite-star {
+        position: static !important; /* Adjust star position */
+        margin-left: 0.5rem !important;
+    }
+
+
+    /* Hide per-category view toggle icon on small screens */
+    .category h2 .category-view-toggle {
+        display: none !important;
+    }
 
     body.block-view main { /* Single column for categories in block view on mobile */
         grid-template-columns: 1fr;
