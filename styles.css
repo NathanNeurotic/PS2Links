@@ -125,8 +125,12 @@ header {
 #sidebarToggle {
     /* font-size: 1rem; */ /* Covered by group */
     /* padding: 0.25rem 0.5rem; */ /* Covered by group */
+    position: fixed;
+    top: 0.5rem;
+    left: 0.5rem;
     margin-right: 1rem; /* PS2Links - spacing to its right */
     z-index:1100; /* PS2Links - keep if needed */
+    transition: left 0.3s ease;
 }
 
 
@@ -236,7 +240,12 @@ body.sidebar-open footer {
 }
 
 body.sidebar-open {
-    overflow: hidden;
+    /* Allow page scrolling while sidebar is open */
+    overflow: initial;
+}
+
+body.sidebar-open #sidebarToggle {
+    left: calc(200px + 0.5rem);
 }
 
 #header-favicon { /* PS2Links specific, keep */
@@ -585,16 +594,19 @@ body.mobile-view .category h2 { font-size: 1.2rem; } /* Consistent */
 body.mobile-view #searchInput { width: 90%; } /* Consistent */
 
 /* Desktop view specific styles (PS2Links) - keep */
-body.desktop-view main {
+body.desktop-view:not(.block-view) main {
+    display: block;
+}
+body.desktop-view.block-view main {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
     gap: 1rem;
 }
-body.desktop-view main > .search-container,
-body.desktop-view main > #favorites {
+body.desktop-view.block-view main > .search-container,
+body.desktop-view.block-view main > #favorites {
     grid-column: 1 / -1;
 }
-body.desktop-view .category {
+body.desktop-view.block-view .category {
     margin-bottom: 0;
 }
 
