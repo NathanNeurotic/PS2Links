@@ -61,15 +61,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Ensure mobileToggle event listener is correctly assigned
     const mobileToggleBtn = document.getElementById('mobileToggle');
-    if (mobileToggleBtn && !mobileToggleBtn.onclick) { // Check if onclick is not already set inline
+    if (mobileToggleBtn) { // Check if onclick is not already set inline
          mobileToggleBtn.addEventListener('click', toggleMobileView);
     }
     // Ensure viewToggle event listener is correctly assigned
     const viewToggleBtn = document.getElementById('viewToggle');
-    if (viewToggleBtn && !viewToggleBtn.onclick) { // Check if onclick is not already set inline
+    if (viewToggleBtn) { // Check if onclick is not already set inline
         viewToggleBtn.addEventListener('click', toggleView);
     }
 
+    const themeToggleBtn = document.getElementById('themeToggle');
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', toggleTheme);
+    }
+
+    const headerExpandAllBtn = document.getElementById('headerExpandAllBtn');
+    if (headerExpandAllBtn) {
+        headerExpandAllBtn.addEventListener('click', expandAllCategories);
+    }
+
+    const headerCollapseAllBtn = document.getElementById('headerCollapseAllBtn');
+    if (headerCollapseAllBtn) {
+        headerCollapseAllBtn.addEventListener('click', collapseAllCategories);
+    }
 
     const installBtn = document.getElementById('installBtn');
     if (installBtn) {
@@ -132,9 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 bar.hidden = false;
                 const refresh = document.getElementById('refreshBtn');
                 if (refresh) {
-                    refresh.onclick = () => {
+                    refresh.addEventListener('click', () => {
                         worker.postMessage({ type: 'SKIP_WAITING' });
-                    };
+                    });
                 }
             }
 
@@ -211,7 +225,7 @@ async function loadServices() {
 
             const categoryHeader = document.createElement('h2');
             categoryHeader.setAttribute('aria-expanded', 'false');
-            categoryHeader.onclick = () => toggleCategory(categoryHeader);
+            categoryHeader.addEventListener('click', () => toggleCategory(categoryHeader));
             categoryHeader.tabIndex = 0;
             categoryHeader.addEventListener('keydown', (e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
@@ -695,7 +709,6 @@ function toggleTheme() {
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
     updateHeaderButtonStates();
 }
-window.toggleTheme = toggleTheme;
 
 function applySavedView() {
     const saved = localStorage.getItem('view');
@@ -733,7 +746,6 @@ function toggleView() { // This is for the global list/block view
     localStorage.setItem('view', isBlock ? 'block' : 'list');
     updateHeaderButtonStates(); // Renamed
 }
-window.toggleView = toggleView;
 
 function toggleMobileView() {
     document.body.classList.add('mobile-view');
@@ -767,7 +779,6 @@ function toggleCategoryView(categoryId) {
         toggle.classList.toggle('active', isList);
     }
 }
-window.toggleCategoryView = toggleCategoryView;
 
 function updateHeaderButtonStates() { // Renamed from updateToggleButtons
     const themeBtn = document.getElementById('themeToggle');
@@ -911,6 +922,4 @@ function populateTagDropdown() {
 
 // Make functions globally available if they are called via HTML onclick attributes
 window.populateTagDropdown = populateTagDropdown;
-window.expandAllCategories = expandAllCategories;
-window.collapseAllCategories = collapseAllCategories;
 // window.setupSidebarHighlighting = setupSidebarHighlighting; // Usually called internally
