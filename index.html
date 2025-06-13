@@ -33,6 +33,9 @@
         <button id="mobileToggle" onclick="toggleMobileView()" aria-label="Toggle mobile view" title="Toggle mobile view">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
         </button>
+        <button id="desktopToggle" type="button" title="Toggle desktop view" aria-label="Toggle desktop view">Desktop</button>
+        <button id="headerExpandAllBtn" onclick="expandAllCategories()" type="button" title="Expand all categories" aria-label="Expand all categories">Expand All</button>
+        <button id="headerCollapseAllBtn" onclick="collapseAllCategories()" type="button" title="Collapse all categories" aria-label="Collapse all categories">Collapse All</button>
         <button id="installBtn" aria-label="Install app" title="Install app">Install App</button>
     </header>
     <main>
@@ -40,8 +43,6 @@
             <input id="searchInput" type="text" placeholder="Search links..." aria-label="Search PS2 links" list="tagOptions" />
             <datalist id="tagOptions"></datalist>
             <small class="tag-hint">Search by tag using "tag1,tag2"</small>
-            <button id="expandAllBtn" onclick="expandAllCategories()" type="button" title="Expand all categories">Expand All</button>
-            <button id="collapseAllBtn" onclick="collapseAllCategories()" type="button" title="Collapse all categories">Collapse All</button>
         </div>
         <p id="noResults" class="no-results" hidden>No results found.</p>
         <!-- Service listings will be dynamically injected here by script.js -->
@@ -53,6 +54,7 @@
     <div id="updateNotification" hidden>
         New version available <button id="refreshBtn" title="Refresh to update">Refresh</button>
     </div>
+    <div id="sidebarOverlay"></div>
     <script src="./script.js"></script>
 </body>
 </html>

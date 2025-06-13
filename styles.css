@@ -90,9 +90,12 @@ header { /* From reference */
 #themeToggle,
 #viewToggle,
 #mobileToggle,
+#desktopToggle,
+#headerExpandAllBtn,
+#headerCollapseAllBtn,
 #installBtn,
-#expandAllBtn,
-#collapseAllBtn,
+#expandAllBtn, /* Old, can be removed later if not reused */
+#collapseAllBtn, /* Old, can be removed later if not reused */
 #clearFavoritesBtn,
 #sidebarToggle {
     background: var(--button-gradient);
@@ -107,8 +110,8 @@ header { /* From reference */
     margin-top: 0; /* Align vertically in flex header if they are direct flex children */
 }
 /* Specific margins from reference */
-#viewToggle, #mobileToggle, #installBtn { margin-left: 0.5rem; } /* Kept for header buttons */
-#expandAllBtn, #collapseAllBtn { margin-left: 0.5rem; margin-top: 0.5rem; } /* For search buttons */
+#viewToggle, #mobileToggle, #desktopToggle, #headerExpandAllBtn, #headerCollapseAllBtn, #installBtn { margin-left: 0.5rem; } /* Kept for header buttons, added new ones */
+#expandAllBtn, #collapseAllBtn { margin-left: 0.5rem; margin-top: 0.5rem; } /* For old search buttons, can be removed later */
 #clearFavoritesBtn { font-size: 0.6rem; padding: 0.1rem 0.2rem; margin:0.5rem; margin-left:0.5rem;} /* from ref */
 #sidebarToggle {
     font-size: 1rem;
@@ -232,6 +235,10 @@ body.sidebar-open footer {
     margin-left: 200px;
     width: calc(100% - 200px);
     transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+body.sidebar-open {
+    overflow: hidden; /* Prevent body scroll when sidebar is open */
 }
 
 #header-favicon { /* From reference */
@@ -550,10 +557,26 @@ body.mobile-view .category-content { grid-template-columns: 1fr; }
 body.mobile-view header h1 { font-size: 1.6rem; }
 body.mobile-view .category h2 { font-size: 1.2rem; }
 body.mobile-view #searchInput { width: 90%; }
-body.mobile-view #viewToggle { display: none; } /* Hide global view toggle */
+/* Ensure #viewToggle is visible by default, removing specific hiding rules */
+/* body.mobile-view #viewToggle, body.desktop-view #viewToggle { display: none; } */
+
+/* Desktop view specific styles (mimicking block-view) */
+body.desktop-view main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--category-min-width), 1fr));
+    gap: 1rem;
+}
+body.desktop-view main > .search-container,
+body.desktop-view main > #favorites {
+    grid-column: 1 / -1; /* Make search and favorites span full width */
+}
+body.desktop-view .category {
+    margin-bottom: 0; /* Consistent with block-view category margin */
+}
+/* .category-content in desktop-view will use its default grid styling, which is desired. */
 
 @media (max-width: 768px) { /* General mobile styles from reference */
-    #viewToggle { display: none; } /* Hide global view toggle */
+    /* #viewToggle { display: none; } */ /* Ensure #viewToggle is visible by default */
     .category-content { grid-template-columns: 1fr; }
     body.block-view main { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); } /* Ref's seems to allow smaller cards on mobile in block view */
     header h1 { font-size: 1.6rem; }
