@@ -1,11 +1,11 @@
 {
-  "name": "PS2Links",
-  "short_name": "PS2Links",
+  "name": "PS2Links - Your PlayStation 2 Resource Hub",
+  "short_name": "PS2Links Hub",
   "start_url": "../index.html",
   "scope": "../",
   "display": "standalone",
-  "theme_color": "#1a1a1a",
-  "background_color": "#1a1a1a",
+  "theme_color": "#0a1612",
+  "background_color": "#0a1612",
   "icons": [
     {
       "src": "../android-chrome-192x192.png",
