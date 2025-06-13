@@ -693,7 +693,7 @@ function toggleTheme() {
     const isLight = document.body.classList.toggle('light-mode');
     document.documentElement.classList.toggle('light-mode', isLight);
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    updateToggleButtons();
+    updateHeaderButtonStates();
 }
 window.toggleTheme = toggleTheme;
 
