@@ -628,6 +628,21 @@ body.desktop-view.block-view .category {
     }
     .category h2 { font-size: 1.2rem; } /* Consistent */
     #searchInput { width: 90%; } /* Consistent */
+
+    /* Ensure header in desktop-view on mobile still wraps and centers items */
+    body.desktop-view header {
+        flex-wrap: wrap;
+        justify-content: center; /* Re-apply from general mobile styles */
+        padding: 1rem; /* Re-apply from general mobile styles */
+        /* gap: 0.5rem; is already in the general mobile header style, might not need repeating if it cascades */
+    }
+
+    /* Ensure h1 in desktop-view on mobile takes full width and centers, allowing buttons below */
+    body.desktop-view header h1 {
+        flex-basis: 100%; /* Re-apply from general mobile styles */
+        text-align: center; /* Re-apply from general mobile styles */
+        font-size: 1.6rem; /* Compromise: use mobile H1 size for better fit, even in desktop view on mobile */
+    }
 }
 
 /* Enforce desktop view styles when body.desktop-view is active, overriding mobile defaults */
